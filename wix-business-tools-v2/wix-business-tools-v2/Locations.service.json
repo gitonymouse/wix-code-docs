@@ -571,26 +571,6 @@
             }
           ],
           "doc": "Whether to include `archived` locations in the response. Defaults to `false`."
-        },
-        {
-          "name": "paging",
-          "optional": true,
-          "type": [
-            {
-              "referenceType": "wix-business-tools-v2.Locations.Paging"
-            }
-          ],
-          "doc": "Pagination.\n\nDefault values:\n`offset`: 0\n`limit`: 50 (Max: 1000)\n"
-        },
-        {
-          "name": "sort",
-          "optional": true,
-          "type": [
-            {
-              "referenceType": "wix-business-tools-v2.Locations.Sorting"
-            }
-          ],
-          "doc": "Sort order."
         }
       ],
       "docs": {
