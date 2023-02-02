@@ -1,0 +1,57 @@
+{ "name": "wix-cli",
+  "mixes": [],
+  "labels":
+    [ "new" ],
+  "location":
+    { "lineno": 1,
+      "filename": "install.js" },
+  "docs":
+    { "summary": "The Wix CLI is a tool that allows you to work with your Wix site from your computer's terminal.",
+      "description":
+        [ "The CLI is an npm or yarn package that you install on your computer. Before setting up the CLI, make sure your site is [connected to GitHub](https://support.wix.com/en/article/velo-setting-up-velo-pro#connect-your-site-to-github) and your site's repository is cloned on your computer.",
+          "",
+          "To install the CLI, do the following:",
+          "",
+          "1. Open your computer's terminal.",
+          "1. Run `npm install -g @wix/cli` or `yarn global add @wix/cli`.",
+          "1. Once you've installed the CLI globally, you can use it with any Wix site repos on your computer." ],
+      "links": [],
+      "examples": [],
+      "extra":
+        {  } },
+  "properties": [],
+  "operations":
+    [ { "name": "install",
+        "labels": [],
+        "nameParams": [],
+        "params": [],
+        "ret":
+          { "type": "void" },
+        "locations":
+          [ { "lineno": 13,
+              "filename": "install.js" } ],
+        "docs":
+          { "summary": "Installs a code package to a site's repo.",
+            "description":
+              [ "For security reasons, you can only install [approved npm packages](https://www.wix.com/velo/npm-modules) on Wix sites. ",
+                "",
+                "If your site's repo has a `yarn.lock` file, the installer uses yarn to install packages by default. ",
+                "Otherwise, the installer uses npm by default. To specify which package manager to use, include an `--npm` or `--yarn` options flag." ],
+            "links": [],
+            "examples":
+              [ { "title": "Install a package using the CLI",
+                  "body":
+                    [ "wix install --yarn marked",
+                      "",
+                      "// Once the package is installed, a message is displayed in the terminal.",
+                      "marked@4.0.16 successfully installed." ],
+                  "extra":
+                    {  } } ],
+            "extra":
+              {  } },
+        "extra":
+          {  } } ],
+  "callbacks": [],
+  "messages": [],
+  "extra":
+    {  } }
