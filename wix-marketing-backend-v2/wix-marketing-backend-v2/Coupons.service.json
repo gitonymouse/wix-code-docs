@@ -44,29 +44,31 @@
         "description": [],
         "examples": [
           {
-            "title": "bulkCreateCoupons example",
+            "title": "BulkCreateCoupons example",
             "body": [
-              "",
-              "    ",
-              "    import { coupons } from 'wix-marketing-backend.v2';",
+              "import { coupons } from 'wix-marketing-backend.v2';",
               "  ",
-              "    ",
-              "    async function bulkCreateCoupons(options) {",
-              "      try {",
-              "        const result = await coupons.bulkCreateCoupons(options);",
+              " async function bulkCreateCoupons(options) {",
+              "   try {",
+              "     const result = await coupons.bulkCreateCoupons(options);",
               "",
-              "        return result;",
-              "        } catch (error) {",
-              "          console.error(error);",
-              "          // Handle the error",
-              "        }",
-              "    }",
+              "     return result;",
+              "   } catch (error) {",
+              "     console.error(error);",
+              "     // Handle the error",
+              "   }",
+              " }",
               "  "
             ]
           }
         ]
       },
-      "isVeloEvent": false
+      "isVeloEvent": false,
+      "customLabels": [
+        {
+          "id": "maturity-beta"
+        }
+      ]
     },
     {
       "name": "bulkDeleteCoupons",
@@ -103,29 +105,31 @@
         "description": [],
         "examples": [
           {
-            "title": "bulkDeleteCoupons example",
+            "title": "BulkDeleteCoupons example",
             "body": [
-              "",
-              "    ",
-              "    import { coupons } from 'wix-marketing-backend.v2';",
+              "import { coupons } from 'wix-marketing-backend.v2';",
               "  ",
-              "    ",
-              "    async function bulkDeleteCoupons(options) {",
-              "      try {",
-              "        const result = await coupons.bulkDeleteCoupons(options);",
+              " async function bulkDeleteCoupons(options) {",
+              "   try {",
+              "     const result = await coupons.bulkDeleteCoupons(options);",
               "",
-              "        return result;",
-              "        } catch (error) {",
-              "          console.error(error);",
-              "          // Handle the error",
-              "        }",
-              "    }",
+              "     return result;",
+              "   } catch (error) {",
+              "     console.error(error);",
+              "     // Handle the error",
+              "   }",
+              " }",
               "  "
             ]
           }
         ]
       },
-      "isVeloEvent": false
+      "isVeloEvent": false,
+      "customLabels": [
+        {
+          "id": "maturity-beta"
+        }
+      ]
     },
     {
       "name": "create",
@@ -162,29 +166,31 @@
         "description": [],
         "examples": [
           {
-            "title": "create example",
+            "title": "Create example",
             "body": [
-              "",
-              "    ",
-              "    import { coupons } from 'wix-marketing-backend.v2';",
+              "import { coupons } from 'wix-marketing-backend.v2';",
               "  ",
-              "    ",
-              "    async function create(options) {",
-              "      try {",
-              "        const result = await coupons.create(options);",
+              " async function create(options) {",
+              "   try {",
+              "     const result = await coupons.create(options);",
               "",
-              "        return result;",
-              "        } catch (error) {",
-              "          console.error(error);",
-              "          // Handle the error",
-              "        }",
-              "    }",
+              "     return result;",
+              "   } catch (error) {",
+              "     console.error(error);",
+              "     // Handle the error",
+              "   }",
+              " }",
               "  "
             ]
           }
         ]
       },
-      "isVeloEvent": false
+      "isVeloEvent": false,
+      "customLabels": [
+        {
+          "id": "maturity-beta"
+        }
+      ]
     },
     {
       "name": "delete",
@@ -225,27 +231,29 @@
           {
             "title": "Delete example",
             "body": [
-              "",
-              "    ",
-              "    import { coupons } from 'wix-marketing-backend.v2';",
+              "import { coupons } from 'wix-marketing-backend.v2';",
               "  ",
-              "    ",
-              "    async function delete(id) {",
-              "      try {",
-              "        const result = await coupons.delete(id);",
+              " async function delete(id) {",
+              "   try {",
+              "     const result = await coupons.delete(id);",
               "",
-              "        return result;",
-              "        } catch (error) {",
-              "          console.error(error);",
-              "          // Handle the error",
-              "        }",
-              "    }",
+              "     return result;",
+              "   } catch (error) {",
+              "     console.error(error);",
+              "     // Handle the error",
+              "   }",
+              " }",
               "  "
             ]
           }
         ]
       },
-      "isVeloEvent": false
+      "isVeloEvent": false,
+      "customLabels": [
+        {
+          "id": "maturity-beta"
+        }
+      ]
     },
     {
       "name": "get",
@@ -284,29 +292,31 @@
         "description": [],
         "examples": [
           {
-            "title": "get example",
+            "title": "Get example",
             "body": [
-              "",
-              "    ",
-              "    import { coupons } from 'wix-marketing-backend.v2';",
+              "import { coupons } from 'wix-marketing-backend.v2';",
               "  ",
-              "    ",
-              "    async function get(id) {",
-              "      try {",
-              "        const result = await coupons.get(id);",
+              " async function get(id) {",
+              "   try {",
+              "     const result = await coupons.get(id);",
               "",
-              "        return result;",
-              "        } catch (error) {",
-              "          console.error(error);",
-              "          // Handle the error",
-              "        }",
-              "    }",
+              "     return result;",
+              "   } catch (error) {",
+              "     console.error(error);",
+              "     // Handle the error",
+              "   }",
+              " }",
               "  "
             ]
           }
         ]
       },
-      "isVeloEvent": false
+      "isVeloEvent": false,
+      "customLabels": [
+        {
+          "id": "maturity-beta"
+        }
+      ]
     },
     {
       "name": "query",
@@ -343,29 +353,31 @@
         "description": [],
         "examples": [
           {
-            "title": "query example",
+            "title": "Query example",
             "body": [
-              "",
-              "    ",
-              "    import { coupons } from 'wix-marketing-backend.v2';",
+              "import { coupons } from 'wix-marketing-backend.v2';",
               "  ",
-              "    ",
-              "    async function query(options) {",
-              "      try {",
-              "        const result = await coupons.query(options);",
+              " async function query(options) {",
+              "   try {",
+              "     const result = await coupons.query(options);",
               "",
-              "        return result;",
-              "        } catch (error) {",
-              "          console.error(error);",
-              "          // Handle the error",
-              "        }",
-              "    }",
+              "     return result;",
+              "   } catch (error) {",
+              "     console.error(error);",
+              "     // Handle the error",
+              "   }",
+              " }",
               "  "
             ]
           }
         ]
       },
-      "isVeloEvent": false
+      "isVeloEvent": false,
+      "customLabels": [
+        {
+          "id": "maturity-beta"
+        }
+      ]
     },
     {
       "name": "update",
@@ -414,29 +426,31 @@
         "description": [],
         "examples": [
           {
-            "title": "update example",
+            "title": "Update example",
             "body": [
-              "",
-              "    ",
-              "    import { coupons } from 'wix-marketing-backend.v2';",
+              "import { coupons } from 'wix-marketing-backend.v2';",
               "  ",
-              "    ",
-              "    async function update(id, options) {",
-              "      try {",
-              "        const result = await coupons.update(id, options);",
+              " async function update(id, options) {",
+              "   try {",
+              "     const result = await coupons.update(id, options);",
               "",
-              "        return result;",
-              "        } catch (error) {",
-              "          console.error(error);",
-              "          // Handle the error",
-              "        }",
-              "    }",
+              "     return result;",
+              "   } catch (error) {",
+              "     console.error(error);",
+              "     // Handle the error",
+              "   }",
+              " }",
               "  "
             ]
           }
         ]
       },
-      "isVeloEvent": false
+      "isVeloEvent": false,
+      "customLabels": [
+        {
+          "id": "maturity-beta"
+        }
+      ]
     }
   ],
   "messages": [
