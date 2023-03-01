@@ -27,7 +27,8 @@
         {  } },
   "properties":
     [ { "name": "expandedItems",
-        "labels": [],
+        "labels":
+          [ "changed" ],
         "get": true,
         "set": false,
         "type":
@@ -39,6 +40,9 @@
               "filename": "Accordion.js" } ],
         "docs":
           { "summary": "Expands a list of accordion items or gets a list of ids of the accordion items that are expanded.",
+            "description":
+              [ "//  * @snippet [Accordion-expandedItems.es6=Get a list of accordion items that are expanded]",
+                "//  * @snippet [Accordion-expandedItemsSet.es6=Expand accordion items]" ],
             "links": [],
             "examples": [],
             "extra":
@@ -46,7 +50,8 @@
         "extra":
           {  } },
       { "name": "items",
-        "labels": [],
+        "labels":
+          [ "changed" ],
         "get": true,
         "set": false,
         "type":
@@ -60,7 +65,8 @@
           { "summary": "Gets a list of all the accordion items contained in the accordion element.",
             "description":
               [ "The accordion items list is in the same order as the accordion items appear.",
-                "The list of items is an object containing item id and item label." ],
+                "The list of items is an object containing item id and item label.",
+                "//  * @snippet [Accordion-items.es6=Get a list of accordion items in an accordion element]" ],
             "links": [],
             "examples": [],
             "extra":
@@ -68,7 +74,8 @@
         "extra":
           {  } },
       { "name": "multipleExpand",
-        "labels": [],
+        "labels":
+          [ "changed" ],
         "get": true,
         "set": false,
         "type":
@@ -80,6 +87,8 @@
               "filename": "Accordion.js" } ],
         "docs":
           { "summary": "Defines if the accordion can expand multiple items concurrently or only one at a time.",
+            "description":
+              [ "//  * @snippet [Accordion-multipleExpand.es6=Define that the accordion can expand multiple items at a time]" ],
             "links": [],
             "examples": [],
             "extra":
@@ -97,7 +106,7 @@
               "doc": "The name of the function or\nthe function expression to run when a site visitor clicks an accordion item title." } ],
         "ret":
           { "type": "$w.Accordion",
-            "doc": "The accordion element on which the event is registered." },
+            "doc": "The accordion element on which the event is registered.\n // * @snippet [Accordion-onItemClicked.es6=Get the ID of the accordion item whose title was clicked]" },
         "locations":
           [ { "lineno": 21,
               "filename": "Accordion.js" } ],

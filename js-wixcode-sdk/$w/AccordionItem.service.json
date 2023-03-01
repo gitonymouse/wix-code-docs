@@ -23,7 +23,8 @@
         {  } },
   "properties":
     [ { "name": "collapsed",
-        "labels": [],
+        "labels":
+          [ "changed" ],
         "get": true,
         "set": true,
         "type": "boolean",
@@ -35,7 +36,8 @@
         "docs":
           { "summary": "Indicates if an element is collapsed.",
             "description":
-              [ "Indicates if an element is collapsed." ],
+              [ "Indicates if an element is collapsed.",
+                "// * @snippet [AccordionItem-collapsed_get.es6=Indicate if an element is collapsed]" ],
             "links": [],
             "examples": [],
             "extra":
@@ -43,7 +45,8 @@
         "extra":
           {  } },
       { "name": "label",
-        "labels": [],
+        "labels":
+          [ "changed" ],
         "get": true,
         "set": true,
         "type": "string",
@@ -56,7 +59,9 @@
           { "summary": "Sets or gets the accordion item's label.",
             "description":
               [ "Sets or gets the accordion item's label.",
-                "The accordion item label appears in the accordion item's title. It is limited to 120 characters." ],
+                "The accordion item label appears in the accordion item's title. It is limited to 120 characters.",
+                " // * @snippet [AccordionItem-label_get.es6=Get an accordion item's label]",
+                " // * @snippet [AccordionItem-label_set.es6=Set an accordion item's label]" ],
             "links": [],
             "examples": [],
             "extra":
@@ -74,7 +79,7 @@
               { "name": "Promise",
                 "typeParams":
                   [ "void" ] },
-            "doc": "Fulfilled - When the element's `collapsed` property has been set to `true`." },
+            "doc": "Fulfilled - When the element's `collapsed` property has been set to `true`.\n//  * @snippet [CollapsedMixin-collapse.es6=Collapse an element]\n//  * @snippet [CollapsedMixin-collapse_then.es6=Collapse an element and log a message when done]\n//  * @snippet [CollapsedMixin_toggle_collapsed.es6=Toggle an element's collapsed state]" },
         "locations":
           [ { "lineno": 56,
               "filename": "AccordionItem.js" } ],
@@ -91,17 +96,7 @@
             "links":
               [ "[expand( )](#expand)",
                 "[hide( )]($w.HiddenMixin.html#hide)" ],
-            "examples":
-              [ { "title": "Toggle an element's collapsed state",
-                  "body":
-                    [ "if( $w(\"#myElement\").collapsed ) {",
-                      "  $w(\"#myElement\").expand();",
-                      "}",
-                      "else {",
-                      "  $w(\"#myElement\").collapse();",
-                      "}" ],
-                  "extra":
-                    {  } } ],
+            "examples": [],
             "extra":
               {  } },
         "extra":
@@ -116,7 +111,7 @@
               { "name": "Promise",
                 "typeParams":
                   [ "void" ] },
-            "doc": "Fulfilled - When the element's `collapsed` property has been set to `false`." },
+            "doc": "Fulfilled - When the element's `collapsed` property has been set to `false`.\n//  * @snippet [CollapsedMixin-expand.es6=Expand an element]\n//  * @snippet [CollapsedMixin-expand_then.es6=Expand an element and log a message when done]\n//  * @snippet [CollapsedMixin_toggle_collapsed.es6=Toggle an element's collapsed state]" },
         "locations":
           [ { "lineno": 79,
               "filename": "AccordionItem.js" } ],
