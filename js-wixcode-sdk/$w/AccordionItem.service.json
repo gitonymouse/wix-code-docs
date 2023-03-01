@@ -4,8 +4,7 @@
     [ "$w.Element",
       "$w.HiddenCollapsedMixin",
       "$w.ContainableMixin" ],
-  "labels":
-    [ "changed" ],
+  "labels": [],
   "location":
     { "lineno": 1,
       "filename": "AccordionItem.js" },
@@ -23,8 +22,7 @@
         {  } },
   "properties":
     [ { "name": "collapsed",
-        "labels":
-          [ "changed" ],
+        "labels": [],
         "get": true,
         "set": true,
         "type": "boolean",
