@@ -40,6 +40,8 @@
               "filename": "Accordion.js" } ],
         "docs":
           { "summary": "Expands a list of accordion items or gets a list of ids of the accordion items that are expanded.",
+            "description":
+              [ "Expands a list of accordion items or gets a list of ids of the accordion items that are expanded." ],
             "links": [],
             "examples": [],
             "extra":
@@ -47,8 +49,7 @@
         "extra":
           {  } },
       { "name": "items",
-        "labels":
-          [ "changed" ],
+        "labels": [],
         "get": true,
         "set": false,
         "type":
@@ -83,6 +84,8 @@
               "filename": "Accordion.js" } ],
         "docs":
           { "summary": "Defines if the accordion can expand multiple items concurrently or only one at a time.",
+            "description":
+              [ "Defines if the accordion can expand multiple items concurrently or only one at a time." ],
             "links": [],
             "examples": [],
             "extra":
@@ -91,8 +94,7 @@
           {  } } ],
   "operations":
     [ { "name": "onItemClicked",
-        "labels":
-          [ "changed" ],
+        "labels": [],
         "nameParams": [],
         "params":
           [ { "name": "eventHandler",
