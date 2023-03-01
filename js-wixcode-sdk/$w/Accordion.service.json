@@ -1,0 +1,117 @@
+{ "name": "Accordion",
+  "memberOf": "$w",
+  "mixes":
+    [ "$w.Element",
+      "$w.HiddenCollapsedMixin",
+      "$w.ClickableMixin",
+      "$w.ContainableMixin",
+      "$w.FocusMixin" ],
+  "labels":
+    [ "new" ],
+  "location":
+    { "lineno": 1,
+      "filename": "Accordion.js" },
+  "docs":
+    { "summary": "A container that holds multiple [accordion item]($w.AccordionItem.html) elements.",
+      "description":
+        [ "An accordion element holds",
+          "multiple [accordion item]($w.AccordionItem.html) elements in a vertical stack, each with different content. One or more accordion items can be displayed at a time according to settings. ",
+          "A site visitor can navigate between accordion items without leaving the page, by clicking an accordion item title.",
+          "",
+          "![Accordion Example](images/accordion.png \"Accordion Example\")",
+          "",
+          "With Velo, you can reverse the order of accordion items or navigate between them using code. You can also define event handlers that run when accordion items are navigated between or accordion item titles are clicked." ],
+      "links": [],
+      "examples": [],
+      "extra":
+        {  } },
+  "properties":
+    [ { "name": "expandedItems",
+        "labels": [],
+        "get": true,
+        "set": false,
+        "type":
+          { "name": "Array",
+            "typeParams":
+              [ "$w.AccordionItems" ] },
+        "locations":
+          [ { "lineno": 50,
+              "filename": "Accordion.js" } ],
+        "docs":
+          { "summary": "Expands a list of accordion items or gets a list of ids of the accordion items that are expanded.",
+            "links": [],
+            "examples": [],
+            "extra":
+              {  } },
+        "extra":
+          {  } },
+      { "name": "items",
+        "labels": [],
+        "get": true,
+        "set": false,
+        "type":
+          { "name": "Array",
+            "typeParams":
+              [ "$w.AccordionItems" ] },
+        "locations":
+          [ { "lineno": 37,
+              "filename": "Accordion.js" } ],
+        "docs":
+          { "summary": "Gets a list of all the accordion items contained in the accordion element.",
+            "description":
+              [ "The accordion items list is in the same order as the accordion items appear.",
+                "The list of items is an object containing item id and item label." ],
+            "links": [],
+            "examples": [],
+            "extra":
+              {  } },
+        "extra":
+          {  } },
+      { "name": "multipleExpand",
+        "labels": [],
+        "get": true,
+        "set": false,
+        "type":
+          { "name": "Array",
+            "typeParams":
+              [ "$w.AccordionItems" ] },
+        "locations":
+          [ { "lineno": 63,
+              "filename": "Accordion.js" } ],
+        "docs":
+          { "summary": "Defines if the accordion can expand multiple items concurrently or only one at a time.",
+            "links": [],
+            "examples": [],
+            "extra":
+              {  } },
+        "extra":
+          {  } } ],
+  "operations":
+    [ { "name": "onItemClicked",
+        "labels": [],
+        "nameParams": [],
+        "params":
+          [ { "name": "eventHandler",
+              "type": "$w.EventHandler",
+              "doc": "The name of the function or\nthe function expression to run when a site visitor clicks an accordion item title." } ],
+        "ret":
+          { "type": "$w.Accordion",
+            "doc": "The accordion element on which the event is registered.\n // * @snippet [Accordion-onItemClicked.es6=Get the ID of the accordion item whose title was clicked]" },
+        "locations":
+          [ { "lineno": 21,
+              "filename": "Accordion.js" } ],
+        "docs":
+          { "summary": "Adds an event handler that runs when any accordion item title is clicked.",
+            "description":
+              [ "`onItemClicked()` runs when a site visitor clicks on any accordion item title in the accordion element." ],
+            "links":
+              [ "[`onChange()`](#onChange)" ],
+            "examples": [],
+            "extra":
+              {  } },
+        "extra":
+          { "eventType": "click" } } ],
+  "callbacks": [],
+  "messages": [],
+  "extra":
+    {  } }

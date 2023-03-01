@@ -1,0 +1,179 @@
+{ "name": "AccordionItem",
+  "memberOf": "$w",
+  "mixes":
+    [ "$w.Element",
+      "$w.HiddenCollapsedMixin",
+      "$w.ContainableMixin" ],
+  "labels":
+    [ "new" ],
+  "location":
+    { "lineno": 1,
+      "filename": "AccordionItem.js" },
+  "docs":
+    { "summary": "An accordion item within an [accordion]($w.Accordion.html) element.",
+      "description":
+        [ "An accordion item element is contained within an [accordion]($w.Accordion.html) element. Each accordion element contains multiple accordion items.",
+          "One or multiple accordion items can be displayed at a time according to settings. The site visitor can ",
+          "navigate between accordion items without leaving the page, by clicking an accordion item title.",
+          "",
+          "//  * ![accordion item Example](images/accordion-items.png \"AccordionItem Example\")" ],
+      "links": [],
+      "examples": [],
+      "extra":
+        {  } },
+  "properties":
+    [ { "name": "collapsed",
+        "labels": [],
+        "get": true,
+        "set": true,
+        "type": "boolean",
+        "locations":
+          [ { "lineno": 38,
+              "filename": "AccordionItem.js" },
+            { "lineno": 50,
+              "filename": "AccordionItem.js" } ],
+        "docs":
+          { "summary": "Indicates if an element is collapsed.",
+            "description":
+              [ "Indicates if an element is collapsed." ],
+            "links": [],
+            "examples": [],
+            "extra":
+              {  } },
+        "extra":
+          {  } },
+      { "name": "label",
+        "labels": [],
+        "get": true,
+        "set": true,
+        "type": "string",
+        "locations":
+          [ { "lineno": 17,
+              "filename": "AccordionItem.js" },
+            { "lineno": 32,
+              "filename": "AccordionItem.js" } ],
+        "docs":
+          { "summary": "Sets or gets the accordion item's label.",
+            "description":
+              [ "Sets or gets the accordion item's label.",
+                "The accordion item label appears in the accordion item's title. It is limited to 120 characters." ],
+            "links": [],
+            "examples": [],
+            "extra":
+              {  } },
+        "extra":
+          {  } } ],
+  "operations":
+    [ { "name": "collapse",
+        "labels": [],
+        "nameParams": [],
+        "params": [],
+        "ret":
+          { "type":
+              { "name": "Promise",
+                "typeParams":
+                  [ "void" ] },
+            "doc": "Fulfilled - When the element's `collapsed` property has been set to `true`." },
+        "locations":
+          [ { "lineno": 56,
+              "filename": "AccordionItem.js" } ],
+        "docs":
+          { "summary": "Collapses the element.",
+            "description":
+              [ "The `collapse()` function returns a Promise that is resolved when the",
+                " element's [`collapsed`](#collapsed) property has been set to `true`.",
+                "",
+                " You can also collapse an element",
+                " when the page loads by using the Properties and Events panel in the Editor.",
+                "",
+                " >**Note:** The `collapse()` function doesn't remove elements from the DOM." ],
+            "links":
+              [ "[expand( )](#expand)",
+                "[hide( )]($w.HiddenMixin.html#hide)" ],
+            "examples":
+              [ { "title": "Collapse an element",
+                  "body":
+                    [ "$w(\"#myElement\").collapse();" ],
+                  "extra":
+                    {  } },
+                { "title": "Collapse an element and log a message when done",
+                  "body":
+                    [ "$w(\"#myElement\").collapse()",
+                      "  .then( () => {",
+                      "    console.log(\"Done with collapse\");",
+                      "  } );" ],
+                  "extra":
+                    {  } },
+                { "title": "Toggle an element's collapsed state",
+                  "body":
+                    [ "if( $w(\"#myElement\").collapsed ) {",
+                      "  $w(\"#myElement\").expand();",
+                      "}",
+                      "else {",
+                      "  $w(\"#myElement\").collapse();",
+                      "}" ],
+                  "extra":
+                    {  } } ],
+            "extra":
+              {  } },
+        "extra":
+          {  } },
+      { "name": "expand",
+        "labels": [],
+        "nameParams": [],
+        "params": [],
+        "ret":
+          { "type":
+              { "name": "Promise",
+                "typeParams":
+                  [ "void" ] },
+            "doc": "Fulfilled - When the element's `collapsed` property has been set to `false`." },
+        "locations":
+          [ { "lineno": 79,
+              "filename": "AccordionItem.js" } ],
+        "docs":
+          { "summary": "Expands the element.",
+            "description":
+              [ "The `expand()` function returns a Promise that is resolved when the",
+                " element's [`collapsed`](#collapsed) property has been set to `false`",
+                "",
+                "> **Notes:** ",
+                "> + In Editor X, an element will not become visible by using `expand()` if it has been marked as \"Don't Display\" for the current breakpoint. Calling `expand()` will however, change the `collapsed` property of the element to `false`.",
+                "> ",
+                ">",
+                "> + It is recommended not to mix `expand()` and `collapse()` with \"Don't Display\" in Editor X." ],
+            "links":
+              [ "[expand( )](#expand)",
+                "[show( )]($w.HiddenMixin.html#show)" ],
+            "examples":
+              [ { "title": "Expand an element",
+                  "body":
+                    [ "$w(\"#myElement\").expand();" ],
+                  "extra":
+                    {  } },
+                { "title": "Expand an element and log a message when done",
+                  "body":
+                    [ "$w(\"#myElement\").expand()",
+                      "  .then( () => {",
+                      "    console.log(\"Done with expand\");",
+                      "  } );" ],
+                  "extra":
+                    {  } },
+                { "title": "Toggle an element's collapsed state",
+                  "body":
+                    [ "if( $w(\"#myElement\").collapsed ) {",
+                      "  $w(\"#myElement\").expand();",
+                      "}",
+                      "else {",
+                      "  $w(\"#myElement\").collapse();",
+                      "}" ],
+                  "extra":
+                    {  } } ],
+            "extra":
+              {  } },
+        "extra":
+          {  } } ],
+  "callbacks": [],
+  "messages": [],
+  "extra":
+    {  } }
