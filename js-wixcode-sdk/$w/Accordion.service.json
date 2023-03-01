@@ -6,7 +6,8 @@
       "$w.ClickableMixin",
       "$w.ContainableMixin",
       "$w.FocusMixin" ],
-  "labels": [],
+  "labels":
+    [ "changed" ],
   "location":
     { "lineno": 1,
       "filename": "Accordion.js" },
@@ -87,7 +88,8 @@
           {  } } ],
   "operations":
     [ { "name": "onItemClicked",
-        "labels": [],
+        "labels":
+          [ "changed" ],
         "nameParams": [],
         "params":
           [ { "name": "eventHandler",
@@ -95,7 +97,7 @@
               "doc": "The name of the function or\nthe function expression to run when a site visitor clicks an accordion item title." } ],
         "ret":
           { "type": "$w.Accordion",
-            "doc": "The accordion element on which the event is registered.\n // * @snippet [Accordion-onItemClicked.es6=Get the ID of the accordion item whose title was clicked]" },
+            "doc": "The accordion element on which the event is registered." },
         "locations":
           [ { "lineno": 21,
               "filename": "Accordion.js" } ],
