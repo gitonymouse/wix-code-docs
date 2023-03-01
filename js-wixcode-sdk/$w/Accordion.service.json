@@ -6,7 +6,8 @@
       "$w.ClickableMixin",
       "$w.ContainableMixin",
       "$w.FocusMixin" ],
-  "labels": [],
+  "labels":
+    [ "changed" ],
   "location":
     { "lineno": 1,
       "filename": "Accordion.js" },
@@ -26,7 +27,8 @@
         {  } },
   "properties":
     [ { "name": "expandedItems",
-        "labels": [],
+        "labels":
+          [ "changed" ],
         "get": true,
         "set": false,
         "type":
@@ -37,9 +39,9 @@
           [ { "lineno": 55,
               "filename": "Accordion.js" } ],
         "docs":
-          { "summary": "Expands a list of accordion items or gets a list of ids of the accordion items that are expanded.",
-            "description":
-              [ "Expands a list of accordion items or gets a list of ids of the accordion items that are expanded." ],
+          { "description":
+              [ "Expands a list of accordion items or collapses all expanded accordion items. ",
+                "Or gets a list of IDs of the accordion items that are expanded." ],
             "links": [],
             "examples": [],
             "extra":
@@ -47,7 +49,8 @@
         "extra":
           {  } },
       { "name": "items",
-        "labels": [],
+        "labels":
+          [ "changed" ],
         "get": true,
         "set": false,
         "type":
@@ -61,7 +64,7 @@
           { "summary": "Gets a list of all the accordion items contained in the accordion element.",
             "description":
               [ "The accordion items list is in the same order as the accordion items appear.",
-                "The list of items is an object containing item id and item label." ],
+                "The list of items is an object containing item ID and item label." ],
             "links": [],
             "examples": [],
             "extra":
@@ -69,7 +72,8 @@
         "extra":
           {  } },
       { "name": "multipleExpand",
-        "labels": [],
+        "labels":
+          [ "changed" ],
         "get": true,
         "set": false,
         "type":
@@ -77,11 +81,10 @@
             "typeParams":
               [ "$w.AccordionItems" ] },
         "locations":
-          [ { "lineno": 70,
+          [ { "lineno": 72,
               "filename": "Accordion.js" } ],
         "docs":
-          { "summary": "Defines if the accordion can expand multiple items concurrently or only one at a time.",
-            "description":
+          { "description":
               [ "Defines if the accordion can expand multiple items concurrently or only one at a time." ],
             "links": [],
             "examples": [],

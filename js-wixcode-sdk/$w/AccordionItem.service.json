@@ -4,7 +4,8 @@
     [ "$w.Element",
       "$w.HiddenCollapsedMixin",
       "$w.ContainableMixin" ],
-  "labels": [],
+  "labels":
+    [ "changed" ],
   "location":
     { "lineno": 1,
       "filename": "AccordionItem.js" },
@@ -15,26 +16,37 @@
           "One or multiple accordion items can be displayed concurrently according to settings. The site visitor can ",
           "navigate between accordion items without leaving the page, by clicking an accordion item title.",
           "",
-          "//  * ![accordion item Example](images/accordion-items.png \"AccordionItem Example\")" ],
+          "![accordion item Example](images/accordion.png \"Accordion Item Example\")" ],
       "links": [],
       "examples": [],
       "extra":
         {  } },
   "properties":
     [ { "name": "collapsed",
-        "labels": [],
+        "labels":
+          [ "changed" ],
         "get": true,
         "set": true,
         "type": "boolean",
         "locations":
           [ { "lineno": 41,
               "filename": "AccordionItem.js" },
-            { "lineno": 56,
+            { "lineno": 67,
               "filename": "AccordionItem.js" } ],
         "docs":
           { "summary": "Indicates if an element is collapsed.",
             "description":
-              [ "Indicates if an element is collapsed." ],
+              [ "If collapsed is `true`, the element is not displayed on the page under any circumstances. ",
+                "However, the collapsed element is still in the site's DOM. Unlike a `hidden` element, ",
+                "a collapsed element doesn't take up any space on the page. When collapsed, ",
+                "elements positioned within 70 pixels below the collapsed element move up ",
+                "to take the collapsed element's place where possible. ",
+                "The elements that move up maintain their positions relative to one another.",
+                "",
+                "To set the collapsed property on an element, use the element's `collapse()` and `expand()` functions.",
+                "",
+                "If you select **Collapsed** in the element's Properties panel in the Editor, the collapsed property ",
+                "is set to `true` when the page loads." ],
             "links": [],
             "examples": [],
             "extra":
@@ -74,7 +86,7 @@
                   [ "void" ] },
             "doc": "Fulfilled - When the element's `collapsed` property has been set to `true`." },
         "locations":
-          [ { "lineno": 62,
+          [ { "lineno": 73,
               "filename": "AccordionItem.js" } ],
         "docs":
           { "summary": "Collapses the element.",
@@ -105,7 +117,7 @@
                   [ "void" ] },
             "doc": "Fulfilled - When the element's `collapsed` property has been set to `false`." },
         "locations":
-          [ { "lineno": 88,
+          [ { "lineno": 99,
               "filename": "AccordionItem.js" } ],
         "docs":
           { "summary": "Expands the element.",
