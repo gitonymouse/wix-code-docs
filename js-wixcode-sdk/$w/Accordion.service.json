@@ -27,8 +27,7 @@
         {  } },
   "properties":
     [ { "name": "expandedItems",
-        "labels":
-          [ "changed" ],
+        "labels": [],
         "get": true,
         "set": false,
         "type":
@@ -49,7 +48,8 @@
         "extra":
           {  } },
       { "name": "items",
-        "labels": [],
+        "labels":
+          [ "changed" ],
         "get": true,
         "set": false,
         "type":
@@ -60,7 +60,7 @@
           [ { "lineno": 39,
               "filename": "Accordion.js" } ],
         "docs":
-          { "summary": "Gets a list of all the accordion items contained in the accordion element.",
+          { "summary": "Gets or sets a list of the accordion items contained in an accordion element.",
             "description":
               [ "The accordion items list is in the same order as the accordion items appear.",
                 "The list of items is an object containing item ID and item label." ],
@@ -71,8 +71,7 @@
         "extra":
           {  } },
       { "name": "multipleExpand",
-        "labels":
-          [ "changed" ],
+        "labels": [],
         "get": true,
         "set": false,
         "type":
