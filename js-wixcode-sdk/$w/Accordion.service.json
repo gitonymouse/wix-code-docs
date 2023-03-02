@@ -6,12 +6,13 @@
       "$w.ClickableMixin",
       "$w.ContainableMixin",
       "$w.FocusMixin" ],
-  "labels": [],
+  "labels":
+    [ "changed" ],
   "location":
     { "lineno": 1,
       "filename": "Accordion.js" },
   "docs":
-    { "summary": "A container that holds multiple [accordion item]($w.AccordionItem.html) elements.",
+    { "summary": "A container that holds multiple collapsible [accordion item]($w.AccordionItem.html) elements.",
       "description":
         [ "An accordion element holds",
           "multiple [accordion item]($w.AccordionItem.html) elements in a vertical stack, each with different content. One or more accordion items can be displayed at a time according to settings. ",
@@ -26,7 +27,8 @@
         {  } },
   "properties":
     [ { "name": "expandedItems",
-        "labels": [],
+        "labels":
+          [ "changed" ],
         "get": true,
         "set": false,
         "type":
@@ -37,7 +39,7 @@
           [ { "lineno": 55,
               "filename": "Accordion.js" } ],
         "docs":
-          { "summary": "Gets or sets list of expanded accordion items.",
+          { "summary": "Gets or sets a list of expanded accordion items.",
             "description":
               [ "Gets a list of IDs of expanded accordion items or sets a list of expanded accordion items." ],
             "links": [],
@@ -69,7 +71,8 @@
         "extra":
           {  } },
       { "name": "multipleExpand",
-        "labels": [],
+        "labels":
+          [ "changed" ],
         "get": true,
         "set": false,
         "type":
@@ -82,7 +85,7 @@
         "docs":
           { "summary": "Sets if multiple accordion items can be expanded at one time.",
             "description":
-              [ "Sets if the accordion can expand multiple accordion items concurrently or only one at a time." ],
+              [ "Sets if you can have multiple accordion items expanded concurrently or only one accordion item expanded at a time." ],
             "links": [],
             "examples": [],
             "extra":
