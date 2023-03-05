@@ -12,7 +12,9 @@
   "docs":
     { "summary": "An accordion item within an [accordion]($w.Accordion.html) element.",
       "description":
-        [ "An accordion item element is contained within an [accordion]($w.Accordion.html) element. Each accordion element contains multiple accordion items.",
+        [ "> This feature is currently only available in Editor X.",
+          "",
+          "An accordion item element is contained within an [accordion]($w.Accordion.html) element. Each accordion element contains multiple accordion items.",
           "One or multiple accordion items can be displayed concurrently according to settings. The site visitor can ",
           "navigate between accordion items without leaving the page, by clicking an accordion item title.",
           "",
@@ -28,9 +30,9 @@
         "set": true,
         "type": "boolean",
         "locations":
-          [ { "lineno": 35,
+          [ { "lineno": 38,
               "filename": "AccordionItem.js" },
-            { "lineno": 55,
+            { "lineno": 58,
               "filename": "AccordionItem.js" } ],
         "docs":
           { "summary": "Indicates if an accordion item is collapsed.",
@@ -57,15 +59,14 @@
         "extra":
           {  } },
       { "name": "label",
-        "labels":
-          [ "changed" ],
+        "labels": [],
         "get": true,
         "set": true,
         "type": "string",
         "locations":
-          [ { "lineno": 17,
+          [ { "lineno": 20,
               "filename": "AccordionItem.js" },
-            { "lineno": 29,
+            { "lineno": 32,
               "filename": "AccordionItem.js" } ],
         "docs":
           { "summary": "Sets or gets the accordion item's label.",
@@ -89,8 +90,7 @@
           {  } } ],
   "operations":
     [ { "name": "collapse",
-        "labels":
-          [ "changed" ],
+        "labels": [],
         "nameParams": [],
         "params": [],
         "ret":
@@ -100,7 +100,7 @@
                   [ "void" ] },
             "doc": "Fulfilled - When the accordion item's `collapsed` property has been set to `true`." },
         "locations":
-          [ { "lineno": 61,
+          [ { "lineno": 64,
               "filename": "AccordionItem.js" } ],
         "docs":
           { "summary": "Collapses the element.",
@@ -136,8 +136,7 @@
         "extra":
           {  } },
       { "name": "expand",
-        "labels":
-          [ "changed" ],
+        "labels": [],
         "nameParams": [],
         "params": [],
         "ret":
@@ -147,7 +146,7 @@
                   [ "void" ] },
             "doc": "Fulfilled - When the accordion item's `collapsed` property has been set to `false`." },
         "locations":
-          [ { "lineno": 84,
+          [ { "lineno": 87,
               "filename": "AccordionItem.js" } ],
         "docs":
           { "summary": "Expands the accordion item.",

@@ -27,8 +27,7 @@
         {  } },
   "properties":
     [ { "name": "expandedItems",
-        "labels":
-          [ "changed" ],
+        "labels": [],
         "get": true,
         "set": true,
         "type":
@@ -67,8 +66,7 @@
         "extra":
           {  } },
       { "name": "items",
-        "labels":
-          [ "changed" ],
+        "labels": [],
         "get": true,
         "set": true,
         "type":
@@ -115,12 +113,14 @@
         "locations":
           [ { "lineno": 78,
               "filename": "Accordion.js" },
-            { "lineno": 91,
+            { "lineno": 95,
               "filename": "Accordion.js" } ],
         "docs":
           { "summary": "Sets if multiple accordion items can be expanded at one time.",
             "description":
-              [ "Sets if you can have multiple accordion items expanded concurrently or only one accordion item expanded at a time." ],
+              [ "> This feature is currently only available in Editor X.",
+                "",
+                "Sets if you can have multiple accordion items expanded concurrently or only one accordion item expanded at a time." ],
             "links": [],
             "examples":
               [ { "title": "Get whether an accordion can expand multiple items",
@@ -139,8 +139,7 @@
           {  } } ],
   "operations":
     [ { "name": "onItemClicked",
-        "labels":
-          [ "changed" ],
+        "labels": [],
         "nameParams": [],
         "params":
           [ { "name": "eventHandler",
