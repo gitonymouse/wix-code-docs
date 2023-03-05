@@ -15,6 +15,7 @@
     { "summary": "A container that holds multiple collapsible [accordion item]($w.AccordionItem.html) elements.",
       "description":
         [ "> This feature is currently only available in Editor X.",
+          "",
           "An accordion element holds",
           "multiple [accordion item]($w.AccordionItem.html) elements in a vertical stack, each with different content. One or more accordion items can be displayed at a time according to settings. ",
           "A site visitor can navigate between accordion items without leaving the page, by clicking an accordion item title.",
@@ -36,9 +37,9 @@
             "typeParams":
               [ "string" ] },
         "locations":
-          [ { "lineno": 59,
+          [ { "lineno": 60,
               "filename": "Accordion.js" },
-            { "lineno": 73,
+            { "lineno": 74,
               "filename": "Accordion.js" } ],
         "docs":
           { "summary": "Gets or sets a list of IDs of expanded accordion items.",
@@ -75,9 +76,9 @@
             "typeParams":
               [ "$w.AccordionItem" ] },
         "locations":
-          [ { "lineno": 38,
+          [ { "lineno": 39,
               "filename": "Accordion.js" },
-            { "lineno": 53,
+            { "lineno": 54,
               "filename": "Accordion.js" } ],
         "docs":
           { "summary": "Gets or sets a list of the accordion items contained in an accordion element.",
@@ -111,9 +112,9 @@
         "set": true,
         "type": "boolean",
         "locations":
-          [ { "lineno": 79,
+          [ { "lineno": 80,
               "filename": "Accordion.js" },
-            { "lineno": 93,
+            { "lineno": 94,
               "filename": "Accordion.js" } ],
         "docs":
           { "summary": "Sets if multiple accordion items can be expanded at one time.",
@@ -147,7 +148,7 @@
           { "type": "$w.Accordion",
             "doc": "The accordion element on which the event is registered." },
         "locations":
-          [ { "lineno": 22,
+          [ { "lineno": 23,
               "filename": "Accordion.js" } ],
         "docs":
           { "summary": "Adds an event handler that runs when any accordion item title is clicked.",

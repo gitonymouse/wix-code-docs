@@ -13,6 +13,7 @@
     { "summary": "An accordion item within an [accordion]($w.Accordion.html) element.",
       "description":
         [ "> This feature is currently only available in Editor X.",
+          "",
           "An accordion item element is contained within an [accordion]($w.Accordion.html) element. Each accordion element contains multiple accordion items.",
           "One or multiple accordion items can be displayed concurrently according to settings. The site visitor can ",
           "navigate between accordion items without leaving the page, by clicking an accordion item title.",
@@ -29,9 +30,9 @@
         "set": true,
         "type": "boolean",
         "locations":
-          [ { "lineno": 36,
+          [ { "lineno": 37,
               "filename": "AccordionItem.js" },
-            { "lineno": 56,
+            { "lineno": 57,
               "filename": "AccordionItem.js" } ],
         "docs":
           { "summary": "Indicates if an accordion item is collapsed.",
@@ -63,9 +64,9 @@
         "set": true,
         "type": "string",
         "locations":
-          [ { "lineno": 18,
+          [ { "lineno": 19,
               "filename": "AccordionItem.js" },
-            { "lineno": 30,
+            { "lineno": 31,
               "filename": "AccordionItem.js" } ],
         "docs":
           { "summary": "Sets or gets the accordion item's label.",
@@ -99,7 +100,7 @@
                   [ "void" ] },
             "doc": "Fulfilled - When the accordion item's `collapsed` property has been set to `true`." },
         "locations":
-          [ { "lineno": 62,
+          [ { "lineno": 63,
               "filename": "AccordionItem.js" } ],
         "docs":
           { "summary": "Collapses the element.",
@@ -145,7 +146,7 @@
                   [ "void" ] },
             "doc": "Fulfilled - When the accordion item's `collapsed` property has been set to `false`." },
         "locations":
-          [ { "lineno": 85,
+          [ { "lineno": 86,
               "filename": "AccordionItem.js" } ],
         "docs":
           { "summary": "Expands the accordion item.",
