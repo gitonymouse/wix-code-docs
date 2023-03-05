@@ -29,7 +29,8 @@
         {  } },
   "properties":
     [ { "name": "expandedItems",
-        "labels": [],
+        "labels":
+          [ "changed" ],
         "get": true,
         "set": true,
         "type":
@@ -39,12 +40,14 @@
         "locations":
           [ { "lineno": 60,
               "filename": "Accordion.js" },
-            { "lineno": 74,
+            { "lineno": 76,
               "filename": "Accordion.js" } ],
         "docs":
           { "summary": "Gets or sets a list of IDs of expanded accordion items.",
             "description":
-              [ "Gets a list of IDs of expanded accordion items or sets a list of expanded accordion items." ],
+              [ "Gets a list of IDs of expanded accordion items or sets a list of expanded accordion items.",
+                "> **Notes:**",
+                "> When `multipleExpand` is set to `false`, multiple accordion items cannot be expanded." ],
             "links": [],
             "examples":
               [ { "title": "Get a list of IDs of accordion items that are expanded",
@@ -112,9 +115,9 @@
         "set": true,
         "type": "boolean",
         "locations":
-          [ { "lineno": 80,
+          [ { "lineno": 82,
               "filename": "Accordion.js" },
-            { "lineno": 94,
+            { "lineno": 96,
               "filename": "Accordion.js" } ],
         "docs":
           { "summary": "Sets if multiple accordion items can be expanded at one time.",
@@ -138,8 +141,7 @@
           {  } } ],
   "operations":
     [ { "name": "onItemClicked",
-        "labels":
-          [ "changed" ],
+        "labels": [],
         "nameParams": [],
         "params":
           [ { "name": "eventHandler",
