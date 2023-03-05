@@ -4,8 +4,7 @@
     [ "$w.Element",
       "$w.HiddenCollapsedMixin",
       "$w.ContainableMixin" ],
-  "labels":
-    [ "changed" ],
+  "labels": [],
   "location":
     { "lineno": 1,
       "filename": "AccordionItem.js" },
@@ -32,7 +31,7 @@
         "locations":
           [ { "lineno": 37,
               "filename": "AccordionItem.js" },
-            { "lineno": 57,
+            { "lineno": 58,
               "filename": "AccordionItem.js" } ],
         "docs":
           { "summary": "Indicates if an accordion item is collapsed.",
@@ -100,7 +99,7 @@
                   [ "void" ] },
             "doc": "Fulfilled - When the accordion item's `collapsed` property has been set to `true`." },
         "locations":
-          [ { "lineno": 63,
+          [ { "lineno": 64,
               "filename": "AccordionItem.js" } ],
         "docs":
           { "summary": "Collapses the element.",
