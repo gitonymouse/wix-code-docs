@@ -20,7 +20,7 @@
           "",
           "![Accordion Example](images/accordion.png \"Accordion Example\")",
           "",
-          "With Velo, you can reverse the order of accordion items or navigate between them using code. You can also define event handlers that run when accordion items are navigated between or accordion item titles are clicked." ],
+          "With Velo, you can reverse the order of accordion items or navigate between them using code. You can also define event handlers that run when accordion item titles are clicked." ],
       "links": [],
       "examples": [],
       "extra":
@@ -34,7 +34,7 @@
         "type":
           { "name": "Array",
             "typeParams":
-              [ "$w.AccordionItems" ] },
+              [ "$w.AccordionItem" ] },
         "locations":
           [ { "lineno": 52,
               "filename": "Accordion.js" } ],
@@ -72,7 +72,7 @@
         "type":
           { "name": "Array",
             "typeParams":
-              [ "$w.AccordionItems" ] },
+              [ "$w.AccordionItem" ] },
         "locations":
           [ { "lineno": 37,
               "filename": "Accordion.js" } ],
@@ -98,13 +98,11 @@
         "extra":
           {  } },
       { "name": "multipleExpand",
-        "labels": [],
+        "labels":
+          [ "changed" ],
         "get": true,
         "set": false,
-        "type":
-          { "name": "Array",
-            "typeParams":
-              [ "$w.AccordionItems" ] },
+        "type": "boolean",
         "locations":
           [ { "lineno": 67,
               "filename": "Accordion.js" } ],
@@ -120,8 +118,7 @@
           {  } } ],
   "operations":
     [ { "name": "onItemClicked",
-        "labels":
-          [ "changed" ],
+        "labels": [],
         "nameParams": [],
         "params":
           [ { "name": "eventHandler",
