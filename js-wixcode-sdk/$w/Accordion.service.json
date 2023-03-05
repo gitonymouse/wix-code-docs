@@ -27,8 +27,7 @@
         {  } },
   "properties":
     [ { "name": "expandedItems",
-        "labels":
-          [ "changed" ],
+        "labels": [],
         "get": true,
         "set": false,
         "type":
@@ -65,8 +64,7 @@
         "extra":
           {  } },
       { "name": "items",
-        "labels":
-          [ "changed" ],
+        "labels": [],
         "get": true,
         "set": false,
         "type":
@@ -111,7 +109,17 @@
             "description":
               [ "Sets if you can have multiple accordion items expanded concurrently or only one accordion item expanded at a time." ],
             "links": [],
-            "examples": [],
+            "examples":
+              [ { "title": "Get whether an accordion can expand multiple items",
+                  "body":
+                    [ "let  myExpandedItems = $w('#myAccordion').expandedItems; //true" ],
+                  "extra":
+                    {  } },
+                { "title": "Set an accordion to expand multiple items",
+                  "body":
+                    [ "$w(\"#myAccordion\").multipleExpand = true;" ],
+                  "extra":
+                    {  } } ],
             "extra":
               {  } },
         "extra":
