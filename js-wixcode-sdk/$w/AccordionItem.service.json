@@ -4,7 +4,8 @@
     [ "$w.Element",
       "$w.HiddenCollapsedMixin",
       "$w.ContainableMixin" ],
-  "labels": [],
+  "labels":
+    [ "changed" ],
   "location":
     { "lineno": 1,
       "filename": "AccordionItem.js" },
@@ -22,31 +23,36 @@
         {  } },
   "properties":
     [ { "name": "collapsed",
-        "labels": [],
+        "labels":
+          [ "changed" ],
         "get": true,
         "set": true,
         "type": "boolean",
         "locations":
-          [ { "lineno": 38,
+          [ { "lineno": 35,
               "filename": "AccordionItem.js" },
-            { "lineno": 62,
+            { "lineno": 56,
               "filename": "AccordionItem.js" } ],
         "docs":
-          { "summary": "Indicates if an element is collapsed.",
+          { "summary": "Indicates if an accordion item is collapsed.",
             "description":
-              [ "If collapsed is `true`, the element is not displayed on the page under any circumstances. ",
-                "However, the collapsed element is still in the site's DOM. Unlike a `hidden` element, ",
+              [ "If collapsed is `true`, the accordion item is not displayed on the page under any circumstances. ",
+                "However, the collapsed accordion item is still in the site's DOM. ",
+                "",
+                "Unlike a `hidden` element, ",
                 "a collapsed element doesn't take up any space on the page. When collapsed, ",
                 "elements positioned within 70 pixels below the collapsed element move up ",
                 "to take the collapsed element's place where possible. ",
                 "The elements that move up maintain their positions relative to one another.",
                 "",
-                "To set the collapsed property on an element, use the element's `collapse()` and `expand()` functions.",
-                "",
-                "If you select **Collapsed** in the element's Properties panel in the Editor, the collapsed property ",
-                "is set to `true` when the page loads." ],
+                "To set the collapsed property on an accordion item, use the accordion item's `collapse()` and `expand()` functions." ],
             "links": [],
-            "examples": [],
+            "examples":
+              [ { "title": "Get whether an accordion item is collapsed",
+                  "body":
+                    [ "let isCollapsed = $w(\"#accordionItem2\").collapsed; // true" ],
+                  "extra":
+                    {  } } ],
             "extra":
               {  } },
         "extra":
@@ -59,7 +65,7 @@
         "locations":
           [ { "lineno": 17,
               "filename": "AccordionItem.js" },
-            { "lineno": 32,
+            { "lineno": 29,
               "filename": "AccordionItem.js" } ],
         "docs":
           { "summary": "Sets or gets the accordion item's label.",
@@ -73,7 +79,8 @@
           {  } } ],
   "operations":
     [ { "name": "collapse",
-        "labels": [],
+        "labels":
+          [ "changed" ],
         "nameParams": [],
         "params": [],
         "ret":
@@ -81,30 +88,46 @@
               { "name": "Promise",
                 "typeParams":
                   [ "void" ] },
-            "doc": "Fulfilled - When the element's `collapsed` property has been set to `true`." },
+            "doc": "Fulfilled - When the accordion item's `collapsed` property has been set to `true`." },
         "locations":
-          [ { "lineno": 68,
+          [ { "lineno": 62,
               "filename": "AccordionItem.js" } ],
         "docs":
           { "summary": "Collapses the element.",
             "description":
               [ "The `collapse()` function returns a Promise that is resolved when the",
-                " element's [`collapsed`](#collapsed) property has been set to `true`.",
+                " accordion item's [`collapsed`](#collapsed) property has been set to `true`.",
                 "",
-                " You can also collapse an element",
+                " You can also collapse an accordion item",
                 " when the page loads by using the Properties and Events panel in the Editor.",
                 "",
                 " >**Note:** The `collapse()` function doesn't remove elements from the DOM." ],
             "links":
               [ "[expand( )](#expand)",
                 "[hide( )]($w.HiddenMixin.html#hide)" ],
-            "examples": [],
+            "examples":
+              [ { "title": "Collapse an accordion item",
+                  "body":
+                    [ "$w(\"#accordionItem1\").collapse();" ],
+                  "extra":
+                    {  } },
+                { "title": "Toggle an accordion item's collapsed state",
+                  "body":
+                    [ "if( $w(\"#accordionItem3\").collapsed ) {",
+                      "  $w(\"#accordionItem3\").expand();",
+                      "}",
+                      "else {",
+                      "  $w(\"#accordionItem3\").collapse();",
+                      "}" ],
+                  "extra":
+                    {  } } ],
             "extra":
               {  } },
         "extra":
           {  } },
       { "name": "expand",
-        "labels": [],
+        "labels":
+          [ "changed" ],
         "nameParams": [],
         "params": [],
         "ret":
@@ -112,25 +135,40 @@
               { "name": "Promise",
                 "typeParams":
                   [ "void" ] },
-            "doc": "Fulfilled - When the element's `collapsed` property has been set to `false`." },
+            "doc": "Fulfilled - When the accordion item's `collapsed` property has been set to `false`." },
         "locations":
-          [ { "lineno": 94,
+          [ { "lineno": 85,
               "filename": "AccordionItem.js" } ],
         "docs":
-          { "summary": "Expands the element.",
+          { "summary": "Expands the accordion item.",
             "description":
               [ "The `expand()` function returns a Promise that is resolved when the",
-                " element's [`collapsed`](#collapsed) property has been set to `false`",
+                " accordion item's [`collapsed`](#collapsed) property has been set to `false`",
                 "",
                 "> **Notes:** ",
-                "> + In Editor X, an element will not become visible by using `expand()` if it has been marked as \"Don't Display\" for the current breakpoint. Calling `expand()` will however, change the `collapsed` property of the element to `false`.",
+                "> + In Editor X, an accordion item will not become visible by using `expand()` if it has been marked as \"Don't Display\" for the current breakpoint. Calling `expand()` will however, change the `collapsed` property of the element to `false`.",
                 "> ",
                 ">",
                 "> + It is recommended not to mix `expand()` and `collapse()` with \"Don't Display\" in Editor X." ],
             "links":
               [ "[expand( )](#expand)",
                 "[show( )]($w.HiddenMixin.html#show)" ],
-            "examples": [],
+            "examples":
+              [ { "title": "Expand an accordion item",
+                  "body":
+                    [ "$w(\"#accordionItem1\").expand();" ],
+                  "extra":
+                    {  } },
+                { "title": "Toggle an accordion item's collapsed state",
+                  "body":
+                    [ "if( $w(\"#accordionItem3\").collapsed ) {",
+                      "  $w(\"#accordionItem3\").expand();",
+                      "}",
+                      "else {",
+                      "  $w(\"#accordionItem3\").collapse();",
+                      "}" ],
+                  "extra":
+                    {  } } ],
             "extra":
               {  } },
         "extra":
