@@ -4,7 +4,8 @@
     [ "$w.Element",
       "$w.HiddenCollapsedMixin",
       "$w.ContainableMixin" ],
-  "labels": [],
+  "labels":
+    [ "changed" ],
   "location":
     { "lineno": 1,
       "filename": "AccordionItem.js" },
@@ -27,9 +28,9 @@
         "set": true,
         "type": "boolean",
         "locations":
-          [ { "lineno": 41,
+          [ { "lineno": 38,
               "filename": "AccordionItem.js" },
-            { "lineno": 67,
+            { "lineno": 62,
               "filename": "AccordionItem.js" } ],
         "docs":
           { "summary": "Indicates if an element is collapsed.",
@@ -52,20 +53,20 @@
         "extra":
           {  } },
       { "name": "label",
-        "labels": [],
+        "labels":
+          [ "changed" ],
         "get": true,
         "set": true,
         "type": "string",
         "locations":
           [ { "lineno": 17,
               "filename": "AccordionItem.js" },
-            { "lineno": 35,
+            { "lineno": 32,
               "filename": "AccordionItem.js" } ],
         "docs":
           { "summary": "Sets or gets the accordion item's label.",
             "description":
-              [ "Sets or gets an accordion item's label.",
-                "The accordion item label appears in the accordion item's title. It is limited to 120 characters." ],
+              [ "The accordion item label appears in the accordion item's title. It is limited to 120 characters." ],
             "links": [],
             "examples": [],
             "extra":
@@ -84,7 +85,7 @@
                   [ "void" ] },
             "doc": "Fulfilled - When the element's `collapsed` property has been set to `true`." },
         "locations":
-          [ { "lineno": 73,
+          [ { "lineno": 68,
               "filename": "AccordionItem.js" } ],
         "docs":
           { "summary": "Collapses the element.",
@@ -115,7 +116,7 @@
                   [ "void" ] },
             "doc": "Fulfilled - When the element's `collapsed` property has been set to `false`." },
         "locations":
-          [ { "lineno": 99,
+          [ { "lineno": 94,
               "filename": "AccordionItem.js" } ],
         "docs":
           { "summary": "Expands the element.",

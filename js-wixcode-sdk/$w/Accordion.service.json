@@ -27,7 +27,8 @@
         {  } },
   "properties":
     [ { "name": "expandedItems",
-        "labels": [],
+        "labels":
+          [ "changed" ],
         "get": true,
         "set": false,
         "type":
@@ -35,14 +36,30 @@
             "typeParams":
               [ "$w.AccordionItems" ] },
         "locations":
-          [ { "lineno": 55,
+          [ { "lineno": 52,
               "filename": "Accordion.js" } ],
         "docs":
           { "summary": "Gets or sets a list of expanded accordion items.",
             "description":
               [ "Gets a list of IDs of expanded accordion items or sets a list of expanded accordion items." ],
             "links": [],
-            "examples": [],
+            "examples":
+              [ { "title": "Get a list of IDs of accordion items that are expanded",
+                  "body":
+                    [ "let  myExpandedItems = $w('#myAccordion').expandedItems;" ],
+                  "extra":
+                    {  } },
+                { "title": "Set an accordion item as expanded by ID",
+                  "body":
+                    [ "let items = $w('#myAccordion').items;",
+                      "$w('#myAccordion').expandedItems = [items[0].id];" ],
+                  "extra":
+                    {  } },
+                { "title": "Set all accordion items as collapsed",
+                  "body":
+                    [ "$w('#myAccordion').expandedItems = [];" ],
+                  "extra":
+                    {  } } ],
             "extra":
               {  } },
         "extra":
@@ -57,15 +74,25 @@
             "typeParams":
               [ "$w.AccordionItems" ] },
         "locations":
-          [ { "lineno": 39,
+          [ { "lineno": 37,
               "filename": "Accordion.js" } ],
         "docs":
           { "summary": "Gets or sets a list of the accordion items contained in an accordion element.",
             "description":
               [ "The accordion items list is in the same order as the accordion items appear.",
-                "The list of items is an object containing item ID and item label." ],
+                "Each of the items is an object containing item ID and item label." ],
             "links": [],
-            "examples": [],
+            "examples":
+              [ { "title": "Get a list of accordion items in an accordion element",
+                  "body":
+                    [ "let myItems = $w(\"#myAccordion\").items;" ],
+                  "extra":
+                    {  } },
+                { "title": "Set list of accordion items in an accordion element",
+                  "body":
+                    [ "$w(\"#myAccordion\").items = [item1];" ],
+                  "extra":
+                    {  } } ],
             "extra":
               {  } },
         "extra":
@@ -79,7 +106,7 @@
             "typeParams":
               [ "$w.AccordionItems" ] },
         "locations":
-          [ { "lineno": 71,
+          [ { "lineno": 67,
               "filename": "Accordion.js" } ],
         "docs":
           { "summary": "Sets if multiple accordion items can be expanded at one time.",
@@ -93,7 +120,8 @@
           {  } } ],
   "operations":
     [ { "name": "onItemClicked",
-        "labels": [],
+        "labels":
+          [ "changed" ],
         "nameParams": [],
         "params":
           [ { "name": "eventHandler",
@@ -108,10 +136,17 @@
         "docs":
           { "summary": "Adds an event handler that runs when any accordion item title is clicked.",
             "description":
-              [ "`onItemClicked()` runs when a site visitor clicks on any accordion item title in the accordion element." ],
+              [ "`onItemClicked()` runs when a site visitor clicks on an accordion item title in an accordion element." ],
             "links":
               [ "[`onChange()`](#onChange)" ],
-            "examples": [],
+            "examples":
+              [ { "title": "Get the ID of the accordion item whose title was clicked",
+                  "body":
+                    [ "$w(\"#myAccordionElement\").onItemClicked((event) => {",
+                      "  let itemClicked = event.items.id ; // \"item3\"",
+                      "});" ],
+                  "extra":
+                    {  } } ],
             "extra":
               {  } },
         "extra":
