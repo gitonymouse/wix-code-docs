@@ -12,7 +12,7 @@
     { "lineno": 1,
       "filename": "Accordion.js" },
   "docs":
-    { "summary": "A container that holds multiple collapsible [accordion item]($w.AccordionItem.html) elements.",
+    { "summary": "A container that holds multiple collapsible [accordion item]($w.AccordionItem.html) elements.\n> This feature is currently only available in Editor X.",
       "description":
         [ "An accordion element holds",
           "multiple [accordion item]($w.AccordionItem.html) elements in a vertical stack, each with different content. One or more accordion items can be displayed at a time according to settings. ",
@@ -35,9 +35,9 @@
             "typeParams":
               [ "$w.AccordionItem" ] },
         "locations":
-          [ { "lineno": 58,
+          [ { "lineno": 59,
               "filename": "Accordion.js" },
-            { "lineno": 72,
+            { "lineno": 73,
               "filename": "Accordion.js" } ],
         "docs":
           { "summary": "Gets or sets a list of expanded accordion items.",
@@ -74,9 +74,9 @@
             "typeParams":
               [ "$w.AccordionItem" ] },
         "locations":
-          [ { "lineno": 37,
+          [ { "lineno": 38,
               "filename": "Accordion.js" },
-            { "lineno": 52,
+            { "lineno": 53,
               "filename": "Accordion.js" } ],
         "docs":
           { "summary": "Gets or sets a list of the accordion items contained in an accordion element.",
@@ -111,16 +111,14 @@
         "set": true,
         "type": "boolean",
         "locations":
-          [ { "lineno": 78,
+          [ { "lineno": 79,
               "filename": "Accordion.js" },
-            { "lineno": 95,
+            { "lineno": 93,
               "filename": "Accordion.js" } ],
         "docs":
           { "summary": "Sets if multiple accordion items can be expanded at one time.",
             "description":
-              [ "> This feature is currently only available in Editor X.",
-                "",
-                "Sets if you can have multiple accordion items expanded concurrently or only one accordion item expanded at a time." ],
+              [ "Sets if you can have multiple accordion items expanded concurrently or only one accordion item expanded at a time." ],
             "links": [],
             "examples":
               [ { "title": "Get whether an accordion can expand multiple items",
@@ -149,7 +147,7 @@
           { "type": "$w.Accordion",
             "doc": "The accordion element on which the event is registered." },
         "locations":
-          [ { "lineno": 21,
+          [ { "lineno": 22,
               "filename": "Accordion.js" } ],
         "docs":
           { "summary": "Adds an event handler that runs when any accordion item title is clicked.",
