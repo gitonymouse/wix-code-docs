@@ -12,9 +12,10 @@
     { "lineno": 1,
       "filename": "Accordion.js" },
   "docs":
-    { "summary": "A container that holds multiple collapsible [accordion item]($w.AccordionItem.html) elements.\n> This feature is currently only available in Editor X.",
+    { "summary": "A container that holds multiple collapsible [accordion item]($w.AccordionItem.html) elements.",
       "description":
-        [ "An accordion element holds",
+        [ "> This feature is currently only available in Editor X.",
+          "An accordion element holds",
           "multiple [accordion item]($w.AccordionItem.html) elements in a vertical stack, each with different content. One or more accordion items can be displayed at a time according to settings. ",
           "A site visitor can navigate between accordion items without leaving the page, by clicking an accordion item title.",
           "",
@@ -27,8 +28,7 @@
         {  } },
   "properties":
     [ { "name": "expandedItems",
-        "labels":
-          [ "changed" ],
+        "labels": [],
         "get": true,
         "set": true,
         "type":
