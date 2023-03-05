@@ -6,7 +6,8 @@
       "$w.ClickableMixin",
       "$w.ContainableMixin",
       "$w.FocusMixin" ],
-  "labels": [],
+  "labels":
+    [ "changed" ],
   "location":
     { "lineno": 1,
       "filename": "Accordion.js" },
@@ -26,13 +27,14 @@
         {  } },
   "properties":
     [ { "name": "expandedItems",
-        "labels": [],
+        "labels":
+          [ "changed" ],
         "get": true,
         "set": true,
         "type":
           { "name": "Array",
             "typeParams":
-              [ "$w.AccordionItem" ] },
+              [ "string" ] },
         "locations":
           [ { "lineno": 59,
               "filename": "Accordion.js" },
