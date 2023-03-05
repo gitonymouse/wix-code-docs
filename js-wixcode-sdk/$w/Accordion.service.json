@@ -41,7 +41,7 @@
             { "lineno": 73,
               "filename": "Accordion.js" } ],
         "docs":
-          { "summary": "Gets or sets a list of expanded accordion items.",
+          { "summary": "Gets or sets a list of IDs of expanded accordion items.",
             "description":
               [ "Gets a list of IDs of expanded accordion items or sets a list of expanded accordion items." ],
             "links": [],
