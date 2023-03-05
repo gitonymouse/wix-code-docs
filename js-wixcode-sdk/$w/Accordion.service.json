@@ -6,7 +6,8 @@
       "$w.ClickableMixin",
       "$w.ContainableMixin",
       "$w.FocusMixin" ],
-  "labels": [],
+  "labels":
+    [ "changed" ],
   "location":
     { "lineno": 1,
       "filename": "Accordion.js" },
@@ -26,15 +27,18 @@
         {  } },
   "properties":
     [ { "name": "expandedItems",
-        "labels": [],
+        "labels":
+          [ "changed" ],
         "get": true,
-        "set": false,
+        "set": true,
         "type":
           { "name": "Array",
             "typeParams":
               [ "$w.AccordionItem" ] },
         "locations":
-          [ { "lineno": 52,
+          [ { "lineno": 58,
+              "filename": "Accordion.js" },
+            { "lineno": 72,
               "filename": "Accordion.js" } ],
         "docs":
           { "summary": "Gets or sets a list of expanded accordion items.",
@@ -63,15 +67,18 @@
         "extra":
           {  } },
       { "name": "items",
-        "labels": [],
+        "labels":
+          [ "changed" ],
         "get": true,
-        "set": false,
+        "set": true,
         "type":
           { "name": "Array",
             "typeParams":
               [ "$w.AccordionItem" ] },
         "locations":
           [ { "lineno": 37,
+              "filename": "Accordion.js" },
+            { "lineno": 52,
               "filename": "Accordion.js" } ],
         "docs":
           { "summary": "Gets or sets a list of the accordion items contained in an accordion element.",
@@ -89,18 +96,26 @@
                   "body":
                     [ "$w(\"#myAccordion\").items = [item1];" ],
                   "extra":
+                    {  } },
+                { "title": "Reverse order of accordion items in an accordion element",
+                  "body":
+                    [ "$w('#myAccordion').items = items.reverse();" ],
+                  "extra":
                     {  } } ],
             "extra":
               {  } },
         "extra":
           {  } },
       { "name": "multipleExpand",
-        "labels": [],
+        "labels":
+          [ "changed" ],
         "get": true,
-        "set": false,
+        "set": true,
         "type": "boolean",
         "locations":
-          [ { "lineno": 67,
+          [ { "lineno": 78,
+              "filename": "Accordion.js" },
+            { "lineno": 91,
               "filename": "Accordion.js" } ],
         "docs":
           { "summary": "Sets if multiple accordion items can be expanded at one time.",
@@ -124,7 +139,8 @@
           {  } } ],
   "operations":
     [ { "name": "onItemClicked",
-        "labels": [],
+        "labels":
+          [ "changed" ],
         "nameParams": [],
         "params":
           [ { "name": "eventHandler",
@@ -146,7 +162,7 @@
               [ { "title": "Get the ID of the accordion item whose title was clicked",
                   "body":
                     [ "$w(\"#myAccordionElement\").onItemClicked((event) => {",
-                      "  let itemClicked = event.items.id ; // \"item3\"",
+                      " let itemClicked = event.items.id ; // \"item3\"",
                       "});" ],
                   "extra":
                     {  } } ],

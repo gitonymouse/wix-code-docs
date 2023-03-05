@@ -23,15 +23,14 @@
         {  } },
   "properties":
     [ { "name": "collapsed",
-        "labels":
-          [ "changed" ],
+        "labels": [],
         "get": true,
         "set": true,
         "type": "boolean",
         "locations":
           [ { "lineno": 35,
               "filename": "AccordionItem.js" },
-            { "lineno": 56,
+            { "lineno": 55,
               "filename": "AccordionItem.js" } ],
         "docs":
           { "summary": "Indicates if an accordion item is collapsed.",
@@ -58,7 +57,8 @@
         "extra":
           {  } },
       { "name": "label",
-        "labels": [],
+        "labels":
+          [ "changed" ],
         "get": true,
         "set": true,
         "type": "string",
@@ -72,7 +72,17 @@
             "description":
               [ "The accordion item label appears in the accordion item's title. It is limited to 120 characters." ],
             "links": [],
-            "examples": [],
+            "examples":
+              [ { "title": "Get an accordion item's label",
+                  "body":
+                    [ "let myLabel = $w(\"#myAccordionItem\").label;" ],
+                  "extra":
+                    {  } },
+                { "title": "Set an accordion item's label",
+                  "body":
+                    [ "$w(\"#myAccordionItem\").label = \"About\";" ],
+                  "extra":
+                    {  } } ],
             "extra":
               {  } },
         "extra":
@@ -90,7 +100,7 @@
                   [ "void" ] },
             "doc": "Fulfilled - When the accordion item's `collapsed` property has been set to `true`." },
         "locations":
-          [ { "lineno": 62,
+          [ { "lineno": 61,
               "filename": "AccordionItem.js" } ],
         "docs":
           { "summary": "Collapses the element.",
@@ -114,10 +124,10 @@
                 { "title": "Toggle an accordion item's collapsed state",
                   "body":
                     [ "if( $w(\"#accordionItem3\").collapsed ) {",
-                      "  $w(\"#accordionItem3\").expand();",
+                      " $w(\"#accordionItem3\").expand();",
                       "}",
                       "else {",
-                      "  $w(\"#accordionItem3\").collapse();",
+                      " $w(\"#accordionItem3\").collapse();",
                       "}" ],
                   "extra":
                     {  } } ],
@@ -137,7 +147,7 @@
                   [ "void" ] },
             "doc": "Fulfilled - When the accordion item's `collapsed` property has been set to `false`." },
         "locations":
-          [ { "lineno": 85,
+          [ { "lineno": 84,
               "filename": "AccordionItem.js" } ],
         "docs":
           { "summary": "Expands the accordion item.",
@@ -162,10 +172,10 @@
                 { "title": "Toggle an accordion item's collapsed state",
                   "body":
                     [ "if( $w(\"#accordionItem3\").collapsed ) {",
-                      "  $w(\"#accordionItem3\").expand();",
+                      " $w(\"#accordionItem3\").expand();",
                       "}",
                       "else {",
-                      "  $w(\"#accordionItem3\").collapse();",
+                      " $w(\"#accordionItem3\").collapse();",
                       "}" ],
                   "extra":
                     {  } } ],
