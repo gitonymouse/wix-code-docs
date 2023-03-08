@@ -28,7 +28,7 @@
         "set": false,
         "type": "string",
         "locations":
-          [ { "lineno": 405,
+          [ { "lineno": 395,
               "filename": "window.js" } ],
         "docs":
           { "summary": "Gets the locale of the site visitor's browser.",
@@ -67,7 +67,7 @@
         "set": false,
         "type": "wix-window.ConsentPolicy",
         "locations":
-          [ { "lineno": 1343,
+          [ { "lineno": 1330,
               "filename": "window.js" } ],
         "docs":
           { "summary": "The ConsentPolicy API is used to perform actions related to the user's allowed cookies and 3rd-party data transfer, such as for GDPR or CCPA purposes.",
@@ -95,7 +95,7 @@
         "set": false,
         "type": "string",
         "locations":
-          [ { "lineno": 446,
+          [ { "lineno": 436,
               "filename": "window.js" } ],
         "docs":
           { "summary": "Gets what kind of device is being used to view the page.",
@@ -125,19 +125,18 @@
         "extra":
           {  } },
       { "name": "lightbox",
-        "labels": [],
+        "labels":
+          [ "changed" ],
         "get": true,
         "set": false,
         "type": "wix-window.Lightbox",
         "locations":
-          [ { "lineno": 383,
+          [ { "lineno": 375,
               "filename": "window.js" } ],
         "docs":
           { "summary": "A [lightbox](https://support.wix.com/en/article/about-lightboxes) pops up on your site to grab your visitor's attention.",
             "description":
-              [ "Get hands-on experience with Lightboxes on our [Hello Lightboxes](https://www.wix.com/velo/example/hello-lightboxes) example page.",
-                "",
-                " To use the Lightbox API, import `wixWindow` from the `wix-window` module:",
+              [ "To use the Lightbox API, import `wixWindow` from the `wix-window` module:",
                 "",
                 "   ```javascript",
                 "   import wixWindow from 'wix-window';",
@@ -169,7 +168,7 @@
         "set": false,
         "type": "string",
         "locations":
-          [ { "lineno": 466,
+          [ { "lineno": 456,
               "filename": "window.js" } ],
         "docs":
           { "summary": "**Deprecated.** The `locale` property is being deprecated. Use the\n[`browserLocale`](https://www.wix.com/velo/reference/wix-window/browserlocale) property instead.",
@@ -236,7 +235,7 @@
         "set": false,
         "type": "wix-window.Multilingual",
         "locations":
-          [ { "lineno": 1185,
+          [ { "lineno": 1172,
               "filename": "window.js" } ],
         "docs":
           { "summary": "The Multilingual API is used when working with the languages in a multilingual site.",
@@ -264,7 +263,7 @@
         "set": false,
         "type": "string",
         "locations":
-          [ { "lineno": 488,
+          [ { "lineno": 478,
               "filename": "window.js" } ],
         "docs":
           { "summary": "Gets the HTTP referrer header field.",
@@ -315,7 +314,7 @@
         "set": false,
         "type": "wix-window.Rendering",
         "locations":
-          [ { "lineno": 341,
+          [ { "lineno": 335,
               "filename": "window.js" } ],
         "docs":
           { "summary": "The [Rendering API](wix-window.html#rendering) is used to control when code is run as a page is being loaded.",
@@ -345,7 +344,7 @@
         "set": false,
         "type": "string",
         "locations":
-          [ { "lineno": 430,
+          [ { "lineno": 420,
               "filename": "window.js" } ],
         "docs":
           { "summary": "Gets which mode the site is currently being viewed in.",
@@ -375,7 +374,7 @@
         "set": false,
         "type": "wix-window.WarmupData",
         "locations":
-          [ { "lineno": 203,
+          [ { "lineno": 197,
               "filename": "window.js" } ],
         "docs":
           { "summary": "The Warmup Data API is used to optimize data loading for sites that render both on the server and in the browser, \n allowing costly data fetching operations to be done only once.",
@@ -429,7 +428,7 @@
                   [ "void" ] },
             "doc": "Fulfilled - When the copy is complete or the site visitor closes the modal popup." },
         "locations":
-          [ { "lineno": 609,
+          [ { "lineno": 599,
               "filename": "window.js" } ],
         "docs":
           { "summary": "Copies text to the site visitor's clipboard.",
@@ -479,7 +478,7 @@
                   [ "wix-window.WindowSizeInfo" ] },
             "doc": "Fulfilled - An object containing information about the window's size, the document's size, and the current scroll position." },
         "locations":
-          [ { "lineno": 595,
+          [ { "lineno": 585,
               "filename": "window.js" } ],
         "docs":
           { "summary": "Returns information about the window.",
@@ -521,7 +520,7 @@
                   [ "wix-window.CurrentGeolocation" ] },
             "doc": "Fulfilled - An object containing the coordinates and timestamp of the current location.\nRejected - The user blocked the geolocation popup." },
         "locations":
-          [ { "lineno": 712,
+          [ { "lineno": 702,
               "filename": "window.js" } ],
         "docs":
           { "summary": "Returns the current geolocation of the user.",
@@ -571,7 +570,7 @@
           { "type": "Object",
             "doc": "The data returned by the router." },
         "locations":
-          [ { "lineno": 693,
+          [ { "lineno": 683,
               "filename": "window.js" } ],
         "docs":
           { "summary": "Returns the data that a router passed to the page in its response.",
@@ -619,7 +618,7 @@
                   [ "Object" ] },
             "doc": "Fulfilled - The returned data from the lightbox.\nRejected - The error that caused the rejection." },
         "locations":
-          [ { "lineno": 734,
+          [ { "lineno": 724,
               "filename": "window.js" } ],
         "docs":
           { "summary": "Opens a lightbox and optionally passes it the given data.",
@@ -703,51 +702,6 @@
                       "  } );" ],
                   "extra":
                     {  } },
-                { "title": "Open and close a lightbox, and send information between the lightbox and the page",
-                  "body":
-                    [ "/******************",
-                      " * Home Page Code *",
-                      " ******************/",
-                      "",
-                      "import { openLightbox } from 'wix-window';",
-                      "",
-                      "$w.onReady(() => {",
-                      "  $w('#openButton').onClick(async () => {",
-                      "    const dataToSend = {",
-                      "      greeting: $w('#greeting').value,",
-                      "      subject: $w('#subject').value",
-                      "    };",
-                      "",
-                      "    const lightBoxResponse = await openLightbox('Greeting Lightbox', dataToSend);",
-                      "    $w('#returnedMessage').text = `YOU CHOSE: ${lightBoxResponse}`;",
-                      "    $w('#returnedMessage').show();",
-                      "  });",
-                      "});",
-                      "",
-                      "/*****************",
-                      " * Lightbox Code *",
-                      " *****************/",
-                      "",
-                      "import { lightbox } from 'wix-window';",
-                      "",
-                      "$w.onReady(function () {",
-                      "  let receivedData = lightbox.getContext();",
-                      "",
-                      "  $w('#greeting').text = receivedData.greeting.toUpperCase();",
-                      "  $w('#subject').text = receivedData.subject.toUpperCase();",
-                      "",
-                      "  $w('#blueButton').onClick(clickHandler);",
-                      "  $w('#greenButton').onClick(clickHandler);",
-                      "  $w('#pinkButton').onClick(clickHandler);",
-                      "});",
-                      "",
-                      "function clickHandler(event) {",
-                      "  lightbox.close(event.target.label);",
-                      "}",
-                      "",
-                      "" ],
-                  "extra":
-                    { "description": "In this example, we demonstrate how to open and close a lightbox using code, as well as how to send information from the page to the lightbox and from the lightbox to the page. \n You can test out the code in our [example template](https://manage.wix.com/edit-template/from?originTemplateId=36f51075-ed17-41e6-aea6-68f9ca7de0be&templateId=63b643a6-6dc1-43ed-ad90-025371ca06fd&autoDevMode=true)." } },
                 { "title": "A scenario where information is passed between a page and a lightbox",
                   "body":
                     [ "/*************",
@@ -809,7 +763,7 @@
                   [ "void" ] },
             "doc": "Fulfilled - When the modal window is closed.\nRejected - The error that caused the rejection." },
         "locations":
-          [ { "lineno": 1116,
+          [ { "lineno": 1103,
               "filename": "window.js" } ],
         "docs":
           { "summary": "Opens a modal window that displays the specified web page.",
@@ -875,7 +829,7 @@
                   [ "Object" ] },
             "doc": "Fulfilled - The data returned from the modal window.\nRejected - The error that caused the rejection." },
         "locations":
-          [ { "lineno": 1141,
+          [ { "lineno": 1128,
               "filename": "window.js" } ],
         "docs":
           { "summary": "Sends a message to the page's parent.",
@@ -958,7 +912,7 @@
                   [ "void" ] },
             "doc": "Fulfilled - When the scroll is complete." },
         "locations":
-          [ { "lineno": 673,
+          [ { "lineno": 663,
               "filename": "window.js" } ],
         "docs":
           { "summary": "Scrolls the page by a given number of pixels.",
@@ -1017,7 +971,7 @@
                   [ "void" ] },
             "doc": "Fulfilled - When the scroll is complete." },
         "locations":
-          [ { "lineno": 643,
+          [ { "lineno": 633,
               "filename": "window.js" } ],
         "docs":
           { "summary": "Scrolls the page to a specific location on the page.",
@@ -1097,7 +1051,7 @@
         "ret":
           { "type": "void" },
         "locations":
-          [ { "lineno": 1047,
+          [ { "lineno": 1034,
               "filename": "window.js" } ],
         "docs":
           { "summary": "Sends a tracking event to external analytics tools.",
@@ -1195,7 +1149,7 @@
   "messages":
     [ { "name": "Coordinates",
         "locations":
-          [ { "lineno": 516,
+          [ { "lineno": 506,
               "filename": "window.js" } ],
         "docs":
           { "summary": "An object that defines the location.",
@@ -1253,7 +1207,7 @@
         "labels": [] },
       { "name": "CurrentGeolocation",
         "locations":
-          [ { "lineno": 548,
+          [ { "lineno": 538,
               "filename": "window.js" } ],
         "docs":
           { "summary": "An object returned by the `getCurrentGeolocation()` function that contains information about the current geolocation.",
@@ -1296,7 +1250,7 @@
         "labels": [] },
       { "name": "CustomType",
         "locations":
-          [ { "lineno": 913,
+          [ { "lineno": 900,
               "filename": "window.js" } ],
         "docs":
           { "summary": "A custom parameter used when sending a CustomEvent track event.",
@@ -1311,7 +1265,7 @@
         "labels": [] },
       { "name": "DocumentSize",
         "locations":
-          [ { "lineno": 567,
+          [ { "lineno": 557,
               "filename": "window.js" } ],
         "docs":
           { "summary": "An object containing the size of the actual body of the page, which may be larger or smaller than the current window.",
@@ -1349,7 +1303,7 @@
         "labels": [] },
       { "name": "OpenModalOptions",
         "locations":
-          [ { "lineno": 1106,
+          [ { "lineno": 1093,
               "filename": "window.js" } ],
         "docs":
           { "summary": "An object used when opening a modal window.",
@@ -1382,7 +1336,7 @@
         "labels": [] },
       { "name": "ScrollOffset",
         "locations":
-          [ { "lineno": 576,
+          [ { "lineno": 566,
               "filename": "window.js" } ],
         "docs":
           { "summary": "An object containing the scroll offset of the page within the window from the top-left corner.",
@@ -1420,7 +1374,7 @@
         "labels": [] },
       { "name": "ScrollToOptions",
         "locations":
-          [ { "lineno": 634,
+          [ { "lineno": 624,
               "filename": "window.js" } ],
         "docs":
           { "summary": "An object used for providing options for the `scrollTo()` method.",
@@ -1447,7 +1401,7 @@
         "labels": [] },
       { "name": "WindowSize",
         "locations":
-          [ { "lineno": 558,
+          [ { "lineno": 548,
               "filename": "window.js" } ],
         "docs":
           { "summary": "An object containing the size of the viewable area of the current browser window.",
@@ -1485,7 +1439,7 @@
         "labels": [] },
       { "name": "WindowSizeInfo",
         "locations":
-          [ { "lineno": 585,
+          [ { "lineno": 575,
               "filename": "window.js" } ],
         "docs":
           { "summary": "An object returned by the `getBoundingRect()` function that contains information about the window's size, the document's size, and the current scroll position.",
@@ -1526,7 +1480,7 @@
         "labels": [] },
       { "name": "trackingParameters",
         "locations":
-          [ { "lineno": 804,
+          [ { "lineno": 791,
               "filename": "window.js" } ],
         "docs":
           { "summary": "Objects used when calling the [`trackEvent()`](wix-window.html#trackEvent) function.",
@@ -1590,7 +1544,7 @@
         "labels": [] },
       { "name": "trackingParametersAddPaymentInfoEvent",
         "locations":
-          [ { "lineno": 797,
+          [ { "lineno": 784,
               "filename": "window.js" } ],
         "docs":
           { "summary": "An object used when sending an `AddPaymentInfo` track event.",
@@ -1614,7 +1568,7 @@
         "labels": [] },
       { "name": "trackingParametersAddProductImpressionEvent",
         "locations":
-          [ { "lineno": 834,
+          [ { "lineno": 821,
               "filename": "window.js" } ],
         "docs":
           { "summary": "An object used when sending an AddProductImpression track event.",
@@ -1669,7 +1623,7 @@
         "labels": [] },
       { "name": "trackingParametersAddProductImpressionEventContents",
         "locations":
-          [ { "lineno": 844,
+          [ { "lineno": 831,
               "filename": "window.js" } ],
         "docs":
           { "summary": "An object used when sending an AddProductImpression track event.",
@@ -1753,7 +1707,7 @@
         "labels": [] },
       { "name": "trackingParametersAddToCartEvent",
         "locations":
-          [ { "lineno": 862,
+          [ { "lineno": 849,
               "filename": "window.js" } ],
         "docs":
           { "summary": "An object used when sending an AddToCart track event.",
@@ -1829,7 +1783,7 @@
         "labels": [] },
       { "name": "trackingParametersCheckoutStepEvent",
         "locations":
-          [ { "lineno": 881,
+          [ { "lineno": 868,
               "filename": "window.js" } ],
         "docs":
           { "summary": "An object used when sending an CheckoutStep track event.",
@@ -1872,7 +1826,7 @@
         "labels": [] },
       { "name": "trackingParametersClickProductEvent",
         "locations":
-          [ { "lineno": 894,
+          [ { "lineno": 881,
               "filename": "window.js" } ],
         "docs":
           { "summary": "An object used when sending a ClickProduct track event.",
@@ -1947,7 +1901,7 @@
         "labels": [] },
       { "name": "trackingParametersCustomEvent",
         "locations":
-          [ { "lineno": 920,
+          [ { "lineno": 907,
               "filename": "window.js" } ],
         "docs":
           { "summary": "An object used when sending a CustomEvent track event.",
@@ -2003,7 +1957,7 @@
         "labels": [] },
       { "name": "trackingParametersInitiateCheckoutEvent",
         "locations":
-          [ { "lineno": 933,
+          [ { "lineno": 920,
               "filename": "window.js" } ],
         "docs":
           { "summary": "An object used when sending an InitiateCheckout track event.",
@@ -2056,7 +2010,7 @@
         "labels": [] },
       { "name": "trackingParametersInitiateCheckoutEventContents",
         "locations":
-          [ { "lineno": 943,
+          [ { "lineno": 930,
               "filename": "window.js" } ],
         "docs":
           { "summary": "An object used when sending an InitiateCheckout track event.",
@@ -2134,7 +2088,7 @@
         "labels": [] },
       { "name": "trackingParametersLeadEvent",
         "locations":
-          [ { "lineno": 959,
+          [ { "lineno": 946,
               "filename": "window.js" } ],
         "docs":
           { "summary": "An object used when sending a Lead track event.",
@@ -2161,7 +2115,7 @@
         "labels": [] },
       { "name": "trackingParametersPurchaseEvent",
         "locations":
-          [ { "lineno": 968,
+          [ { "lineno": 955,
               "filename": "window.js" } ],
         "docs":
           { "summary": "An object used when sending a Purchase track event.",
@@ -2236,7 +2190,7 @@
         "labels": [] },
       { "name": "trackingParametersPurchaseEventContents",
         "locations":
-          [ { "lineno": 984,
+          [ { "lineno": 971,
               "filename": "window.js" } ],
         "docs":
           { "summary": "An object used when sending an Purchase track event.",
@@ -2308,7 +2262,7 @@
         "labels": [] },
       { "name": "trackingParametersRemoveFromCartEvent",
         "locations":
-          [ { "lineno": 1000,
+          [ { "lineno": 987,
               "filename": "window.js" } ],
         "docs":
           { "summary": "An object used when sending a RemoveFromCart track event.",
@@ -2380,7 +2334,7 @@
         "labels": [] },
       { "name": "trackingParametersStartPaymentEvent",
         "locations":
-          [ { "lineno": 1018,
+          [ { "lineno": 1005,
               "filename": "window.js" } ],
         "docs":
           { "summary": "An object used when sending an StartPayment track event.",
@@ -2413,7 +2367,7 @@
         "labels": [] },
       { "name": "trackingParametersViewContentEvent",
         "locations":
-          [ { "lineno": 1028,
+          [ { "lineno": 1015,
               "filename": "window.js" } ],
         "docs":
           { "summary": "An object used when sending a ViewContent track event.",

@@ -2,7 +2,8 @@
   "memberOf": "$w",
   "mixes":
     [ "$w.IFrame" ],
-  "labels": [],
+  "labels":
+    [ "changed" ],
   "location":
     { "lineno": 9,
       "filename": "HtmlComponent.js" },
@@ -14,8 +15,6 @@
           " component to your page code using the [`postMessage()`](#postMessage) and",
           " [`onMessage()`](#onMessage) functions. To learn more about what code an HTML",
           " component can hold, see [here](https://support.wix.com/en/article/using-iframes-to-display-visible-content-on-your-site).",
-          "",
-          " Get hands-on experience with the HTML Components on our [Hello HTML Component](https://www.wix.com/velo/example/hello-html-component) example page. ",
           "",
           " For an overview of working with an HTML Component using code, see [Working with the HTML Element](https://support.wix.com/en/article/working-with-the-html-element).",
           "",
@@ -31,9 +30,9 @@
         "set": true,
         "type": "string",
         "locations":
-          [ { "lineno": 65,
+          [ { "lineno": 63,
               "filename": "HtmlComponent.js" },
-            { "lineno": 72,
+            { "lineno": 70,
               "filename": "HtmlComponent.js" } ],
         "docs":
           { "summary": "Sets or gets whether the HTML Component displays scrollbars.",
@@ -71,9 +70,9 @@
         "set": true,
         "type": "string",
         "locations":
-          [ { "lineno": 33,
+          [ { "lineno": 31,
               "filename": "HtmlComponent.js" },
-            { "lineno": 40,
+            { "lineno": 38,
               "filename": "HtmlComponent.js" } ],
         "docs":
           { "summary": "Sets or gets the URL of the HTML Component's code.",
@@ -112,7 +111,7 @@
         "ret":
           { "type": "$w.HtmlComponent" },
         "locations":
-          [ { "lineno": 224,
+          [ { "lineno": 216,
               "filename": "HtmlComponent.js" } ],
         "docs":
           { "summary": "Allows the HTML Component to be put into full screen mode.",
@@ -131,7 +130,8 @@
         "extra":
           {  } },
       { "name": "onMessage",
-        "labels": [],
+        "labels":
+          [ "changed" ],
         "nameParams": [],
         "params":
           [ { "name": "handler",
@@ -141,7 +141,7 @@
           { "type": "$w.HtmlComponent",
             "doc": "The HTML Code element that triggered the event." },
         "locations":
-          [ { "lineno": 171,
+          [ { "lineno": 166,
               "filename": "HtmlComponent.js" } ],
         "docs":
           { "summary": "Adds an event handler that runs when the HTML Component\n sends a message.",
@@ -177,21 +177,6 @@
                       "} );" ],
                   "extra":
                     {  } },
-                { "title": "Communicate with an HTML Component",
-                  "body":
-                    [ "$w.onReady(() => {",
-                      "  // Send message to HTML Component",
-                      "  $w('#sendButton').onClick(() => {",
-                      "    $w('#htmlComponent').postMessage('HELLO FROM THE PAGE');",
-                      "  });",
-                      "",
-                      "  // Handle messages that the HTML Component sends to the page",
-                      "  $w('#htmlComponent').onMessage((event) => {",
-                      "    $w('#message').text = event.data;",
-                      "  });",
-                      "});" ],
-                  "extra":
-                    { "description": "This example shows how to send information from the page to the HTML Component and from the HTML Component to the page. \n You can test out the code in our [example template](https://manage.wix.com/edit-template/from?originTemplateId=d39789d7-13ee-4208-8467-8a939cd8ed8c&templateId=cfd24f07-e15f-4091-b110-2b8b889fa1e3&autoDevMode=true)." } },
                 { "title": "Send a message to an HTML Component and receive a confirmation",
                   "body":
                     [ "/* * * * * * * * * * * * * * * * * * * * * * * * *",
@@ -256,7 +241,8 @@
         "extra":
           { "eventType": "message" } },
       { "name": "postMessage",
-        "labels": [],
+        "labels":
+          [ "changed" ],
         "nameParams": [],
         "params":
           [ { "name": "message",
@@ -272,7 +258,7 @@
         "ret":
           { "type": "void" },
         "locations":
-          [ { "lineno": 99,
+          [ { "lineno": 97,
               "filename": "HtmlComponent.js" } ],
         "docs":
           { "summary": "Sends a message to the HTML Component.",
@@ -329,21 +315,6 @@
                     [ "$w(\"#myHtmlComponent\").postMessage(\"Message from page code!\");" ],
                   "extra":
                     {  } },
-                { "title": "Communicate with an HTML Component",
-                  "body":
-                    [ "$w.onReady(() => {",
-                      "  // Send message to HTML Component",
-                      "  $w('#sendButton').onClick(() => {",
-                      "    $w('#htmlComponent').postMessage('HELLO FROM THE PAGE');",
-                      "  });",
-                      "",
-                      "  // Handle messages that the HTML Component sends to the page",
-                      "  $w('#htmlComponent').onMessage((event) => {",
-                      "    $w('#message').text = event.data;",
-                      "  });",
-                      "});" ],
-                  "extra":
-                    { "description": "This example shows how to send information from the page to the HTML Component and from the HTML Component to the page. \n You can test out the code in our [example template](https://manage.wix.com/edit-template/from?originTemplateId=d39789d7-13ee-4208-8467-8a939cd8ed8c&templateId=cfd24f07-e15f-4091-b110-2b8b889fa1e3&autoDevMode=true)." } },
                 { "title": "Send a message to an HTML Component and receive a confirmation",
                   "body":
                     [ "/* * * * * * * * * * * * * * * * * * * * * * * * *",
@@ -413,9 +384,6 @@
     { "queryable": true },
   "relatedContent":
     [ { "icon": "example",
-        "text": "Hello HTML Component (Getting Started)",
-        "url": "https://www.wix.com/velo/example/hello-html-component" },
-      { "icon": "example",
         "text": "Adding Multiple Markers in Google Maps",
         "url": "https://www.wix.com/code/home/forum/wix-tips-and-updates/example-multiple-markers-google-maps" },
       { "icon": "example",

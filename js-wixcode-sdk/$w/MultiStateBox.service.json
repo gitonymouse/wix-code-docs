@@ -5,7 +5,8 @@
       "$w.HiddenCollapsedMixin",
       "$w.ClickableMixin",
       "$w.ContainableMixin" ],
-  "labels": [],
+  "labels":
+    [ "changed" ],
   "location":
     { "lineno": 1,
       "filename": "MultiStateBox.js" },
@@ -15,9 +16,7 @@
         [ "A [multi-state box](https://support.wix.com/en/article/velo-about-multi-state-boxes) contains",
           "multiple states, each with different content. A multi-state box displays one state at a time.",
           "",
-          "For a tutorial on working with your multi-state box and Velo, click [here](https://support.wix.com/en/article/velo-tutorial-working-with-multi-state-boxes-and-code).",
-          "",
-          "Get hands-on experience with multi-state box on our [Hello Multi-state Boxes](https://www.wix.com/velo/example/hello-multi-state-boxes) example page." ],
+          "For a tutorial on working with your multi-state box and Velo, click [here](https://support.wix.com/en/article/velo-tutorial-working-with-multi-state-boxes-and-code)." ],
       "links": [],
       "examples": [],
       "extra":
@@ -29,7 +28,7 @@
         "set": false,
         "type": "$w.State",
         "locations":
-          [ { "lineno": 48,
+          [ { "lineno": 45,
               "filename": "MultiStateBox.js" } ],
         "docs":
           { "summary": "Gets the multi-state box's current state.",
@@ -55,7 +54,7 @@
             "typeParams":
               [ "$w.State" ] },
         "locations":
-          [ { "lineno": 98,
+          [ { "lineno": 92,
               "filename": "MultiStateBox.js" } ],
         "docs":
           { "summary": "Gets a list of all the states contained in the multi-state box.",
@@ -72,7 +71,8 @@
           {  } } ],
   "operations":
     [ { "name": "changeState",
-        "labels": [],
+        "labels":
+          [ "changed" ],
         "nameParams": [],
         "params":
           [ { "name": "stateReference",
@@ -87,7 +87,7 @@
                   [ "$w.State" ] },
             "doc": "Fulfilled - The state that the multi-state box changed to.\nRejected - Error message: If no argument was provided or the argument is not a string or an existing state." },
         "locations":
-          [ { "lineno": 62,
+          [ { "lineno": 59,
               "filename": "MultiStateBox.js" } ],
         "docs":
           { "summary": "Change the multi-state box's current state to a specific state.",
@@ -136,24 +136,6 @@
                       "" ],
                   "extra":
                     { "description": "This example demonstrates how to switch back and forth between 2 states. The multi-state box has 2 states, with IDs `state1` and `state2`. Each state has a button. When a site visitor clicks the button, the multi-state box moves to the other state." } },
-                { "title": "Switch between 3 states",
-                  "body":
-                    [ "$w.onReady(() => {",
-                      "  $w('#newYorkButton').onClick(() => {",
-                      "    $w('#statebox').changeState('newYork');",
-                      "  });",
-                      "",
-                      "  $w('#texasButton').onClick(() => {",
-                      "    $w('#statebox').changeState('texas');",
-                      "  });",
-                      "",
-                      "  $w('#californiaButton').onClick(() => {",
-                      "    $w('#statebox').changeState('california');",
-                      "  });",
-                      "});",
-                      "" ],
-                  "extra":
-                    { "description": "This example shows how to change between states in multi-state boxes using code. \n You can test out the code in our [example template](https://manage.wix.com/edit-template/from?originTemplateId=65aa0783-be71-42bc-ac6b-c21b454748f5&templateId=d87fbeb3-300c-49da-b93a-a2a5b4e620c6&autoDevMode=true)." } },
                 { "title": "State per Status",
                   "body":
                     [ "wixLocation.onChange(() => {",
@@ -193,7 +175,7 @@
           { "type": "$w.MultiStateBox",
             "doc": "The multi-state box on which the event is now registered." },
         "locations":
-          [ { "lineno": 26,
+          [ { "lineno": 23,
               "filename": "MultiStateBox.js" } ],
         "docs":
           { "summary": "Adds an event handler that runs when the multi-state box moves to a new state.",
@@ -220,9 +202,6 @@
     { "queryable": true },
   "relatedContent":
     [ { "icon": "example",
-        "text": "Hello Multi-state Boxes (Getting Started)",
-        "url": "https://www.wix.com/velo/example/hello-multi-state-boxes" },
-      { "icon": "example",
         "text": "State Toggle",
         "url": "https://www.wix.com/velo/example/state-toggle" },
       { "icon": "article",

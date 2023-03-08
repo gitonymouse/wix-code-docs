@@ -4,7 +4,8 @@
     [ "$w.Element",
       "$w.HiddenCollapsedMixin",
       "$w.ContainableMixin" ],
-  "labels": [],
+  "labels":
+    [ "changed" ],
   "location":
     { "lineno": 1,
       "filename": "AccordionItem.js" },
@@ -56,7 +57,8 @@
         "extra":
           {  } },
       { "name": "label",
-        "labels": [],
+        "labels":
+          [ "changed" ],
         "get": true,
         "set": true,
         "type": "string",
@@ -73,12 +75,12 @@
             "examples":
               [ { "title": "Get an accordion item's label",
                   "body":
-                    [ "let myLabel = $w(\"#myAccordionItem\").label;" ],
+                    [ "let myLabel = $w(\"#accordionItem1\").label;" ],
                   "extra":
                     {  } },
                 { "title": "Set an accordion item's label",
                   "body":
-                    [ "$w(\"#myAccordionItem\").label = \"About\";" ],
+                    [ "$w(\"#accordionItem1\").label = \"About\";" ],
                   "extra":
                     {  } } ],
             "extra":
@@ -87,7 +89,8 @@
           {  } } ],
   "operations":
     [ { "name": "collapse",
-        "labels": [],
+        "labels":
+          [ "changed" ],
         "nameParams": [],
         "params": [],
         "ret":
@@ -120,7 +123,8 @@
                     {  } },
                 { "title": "Toggle an accordion item's collapsed state",
                   "body":
-                    [ "if( $w(\"#accordionItem3\").collapsed ) {",
+                    [ "let isItem3collapsed = $w(\"#accordionItem3\").collapsed;",
+                      "if(isItem3collapsed) {",
                       " $w(\"#accordionItem3\").expand();",
                       "}",
                       "else {",
@@ -133,7 +137,8 @@
         "extra":
           {  } },
       { "name": "expand",
-        "labels": [],
+        "labels":
+          [ "changed" ],
         "nameParams": [],
         "params": [],
         "ret":
@@ -157,16 +162,6 @@
               [ { "title": "Expand an accordion item",
                   "body":
                     [ "$w(\"#accordionItem1\").expand();" ],
-                  "extra":
-                    {  } },
-                { "title": "Toggle an accordion item's collapsed state",
-                  "body":
-                    [ "if( $w(\"#accordionItem3\").collapsed ) {",
-                      " $w(\"#accordionItem3\").expand();",
-                      "}",
-                      "else {",
-                      " $w(\"#accordionItem3\").collapse();",
-                      "}" ],
                   "extra":
                     {  } } ],
             "extra":

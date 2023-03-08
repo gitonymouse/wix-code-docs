@@ -6,7 +6,8 @@
       "$w.ClickableMixin",
       "$w.ContainableMixin",
       "$w.FocusMixin" ],
-  "labels": [],
+  "labels":
+    [ "changed" ],
   "location":
     { "lineno": 1,
       "filename": "Accordion.js" },
@@ -17,18 +18,19 @@
           "",
           "An accordion element holds",
           "multiple [accordion item]($w.AccordionItem.html) elements in a vertical stack, each with different content. One or more accordion items can be displayed at a time according to settings. ",
-          "A site visitor can navigate between accordion items without leaving the page, by clicking an accordion item title.",
+          "A site visitor can expand and collapse accordion items by clicking an accordion item title.",
           "",
           "![Accordion Example](images/accordion.png \"Accordion Example\")",
           "",
-          "With Velo, you can reverse the order of accordion items or navigate between them using code. You can also define event handlers that run when accordion item titles are clicked." ],
+          "With Velo, you can change the order of accordion items or expand and collapse them using code. You can also define event handlers that run when accordion item titles are clicked." ],
       "links": [],
       "examples": [],
       "extra":
         {  } },
   "properties":
     [ { "name": "expandedItems",
-        "labels": [],
+        "labels":
+          [ "changed" ],
         "get": true,
         "set": true,
         "type":
@@ -50,18 +52,18 @@
             "examples":
               [ { "title": "Get a list of IDs of accordion items that are expanded",
                   "body":
-                    [ "let  myExpandedItems = $w('#myAccordion').expandedItems;" ],
+                    [ "let  myExpandedItems = $w('#accordion1').expandedItems;" ],
                   "extra":
                     {  } },
                 { "title": "Set an accordion item as expanded by ID",
                   "body":
-                    [ "let items = $w('#myAccordion').items;",
-                      "$w('#myAccordion').expandedItems = [items[0].id];" ],
+                    [ "let items = $w('#accordion1').items;",
+                      "$w('#accordion1').expandedItems = [items[0].id];" ],
                   "extra":
                     {  } },
                 { "title": "Set all accordion items as collapsed",
                   "body":
-                    [ "$w('#myAccordion').expandedItems = [];" ],
+                    [ "$w('#accordion1').expandedItems = [];" ],
                   "extra":
                     {  } } ],
             "extra":
@@ -69,13 +71,11 @@
         "extra":
           {  } },
       { "name": "items",
-        "labels": [],
+        "labels":
+          [ "changed" ],
         "get": true,
         "set": true,
-        "type":
-          { "name": "Array",
-            "typeParams":
-              [ "$w.AccordionItem" ] },
+        "type": "Object",
         "locations":
           [ { "lineno": 39,
               "filename": "Accordion.js" },
@@ -90,17 +90,18 @@
             "examples":
               [ { "title": "Get a list of accordion items in an accordion element",
                   "body":
-                    [ "let myItems = $w(\"#myAccordion\").items;" ],
+                    [ "let myItems = $w(\"#accordion1\").items;" ],
                   "extra":
                     {  } },
                 { "title": "Set list of accordion items in an accordion element",
                   "body":
-                    [ "$w(\"#myAccordion\").items = [item1];" ],
+                    [ "let items = $w('#accordion1').items;",
+                      "$w(\"#accordion1\").items = [item1];" ],
                   "extra":
                     {  } },
                 { "title": "Reverse order of accordion items in an accordion element",
                   "body":
-                    [ "$w('#myAccordion').items = items.reverse();" ],
+                    [ "$w('#accordion1').items = items.reverse();" ],
                   "extra":
                     {  } } ],
             "extra":
@@ -108,7 +109,8 @@
         "extra":
           {  } },
       { "name": "multipleExpand",
-        "labels": [],
+        "labels":
+          [ "changed" ],
         "get": true,
         "set": true,
         "type": "boolean",
@@ -125,12 +127,12 @@
             "examples":
               [ { "title": "Get whether an accordion can expand multiple items",
                   "body":
-                    [ "let  myExpandedItems = $w('#myAccordion').expandedItems; //true" ],
+                    [ "let  myExpandedItems = $w('#accordion1').expandedItems;" ],
                   "extra":
                     {  } },
                 { "title": "Set an accordion to expand multiple items",
                   "body":
-                    [ "$w(\"#myAccordion\").multipleExpand = true;" ],
+                    [ "$w(\"#accordion1\").multipleExpand = true;" ],
                   "extra":
                     {  } } ],
             "extra":
@@ -139,7 +141,8 @@
           {  } } ],
   "operations":
     [ { "name": "onItemClicked",
-        "labels": [],
+        "labels":
+          [ "changed" ],
         "nameParams": [],
         "params":
           [ { "name": "eventHandler",
@@ -160,8 +163,8 @@
             "examples":
               [ { "title": "Get the ID of the accordion item whose title was clicked",
                   "body":
-                    [ "$w(\"#myAccordionElement\").onItemClicked((event) => {",
-                      " let itemClicked = event.items.id ; // \"item3\"",
+                    [ "$w(\"#accordionItem1\").onItemClicked((event) => {",
+                      " let itemClicked = event.id ; // \"item3\"",
                       "});" ],
                   "extra":
                     {  } } ],
