@@ -4,7 +4,8 @@
     [ "$w.Element",
       "$w.HiddenCollapsedMixin",
       "$w.ContainableMixin" ],
-  "labels": [],
+  "labels":
+    [ "changed" ],
   "location":
     { "lineno": 1,
       "filename": "AccordionItem.js" },
@@ -15,7 +16,7 @@
           "",
           "An accordion item element is contained within an [accordion]($w.Accordion.html) element. Each accordion element contains multiple accordion items.",
           "One or multiple accordion items can be displayed concurrently according to settings. The site visitor can ",
-          "navigate between accordion items without leaving the page, by clicking an accordion item title.",
+          "navigate between accordion items without leaving the page, by clicking a title.",
           "",
           "![accordion item Example](images/accordion.png \"Accordion Item Example\")" ],
       "links": [],
@@ -24,7 +25,8 @@
         {  } },
   "properties":
     [ { "name": "collapsed",
-        "labels": [],
+        "labels":
+          [ "changed" ],
         "get": true,
         "set": false,
         "type": "boolean",
@@ -37,11 +39,7 @@
               [ "If collapsed is `true`, the accordion item is not displayed on the page under any circumstances. ",
                 "However, the collapsed accordion item is still in the site's DOM. ",
                 "",
-                "Unlike a `hidden` element, ",
-                "a collapsed element doesn't take up any space on the page. When collapsed, ",
-                "elements positioned within 70 pixels below the collapsed element move up ",
-                "to take the collapsed element's place where possible. ",
-                "The elements that move up maintain their positions relative to one another.",
+                "Unlike a `hidden` element, a collapsed element doesn't take up any space on the page. ",
                 "",
                 "To set the collapsed property on an accordion item, use the accordion item's `collapse()` and `expand()` functions." ],
             "links": [],
@@ -98,7 +96,7 @@
                   [ "void" ] },
             "doc": "Fulfilled - When the accordion item's `collapsed` property has been set to `true`." },
         "locations":
-          [ { "lineno": 58,
+          [ { "lineno": 54,
               "filename": "AccordionItem.js" } ],
         "docs":
           { "summary": "Collapses the element.",
@@ -145,7 +143,7 @@
                   [ "void" ] },
             "doc": "Fulfilled - When the accordion item's `collapsed` property has been set to `false`." },
         "locations":
-          [ { "lineno": 79,
+          [ { "lineno": 75,
               "filename": "AccordionItem.js" } ],
         "docs":
           { "summary": "Expands the accordion item.",

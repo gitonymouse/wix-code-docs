@@ -6,7 +6,8 @@
       "$w.ClickableMixin",
       "$w.ContainableMixin",
       "$w.FocusMixin" ],
-  "labels": [],
+  "labels":
+    [ "changed" ],
   "location":
     { "lineno": 1,
       "filename": "Accordion.js" },
@@ -19,7 +20,7 @@
           "multiple [accordion item]($w.AccordionItem.html) elements in a vertical stack, each with different content. One or more accordion items can be displayed at a time according to settings. ",
           "A site visitor can expand and collapse accordion items by clicking an accordion item title.",
           "",
-          "![Accordion Example](images/accordion.png \"Accordion Example\")",
+          "![Accordion Example](images/accordion.png \"Accordion Example\") ",
           "",
           "With Velo, you can change the order of accordion items or expand and collapse them using code. You can also define event handlers that run when accordion item titles are clicked." ],
       "links": [],
