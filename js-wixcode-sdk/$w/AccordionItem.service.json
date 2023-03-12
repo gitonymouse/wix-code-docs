@@ -80,7 +80,8 @@
                     {  } },
                 { "title": "Set an accordion item's label",
                   "body":
-                    [ "$w(\"#accordionItem1\").label = \"About\";" ],
+                    [ "let myItemLabel = $w('#accordionItem1').label",
+                      "myItemsLabel = \"About\";" ],
                   "extra":
                     {  } } ],
             "extra":
@@ -89,8 +90,7 @@
           {  } } ],
   "operations":
     [ { "name": "collapse",
-        "labels":
-          [ "changed" ],
+        "labels": [],
         "nameParams": [],
         "params": [],
         "ret":
@@ -137,8 +137,7 @@
         "extra":
           {  } },
       { "name": "expand",
-        "labels":
-          [ "changed" ],
+        "labels": [],
         "nameParams": [],
         "params": [],
         "ret":

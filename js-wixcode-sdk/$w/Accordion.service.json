@@ -29,8 +29,7 @@
         {  } },
   "properties":
     [ { "name": "expandedItems",
-        "labels":
-          [ "changed" ],
+        "labels": [],
         "get": true,
         "set": true,
         "type":
@@ -101,7 +100,8 @@
                     {  } },
                 { "title": "Reverse order of accordion items in an accordion element",
                   "body":
-                    [ "$w('#accordion1').items = items.reverse();" ],
+                    [ "let myItems = $w('#myAccordion').items",
+                      "$w('#accordion1').items = myItems.reverse();" ],
                   "extra":
                     {  } } ],
             "extra":
@@ -127,7 +127,7 @@
             "examples":
               [ { "title": "Get whether an accordion can expand multiple items",
                   "body":
-                    [ "let  myExpandedItems = $w('#accordion1').expandedItems;" ],
+                    [ "let isMultipleExpand = $w(\"#accordion1\").multipleExpand;" ],
                   "extra":
                     {  } },
                 { "title": "Set an accordion to expand multiple items",
@@ -141,8 +141,7 @@
           {  } } ],
   "operations":
     [ { "name": "onItemClicked",
-        "labels":
-          [ "changed" ],
+        "labels": [],
         "nameParams": [],
         "params":
           [ { "name": "eventHandler",
