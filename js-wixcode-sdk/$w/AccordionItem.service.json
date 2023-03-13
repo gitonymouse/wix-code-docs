@@ -4,7 +4,8 @@
     [ "$w.Element",
       "$w.HiddenCollapsedMixin",
       "$w.ContainableMixin" ],
-  "labels": [],
+  "labels":
+    [ "changed" ],
   "location":
     { "lineno": 1,
       "filename": "AccordionItem.js" },
@@ -15,7 +16,7 @@
           "",
           "An accordion item element is contained within an [accordion]($w.Accordion.html) element. Each accordion element contains multiple accordion items.",
           "One or multiple accordion items can be displayed concurrently according to settings. The site visitor can ",
-          "navigate between accordion items without leaving the page, by clicking a title.",
+          "navigate between accordion items without leaving the page by clicking a title.",
           "",
           "![accordion item Example](images/accordion.png \"Accordion Item Example\")" ],
       "links": [],
@@ -84,7 +85,8 @@
           {  } } ],
   "operations":
     [ { "name": "collapse",
-        "labels": [],
+        "labels":
+          [ "changed" ],
         "nameParams": [],
         "params": [],
         "ret":
@@ -97,7 +99,7 @@
           [ { "lineno": 54,
               "filename": "AccordionItem.js" } ],
         "docs":
-          { "summary": "Collapses the element.",
+          { "summary": "Collapses the accordion item.",
             "description":
               [ "The `collapse()` function returns a Promise that is resolved when the",
                 " accordion item's [`collapsed`](#collapsed) property has been set to `true`.",

@@ -17,7 +17,7 @@
         [ "> This feature is currently only available in Editor X.",
           "",
           "An accordion element holds",
-          "multiple [accordion item]($w.AccordionItem.html) elements in a vertical stack, each with different content. One or more accordion items can be displayed at a time according to settings. ",
+          "multiple [accordion item]($w.AccordionItem.html) elements in a vertical stack, each with different content. One or more accordion items can be expanded at a time according to settings. ",
           "A site visitor can expand and collapse accordion items by clicking an accordion item title.",
           "",
           "![Accordion Example](images/accordion.png \"Accordion Example\")",
@@ -30,7 +30,8 @@
         {  } },
   "properties":
     [ { "name": "expandedItems",
-        "labels": [],
+        "labels":
+          [ "changed" ],
         "get": true,
         "set": true,
         "type":
@@ -47,7 +48,7 @@
             "description":
               [ "Gets a list of IDs of expanded accordion items or sets a list of expanded accordion items.",
                 "> **Notes:**",
-                "> When `multipleExpand` is set to `false`, multiple accordion items cannot be expanded." ],
+                "> When `multipleExpand` is set to `false`, multiple accordion items cannot be expanded concurrently." ],
             "links": [],
             "examples":
               [ { "title": "Get a list of IDs of accordion items that are expanded",
@@ -71,7 +72,8 @@
         "extra":
           {  } },
       { "name": "items",
-        "labels": [],
+        "labels":
+          [ "changed" ],
         "get": true,
         "set": true,
         "type": "Object",
@@ -81,24 +83,24 @@
             { "lineno": 55,
               "filename": "Accordion.js" } ],
         "docs":
-          { "summary": "Gets or sets a list of the accordion items contained in an accordion element.",
+          { "summary": "Gets or sets a list of the items contained in an accordion element.",
             "description":
-              [ "The accordion items list is in the same order as the accordion items appear.",
+              [ "The items list is in the same order as the accordion items appear.",
                 "Each of the items is an object containing item ID and item label." ],
             "links": [],
             "examples":
-              [ { "title": "Get a list of accordion items in an accordion element",
+              [ { "title": "Get a list of items in an accordion element",
                   "body":
                     [ "let myItems = $w(\"#accordion1\").items;" ],
                   "extra":
                     {  } },
-                { "title": "Set list of accordion items in an accordion element",
+                { "title": "Set list of items in an accordion element",
                   "body":
                     [ "let items = $w('#accordion1').items;",
                       "$w(\"#accordion1\").items = [item1];" ],
                   "extra":
                     {  } },
-                { "title": "Reverse order of accordion items in an accordion element",
+                { "title": "Reverse order of items in an accordion element",
                   "body":
                     [ "let myItems = $w('#myAccordion').items",
                       "$w('#accordion1').items = myItems.reverse();" ],
