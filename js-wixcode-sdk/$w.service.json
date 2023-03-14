@@ -340,7 +340,7 @@
         "ret":
           { "type": "void" },
         "locations":
-          [ { "lineno": 391,
+          [ { "lineno": 389,
               "filename": "Repeater.js" } ],
         "docs":
           { "description":
@@ -513,7 +513,7 @@
         "ret":
           { "type": "void" },
         "locations":
-          [ { "lineno": 362,
+          [ { "lineno": 360,
               "filename": "Repeater.js" } ],
         "docs":
           { "description":
