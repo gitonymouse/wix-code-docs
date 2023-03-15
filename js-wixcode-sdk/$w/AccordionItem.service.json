@@ -54,8 +54,7 @@
         "extra":
           {  } },
       { "name": "label",
-        "labels":
-          [ "changed" ],
+        "labels": [],
         "get": true,
         "set": true,
         "type": "string",
@@ -104,7 +103,8 @@
           { "summary": "Collapses the accordion item.",
             "description":
               [ "When you collapse an accordion item, this collapses only the content and ",
-                "the title remains displayed.",
+                "the title remains displayed.  ",
+                "",
                 "The `collapse()` function returns a Promise that is resolved when the",
                 "accordion item's [`collapsed`](#collapsed) property has been set to `true`.",
                 "",
@@ -148,13 +148,14 @@
                   [ "void" ] },
             "doc": "Fulfilled - When the accordion item's `collapsed` property has been set to `false`." },
         "locations":
-          [ { "lineno": 78,
+          [ { "lineno": 79,
               "filename": "AccordionItem.js" } ],
         "docs":
           { "summary": "Expands the accordion item.",
             "description":
               [ "When you expand an accordion item, this expands the accordion item content under ",
-                "the accordion item's title.",
+                "the accordion item's title.  ",
+                "",
                 "The `expand()` function returns a Promise that is resolved when the",
                 "accordion item's [`collapsed`](#collapsed) property has been set to `false`" ],
             "links":
