@@ -10,11 +10,11 @@
     { "lineno": 1,
       "filename": "AccordionItem.js" },
   "docs":
-    { "summary": "An accordion item displayed within an [accordion]($w.Accordion.html) element.",
+    { "summary": "An accordion item displayed within an accordion element.",
       "description":
         [ "> This feature is currently only available in Editor X.",
           "",
-          "Each accordion element contains multiple accordion items.",
+          "Each [accordion]($w.Accordion.html) element contains multiple accordion items.",
           "One or multiple accordion items can be displayed concurrently according to settings. ",
           "The site visitor can navigate between accordion items without leaving the page ",
           "by clicking a title.",
@@ -26,8 +26,7 @@
         {  } },
   "properties":
     [ { "name": "collapsed",
-        "labels":
-          [ "changed" ],
+        "labels": [],
         "get": true,
         "set": false,
         "type": "boolean",
@@ -87,7 +86,8 @@
           {  } } ],
   "operations":
     [ { "name": "collapse",
-        "labels": [],
+        "labels":
+          [ "changed" ],
         "nameParams": [],
         "params": [],
         "ret":
@@ -102,7 +102,7 @@
         "docs":
           { "summary": "Collapses the accordion item.",
             "description":
-              [ "When you collapse an accordion item, this collapses only the content and ",
+              [ "When you collapse an accordion item, this collapses only the content, and ",
                 "the title remains displayed.  ",
                 "",
                 "The `collapse()` function returns a Promise that is resolved when the",
@@ -137,7 +137,8 @@
         "extra":
           {  } },
       { "name": "expand",
-        "labels": [],
+        "labels":
+          [ "changed" ],
         "nameParams": [],
         "params": [],
         "ret":
@@ -156,7 +157,7 @@
                 "the accordion item's title.  ",
                 "",
                 "The `expand()` function returns a Promise that is resolved when the",
-                "accordion item's [`collapsed`](#collapsed) property has been set to `false`" ],
+                "accordion item's [`collapsed`](#collapsed) property has been set to `false`." ],
             "links":
               [ "[expand( )](#expand)",
                 "[show( )]($w.HiddenMixin.html#show)" ],
