@@ -4,8 +4,7 @@
     [ "$w.Element",
       "$w.HiddenCollapsedMixin",
       "$w.ContainableMixin" ],
-  "labels":
-    [ "changed" ],
+  "labels": [],
   "location":
     { "lineno": 1,
       "filename": "AccordionItem.js" },
@@ -85,8 +84,7 @@
           {  } } ],
   "operations":
     [ { "name": "collapse",
-        "labels":
-          [ "changed" ],
+        "labels": [],
         "nameParams": [],
         "params": [],
         "ret":
@@ -145,8 +143,7 @@
         "extra":
           {  } },
       { "name": "expand",
-        "labels":
-          [ "changed" ],
+        "labels": [],
         "nameParams": [],
         "params": [],
         "ret":

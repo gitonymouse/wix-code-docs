@@ -6,7 +6,8 @@
       "$w.ClickableMixin",
       "$w.ContainableMixin",
       "$w.FocusMixin" ],
-  "labels": [],
+  "labels":
+    [ "changed" ],
   "location":
     { "lineno": 1,
       "filename": "Accordion.js" },
@@ -30,7 +31,8 @@
         {  } },
   "properties":
     [ { "name": "expandedItems",
-        "labels": [],
+        "labels":
+          [ "changed" ],
         "get": true,
         "set": true,
         "type":
@@ -53,7 +55,7 @@
                     [ "let  myExpandedItems = $w('#myAccordion').expandedItems;" ],
                   "extra":
                     {  } },
-                { "title": "Expand the first accordion item, collapsing the rest",
+                { "title": "Expand the first accordion item",
                   "body":
                     [ "let items = $w('#myAccordion').items;",
                       "let firstItem = items[0];",
