@@ -4,7 +4,8 @@
     [ "$w.Element",
       "$w.HiddenCollapsedMixin",
       "$w.ContainableMixin" ],
-  "labels": [],
+  "labels":
+    [ "changed" ],
   "location":
     { "lineno": 1,
       "filename": "AccordionItem.js" },
@@ -84,7 +85,8 @@
           {  } } ],
   "operations":
     [ { "name": "collapse",
-        "labels": [],
+        "labels":
+          [ "changed" ],
         "nameParams": [],
         "params": [],
         "ret":
@@ -129,13 +131,22 @@
                       " $w(\"#myAccordionItem\").collapse();",
                       "}" ],
                   "extra":
+                    {  } },
+                { "title": "Collapse an accordion item and log a message when done",
+                  "body":
+                    [ "$w(\"#myAccordionItem\").collapse()",
+                      "  .then(() => {",
+                      "    console.log(\"Done with collapse\");",
+                      "  });" ],
+                  "extra":
                     {  } } ],
             "extra":
               {  } },
         "extra":
           {  } },
       { "name": "expand",
-        "labels": [],
+        "labels":
+          [ "changed" ],
         "nameParams": [],
         "params": [],
         "ret":
@@ -145,7 +156,7 @@
                   [ "void" ] },
             "doc": "Fulfilled - When the accordion item's `collapsed` property has been set to `false`." },
         "locations":
-          [ { "lineno": 79,
+          [ { "lineno": 80,
               "filename": "AccordionItem.js" } ],
         "docs":
           { "summary": "Expands the accordion item.",
@@ -174,6 +185,14 @@
                       "else {",
                       " $w(\"#myAccordionItem\").expand();",
                       "}" ],
+                  "extra":
+                    {  } },
+                { "title": "Expand an accordion item and log a message when done",
+                  "body":
+                    [ "$w(\"#myAccordionItem\").expand()",
+                      "  .then(() => {",
+                      "    console.log(\"Done with expand\");",
+                      "  });" ],
                   "extra":
                     {  } } ],
             "extra":
