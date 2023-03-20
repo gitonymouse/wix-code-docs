@@ -31,8 +31,7 @@
         {  } },
   "properties":
     [ { "name": "expandedItems",
-        "labels":
-          [ "changed" ],
+        "labels": [],
         "get": true,
         "set": true,
         "type":
@@ -40,9 +39,9 @@
             "typeParams":
               [ "string" ] },
         "locations":
-          [ { "lineno": 69,
+          [ { "lineno": 84,
               "filename": "Accordion.js" },
-            { "lineno": 85,
+            { "lineno": 100,
               "filename": "Accordion.js" } ],
         "docs":
           { "summary": "Gets or sets a list of IDs of expanded accordion items.",
@@ -74,7 +73,8 @@
         "extra":
           {  } },
       { "name": "items",
-        "labels": [],
+        "labels":
+          [ "changed" ],
         "get": true,
         "set": true,
         "type":
@@ -84,14 +84,25 @@
         "locations":
           [ { "lineno": 47,
               "filename": "Accordion.js" },
-            { "lineno": 63,
+            { "lineno": 78,
               "filename": "Accordion.js" } ],
         "docs":
           { "summary": "Gets or sets a list of the items contained in an accordion element.",
             "description":
               [ "The items list is in the same order as the accordion items appear.",
                 "Each of the items is an object that represents an accordion item. Each items object ",
-                "consists of an item ID and an item label." ],
+                "consists of an item ID and an item label.",
+                "",
+                "Setting the `items` property sets all the items available to a user.",
+                "",
+                "Getting the `items` property returns IDs of the current",
+                "list of accordion items.",
+                "",
+                "You cannot modify the items array in-place. To add, change, or remove individual items:",
+                "",
+                "   1. Store the value of the `items` property in a variable.",
+                "   1. Make changes to the items array.",
+                "   1. Reset the `items` property with the modified array." ],
             "links": [],
             "examples":
               [ { "title": "Get list of items in an accordion element",
@@ -111,21 +122,27 @@
                     [ "let myItems = $w('#myAccordion').items",
                       "$w('#myAccordion').items = myItems.reverse();" ],
                   "extra":
-                    {  } } ],
+                    {  } },
+                { "title": "Add an item to an accordion",
+                  "body":
+                    [ "let myItems = $w(\"#accordion1\").items;",
+                      "myItems.push({\"label\": \"New Label\", \"id\": \"item5\"});",
+                      "$w(\"#accordion1\").items = myItems;" ],
+                  "extra":
+                    { "description": "This example retrieves the items of an accordion, adds a new\n item, and then overwrites the old items." } } ],
             "extra":
               {  } },
         "extra":
           {  } },
       { "name": "multipleExpand",
-        "labels":
-          [ "changed" ],
+        "labels": [],
         "get": true,
         "set": true,
         "type": "boolean",
         "locations":
-          [ { "lineno": 91,
+          [ { "lineno": 106,
               "filename": "Accordion.js" },
-            { "lineno": 106,
+            { "lineno": 121,
               "filename": "Accordion.js" } ],
         "docs":
           { "summary": "Gets or sets if multiple accordion items can be expanded at one time.",
