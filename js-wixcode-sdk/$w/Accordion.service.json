@@ -6,7 +6,8 @@
       "$w.ClickableMixin",
       "$w.ContainableMixin",
       "$w.FocusMixin" ],
-  "labels": [],
+  "labels":
+    [ "changed" ],
   "location":
     { "lineno": 1,
       "filename": "Accordion.js" },
@@ -38,9 +39,9 @@
             "typeParams":
               [ "string" ] },
         "locations":
-          [ { "lineno": 62,
+          [ { "lineno": 69,
               "filename": "Accordion.js" },
-            { "lineno": 76,
+            { "lineno": 83,
               "filename": "Accordion.js" } ],
         "docs":
           { "summary": "Gets or sets a list of IDs of expanded accordion items.",
@@ -70,14 +71,18 @@
         "extra":
           {  } },
       { "name": "items",
-        "labels": [],
+        "labels":
+          [ "changed" ],
         "get": true,
         "set": true,
-        "type": "void",
+        "type":
+          { "name": "Array",
+            "typeParams":
+              [ "$w.Accordion.Item" ] },
         "locations":
-          [ { "lineno": 40,
+          [ { "lineno": 47,
               "filename": "Accordion.js" },
-            { "lineno": 56,
+            { "lineno": 63,
               "filename": "Accordion.js" } ],
         "docs":
           { "summary": "Gets or sets a list of the items contained in an accordion element.",
@@ -115,9 +120,9 @@
         "set": true,
         "type": "boolean",
         "locations":
-          [ { "lineno": 82,
+          [ { "lineno": 89,
               "filename": "Accordion.js" },
-            { "lineno": 97,
+            { "lineno": 104,
               "filename": "Accordion.js" } ],
         "docs":
           { "summary": "Gets of sets if multiple accordion items can be expanded at one time.",
@@ -172,6 +177,29 @@
         "extra":
           { "eventType": "click" } } ],
   "callbacks": [],
-  "messages": [],
+  "messages":
+    [ { "name": "Item",
+        "locations":
+          [ { "lineno": 40,
+              "filename": "Accordion.js" } ],
+        "docs":
+          { "summary": "An object used by the `items` property that contains the attributes of an accordion item.",
+            "links": [],
+            "examples": [],
+            "extra":
+              {  } },
+        "members":
+          [ { "name": "id",
+              "type": "string",
+              "doc": "The ID of the accordion item.",
+              "optional": true },
+            { "name": "label",
+              "type": "string",
+              "doc": "The label of the accordion item. This is what a user sees.",
+              "optional": true } ],
+        "extra":
+          {  },
+        "labels":
+          [ "new" ] } ],
   "extra":
     {  } }
