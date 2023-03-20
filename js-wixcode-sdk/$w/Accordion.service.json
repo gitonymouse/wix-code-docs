@@ -42,12 +42,14 @@
         "locations":
           [ { "lineno": 69,
               "filename": "Accordion.js" },
-            { "lineno": 83,
+            { "lineno": 85,
               "filename": "Accordion.js" } ],
         "docs":
           { "summary": "Gets or sets a list of IDs of expanded accordion items.",
             "description":
-              [ "Gets a list of IDs of expanded accordion items or sets a list of expanded accordion items." ],
+              [ "Set `expandedItems` to an empty array (`[]`) to collapse any open accordion items.  ",
+                "",
+                "Getting the `expandedItems` property returns the list of IDs of expanded accordion items." ],
             "links": [],
             "examples":
               [ { "title": "Get a list of IDs of accordion items that are expanded",
@@ -55,7 +57,7 @@
                     [ "let  myExpandedItems = $w('#myAccordion').expandedItems;" ],
                   "extra":
                     {  } },
-                { "title": "Expand the first accordion item",
+                { "title": "Expand the first accordion item, and collapses any open accordion items",
                   "body":
                     [ "let items = $w('#myAccordion').items;",
                       "let firstItem = items[0];",
@@ -115,20 +117,21 @@
         "extra":
           {  } },
       { "name": "multipleExpand",
-        "labels": [],
+        "labels":
+          [ "changed" ],
         "get": true,
         "set": true,
         "type": "boolean",
         "locations":
-          [ { "lineno": 89,
+          [ { "lineno": 91,
               "filename": "Accordion.js" },
-            { "lineno": 104,
+            { "lineno": 106,
               "filename": "Accordion.js" } ],
         "docs":
-          { "summary": "Gets of sets if multiple accordion items can be expanded at one time.",
+          { "summary": "Gets or sets if multiple accordion items can be expanded at one time.",
             "description":
               [ "Gets or sets if you can have multiple accordion items expanded concurrently or only one accordion item expanded at a time.",
-                "When set to `false` and an accordionItem1 is open, when you expand accordionItem2, accordionItem1 collapses." ],
+                "When set to `false` and accordionItem1 is open, when you expand accordionItem2, accordionItem1 collapses." ],
             "links": [],
             "examples":
               [ { "title": "Get whether an accordion can expand multiple items",
