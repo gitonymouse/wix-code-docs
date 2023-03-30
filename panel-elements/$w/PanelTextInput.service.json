@@ -1,0 +1,455 @@
+{ "name": "PanelTextInput",
+  "memberOf": "$w",
+  "mixes":
+    [ "$w.HiddenCollapsedMixin",
+      "$w.Element" ],
+  "labels":
+    [ "new" ],
+  "location":
+    { "lineno": 1,
+      "filename": "PanelTextInput.js" },
+  "docs":
+    { "summary": "An input element in a Blocks panel for capturing small amounts of text.",
+      "description":
+        [ "A text input is an input field that receives strings.",
+          "",
+          "> **Important**:  ",
+          "> This element is available only in [custom panels built in Blocks](https://support.wix.com/en/article/wix-blocks-designing-custom-panels-for-your-widgets-action-bar-buttons).  ",
+          "> [Wix Blocks](https://support.wix.com/en/article/wix-blocks-check-out-our-articles) is a workspace for building Wix apps. It is currently a Beta version, open to a limited number of users." ],
+      "links": [],
+      "examples": [],
+      "extra":
+        {  } },
+  "properties":
+    [ { "name": "autoFocus",
+        "labels": [],
+        "get": true,
+        "set": true,
+        "type": "boolean",
+        "defaultValue": "false",
+        "locations":
+          [ { "lineno": 163,
+              "filename": "PanelTextInput.js" },
+            { "lineno": 175,
+              "filename": "PanelTextInput.js" } ],
+        "docs":
+          { "summary": "Sets or gets whether the input field is in focus.",
+            "links": [],
+            "examples":
+              [ { "title": "Get whether the input field is in focus",
+                  "body":
+                    [ "let isAutoFocus = $w(\"#myTextInput\").autoFocus;  // true" ],
+                  "extra":
+                    {  } },
+                { "title": "Set the input field to be in focus",
+                  "body":
+                    [ "$w(\"#myTextInput\").autoFocus = true;" ],
+                  "extra":
+                    {  } } ],
+            "extra":
+              {  } },
+        "extra":
+          {  } },
+      { "name": "divider",
+        "labels": [],
+        "get": true,
+        "set": true,
+        "type": "string",
+        "defaultValue": "\"long\"",
+        "locations":
+          [ { "lineno": 99,
+              "filename": "PanelTextInput.js" },
+            { "lineno": 116,
+              "filename": "PanelTextInput.js" } ],
+        "docs":
+          { "summary": "Sets or gets the type of divider displayed under the element.",
+            "description":
+              [ "The divider type can be:",
+                "* `\"long\"`",
+                "* `\"short\"`",
+                "* `\"none\"`" ],
+            "links": [],
+            "examples":
+              [ { "title": "Get an element's divider type",
+                  "body":
+                    [ "let divider = $w(\"#myElement\").divider;  // \"none\"" ],
+                  "extra":
+                    {  } },
+                { "title": "Set an element's divider type",
+                  "body":
+                    [ "$w(\"#myElement\").divider = \"none\";" ],
+                  "extra":
+                    {  } } ],
+            "extra":
+              {  } },
+        "extra":
+          {  } },
+      { "name": "label",
+        "labels": [],
+        "get": true,
+        "set": true,
+        "type": "string",
+        "locations":
+          [ { "lineno": 62,
+              "filename": "PanelTextInput.js" },
+            { "lineno": 73,
+              "filename": "PanelTextInput.js" } ],
+        "docs":
+          { "summary": "Sets or gets the label of an element.",
+            "links": [],
+            "examples":
+              [ { "title": "Get an element's label",
+                  "body":
+                    [ "let label = $w(\"#myElement\").label;  // \"My element's label\"" ],
+                  "extra":
+                    {  } },
+                { "title": "Set an element's label",
+                  "body":
+                    [ "$w(\"#myElement\").label = \"New Label\";" ],
+                  "extra":
+                    {  } } ],
+            "extra":
+              {  } },
+        "extra":
+          {  } },
+      { "name": "maxLength",
+        "labels": [],
+        "get": true,
+        "set": true,
+        "type": "number",
+        "defaultValue": "72",
+        "locations":
+          [ { "lineno": 261,
+              "filename": "PanelTextInput.js" },
+            { "lineno": 273,
+              "filename": "PanelTextInput.js" } ],
+        "docs":
+          { "summary": "Sets or gets the maximum number of characters in the input text.",
+            "links": [],
+            "examples":
+              [ { "title": "Get a text input's maximum length",
+                  "body":
+                    [ "let myLength = $w(\"#myTextInput\").maxLength;  // 20" ],
+                  "extra":
+                    {  } },
+                { "title": "Set a text input's maximum length",
+                  "body":
+                    [ "$w(\"#myTextInput\").maxLength = 20;" ],
+                  "extra":
+                    {  } } ],
+            "extra":
+              {  } },
+        "extra":
+          {  } },
+      { "name": "placeholder",
+        "labels": [],
+        "get": true,
+        "set": true,
+        "type": "string",
+        "locations":
+          [ { "lineno": 80,
+              "filename": "PanelTextInput.js" },
+            { "lineno": 91,
+              "filename": "PanelTextInput.js" } ],
+        "docs":
+          { "summary": "Sets or gets the placeholder text of an element.",
+            "links": [],
+            "examples":
+              [ { "title": "Get an element's placeholder",
+                  "body":
+                    [ "let label = $w(\"#myElement\").placeholder;  // \"Type your name\"" ],
+                  "extra":
+                    {  } },
+                { "title": "Set an element's placeholder",
+                  "body":
+                    [ "$w(\"#myElement\").placeholder = \"New Placeholder\";" ],
+                  "extra":
+                    {  } } ],
+            "extra":
+              {  } },
+        "extra":
+          {  } },
+      { "name": "prefix",
+        "labels": [],
+        "get": true,
+        "set": true,
+        "type": "string",
+        "defaultValue": "Empty string",
+        "locations":
+          [ { "lineno": 123,
+              "filename": "PanelTextInput.js" },
+            { "lineno": 135,
+              "filename": "PanelTextInput.js" } ],
+        "docs":
+          { "summary": "Sets or gets text that is displayed before the text input field.",
+            "links": [],
+            "examples":
+              [ { "title": "Get a text input's prefix",
+                  "body":
+                    [ "let myPrefix = $w(\"#myTextInput\").prefix;  // \"Mr.\"" ],
+                  "extra":
+                    {  } },
+                { "title": "Set a text input's prefix",
+                  "body":
+                    [ "$w(\"#myTextInput\").prefix = \"New prefix\";" ],
+                  "extra":
+                    {  } } ],
+            "extra":
+              {  } },
+        "extra":
+          {  } },
+      { "name": "readOnly",
+        "labels": [],
+        "get": true,
+        "set": true,
+        "type": "boolean",
+        "defaultValue": "false",
+        "locations":
+          [ { "lineno": 143,
+              "filename": "PanelTextInput.js" },
+            { "lineno": 155,
+              "filename": "PanelTextInput.js" } ],
+        "docs":
+          { "summary": "Sets or gets whether the value of the input element is read-only (cannot be modified by users).",
+            "links": [],
+            "examples":
+              [ { "title": "Get whether the value of the input element is read-only",
+                  "body":
+                    [ "let isReadOnly = $w(\"#myTextInput\").readOnly;  // true" ],
+                  "extra":
+                    {  } },
+                { "title": "Set the value of the input element to be read-only",
+                  "body":
+                    [ "$w(\"#myTextInput\").readOnly = true;" ],
+                  "extra":
+                    {  } } ],
+            "extra":
+              {  } },
+        "extra":
+          {  } },
+      { "name": "regexPattern",
+        "labels": [],
+        "get": true,
+        "set": true,
+        "type": "string",
+        "defaultValue": "Empty string",
+        "locations":
+          [ { "lineno": 221,
+              "filename": "PanelTextInput.js" },
+            { "lineno": 233,
+              "filename": "PanelTextInput.js" } ],
+        "docs":
+          { "summary": "Sets or gets the regex validation pattern.",
+            "links": [],
+            "examples":
+              [ { "title": "Get a text input's regex validation pattern",
+                  "body":
+                    [ "let myRegex = $w(\"#myTextInput\").regexPattern;  // \"^([1-9]|10)$\"" ],
+                  "extra":
+                    {  } },
+                { "title": "Set a text input's regex validation pattern",
+                  "body":
+                    [ "$w(\"#myTextInput\").regexPattern = \"^([1-9]|10)$\"; // Allow only numbers between 1-10" ],
+                  "extra":
+                    {  } } ],
+            "extra":
+              {  } },
+        "extra":
+          {  } },
+      { "name": "selectTextOnFocus",
+        "labels": [],
+        "get": true,
+        "set": true,
+        "type": "boolean",
+        "defaultValue": "true",
+        "locations":
+          [ { "lineno": 182,
+              "filename": "PanelTextInput.js" },
+            { "lineno": 194,
+              "filename": "PanelTextInput.js" } ],
+        "docs":
+          { "summary": "Sets or gets whether the input field content is automatically selected on focus.",
+            "links": [],
+            "examples":
+              [ { "title": "Get whether the input field content is automatically selected on focus",
+                  "body":
+                    [ "let isTextSelectedOnFocus = $w(\"#myTextInput\").selectTextOnFocus;  // true" ],
+                  "extra":
+                    {  } },
+                { "title": "Set the input field content to be automatically selected on focus",
+                  "body":
+                    [ "$w(\"#myTextInput\").selectTextOnFocus = true;" ],
+                  "extra":
+                    {  } } ],
+            "extra":
+              {  } },
+        "extra":
+          {  } },
+      { "name": "tooltip",
+        "labels": [],
+        "get": true,
+        "set": true,
+        "type": "string",
+        "defaultValue": "Empty string",
+        "locations":
+          [ { "lineno": 42,
+              "filename": "PanelTextInput.js" },
+            { "lineno": 56,
+              "filename": "PanelTextInput.js" } ],
+        "docs":
+          { "summary": "Sets or gets an element's tooltip.",
+            "description":
+              [ "Setting the `tooltip` property defines the text that is displayed when a user hovers on an element's ![tooltip-icon](images/tooltip-icon.png) icon." ],
+            "links": [],
+            "examples":
+              [ { "title": "Get an element's tooltip",
+                  "body":
+                    [ "let tooltip = $w(\"#myElement\").tooltip;  // \"Tooltip text\"" ],
+                  "extra":
+                    {  } },
+                { "title": "Set an element's tooltip",
+                  "body":
+                    [ "$w(\"#myElement\").tooltip = \"New tooltip\";" ],
+                  "extra":
+                    {  } } ],
+            "extra":
+              {  } },
+        "extra":
+          {  } },
+      { "name": "usePatternValidation",
+        "labels": [],
+        "get": true,
+        "set": true,
+        "type": "boolean",
+        "defaultValue": "false",
+        "locations":
+          [ { "lineno": 201,
+              "filename": "PanelTextInput.js" },
+            { "lineno": 213,
+              "filename": "PanelTextInput.js" } ],
+        "docs":
+          { "summary": "Sets or gets whether the input field uses regex validation.",
+            "links": [],
+            "examples":
+              [ { "title": "Get whether the input field uses regex validation",
+                  "body":
+                    [ "let patternValidationUsed = $w(\"#myTextInput\").usePatternValidation;  // true" ],
+                  "extra":
+                    {  } },
+                { "title": "Set the input field to use regex validation",
+                  "body":
+                    [ "$w(\"#myTextInput\").usePatternValidation = true;" ],
+                  "extra":
+                    {  } } ],
+            "extra":
+              {  } },
+        "extra":
+          {  } },
+      { "name": "validationMessage",
+        "labels": [],
+        "get": true,
+        "set": true,
+        "type": "string",
+        "defaultValue": "Empty string",
+        "locations":
+          [ { "lineno": 242,
+              "filename": "PanelTextInput.js" },
+            { "lineno": 254,
+              "filename": "PanelTextInput.js" } ],
+        "docs":
+          { "summary": "Sets or gets the error message that is displayed if the regex validation fails.",
+            "links": [],
+            "examples":
+              [ { "title": "Get a text input's validation message",
+                  "body":
+                    [ "let myValidationMessage = $w(\"#myTextInput\").validationMessage;  // \"Please enter a number between 1 and 10.\"" ],
+                  "extra":
+                    {  } },
+                { "title": "Set a text input's validation message",
+                  "body":
+                    [ "$w(\"#myTextInput\").validationMessage = \"Please enter a number between 1 and 10.\";" ],
+                  "extra":
+                    {  } } ],
+            "extra":
+              {  } },
+        "extra":
+          {  } },
+      { "name": "value",
+        "labels": [],
+        "get": true,
+        "set": true,
+        "type": "string",
+        "locations":
+          [ { "lineno": 19,
+              "filename": "PanelTextInput.js" },
+            { "lineno": 35,
+              "filename": "PanelTextInput.js" } ],
+        "docs":
+          { "summary": "Sets or gets an element's value.",
+            "description":
+              [ "To reset the element, restoring any placeholder text, set the value",
+                " property to `null` or `undefined`.",
+                "",
+                "> **Note**: Changing an element's `value` in code does not trigger an `onChange` event." ],
+            "links": [],
+            "examples":
+              [ { "title": "Get an element's value",
+                  "body":
+                    [ "let myValue = $w(\"#myElement\").value; // \"option-1\"" ],
+                  "extra":
+                    {  } },
+                { "title": "Set an element's value",
+                  "body":
+                    [ "$w(\"#myElement\").value = \"option-1\";" ],
+                  "extra":
+                    {  } } ],
+            "extra":
+              {  } },
+        "extra":
+          {  } } ],
+  "operations":
+    [ { "name": "onChange",
+        "labels": [],
+        "nameParams": [],
+        "params":
+          [ { "name": "handler",
+              "type": "$w.EventHandler",
+              "doc": "The name of the function or\n the function expression to run when the element's value changes." } ],
+        "ret":
+          { "type": "$w.Element",
+            "doc": "The element on which the event is now registered." },
+        "locations":
+          [ { "lineno": 287,
+              "filename": "PanelTextInput.js" } ],
+        "docs":
+          { "summary": "Adds an event handler that runs when an input element's value\n is changed.",
+            "description":
+              [ "An element receives a `change` event when a user changes the value",
+                " in an input element.",
+                "",
+                " A `change` event is not triggered when you change an element's value using",
+                " the element's [`value`](#value) property.",
+                "",
+                " Because `onChange()` is fired before validations are performed, do not check",
+                " any of the validation properties in the `onChange()` event handler. For example,",
+                " do not code an if statement that checks the `valid` property in the `onChange()`",
+                " because the property at this point contains values prior to the `onChange()`.",
+                "",
+                " You can also [define an event handler using the Properties and Events panel](https://support.wix.com/en/article/velo-reacting-to-user-actions-using-events)." ],
+            "links": [],
+            "examples":
+              [ { "title": "Get the value of the element that was changed",
+                  "body":
+                    [ "$w(\"#myElement\").onChange( (event) => {",
+                      "  let newValue = event.target.value;  // \"new value\"",
+                      "});" ],
+                  "extra":
+                    {  } } ],
+            "extra":
+              {  } },
+        "extra":
+          { "eventType": "change" } } ],
+  "callbacks": [],
+  "messages": [],
+  "extra":
+    { "queryable": true } }

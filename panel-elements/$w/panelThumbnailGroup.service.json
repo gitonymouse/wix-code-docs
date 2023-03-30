@@ -1,0 +1,28 @@
+{ "name": "panelThumbnailGroup",
+  "memberOf": "$w",
+  "mixes":
+    [ "$w.HiddenCollapsedMixin",
+      "$w.Element" ],
+  "labels":
+    [ "new" ],
+  "location":
+    { "lineno": 1,
+      "filename": "panelThumbnailGroup.js" },
+  "docs":
+    { "summary": "Thumbnails allow users to select an option using a set of thumbnail images in a Blocks panel.",
+      "description":
+        [ "Thumbnails allow users to select an option using a set of thumbnail images.",
+          "",
+          "> **Important**:  ",
+          "> This element is available only in [custom panels built in Blocks](https://support.wix.com/en/article/wix-blocks-designing-custom-panels-for-your-widgets-action-bar-buttons).  ",
+          "> [Wix Blocks](https://support.wix.com/en/article/wix-blocks-check-out-our-articles) is a workspace for building Wix apps. It is currently a Beta version, open to a limited number of users." ],
+      "links": [],
+      "examples": [],
+      "extra":
+        {  } },
+  "properties": [],
+  "operations": [],
+  "callbacks": [],
+  "messages": [],
+  "extra":
+    { "queryable": true } }

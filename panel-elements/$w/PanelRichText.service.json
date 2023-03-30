@@ -1,0 +1,176 @@
+{ "name": "PanelRichText",
+  "memberOf": "$w",
+  "mixes":
+    [ "$w.HiddenCollapsedMixin",
+      "$w.Element" ],
+  "labels":
+    [ "new" ],
+  "location":
+    { "lineno": 1,
+      "filename": "PanelRichText.js" },
+  "docs":
+    { "summary": "A rich text element is used in the Blocks panel builder to display text followed by a link.",
+      "description":
+        [ "A rich text element is used to display text followed by a link. ",
+          "> **Important**:  ",
+          "> This element is available only in [custom panels built in Blocks](https://support.wix.com/en/article/wix-blocks-designing-custom-panels-for-your-widgets-action-bar-buttons).   ",
+          "> [Wix Blocks](https://support.wix.com/en/article/wix-blocks-check-out-our-articles) is a workspace for building Wix apps. It is currently a Beta version, open to a limited number of users." ],
+      "links": [],
+      "examples": [],
+      "extra":
+        {  } },
+  "properties":
+    [ { "name": "alignCenter",
+        "labels": [],
+        "get": true,
+        "set": true,
+        "type": "boolean",
+        "defaultValue": "false",
+        "locations":
+          [ { "lineno": 78,
+              "filename": "PanelRichText.js" },
+            { "lineno": 90,
+              "filename": "PanelRichText.js" } ],
+        "docs":
+          { "summary": "Sets or gets whether the text is centered.",
+            "links": [],
+            "examples":
+              [ { "title": "Get whether the text is centered",
+                  "body":
+                    [ "let isCenterAligned = $w(\"#myText\").alignCenter;  // true" ],
+                  "extra":
+                    {  } },
+                { "title": "Set the text to be centered",
+                  "body":
+                    [ "let isCenterAligned = $w(\"#myText\").alignCenter;  // true" ],
+                  "extra":
+                    {  } } ],
+            "extra":
+              {  } },
+        "extra":
+          {  } },
+      { "name": "content",
+        "labels": [],
+        "get": true,
+        "set": true,
+        "type": "string",
+        "locations":
+          [ { "lineno": 18,
+              "filename": "PanelRichText.js" },
+            { "lineno": 29,
+              "filename": "PanelRichText.js" } ],
+        "docs":
+          { "summary": "Sets or gets the rich text content (without the link).",
+            "links": [],
+            "examples":
+              [ { "title": "Get the rich text content",
+                  "body":
+                    [ "let myContent = $w(\"#myText\").content;  // \"Some text\"" ],
+                  "extra":
+                    {  } },
+                { "title": "Set the rich text content",
+                  "body":
+                    [ "$w(\"#myText\").content = \"Some text\";" ],
+                  "extra":
+                    {  } } ],
+            "extra":
+              {  } },
+        "extra":
+          {  } },
+      { "name": "divider",
+        "labels": [],
+        "get": true,
+        "set": true,
+        "type": "string",
+        "defaultValue": "\"long\"",
+        "locations":
+          [ { "lineno": 99,
+              "filename": "PanelRichText.js" },
+            { "lineno": 116,
+              "filename": "PanelRichText.js" } ],
+        "docs":
+          { "summary": "Sets or gets the type of divider displayed under the element.",
+            "description":
+              [ "The divider type can be:",
+                "* `\"long\"`",
+                "* `\"short\"`",
+                "* `\"none\"`" ],
+            "links": [],
+            "examples":
+              [ { "title": "Get an element's divider type",
+                  "body":
+                    [ "let divider = $w(\"#myElement\").divider;  // \"none\"" ],
+                  "extra":
+                    {  } },
+                { "title": "Set an element's divider type",
+                  "body":
+                    [ "$w(\"#myElement\").divider = \"none\";" ],
+                  "extra":
+                    {  } } ],
+            "extra":
+              {  } },
+        "extra":
+          {  } },
+      { "name": "richTextLabel",
+        "labels": [],
+        "get": true,
+        "set": true,
+        "type": "string",
+        "defaultValue": "Empty string",
+        "locations":
+          [ { "lineno": 36,
+              "filename": "PanelRichText.js" },
+            { "lineno": 48,
+              "filename": "PanelRichText.js" } ],
+        "docs":
+          { "summary": "Sets or gets the link's text.",
+            "links": [],
+            "examples":
+              [ { "title": "Get the link text",
+                  "body":
+                    [ "let myLinkLabel = $w(\"#myText\").richTextLabel;  // \"Learn More\"" ],
+                  "extra":
+                    {  } },
+                { "title": "Set the link text",
+                  "body":
+                    [ "$w(\"#myText\").richTextLabel = \"Learn More\";" ],
+                  "extra":
+                    {  } } ],
+            "extra":
+              {  } },
+        "extra":
+          {  } },
+      { "name": "richTextLink",
+        "labels": [],
+        "get": true,
+        "set": true,
+        "type": "string",
+        "defaultValue": "Empty string",
+        "locations":
+          [ { "lineno": 57,
+              "filename": "PanelRichText.js" },
+            { "lineno": 69,
+              "filename": "PanelRichText.js" } ],
+        "docs":
+          { "summary": "Sets or gets the link's URL.",
+            "links": [],
+            "examples":
+              [ { "title": "Get the link",
+                  "body":
+                    [ "let myLink = $w(\"#myText\").richTextLink;  // \"https://link.com\"" ],
+                  "extra":
+                    {  } },
+                { "title": "Set the link",
+                  "body":
+                    [ "$w(\"#myText\").richTextLink = \"https://link.com\";" ],
+                  "extra":
+                    {  } } ],
+            "extra":
+              {  } },
+        "extra":
+          {  } } ],
+  "operations": [],
+  "callbacks": [],
+  "messages": [],
+  "extra":
+    { "queryable": true } }
