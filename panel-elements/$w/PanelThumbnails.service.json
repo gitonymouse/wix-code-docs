@@ -1,16 +1,17 @@
-{ "name": "PanelTextInput",
+{ "name": "PanelThumbnails",
   "memberOf": "$w",
   "mixes":
     [ "$w.HiddenCollapsedMixin",
       "$w.Element" ],
-  "labels": [],
+  "labels":
+    [ "new" ],
   "location":
     { "lineno": 1,
-      "filename": "PanelTextInput.js" },
+      "filename": "PanelThumbnails.js" },
   "docs":
-    { "summary": "An input element in a Blocks panel for capturing small amounts of text.",
+    { "summary": "Thumbnails allow users to select an option using a set of thumbnail images in a Blocks panel.",
       "description":
-        [ "A text input is an input field that receives strings.",
+        [ "Thumbnails allow users to select an option using a set of thumbnail images.",
           "",
           "> **Important**:  ",
           "> This element is available only in [custom panels built in Blocks](https://support.wix.com/en/article/wix-blocks-designing-custom-panels-for-your-widgets-action-bar-buttons).  ",
@@ -20,46 +21,17 @@
       "extra":
         {  } },
   "properties":
-    [ { "name": "autoFocus",
-        "labels": [],
-        "get": true,
-        "set": true,
-        "type": "boolean",
-        "defaultValue": "false",
-        "locations":
-          [ { "lineno": 163,
-              "filename": "PanelTextInput.js" },
-            { "lineno": 175,
-              "filename": "PanelTextInput.js" } ],
-        "docs":
-          { "summary": "Sets or gets whether the input field is in focus.",
-            "links": [],
-            "examples":
-              [ { "title": "Get whether the input field is in focus",
-                  "body":
-                    [ "let isAutoFocus = $w(\"#myTextInput\").autoFocus;  // true" ],
-                  "extra":
-                    {  } },
-                { "title": "Set the input field to be in focus",
-                  "body":
-                    [ "$w(\"#myTextInput\").autoFocus = true;" ],
-                  "extra":
-                    {  } } ],
-            "extra":
-              {  } },
-        "extra":
-          {  } },
-      { "name": "divider",
+    [ { "name": "divider",
         "labels": [],
         "get": true,
         "set": true,
         "type": "string",
         "defaultValue": "\"long\"",
         "locations":
-          [ { "lineno": 99,
-              "filename": "PanelTextInput.js" },
-            { "lineno": 116,
-              "filename": "PanelTextInput.js" } ],
+          [ { "lineno": 80,
+              "filename": "PanelThumbnails.js" },
+            { "lineno": 97,
+              "filename": "PanelThumbnails.js" } ],
         "docs":
           { "summary": "Sets or gets the type of divider displayed under the element.",
             "description":
@@ -88,11 +60,12 @@
         "get": true,
         "set": true,
         "type": "string",
+        "defaultValue": "Empty string",
         "locations":
-          [ { "lineno": 62,
-              "filename": "PanelTextInput.js" },
+          [ { "lineno": 61,
+              "filename": "PanelThumbnails.js" },
             { "lineno": 73,
-              "filename": "PanelTextInput.js" } ],
+              "filename": "PanelThumbnails.js" } ],
         "docs":
           { "summary": "Sets or gets the label of an element.",
             "links": [],
@@ -111,173 +84,168 @@
               {  } },
         "extra":
           {  } },
-      { "name": "maxLength",
+      { "name": "numberOfColumns",
         "labels": [],
         "get": true,
         "set": true,
-        "type": "number",
-        "defaultValue": "72",
+        "type": "Nunber",
+        "defaultValue": "3",
         "locations":
-          [ { "lineno": 261,
-              "filename": "PanelTextInput.js" },
-            { "lineno": 273,
-              "filename": "PanelTextInput.js" } ],
+          [ { "lineno": 104,
+              "filename": "PanelThumbnails.js" },
+            { "lineno": 116,
+              "filename": "PanelThumbnails.js" } ],
         "docs":
-          { "summary": "Sets or gets the maximum number of characters in the input text.",
+          { "summary": "Sets or gets the number of thumbnail columns. The minimum value is 1, maximum is 5.",
             "links": [],
             "examples":
-              [ { "title": "Get a text input's maximum length",
+              [ { "title": "Get the number of thumbnail columns",
                   "body":
-                    [ "let myLength = $w(\"#myTextInput\").maxLength;  // 20" ],
+                    [ "let columns = $w(\"#myThumbnails\").numberOfColumns; // 2" ],
                   "extra":
                     {  } },
-                { "title": "Set a text input's maximum length",
+                { "title": "Set the number of thumbnail columns",
                   "body":
-                    [ "$w(\"#myTextInput\").maxLength = 20;" ],
+                    [ "$w(\"#myThumbnails\").numberOfColumns = 2;" ],
                   "extra":
                     {  } } ],
             "extra":
               {  } },
         "extra":
           {  } },
-      { "name": "placeholder",
+      { "name": "options",
         "labels": [],
         "get": true,
         "set": true,
-        "type": "string",
+        "type":
+          { "name": "Array",
+            "typeParams":
+              [ "$w.PanelThumbnails.option" ] },
+        "defaultValue": "empty array",
         "locations":
-          [ { "lineno": 80,
-              "filename": "PanelTextInput.js" },
-            { "lineno": 91,
-              "filename": "PanelTextInput.js" } ],
+          [ { "lineno": 188,
+              "filename": "PanelThumbnails.js" },
+            { "lineno": 203,
+              "filename": "PanelThumbnails.js" } ],
         "docs":
-          { "summary": "Sets or gets the placeholder text of an element.",
+          { "summary": "Sets or gets the options in the thumbnail group.",
+            "description":
+              [ "`options` is an array of objects, each representing an option available to a user." ],
             "links": [],
             "examples":
-              [ { "title": "Get an element's placeholder",
+              [ { "title": "Get the list of options and the first option's label and value from a thumbnail group",
                   "body":
-                    [ "let label = $w(\"#myElement\").placeholder;  // \"Type your name\"" ],
+                    [ "let thumbnailsOptions = $w(\"#myThumbnails\").options;",
+                      "",
+                      "let firstLabel = thumbnailsOptions[0].label;  // \"First Label\"",
+                      "let firstValue = thumbnailsOptions[0].value;  // \"first_value\"" ],
                   "extra":
                     {  } },
-                { "title": "Set an element's placeholder",
+                { "title": "Set the list of options for a thumbnail group",
                   "body":
-                    [ "$w(\"#myElement\").placeholder = \"New Placeholder\";" ],
+                    [ "$w(\"#myThumbnails\").options = [",
+                      "  {\"label\": \"Who's on first!\", \"value\": \"first\"},",
+                      "  {\"label\": \"What's on second\", \"value\": \"second\"},",
+                      "  {\"label\": \"I Don't Know is on third\", \"value\": \"third\"}",
+                      "];" ],
+                  "extra":
+                    {  } },
+                { "title": "Add an option to a thumbnail group",
+                  "body":
+                    [ "let opts = $w(\"#myThumbnails\").options;",
+                      "opts.push({\"label\": \"New Label\", \"value\": \"New Value\"});",
+                      "$w(\"#myThumbnails\").options = opts;" ],
                   "extra":
                     {  } } ],
             "extra":
               {  } },
         "extra":
           {  } },
-      { "name": "prefix",
-        "labels": [],
-        "get": true,
-        "set": true,
-        "type": "string",
-        "defaultValue": "Empty string",
-        "locations":
-          [ { "lineno": 123,
-              "filename": "PanelTextInput.js" },
-            { "lineno": 135,
-              "filename": "PanelTextInput.js" } ],
-        "docs":
-          { "summary": "Sets or gets text that is displayed before the text input field.",
-            "links": [],
-            "examples":
-              [ { "title": "Get a text input's prefix",
-                  "body":
-                    [ "let myPrefix = $w(\"#myTextInput\").prefix;  // \"Mr.\"" ],
-                  "extra":
-                    {  } },
-                { "title": "Set a text input's prefix",
-                  "body":
-                    [ "$w(\"#myTextInput\").prefix = \"New prefix\";" ],
-                  "extra":
-                    {  } } ],
-            "extra":
-              {  } },
-        "extra":
-          {  } },
-      { "name": "readOnly",
+      { "name": "showEmptyThumbnail",
         "labels": [],
         "get": true,
         "set": true,
         "type": "boolean",
         "defaultValue": "false",
         "locations":
-          [ { "lineno": 143,
-              "filename": "PanelTextInput.js" },
-            { "lineno": 155,
-              "filename": "PanelTextInput.js" } ],
+          [ { "lineno": 148,
+              "filename": "PanelThumbnails.js" },
+            { "lineno": 160,
+              "filename": "PanelThumbnails.js" } ],
         "docs":
-          { "summary": "Sets or gets whether the value of the input element is read-only (cannot be modified by users).",
+          { "summary": "Sets or gets whether empty thumbnails are shown.",
             "links": [],
             "examples":
-              [ { "title": "Get whether the value of the input element is read-only",
+              [ { "title": "Get whether empty thumbnails are shown",
                   "body":
-                    [ "let isReadOnly = $w(\"#myTextInput\").readOnly;  // true" ],
+                    [ "let emptyThumbnailsShown = $w(\"#myThumbnails\").showEmptyThumbnail;  // true" ],
                   "extra":
                     {  } },
-                { "title": "Set the value of the input element to be read-only",
+                { "title": "Set empty thumbnails to be shown",
                   "body":
-                    [ "$w(\"#myTextInput\").readOnly = true;" ],
+                    [ "$w(\"#myThumbnails\").showEmptyThumbnail = true;" ],
                   "extra":
                     {  } } ],
             "extra":
               {  } },
         "extra":
           {  } },
-      { "name": "regexPattern",
-        "labels": [],
-        "get": true,
-        "set": true,
-        "type": "string",
-        "defaultValue": "Empty string",
-        "locations":
-          [ { "lineno": 221,
-              "filename": "PanelTextInput.js" },
-            { "lineno": 233,
-              "filename": "PanelTextInput.js" } ],
-        "docs":
-          { "summary": "Sets or gets the regex validation pattern.",
-            "links": [],
-            "examples":
-              [ { "title": "Get a text input's regex validation pattern",
-                  "body":
-                    [ "let myRegex = $w(\"#myTextInput\").regexPattern;  // \"^([1-9]|10)$\"" ],
-                  "extra":
-                    {  } },
-                { "title": "Set a text input's regex validation pattern",
-                  "body":
-                    [ "$w(\"#myTextInput\").regexPattern = \"^([1-9]|10)$\"; // Allow only numbers between 1-10" ],
-                  "extra":
-                    {  } } ],
-            "extra":
-              {  } },
-        "extra":
-          {  } },
-      { "name": "selectTextOnFocus",
+      { "name": "showLabels",
         "labels": [],
         "get": true,
         "set": true,
         "type": "boolean",
-        "defaultValue": "true",
+        "defaultValue": "false",
         "locations":
-          [ { "lineno": 182,
-              "filename": "PanelTextInput.js" },
-            { "lineno": 194,
-              "filename": "PanelTextInput.js" } ],
+          [ { "lineno": 168,
+              "filename": "PanelThumbnails.js" },
+            { "lineno": 180,
+              "filename": "PanelThumbnails.js" } ],
         "docs":
-          { "summary": "Sets or gets whether the input field content is automatically selected on focus.",
+          { "summary": "Sets or gets whether the thumbnail labels are displayed.",
             "links": [],
             "examples":
-              [ { "title": "Get whether the input field content is automatically selected on focus",
+              [ { "title": "Get whether the thumbnail labels are displayed",
                   "body":
-                    [ "let isTextSelectedOnFocus = $w(\"#myTextInput\").selectTextOnFocus;  // true" ],
+                    [ "let labelsShown = $w(\"#myThumbnails\").showLabels;  // true" ],
                   "extra":
                     {  } },
-                { "title": "Set the input field content to be automatically selected on focus",
+                { "title": "Set thumbnail labels to be displayed",
                   "body":
-                    [ "$w(\"#myTextInput\").selectTextOnFocus = true;" ],
+                    [ "$w(\"#myThumbnails\").showLabels = true;" ],
+                  "extra":
+                    {  } } ],
+            "extra":
+              {  } },
+        "extra":
+          {  } },
+      { "name": "thumbnailHeight",
+        "labels": [],
+        "get": true,
+        "set": true,
+        "type": "string",
+        "defaultValue": "\"Fixed ratio (1:1)\"",
+        "locations":
+          [ { "lineno": 124,
+              "filename": "PanelThumbnails.js" },
+            { "lineno": 140,
+              "filename": "PanelThumbnails.js" } ],
+        "docs":
+          { "summary": "Sets or gets the thumbnails' height ratio.",
+            "description":
+              [ "The height ratio can be:",
+                "* `\"Fixed ratio (1:1)\"`",
+                "* `\"Fluid\"`" ],
+            "links": [],
+            "examples":
+              [ { "title": "Get the thumbnails' height ratio",
+                  "body":
+                    [ "let height = $w(\"#myThumbnails\").thumbnailHeight; // \"Fluid\"" ],
+                  "extra":
+                    {  } },
+                { "title": "Set the thumbnails' height ratio",
+                  "body":
+                    [ "$w(\"#myThumbnails\").thumbnailHeight = \"Fluid\";" ],
                   "extra":
                     {  } } ],
             "extra":
@@ -291,10 +259,10 @@
         "type": "string",
         "defaultValue": "Empty string",
         "locations":
-          [ { "lineno": 42,
-              "filename": "PanelTextInput.js" },
-            { "lineno": 56,
-              "filename": "PanelTextInput.js" } ],
+          [ { "lineno": 41,
+              "filename": "PanelThumbnails.js" },
+            { "lineno": 55,
+              "filename": "PanelThumbnails.js" } ],
         "docs":
           { "summary": "Sets or gets an element's tooltip.",
             "description":
@@ -315,64 +283,6 @@
               {  } },
         "extra":
           {  } },
-      { "name": "usePatternValidation",
-        "labels": [],
-        "get": true,
-        "set": true,
-        "type": "boolean",
-        "defaultValue": "false",
-        "locations":
-          [ { "lineno": 201,
-              "filename": "PanelTextInput.js" },
-            { "lineno": 213,
-              "filename": "PanelTextInput.js" } ],
-        "docs":
-          { "summary": "Sets or gets whether the input field uses regex validation.",
-            "links": [],
-            "examples":
-              [ { "title": "Get whether the input field uses regex validation",
-                  "body":
-                    [ "let patternValidationUsed = $w(\"#myTextInput\").usePatternValidation;  // true" ],
-                  "extra":
-                    {  } },
-                { "title": "Set the input field to use regex validation",
-                  "body":
-                    [ "$w(\"#myTextInput\").usePatternValidation = true;" ],
-                  "extra":
-                    {  } } ],
-            "extra":
-              {  } },
-        "extra":
-          {  } },
-      { "name": "validationMessage",
-        "labels": [],
-        "get": true,
-        "set": true,
-        "type": "string",
-        "defaultValue": "Empty string",
-        "locations":
-          [ { "lineno": 242,
-              "filename": "PanelTextInput.js" },
-            { "lineno": 254,
-              "filename": "PanelTextInput.js" } ],
-        "docs":
-          { "summary": "Sets or gets the error message that is displayed if the regex validation fails.",
-            "links": [],
-            "examples":
-              [ { "title": "Get a text input's validation message",
-                  "body":
-                    [ "let myValidationMessage = $w(\"#myTextInput\").validationMessage;  // \"Please enter a number between 1 and 10.\"" ],
-                  "extra":
-                    {  } },
-                { "title": "Set a text input's validation message",
-                  "body":
-                    [ "$w(\"#myTextInput\").validationMessage = \"Please enter a number between 1 and 10.\";" ],
-                  "extra":
-                    {  } } ],
-            "extra":
-              {  } },
-        "extra":
-          {  } },
       { "name": "value",
         "labels": [],
         "get": true,
@@ -380,13 +290,13 @@
         "type": "string",
         "locations":
           [ { "lineno": 19,
-              "filename": "PanelTextInput.js" },
+              "filename": "PanelThumbnails.js" },
             { "lineno": 35,
-              "filename": "PanelTextInput.js" } ],
+              "filename": "PanelThumbnails.js" } ],
         "docs":
           { "summary": "Sets or gets an element's value.",
             "description":
-              [ "To reset the element, restoring any placeholder text, set the value",
+              [ "To reset the element, set the value",
                 " property to `null` or `undefined`.",
                 "",
                 "> **Note**: Changing an element's `value` in code does not trigger an `onChange` event." ],
@@ -418,8 +328,8 @@
           { "type": "$w.Element",
             "doc": "The element on which the event is now registered." },
         "locations":
-          [ { "lineno": 287,
-              "filename": "PanelTextInput.js" } ],
+          [ { "lineno": 228,
+              "filename": "PanelThumbnails.js" } ],
         "docs":
           { "summary": "Adds an event handler that runs when an input element's value\n is changed.",
             "description":
@@ -449,6 +359,46 @@
         "extra":
           { "eventType": "change" } } ],
   "callbacks": [],
-  "messages": [],
+  "messages":
+    [ { "name": "illustration",
+        "locations":
+          [ { "lineno": 220,
+              "filename": "PanelThumbnails.js" } ],
+        "docs":
+          { "summary": "An object representing an SVG illustration.",
+            "links": [],
+            "examples": [],
+            "extra":
+              {  } },
+        "members":
+          [ { "name": "svgId",
+              "type": "string",
+              "doc": "An SVG element" } ],
+        "extra":
+          {  },
+        "labels": [] },
+      { "name": "option",
+        "locations":
+          [ { "lineno": 210,
+              "filename": "PanelThumbnails.js" } ],
+        "docs":
+          { "summary": "An object representing a thumbnail option.",
+            "links": [],
+            "examples": [],
+            "extra":
+              {  } },
+        "members":
+          [ { "name": "label",
+              "type": "string",
+              "doc": "The label of the thumbnail option, optionally displayed below the thumbnail." },
+            { "name": "value",
+              "type": "string",
+              "doc": "The value of the thumbnail option. This is what you use in code." },
+            { "name": "illustration",
+              "type": "$w.PanelThumbnails.illustration",
+              "doc": "The thumbnail illustration in SVG format" } ],
+        "extra":
+          {  },
+        "labels": [] } ],
   "extra":
     { "queryable": true } }

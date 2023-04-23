@@ -4,7 +4,7 @@
     [ "$w.HiddenCollapsedMixin",
       "$w.Element" ],
   "labels":
-    [ "new" ],
+    [ "removed" ],
   "location":
     { "lineno": 1,
       "filename": "panelThumbnailGroup.js" },
