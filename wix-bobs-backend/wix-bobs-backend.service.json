@@ -59,7 +59,8 @@
           }
         ]
       },
-      "isVeloEvent": false
+      "isVeloEvent": false,
+      "syntaxName": "createWishlist"
     }
   ],
   "messages": [
