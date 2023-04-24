@@ -82,7 +82,8 @@
         {
           "id": "maturity-beta"
         }
-      ]
+      ],
+      "syntaxName": "notify"
     }
   ],
   "messages": [
