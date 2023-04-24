@@ -74,7 +74,8 @@
         {
           "id": "maturity-beta"
         }
-      ]
+      ],
+      "syntaxName": "createDataCollection"
     },
     {
       "name": "deleteDataCollection",
@@ -140,7 +141,8 @@
         {
           "id": "maturity-beta"
         }
-      ]
+      ],
+      "syntaxName": "deleteDataCollection"
     },
     {
       "name": "getDataCollection",
@@ -214,7 +216,8 @@
         {
           "id": "maturity-beta"
         }
-      ]
+      ],
+      "syntaxName": "getDataCollection"
     },
     {
       "name": "listDataCollections",
@@ -277,7 +280,8 @@
         {
           "id": "maturity-beta"
         }
-      ]
+      ],
+      "syntaxName": "listDataCollections"
     },
     {
       "name": "updateDataCollection",
@@ -345,7 +349,8 @@
         {
           "id": "maturity-beta"
         }
-      ]
+      ],
+      "syntaxName": "updateDataCollection"
     }
   ],
   "messages": [
