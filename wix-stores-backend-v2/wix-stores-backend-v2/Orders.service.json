@@ -79,7 +79,8 @@
           }
         ]
       },
-      "isVeloEvent": false
+      "isVeloEvent": false,
+      "syntaxName": "createFulfillment"
     },
     {
       "name": "createOrder",
@@ -143,7 +144,8 @@
           }
         ]
       },
-      "isVeloEvent": false
+      "isVeloEvent": false,
+      "syntaxName": "createOrder"
     },
     {
       "name": "deleteFulfillment",
@@ -206,7 +208,8 @@
           }
         ]
       },
-      "isVeloEvent": false
+      "isVeloEvent": false,
+      "syntaxName": "deleteFulfillment"
     },
     {
       "name": "getOrder",
@@ -267,7 +270,8 @@
           }
         ]
       },
-      "isVeloEvent": false
+      "isVeloEvent": false,
+      "syntaxName": "getOrder"
     },
     {
       "name": "queryOrders",
@@ -326,7 +330,8 @@
           }
         ]
       },
-      "isVeloEvent": false
+      "isVeloEvent": false,
+      "syntaxName": "queryOrders"
     },
     {
       "name": "updateFulfillment",
@@ -399,7 +404,8 @@
           }
         ]
       },
-      "isVeloEvent": false
+      "isVeloEvent": false,
+      "syntaxName": "updateFulfillment"
     },
     {
       "name": "updateOrderEmail",
@@ -470,7 +476,8 @@
           }
         ]
       },
-      "isVeloEvent": false
+      "isVeloEvent": false,
+      "syntaxName": "updateOrderEmail"
     },
     {
       "name": "updateOrderShippingAddress",
@@ -541,7 +548,8 @@
           }
         ]
       },
-      "isVeloEvent": false
+      "isVeloEvent": false,
+      "syntaxName": "updateOrderShippingAddress"
     }
   ],
   "messages": [
