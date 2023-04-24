@@ -59,7 +59,8 @@
           }
         ]
       },
-      "isVeloEvent": false
+      "isVeloEvent": false,
+      "syntaxName": "createWishlist"
     },
     {
       "name": "deleteWishlist",
@@ -122,7 +123,8 @@
           }
         ]
       },
-      "isVeloEvent": false
+      "isVeloEvent": false,
+      "syntaxName": "deleteWishlist"
     },
     {
       "name": "getWishlist",
@@ -175,7 +177,8 @@
           }
         ]
       },
-      "isVeloEvent": false
+      "isVeloEvent": false,
+      "syntaxName": "getWishlist"
     },
     {
       "name": "queryWishlist",
@@ -228,7 +231,8 @@
           }
         ]
       },
-      "isVeloEvent": false
+      "isVeloEvent": false,
+      "syntaxName": "queryWishlist"
     },
     {
       "name": "updateWishlist",
@@ -303,7 +307,8 @@
           }
         ]
       },
-      "isVeloEvent": false
+      "isVeloEvent": false,
+      "syntaxName": "updateWishlist"
     }
   ],
   "messages": [
