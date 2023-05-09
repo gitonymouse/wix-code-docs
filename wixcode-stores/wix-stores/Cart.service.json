@@ -3,7 +3,7 @@
   "mixes": [],
   "labels": [],
   "location":
-    { "lineno": 23,
+    { "lineno": 25,
       "filename": "stores-index.js" },
   "docs":
     { "summary": "The wix-stores.Cart module contains functionality for working with your\n site's cart from client-side code.",

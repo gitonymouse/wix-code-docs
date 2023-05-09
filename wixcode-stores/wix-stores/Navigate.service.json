@@ -3,7 +3,7 @@
   "mixes": [],
   "labels": [],
   "location":
-    { "lineno": 47,
+    { "lineno": 49,
       "filename": "stores-index.js" },
   "docs":
     { "summary": "The wix-stores.Navigate module contains functionality for navigating to\nstore-related pages from client-side code.",
