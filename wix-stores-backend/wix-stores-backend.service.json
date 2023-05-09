@@ -9,7 +9,7 @@
     { "summary": "The wix-stores-backend module contains functionality for working with your\n site's store from backend code.",
       "description":
         [ "> **Note:**  ",
-          "> There is a new version of the `[Stores APIs](https://www.wix.com/velo/reference/wix-stores-v2).",
+          "> There is a new version of the [Stores APIs](https://www.wix.com/velo/reference/wix-stores-v2).",
           "> If you're already using Stores modules in your code,",
           "> they will continue to work.",
           " ",
