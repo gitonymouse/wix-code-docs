@@ -1,13 +1,19 @@
 { "name": "wix-stores",
   "mixes": [],
-  "labels": [],
+  "labels":
+    [ "changed" ],
   "location":
     { "lineno": 1,
       "filename": "stores-index.js" },
   "docs":
     { "summary": "The wix-stores module contains functionality for working with your\n site's store from client-side code.",
       "description":
-        [ "To use the Stores API, import `wixStores` from the `wix-stores` module:",
+        [ "> **Note:**  ",
+          "> There is a new version of the [Stores APIs](https://www.wix.com/velo/reference/wix-stores-v2).",
+          "> If you're already using the Stores modules in your code,",
+          "> it will continue to work.",
+          "",
+          " To use the Stores API, import `wixStores` from the `wix-stores` module:",
           "",
           "   ```javascript",
           "   import wixStores from 'wix-stores';",
@@ -26,7 +32,7 @@
         "set": false,
         "type": "wix-stores.Cart",
         "locations":
-          [ { "lineno": 54,
+          [ { "lineno": 59,
               "filename": "stores-index.js" } ],
         "docs":
           { "summary": "The wix-stores.cart module provides functionality for working with your site's cart from client-side code.",
@@ -42,7 +48,7 @@
         "set": false,
         "type": "wix-stores.Navigate",
         "locations":
-          [ { "lineno": 72,
+          [ { "lineno": 77,
               "filename": "stores-index.js" } ],
         "docs":
           { "summary": "The wix-stores.navigate module provides functionality for navigating your store from client-side code.",
@@ -58,7 +64,7 @@
         "set": false,
         "type": "wix-stores.Product",
         "locations":
-          [ { "lineno": 63,
+          [ { "lineno": 68,
               "filename": "stores-index.js" } ],
         "docs":
           { "summary": "The wix-stores.product module provides functionality for working with your store's products from client-side code.",
@@ -2038,7 +2044,8 @@
         "labels":
           [ "removed" ] } ],
   "extra":
-    {  },
+    { "scopes":
+        [ "frontend" ] },
   "menuSections": "APIs",
   "relatedContent":
     [ { "icon": "video",

@@ -1,10 +1,9 @@
 { "name": "Cart",
   "memberOf": "wix-stores",
   "mixes": [],
-  "labels":
-    [ "changed" ],
+  "labels": [],
   "location":
-    { "lineno": 18,
+    { "lineno": 23,
       "filename": "stores-index.js" },
   "docs":
     { "summary": "The wix-stores.Cart module contains functionality for working with your\n site's cart from client-side code.",
@@ -21,8 +20,7 @@
   "properties": [],
   "operations":
     [ { "name": "addProducts",
-        "labels":
-          [ "changed" ],
+        "labels": [],
         "nameParams": [],
         "params":
           [ { "name": "products",
