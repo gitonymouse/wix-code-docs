@@ -10,9 +10,8 @@
       "description":
         [ "> **Note:**  ",
           "> There is a new version of [the Stores APIs](https://www.wix.com/velo/reference/wix-stores-v2).",
-          "> If you're already using the Stores modules in your code,",
+          "> If you're already using Stores modules in your code,",
           "> they will continue to work.",
-          " ",
           " ",
           " To use the Stores API, import `wixStores` from the `wix-stores` module :",
           "",
@@ -33,7 +32,7 @@
         "set": false,
         "type": "wix-stores.Cart",
         "locations":
-          [ { "lineno": 61,
+          [ { "lineno": 59,
               "filename": "stores-index.js" } ],
         "docs":
           { "summary": "The wix-stores.cart module provides functionality for working with your site's cart from client-side code.",
@@ -49,7 +48,7 @@
         "set": false,
         "type": "wix-stores.Navigate",
         "locations":
-          [ { "lineno": 79,
+          [ { "lineno": 77,
               "filename": "stores-index.js" } ],
         "docs":
           { "summary": "The wix-stores.navigate module provides functionality for navigating your store from client-side code.",
@@ -65,7 +64,7 @@
         "set": false,
         "type": "wix-stores.Product",
         "locations":
-          [ { "lineno": 70,
+          [ { "lineno": 68,
               "filename": "stores-index.js" } ],
         "docs":
           { "summary": "The wix-stores.product module provides functionality for working with your store's products from client-side code.",
