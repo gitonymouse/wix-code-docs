@@ -146,7 +146,7 @@
                 "",
                 "For example, effects for text elements allow changes to these properties:",
                 "",
-                "![](../assets/images/effects_UI.png \"Create Effect Panel\")",
+                "![](/effects_UI.png \"Create Effect Panel\")",
                 "",
                 "If you create 2 effects that each change properties in the **Adjust** section and try to apply them together, only",
                 "one is visible on your site. The same is true for 2 effects that change properties in the **Design** section.",
@@ -219,8 +219,7 @@
         "extra":
           {  } },
       { "name": "removeEffects",
-        "labels":
-          [ "changed" ],
+        "labels": [],
         "nameParams": [],
         "params":
           [ { "name": "effects",
@@ -268,8 +267,7 @@
         "extra":
           {  } },
       { "name": "toggleEffects",
-        "labels":
-          [ "changed" ],
+        "labels": [],
         "nameParams": [],
         "params":
           [ { "name": "effects",
