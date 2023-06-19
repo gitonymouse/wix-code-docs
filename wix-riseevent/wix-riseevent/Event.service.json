@@ -90,18 +90,19 @@
           "required": true
         },
         {
-          "name": "options",
+          "name": "revision",
           "type": [
             {
-              "referenceType": "wix-riseevent.Event.DisableEventOptions"
+              "nativeType": "string"
             }
           ],
-          "doc": "",
-          "required": false
+          "doc": "The revision of the Event",
+          "required": true
         }
       ],
       "requiredFields": [
-        "eventId"
+        "eventId",
+        "revision"
       ],
       "ret": {
         "type": [
@@ -127,9 +128,9 @@
             "body": [
               "import { event } from 'wix-riseevent';",
               "  ",
-              " async function disableEvent(eventId, options) {",
+              " async function disableEvent(eventId, revision) {",
               "   try {",
-              "     const result = await event.disableEvent(eventId, options);",
+              "     const result = await event.disableEvent(eventId, revision);",
               "",
               "     return result;",
               "   } catch (error) {",
@@ -426,6 +427,36 @@
       }
     },
     {
+      "name": "Cursors",
+      "members": [
+        {
+          "name": "next",
+          "optional": true,
+          "type": [
+            {
+              "nativeType": "string"
+            }
+          ],
+          "doc": "Cursor pointing to next page in the list of results."
+        },
+        {
+          "name": "prev",
+          "optional": true,
+          "type": [
+            {
+              "nativeType": "string"
+            }
+          ],
+          "doc": "Cursor pointing to previous page in the list of results."
+        }
+      ],
+      "docs": {
+        "description": [
+          ""
+        ]
+      }
+    },
+    {
       "name": "DeleteEventOptions",
       "members": [
         {
@@ -484,26 +515,6 @@
       }
     },
     {
-      "name": "DisableEventOptions",
-      "members": [
-        {
-          "name": "revision",
-          "optional": true,
-          "type": [
-            {
-              "nativeType": "string"
-            }
-          ],
-          "doc": "The revision of the Event"
-        }
-      ],
-      "docs": {
-        "description": [
-          ""
-        ]
-      }
-    },
-    {
       "name": "DisableEventRequest",
       "members": [
         {
@@ -517,7 +528,6 @@
         },
         {
           "name": "revision",
-          "optional": true,
           "type": [
             {
               "nativeType": "string"
@@ -616,6 +626,28 @@
             }
           ],
           "doc": "Represents the time when the event was manually disabled"
+        },
+        {
+          "name": "eventAddedTransactionId",
+          "readOnly": true,
+          "optional": true,
+          "type": [
+            {
+              "nativeType": "string"
+            }
+          ],
+          "doc": "The transactionId that added the event's amount;"
+        },
+        {
+          "name": "eventRemovedTransactionId",
+          "readOnly": true,
+          "optional": true,
+          "type": [
+            {
+              "nativeType": "string"
+            }
+          ],
+          "doc": "The transactionId that removed the remaining event's balance;"
         },
         {
           "name": "expiresAt",
@@ -1004,6 +1036,66 @@
       }
     },
     {
+      "name": "PagingMetadataV2",
+      "members": [
+        {
+          "name": "count",
+          "optional": true,
+          "type": [
+            {
+              "nativeType": "number"
+            }
+          ],
+          "doc": "Number of items returned in the response."
+        },
+        {
+          "name": "cursors",
+          "optional": true,
+          "type": [
+            {
+              "referenceType": "wix-riseevent.Event.Cursors"
+            }
+          ],
+          "doc": "Cursors to navigate through the result pages using `next` and `prev`. Returned if cursor paging is used."
+        },
+        {
+          "name": "offset",
+          "optional": true,
+          "type": [
+            {
+              "nativeType": "number"
+            }
+          ],
+          "doc": "Offset that was requested."
+        },
+        {
+          "name": "tooManyToCount",
+          "optional": true,
+          "type": [
+            {
+              "nativeType": "boolean"
+            }
+          ],
+          "doc": "Flag that indicates the server failed to calculate the `total` field."
+        },
+        {
+          "name": "total",
+          "optional": true,
+          "type": [
+            {
+              "nativeType": "number"
+            }
+          ],
+          "doc": "Total number of items that match the query. Returned if offset paging is used and the `tooManyToCount` flag is not set."
+        }
+      ],
+      "docs": {
+        "description": [
+          ""
+        ]
+      }
+    },
+    {
       "name": "QueryEventBalancesRequest",
       "members": [
         {
@@ -1087,6 +1179,16 @@
             }
           ],
           "doc": "The retrieved Events"
+        },
+        {
+          "name": "pagingMetadata",
+          "optional": true,
+          "type": [
+            {
+              "referenceType": "wix-riseevent.Event.PagingMetadataV2"
+            }
+          ],
+          "doc": ""
         }
       ],
       "docs": {
@@ -1465,6 +1567,28 @@
             }
           ],
           "doc": "Represents the time when the event was manually disabled"
+        },
+        {
+          "name": "eventAddedTransactionId",
+          "readOnly": true,
+          "optional": true,
+          "type": [
+            {
+              "nativeType": "string"
+            }
+          ],
+          "doc": "The transactionId that added the event's amount;"
+        },
+        {
+          "name": "eventRemovedTransactionId",
+          "readOnly": true,
+          "optional": true,
+          "type": [
+            {
+              "nativeType": "string"
+            }
+          ],
+          "doc": "The transactionId that removed the remaining event's balance;"
         },
         {
           "name": "expiresAt",
