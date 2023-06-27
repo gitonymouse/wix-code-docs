@@ -10,7 +10,7 @@
   "properties": [],
   "operations": [
     {
-      "name": "createCustomerRef",
+      "name": "createWallet",
       "params": [
         {
           "name": "customerRef",
@@ -21,6 +21,16 @@
           ],
           "doc": "Customer reference",
           "required": true
+        },
+        {
+          "name": "options",
+          "type": [
+            {
+              "referenceType": "wix-risewallet.Wallet.CreateWalletOptions"
+            }
+          ],
+          "doc": "",
+          "required": false
         }
       ],
       "requiredFields": [
@@ -37,7 +47,7 @@
               "nativeType": "Promise",
               "typeParams": [
                 {
-                  "referenceType": "wix-risewallet.Wallet.CreateCustomerRefResponse"
+                  "referenceType": "wix-risewallet.Wallet.CreateWalletResponse"
                 }
               ]
             }
@@ -50,13 +60,13 @@
         "description": [],
         "examples": [
           {
-            "title": "createCustomerRef example",
+            "title": "createWallet example",
             "body": [
               "import { wallet } from 'wix-risewallet';",
               "  ",
-              " async function createCustomerRef(customerRef) {",
+              " async function createWallet(customerRef, options) {",
               "   try {",
-              "     const result = await wallet.createCustomerRef(customerRef);",
+              "     const result = await wallet.createWallet(customerRef, options);",
               "",
               "     return result;",
               "   } catch (error) {",
@@ -75,7 +85,7 @@
           "id": "maturity-beta"
         }
       ],
-      "syntaxName": "createCustomerRef"
+      "syntaxName": "createWallet"
     },
     {
       "name": "getCustomerRef",
@@ -206,16 +216,16 @@
       "syntaxName": "getWallet"
     },
     {
-      "name": "getWalletGiftCard",
+      "name": "queryWallets",
       "params": [
         {
           "name": "query",
           "type": [
             {
-              "referenceType": "wix-risewallet.Wallet.WalletQuery"
+              "referenceType": "wix-risewallet.Wallet.QueryV2"
             }
           ],
-          "doc": "ID of the Wallet for which to retrieve the associated Gift Card",
+          "doc": "WQL expression for filtering Wallet entity",
           "required": true
         }
       ],
@@ -229,7 +239,7 @@
               "nativeType": "Promise",
               "typeParams": [
                 {
-                  "referenceType": "wix-risewallet.Wallet.GetWalletGiftCardResponse"
+                  "referenceType": "wix-risewallet.Wallet.QueryWalletsResponse"
                 }
               ]
             }
@@ -238,17 +248,17 @@
         "doc": null
       },
       "docs": {
-        "summary": "Get a Wallet's Gift Card",
+        "summary": "Query wallets enriched with gift card and contact information",
         "description": [],
         "examples": [
           {
-            "title": "getWalletGiftCard example",
+            "title": "queryWallets example",
             "body": [
               "import { wallet } from 'wix-risewallet';",
               "  ",
-              " async function getWalletGiftCard(query) {",
+              " async function queryWallets(query) {",
               "   try {",
-              "     const result = await wallet.getWalletGiftCard(query);",
+              "     const result = await wallet.queryWallets(query);",
               "",
               "     return result;",
               "   } catch (error) {",
@@ -267,7 +277,7 @@
           "id": "maturity-beta"
         }
       ],
-      "syntaxName": "getWalletGiftCard"
+      "syntaxName": "queryWallets"
     }
   ],
   "messages": [
@@ -322,6 +332,95 @@
             }
           ],
           "doc": "Customer reference"
+        }
+      ],
+      "docs": {
+        "description": [
+          ""
+        ]
+      }
+    },
+    {
+      "name": "CreateWalletOptions",
+      "members": [
+        {
+          "name": "currency",
+          "optional": true,
+          "type": [
+            {
+              "nativeType": "string"
+            }
+          ],
+          "doc": "Currency"
+        },
+        {
+          "name": "initialValue",
+          "optional": true,
+          "type": [
+            {
+              "nativeType": "string"
+            }
+          ],
+          "doc": "Initial amount"
+        }
+      ],
+      "docs": {
+        "description": [
+          ""
+        ]
+      }
+    },
+    {
+      "name": "CreateWalletRequest",
+      "members": [
+        {
+          "name": "currency",
+          "optional": true,
+          "type": [
+            {
+              "nativeType": "string"
+            }
+          ],
+          "doc": "Currency"
+        },
+        {
+          "name": "customerRef",
+          "type": [
+            {
+              "referenceType": "wix-risewallet.Wallet.CustomerRef"
+            }
+          ],
+          "doc": "Customer reference"
+        },
+        {
+          "name": "initialValue",
+          "optional": true,
+          "type": [
+            {
+              "nativeType": "string"
+            }
+          ],
+          "doc": "Initial amount"
+        }
+      ],
+      "docs": {
+        "description": [
+          ""
+        ]
+      }
+    },
+    {
+      "name": "CreateWalletResponse",
+      "members": [
+        {
+          "name": "wallet",
+          "optional": true,
+          "type": [
+            {
+              "referenceType": "wix-risewallet.Wallet.Wallet"
+            }
+          ],
+          "doc": "wallet"
         }
       ],
       "docs": {
@@ -681,16 +780,6 @@
       "name": "GetWalletResponse",
       "members": [
         {
-          "name": "giftCardInfo",
-          "optional": true,
-          "type": [
-            {
-              "referenceType": "wix-risewallet.Wallet.GiftCardInfo"
-            }
-          ],
-          "doc": "Gift card info"
-        },
-        {
           "name": "wallet",
           "optional": true,
           "type": [
@@ -842,7 +931,7 @@
               "nativeType": "string"
             }
           ],
-          "doc": "Balance"
+          "doc": "Current Gift Card Balance"
         },
         {
           "name": "code",
@@ -852,7 +941,7 @@
               "nativeType": "string"
             }
           ],
-          "doc": "Code"
+          "doc": "Gift Card Code"
         },
         {
           "name": "currency",
@@ -862,7 +951,7 @@
               "nativeType": "string"
             }
           ],
-          "doc": "Currency"
+          "doc": "Gift Card Currency"
         }
       ],
       "docs": {
@@ -1308,7 +1397,7 @@
                 "nativeType": "Array",
                 "typeParams": [
                   {
-                    "referenceType": "wix-risewallet.Wallet.WalletSummary"
+                    "referenceType": "wix-risewallet.Wallet.Wallet"
                   }
                 ]
               }
@@ -1518,6 +1607,17 @@
           "doc": "Represents the Gift Card associated with this Wallet"
         },
         {
+          "name": "giftCardInfo",
+          "readOnly": true,
+          "optional": true,
+          "type": [
+            {
+              "referenceType": "wix-risewallet.Wallet.GiftCardInfo"
+            }
+          ],
+          "doc": "Gift Card info"
+        },
+        {
           "name": "revision",
           "optional": true,
           "type": [
@@ -1618,36 +1718,6 @@
             }
           ],
           "doc": "Wallet id"
-        }
-      ],
-      "docs": {
-        "description": [
-          ""
-        ]
-      }
-    },
-    {
-      "name": "WalletSummary",
-      "members": [
-        {
-          "name": "giftCardInfo",
-          "optional": true,
-          "type": [
-            {
-              "referenceType": "wix-risewallet.Wallet.GiftCardInfo"
-            }
-          ],
-          "doc": "Gift card info"
-        },
-        {
-          "name": "wallet",
-          "optional": true,
-          "type": [
-            {
-              "referenceType": "wix-risewallet.Wallet.Wallet"
-            }
-          ],
-          "doc": "The retrieved Wallet"
         }
       ],
       "docs": {
