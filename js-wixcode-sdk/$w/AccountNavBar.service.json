@@ -3,12 +3,13 @@
   "mixes":
     [ "$w.Element",
       "$w.HiddenCollapsedMixin" ],
-  "labels": [],
+  "labels":
+    [ "changed" ],
   "location":
     { "lineno": 1,
       "filename": "AccountNavBar.js" },
   "docs":
-    { "summary": "The menu in a user profile.",
+    { "summary": "The [AccountNavBar]() is the menu in a user profile.",
       "links": [],
       "examples": [],
       "extra":
