@@ -63,7 +63,8 @@
   "properties": [],
   "operations":
     [ { "name": "getValidationViolations",
-        "labels": [],
+        "labels":
+          [ "changed" ],
         "nameParams": [],
         "params":
           [ { "name": "options",
@@ -93,13 +94,13 @@
                       "  const lineItems = options.validationInfo.lineItems;",
                       "  let violations = [];",
                       "",
-                      "  if (hasExcessiveGoldRingQuantity(lineItems)) {",
+                      "  if (excessiveGoldRingQuantity(lineItems)) {",
                       "    const severity = getSourceSeverity(source);",
                       "",
-                      "    const target = { ",
-                      "      other: { ",
+                      "    const target = {",
+                      "      other: {",
                       "        name: 'OTHER_DEFAULT'",
-                      "      } ",
+                      "      }",
                       "    };",
                       "",
                       "    const description = \"You can't purchase more than 5 gold rings.\";",
@@ -108,7 +109,7 @@
                       "    violations.push(violation);",
                       "  }",
                       "",
-                      "  return { violations }; ",
+                      "  return { violations };",
                       "};",
                       "",
                       "function getSourceSeverity(source) {",
@@ -119,7 +120,7 @@
                       "  }",
                       "}",
                       "",
-                      "function hasExcessiveGoldRingQuantity(lineItems) {",
+                      "function excessiveGoldRingQuantity(lineItems) {",
                       "  const goldRingItemId = \"e02876a5-64a7-6a30-3055-25213cd48f47\";",
                       "  for (const lineItem of lineItems) {",
                       "    if (lineItem.catalogReference.catalogItemId === goldRingItemId && lineItem.quantity > 5) {",
@@ -537,8 +538,7 @@
                   "members":
                     [ "preset",
                       "custom" ] } ] },
-        "labels":
-          [ "changed" ] },
+        "labels": [] },
       { "name": "LineItem",
         "locations":
           [ { "lineno": 77,
@@ -575,8 +575,7 @@
               "doc": "[Subscription option](https://support.wix.com/en/article/wix-stores-selling-product-subscriptions) information. A subscription is a product that is sold on a recurring basis." } ],
         "extra":
           {  },
-        "labels":
-          [ "changed" ] },
+        "labels": [] },
       { "name": "LineItemViolation",
         "locations":
           [ { "lineno": 384,
@@ -1040,8 +1039,7 @@
               "doc": "Applied discounts." } ],
         "extra":
           {  },
-        "labels":
-          [ "changed" ] },
+        "labels": [] },
       { "name": "Value",
         "locations":
           [ { "lineno": 333,
