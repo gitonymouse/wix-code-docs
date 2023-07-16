@@ -1,7 +1,7 @@
 { "name": "ecom-validations",
   "mixes": [],
   "labels":
-    [ "new" ],
+    [ "changed" ],
   "location":
     { "lineno": 1,
       "filename": "validations-index.js" },
@@ -22,7 +22,7 @@
           "",
           "The image below shows a checkout page with both a general validation violation error and a line item validation violation error.",
           "",
-          "![Cart page warning and error](assets/images/img2.png \"Checkout page errors\")",
+          "![Checkout page warning and error](assets/images/img2.png \"Checkout page errors\")",
           "",
           "",
           "For a step-by-step tutorial, see [Validation Violations SPI custom extension](https://support.wix.com/en/article/velo-tutorial-validations-custom-extension). ",
