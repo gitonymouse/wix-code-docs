@@ -1,0 +1,421 @@
+{
+  "name": "wix-members-followers-backend-v1",
+  "displayName": "wix-members-followers-backend.v1",
+  "mixes": [],
+  "callbacks": [],
+  "extra": {},
+  "clientId": "wix-members-followers-backend.v1",
+  "docs": {},
+  "relatedGuides": [],
+  "properties": [],
+  "operations": [],
+  "messages": [
+    {
+      "name": "FollowRequest",
+      "members": [
+        {
+          "name": "userId",
+          "type": [
+            {
+              "nativeType": "string"
+            }
+          ],
+          "doc": "Site member ID"
+        }
+      ],
+      "docs": {
+        "description": [
+          ""
+        ]
+      }
+    },
+    {
+      "name": "FollowResponse",
+      "members": [],
+      "docs": {
+        "description": [
+          ""
+        ]
+      }
+    },
+    {
+      "name": "Follower",
+      "members": [],
+      "docs": {
+        "description": [
+          "Fake FQDN\nService will soon be replaces by v2 of the service, so does not make sense to refactor this service to support fqdn"
+        ]
+      }
+    },
+    {
+      "name": "FollowingsFollowers",
+      "members": [
+        {
+          "name": "followed",
+          "optional": true,
+          "type": [
+            {
+              "nativeType": "boolean"
+            }
+          ],
+          "doc": "Shows if the caller is following this site member"
+        },
+        {
+          "name": "following",
+          "optional": true,
+          "type": [
+            {
+              "nativeType": "boolean"
+            }
+          ],
+          "doc": "Shows if this site member is following the caller"
+        },
+        {
+          "name": "userId",
+          "optional": true,
+          "type": [
+            {
+              "nativeType": "string"
+            }
+          ],
+          "doc": "Site member ID"
+        }
+      ],
+      "docs": {
+        "description": [
+          ""
+        ]
+      }
+    },
+    {
+      "name": "ListFollowersOptions",
+      "members": [
+        {
+          "name": "limit",
+          "optional": true,
+          "type": [
+            {
+              "nativeType": "number"
+            }
+          ],
+          "doc": "Amount of items per response"
+        },
+        {
+          "name": "offset",
+          "optional": true,
+          "type": [
+            {
+              "nativeType": "number"
+            }
+          ],
+          "doc": "Number of items to skip"
+        }
+      ],
+      "docs": {
+        "description": [
+          ""
+        ]
+      }
+    },
+    {
+      "name": "ListFollowersRequest",
+      "members": [
+        {
+          "name": "limit",
+          "optional": true,
+          "type": [
+            {
+              "nativeType": "number"
+            }
+          ],
+          "doc": "Amount of items per response"
+        },
+        {
+          "name": "offset",
+          "optional": true,
+          "type": [
+            {
+              "nativeType": "number"
+            }
+          ],
+          "doc": "Number of items to skip"
+        },
+        {
+          "name": "userId",
+          "type": [
+            {
+              "nativeType": "string"
+            }
+          ],
+          "doc": "Site member ID"
+        }
+      ],
+      "docs": {
+        "description": [
+          ""
+        ]
+      }
+    },
+    {
+      "name": "ListFollowersResponse",
+      "members": [
+        {
+          "name": "count",
+          "optional": true,
+          "type": [
+            {
+              "nativeType": "string"
+            }
+          ],
+          "doc": "Total follower count"
+        },
+        {
+          "name": "userIds",
+          "optional": true,
+          "type": [
+            {
+              "complexType": {
+                "nativeType": "Array",
+                "typeParams": [
+                  {
+                    "nativeType": "string"
+                  }
+                ]
+              }
+            }
+          ],
+          "doc": "Follower site member IDs"
+        }
+      ],
+      "docs": {
+        "description": [
+          ""
+        ]
+      }
+    },
+    {
+      "name": "ListFollowingsFollowersOptions",
+      "members": [
+        {
+          "name": "userIds",
+          "optional": true,
+          "type": [
+            {
+              "complexType": {
+                "nativeType": "Array",
+                "typeParams": [
+                  {
+                    "nativeType": "string"
+                  }
+                ]
+              }
+            }
+          ],
+          "doc": "Site member IDs"
+        }
+      ],
+      "docs": {
+        "description": [
+          ""
+        ]
+      }
+    },
+    {
+      "name": "ListFollowingsFollowersRequest",
+      "members": [
+        {
+          "name": "userId",
+          "type": [
+            {
+              "nativeType": "string"
+            }
+          ],
+          "doc": "Site member ID"
+        },
+        {
+          "name": "userIds",
+          "optional": true,
+          "type": [
+            {
+              "complexType": {
+                "nativeType": "Array",
+                "typeParams": [
+                  {
+                    "nativeType": "string"
+                  }
+                ]
+              }
+            }
+          ],
+          "doc": "Site member IDs"
+        }
+      ],
+      "docs": {
+        "description": [
+          ""
+        ]
+      }
+    },
+    {
+      "name": "ListFollowingsFollowersResponse",
+      "members": [
+        {
+          "name": "followingsFollowers",
+          "optional": true,
+          "type": [
+            {
+              "complexType": {
+                "nativeType": "Array",
+                "typeParams": [
+                  {
+                    "referenceType": "wix-members-followers-backend-v1.FollowingsFollowers"
+                  }
+                ]
+              }
+            }
+          ],
+          "doc": "Site members IDs with their status"
+        }
+      ],
+      "docs": {
+        "description": [
+          ""
+        ]
+      }
+    },
+    {
+      "name": "ListFollowingsOptions",
+      "members": [
+        {
+          "name": "limit",
+          "optional": true,
+          "type": [
+            {
+              "nativeType": "number"
+            }
+          ],
+          "doc": "Amount of items per response"
+        },
+        {
+          "name": "offset",
+          "optional": true,
+          "type": [
+            {
+              "nativeType": "number"
+            }
+          ],
+          "doc": "Number of items to skip"
+        }
+      ],
+      "docs": {
+        "description": [
+          ""
+        ]
+      }
+    },
+    {
+      "name": "ListFollowingsRequest",
+      "members": [
+        {
+          "name": "limit",
+          "optional": true,
+          "type": [
+            {
+              "nativeType": "number"
+            }
+          ],
+          "doc": "Amount of items per response"
+        },
+        {
+          "name": "offset",
+          "optional": true,
+          "type": [
+            {
+              "nativeType": "number"
+            }
+          ],
+          "doc": "Number of items to skip"
+        },
+        {
+          "name": "userId",
+          "type": [
+            {
+              "nativeType": "string"
+            }
+          ],
+          "doc": "Site member ID"
+        }
+      ],
+      "docs": {
+        "description": [
+          ""
+        ]
+      }
+    },
+    {
+      "name": "ListFollowingsResponse",
+      "members": [
+        {
+          "name": "count",
+          "optional": true,
+          "type": [
+            {
+              "nativeType": "string"
+            }
+          ],
+          "doc": "Total count of followed users"
+        },
+        {
+          "name": "userIds",
+          "optional": true,
+          "type": [
+            {
+              "complexType": {
+                "nativeType": "Array",
+                "typeParams": [
+                  {
+                    "nativeType": "string"
+                  }
+                ]
+              }
+            }
+          ],
+          "doc": "Followed site member IDs"
+        }
+      ],
+      "docs": {
+        "description": [
+          ""
+        ]
+      }
+    },
+    {
+      "name": "UnfollowRequest",
+      "members": [
+        {
+          "name": "userId",
+          "type": [
+            {
+              "nativeType": "string"
+            }
+          ],
+          "doc": "Site member ID"
+        }
+      ],
+      "docs": {
+        "description": [
+          ""
+        ]
+      }
+    },
+    {
+      "name": "UnfollowResponse",
+      "members": [],
+      "docs": {
+        "description": [
+          ""
+        ]
+      }
+    }
+  ]
+}
