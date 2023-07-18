@@ -1,8 +1,7 @@
 { "name": "Effects",
   "memberOf": "$w",
   "mixes": [],
-  "labels":
-    [ "new" ],
+  "labels": [],
   "location":
     { "lineno": 49,
       "filename": "EffectsMixin.js" },
