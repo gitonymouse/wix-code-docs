@@ -9,8 +9,7 @@
       "$w.StyleMixin",
       "$w.LabelMixin",
       "$w.EffectsMixin" ],
-  "labels":
-    [ "changed" ],
+  "labels": [],
   "location":
     { "lineno": 1,
       "filename": "Button.js" },
@@ -452,6 +451,8 @@
   "messages": [],
   "extra":
     { "queryable": true },
+  "relatedGuides":
+    [ { "path": "./button/guides/CSS Classes.md" } ],
   "relatedContent":
     [ { "icon": "article",
         "text": "Adding Custom Interactivity with Events",

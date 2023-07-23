@@ -5,8 +5,7 @@
       "$w.HiddenCollapsedMixin",
       "$w.ClickableMixin",
       "$w.EffectsMixin" ],
-  "labels":
-    [ "changed" ],
+  "labels": [],
   "location":
     { "lineno": 1,
       "filename": "Text.js" },
@@ -198,6 +197,8 @@
   "messages": [],
   "extra":
     { "queryable": true },
+  "relatedGuides":
+    [ { "path": "./text/guides/CSS Classes.md" } ],
   "relatedContent":
     [ { "icon": "example",
         "text": "Create a Weather Widget",
