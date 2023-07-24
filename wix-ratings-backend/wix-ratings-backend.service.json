@@ -96,7 +96,7 @@
               "referenceType": "wix-ratings-backend.Rating"
             }
           ],
-          "doc": ""
+          "doc": "Rating to create."
         }
       ],
       "docs": {
