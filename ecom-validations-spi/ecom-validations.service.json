@@ -1,7 +1,7 @@
 { "name": "ecom-validations",
   "mixes": [],
   "labels":
-    [ "new" ],
+    [ "changed" ],
   "location":
     { "lineno": 1,
       "filename": "validations-index.js" },
@@ -23,7 +23,7 @@
           "",
           "![Checkout page errors](..assets/images/img2.png \"Checkout page errors\")",
           "",
-          "For a step-by-step tutorial, see [Validation Violations SPI custom extension](https://support.wix.com/en/article/velo-tutorial-validations-custom-extension). ",
+          "For a step-by-step tutorial, see [Validation Violations SPI custom extension](https://support.wix.com/en/article/tutorial-validations-custom-extension). ",
           "",
           "Future functionality includes validating products and orders.",
           "",
