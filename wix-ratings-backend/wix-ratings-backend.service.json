@@ -60,7 +60,7 @@
               "nativeType": "number"
             }
           ],
-          "doc": "Number of ratings for the attribute."
+          "doc": "Total number of ratings."
         },
         {
           "name": "valueBreakdown",
@@ -456,7 +456,7 @@
               "nativeType": "string"
             }
           ],
-          "doc": "The Wix module or app that Ratings is integrated with. For example, Wix Reviews as `reviews`."
+          "doc": "The Wix module or app that the Ratings API is integrated with. For example, Wix Reviews as `reviews`."
         }
       ],
       "docs": {
@@ -476,7 +476,7 @@
               "nativeType": "number"
             }
           ],
-          "doc": "Average rating."
+          "doc": "Average rating for the attributes of the entity."
         },
         {
           "name": "entityId",
@@ -496,7 +496,7 @@
               "nativeType": "number"
             }
           ],
-          "doc": "Total number of ratings."
+          "doc": "Total number of ratings for the entity."
         }
       ],
       "docs": {
@@ -941,7 +941,7 @@
               "nativeType": "string"
             }
           ],
-          "doc": "The Wix module or app that Ratings is integrated with. For example, Wix Reviews as `reviews`."
+          "doc": "The Wix module or app that the Ratings API is integrated with. For example, Wix Reviews as `reviews`."
         }
       ],
       "docs": {
@@ -1041,7 +1041,7 @@
               "nativeType": "string"
             }
           ],
-          "doc": "Attribute for the averages."
+          "doc": "Attribute to calculate rating averages for."
         },
         {
           "name": "entityIds",
@@ -1058,7 +1058,7 @@
               }
             }
           ],
-          "doc": "Entity IDs for the averages."
+          "doc": "Entity IDs to calculate rating averages for."
         },
         {
           "name": "namespace",
@@ -1068,7 +1068,7 @@
               "nativeType": "string"
             }
           ],
-          "doc": "Namespace for the averages."
+          "doc": "Namespace to calculate rating averages for."
         }
       ],
       "docs": {
@@ -1087,7 +1087,7 @@
               "nativeType": "string"
             }
           ],
-          "doc": "Attribute for the averages."
+          "doc": "Attribute to calculate rating averages for."
         },
         {
           "name": "entityIds",
@@ -1104,7 +1104,7 @@
               }
             }
           ],
-          "doc": "Entity IDs for the averages."
+          "doc": "Entity IDs to calculate rating averages for."
         },
         {
           "name": "group",
@@ -1123,7 +1123,7 @@
               "nativeType": "string"
             }
           ],
-          "doc": "Namespace for the averages."
+          "doc": "Namespace to calculate rating averages for."
         }
       ],
       "docs": {
@@ -1347,7 +1347,7 @@
               "nativeType": "string"
             }
           ],
-          "doc": "Feature of an entity that can be rated individually. For example, `value for money`."
+          "doc": "Characteristic of an entity that can be rated individually. For example, `value for money`."
         },
         {
           "name": "entityId",
@@ -1377,7 +1377,7 @@
               "nativeType": "string"
             }
           ],
-          "doc": "The Wix module or app that Ratings is integrated with. For example, Wix Reviews as `reviews`."
+          "doc": "The Wix module or app that the Ratings API is integrated with. For example, Wix Reviews as `reviews`."
         },
         {
           "name": "owner",
@@ -1404,7 +1404,7 @@
               }
             }
           ],
-          "doc": "[Query Ratings]() can filter by this parameter."
+          "doc": "[Query Ratings](https://dev.wix.com/api/rest/ratings/query-ratings) can filter by this parameter."
         },
         {
           "name": "revision",
@@ -1430,7 +1430,7 @@
       ],
       "docs": {
         "description": [
-          "A Rating object includes all of the details related to the rating of an entity. An entity is a specific resource to be rated,\nfor example, a store product.\nYou can manage existing ratings, create new ratings, and retrieve rating data.\nRead more about ratings in this [tutorial](https://support.wix.com/en/article/velo-tutorial-capturing-and-displaying-ratings)."
+          "A Rating object includes all of the details related to the rating of an entity or its attributes.\nAn entity is a resource to be rated, for example, a Wix Stores product.\nYou can manage existing ratings, create new ratings, and retrieve rating data.\nRead more about ratings in this [tutorial](https://support.wix.com/en/article/velo-tutorial-capturing-and-displaying-ratings)."
         ]
       }
     },
@@ -1508,7 +1508,7 @@
               "nativeType": "string"
             }
           ],
-          "doc": "Feature of an entity that can be rated individually. For example, `value for money`."
+          "doc": "Characteristic of an entity that can be rated individually. For example, `value for money`."
         },
         {
           "name": "entityId",
@@ -1538,7 +1538,7 @@
               "nativeType": "string"
             }
           ],
-          "doc": "The Wix module or app that Ratings is integrated with. For example, Wix Reviews as `reviews`."
+          "doc": "The Wix module or app that the Ratings API is integrated with. For example, Wix Reviews as `reviews`."
         },
         {
           "name": "owner",
@@ -1565,7 +1565,7 @@
               }
             }
           ],
-          "doc": "[Query Ratings]() can filter by this parameter."
+          "doc": "[Query Ratings](https://dev.wix.com/api/rest/ratings/query-ratings) can filter by this parameter."
         },
         {
           "name": "revision",
