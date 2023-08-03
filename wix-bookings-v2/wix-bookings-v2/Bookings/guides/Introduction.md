@@ -18,7 +18,7 @@ The booking object holds information about the customer and the session or
 schedule they have booked. You can then use the 
 eCommerce APIs to handle the checkout and payment flow.
 
-With Wix Bookings V2 API you can retrieve existing bookings and manage the booking's life cycle.
+With Wix Bookings V2 API you can retrieve existing bookings and manage the booking's life cycle. 
 
 
 ### Terminology
