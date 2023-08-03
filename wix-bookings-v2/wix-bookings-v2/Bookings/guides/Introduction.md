@@ -25,7 +25,7 @@ With Wix Bookings V2 API you can retrieve existing bookings and manage the booki
 
 
 + __Booking__: Information about the service that the customer has booked. 
-  Includes details about the time, location, participants, and price.
+  Includes details about the time, location, participants, and price. 
 + __Booking Status__: Information about the booking's life cycle.
     + `CREATED`: The booking has been created, but doesn't yet appear in the 
       business calendar. 
