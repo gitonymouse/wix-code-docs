@@ -1,0 +1,1818 @@
+{
+  "name": "Events",
+  "memberOf": "wix-ratings-backend",
+  "mixes": [],
+  "callbacks": [],
+  "extra": {},
+  "clientId": "wix-ratings-backend-events",
+  "docs": {},
+  "relatedGuides": [],
+  "properties": [],
+  "operations": [
+    {
+      "name": "onRatingCreated",
+      "params": [
+        {
+          "name": "event",
+          "type": [
+            {
+              "referenceType": "wix-ratings-backend.Events.wixVeloEventsRatingCreated",
+              "displayName": "RatingCreated"
+            }
+          ],
+          "doc": "",
+          "required": false
+        }
+      ],
+      "requiredFields": [],
+      "ret": {
+        "type": [
+          {
+            "nativeType": "void"
+          }
+        ],
+        "doc": null
+      },
+      "docs": {
+        "description": [],
+        "examples": [
+          {
+            "title": "onRatingCreated example",
+            "body": [
+              "",
+              "  export function wixRatings_onRatingCreated(event) {",
+              "    const eventId = event.metadata.id",
+              "    const entityId = event.entity._id;",
+              "  }",
+              "",
+              "  "
+            ]
+          }
+        ]
+      },
+      "isVeloEvent": true,
+      "customLabels": [
+        {
+          "id": "maturity-beta"
+        }
+      ],
+      "syntaxName": "wixRatings_onRatingCreated"
+    },
+    {
+      "name": "onRatingDeleted",
+      "params": [
+        {
+          "name": "event",
+          "type": [
+            {
+              "referenceType": "wix-ratings-backend.Events.wixVeloEventsRatingDeleted",
+              "displayName": "RatingDeleted"
+            }
+          ],
+          "doc": "",
+          "required": false
+        }
+      ],
+      "requiredFields": [],
+      "ret": {
+        "type": [
+          {
+            "nativeType": "void"
+          }
+        ],
+        "doc": null
+      },
+      "docs": {
+        "description": [],
+        "examples": [
+          {
+            "title": "onRatingDeleted example",
+            "body": [
+              "",
+              "  export function wixRatings_onRatingDeleted(event) {",
+              "    const eventId = event.metadata.id",
+              "    const entityId = event.entity._id;",
+              "  }",
+              "",
+              "  "
+            ]
+          }
+        ]
+      },
+      "isVeloEvent": true,
+      "customLabels": [
+        {
+          "id": "maturity-beta"
+        }
+      ],
+      "syntaxName": "wixRatings_onRatingDeleted"
+    },
+    {
+      "name": "onRatingEntityAttributeSummaryUpdated",
+      "params": [
+        {
+          "name": "event",
+          "type": [
+            {
+              "referenceType": "wix-ratings-backend.Events.wixVeloEventsRatingEntityAttributeSummaryUpdated",
+              "displayName": "RatingEntityAttributeSummaryUpdated"
+            }
+          ],
+          "doc": "",
+          "required": false
+        }
+      ],
+      "requiredFields": [],
+      "ret": {
+        "type": [
+          {
+            "nativeType": "void"
+          }
+        ],
+        "doc": null
+      },
+      "docs": {
+        "description": [],
+        "examples": [
+          {
+            "title": "onRatingEntityAttributeSummaryUpdated example",
+            "body": [
+              "",
+              "  export function wixRatings_onRatingEntityAttributeSummaryUpdated(event) {",
+              "    const eventId = event.metadata.id",
+              "    const entityId = event.data.rating._id;",
+              "  }",
+              "",
+              "  "
+            ]
+          }
+        ]
+      },
+      "isVeloEvent": true,
+      "customLabels": [
+        {
+          "id": "maturity-beta"
+        }
+      ],
+      "syntaxName": "wixRatings_onRatingEntityAttributeSummaryUpdated"
+    },
+    {
+      "name": "onRatingGroupAttributeSummaryUpdated",
+      "params": [
+        {
+          "name": "event",
+          "type": [
+            {
+              "referenceType": "wix-ratings-backend.Events.wixVeloEventsRatingGroupAttributeSummaryUpdated",
+              "displayName": "RatingGroupAttributeSummaryUpdated"
+            }
+          ],
+          "doc": "",
+          "required": false
+        }
+      ],
+      "requiredFields": [],
+      "ret": {
+        "type": [
+          {
+            "nativeType": "void"
+          }
+        ],
+        "doc": null
+      },
+      "docs": {
+        "description": [],
+        "examples": [
+          {
+            "title": "onRatingGroupAttributeSummaryUpdated example",
+            "body": [
+              "",
+              "  export function wixRatings_onRatingGroupAttributeSummaryUpdated(event) {",
+              "    const eventId = event.metadata.id",
+              "    const entityId = event.data.rating._id;",
+              "  }",
+              "",
+              "  "
+            ]
+          }
+        ]
+      },
+      "isVeloEvent": true,
+      "customLabels": [
+        {
+          "id": "maturity-beta"
+        }
+      ],
+      "syntaxName": "wixRatings_onRatingGroupAttributeSummaryUpdated"
+    },
+    {
+      "name": "onRatingUpdated",
+      "params": [
+        {
+          "name": "event",
+          "type": [
+            {
+              "referenceType": "wix-ratings-backend.Events.wixVeloEventsRatingUpdated",
+              "displayName": "RatingUpdated"
+            }
+          ],
+          "doc": "",
+          "required": false
+        }
+      ],
+      "requiredFields": [],
+      "ret": {
+        "type": [
+          {
+            "nativeType": "void"
+          }
+        ],
+        "doc": null
+      },
+      "docs": {
+        "description": [],
+        "examples": [
+          {
+            "title": "onRatingUpdated example",
+            "body": [
+              "",
+              "  export function wixRatings_onRatingUpdated(event) {",
+              "    const eventId = event.metadata.id",
+              "    const entityId = event.entity._id;",
+              "  }",
+              "",
+              "  "
+            ]
+          }
+        ]
+      },
+      "isVeloEvent": true,
+      "customLabels": [
+        {
+          "id": "maturity-beta"
+        }
+      ],
+      "syntaxName": "wixRatings_onRatingUpdated"
+    }
+  ],
+  "messages": [
+    {
+      "name": "wixVeloEventsActionEvent",
+      "members": [
+        {
+          "name": "bodyAsJson",
+          "optional": true,
+          "type": [
+            {
+              "nativeType": "string"
+            }
+          ],
+          "doc": ""
+        }
+      ],
+      "docs": {
+        "description": [
+          ""
+        ]
+      }
+    },
+    {
+      "name": "wixVeloEventsAttributeSummary",
+      "members": [
+        {
+          "name": "attributeName",
+          "optional": true,
+          "type": [
+            {
+              "nativeType": "string"
+            }
+          ],
+          "doc": "Attribute name. An attribute is a feature of an entity that can be rated individually."
+        },
+        {
+          "name": "average",
+          "optional": true,
+          "type": [
+            {
+              "nativeType": "number"
+            }
+          ],
+          "doc": "Average rating score for the attribute."
+        },
+        {
+          "name": "total",
+          "optional": true,
+          "type": [
+            {
+              "nativeType": "number"
+            }
+          ],
+          "doc": "Total number of ratings."
+        },
+        {
+          "name": "valueBreakdown",
+          "optional": true,
+          "type": [
+            {
+              "complexType": {
+                "nativeType": "Array",
+                "typeParams": [
+                  {
+                    "referenceType": "wix-ratings-backend.Events.wixVeloEventsValueBreakdown",
+                    "displayName": "ValueBreakdown"
+                  }
+                ]
+              }
+            }
+          ],
+          "doc": "Details of the rating scores. This includes every rating `value` given for the attribute and the `total` number of ratings with the `value`."
+        }
+      ],
+      "docs": {
+        "description": [
+          ""
+        ]
+      }
+    },
+    {
+      "name": "wixVeloEventsBackendEventMetadata",
+      "members": [
+        {
+          "name": "entityId",
+          "type": [
+            {
+              "nativeType": "string"
+            }
+          ],
+          "doc": "ID of the entity associated with the event."
+        },
+        {
+          "name": "eventTime",
+          "type": [
+            {
+              "nativeType": "string"
+            }
+          ],
+          "doc": "Event timestamp."
+        },
+        {
+          "name": "id",
+          "type": [
+            {
+              "nativeType": "string"
+            }
+          ],
+          "doc": "Event ID."
+        },
+        {
+          "name": "triggeredByAnonymizeRequest",
+          "type": [
+            {
+              "nativeType": "boolean"
+            }
+          ],
+          "doc": "Whether the event was triggered as a result of a privacy regulation application (for example, [GDPR](https://support.wix.com/en/article/gdpr-frequently-asked-questions)). For advanced users."
+        }
+      ],
+      "docs": {
+        "description": [
+          ""
+        ]
+      }
+    },
+    {
+      "name": "wixVeloEventsCreateRatingRequest",
+      "members": [
+        {
+          "name": "rating",
+          "type": [
+            {
+              "referenceType": "wix-ratings-backend.Events.wixVeloEventsRating",
+              "displayName": "Rating"
+            }
+          ],
+          "doc": "Rating to create."
+        }
+      ],
+      "docs": {
+        "description": [
+          ""
+        ]
+      }
+    },
+    {
+      "name": "wixVeloEventsCreateRatingResponse",
+      "members": [
+        {
+          "name": "rating",
+          "optional": true,
+          "type": [
+            {
+              "referenceType": "wix-ratings-backend.Events.wixVeloEventsRating",
+              "displayName": "Rating"
+            }
+          ],
+          "doc": "Created rating."
+        }
+      ],
+      "docs": {
+        "description": [
+          ""
+        ]
+      }
+    },
+    {
+      "name": "wixVeloEventsCursorPaging",
+      "members": [
+        {
+          "name": "cursor",
+          "optional": true,
+          "type": [
+            {
+              "nativeType": "string"
+            }
+          ],
+          "doc": "Cursor returned in last query response. Should not be provided on first page request."
+        },
+        {
+          "name": "limit",
+          "optional": true,
+          "type": [
+            {
+              "nativeType": "number"
+            }
+          ],
+          "doc": "The number of items to load.\nCursor token returned in the query response. To be used on the next query request, but not the first query request.\n\nMax: `100` <br />\nDefault: `50`\n"
+        }
+      ],
+      "docs": {
+        "description": [
+          ""
+        ]
+      }
+    },
+    {
+      "name": "wixVeloEventsCursors",
+      "members": [
+        {
+          "name": "next",
+          "optional": true,
+          "type": [
+            {
+              "nativeType": "string"
+            }
+          ],
+          "doc": "Cursor pointing to next page in the list of results."
+        },
+        {
+          "name": "prev",
+          "optional": true,
+          "type": [
+            {
+              "nativeType": "string"
+            }
+          ],
+          "doc": "Cursor pointing to previous page in the list of results."
+        }
+      ],
+      "docs": {
+        "description": [
+          ""
+        ]
+      }
+    },
+    {
+      "name": "wixVeloEventsDeleteRatingRequest",
+      "members": [
+        {
+          "name": "_id",
+          "type": [
+            {
+              "nativeType": "string"
+            }
+          ],
+          "doc": "ID of the rating to delete."
+        }
+      ],
+      "docs": {
+        "description": [
+          ""
+        ]
+      }
+    },
+    {
+      "name": "wixVeloEventsDeleteRatingResponse",
+      "members": [],
+      "docs": {
+        "description": [
+          ""
+        ]
+      }
+    },
+    {
+      "name": "wixVeloEventsDomainEvent",
+      "members": [
+        {
+          "name": "_id",
+          "optional": true,
+          "type": [
+            {
+              "nativeType": "string"
+            }
+          ],
+          "doc": "random GUID so clients can tell if event was already handled"
+        },
+        {
+          "name": "actionEvent",
+          "optional": true,
+          "type": [
+            {
+              "referenceType": "wix-ratings-backend.Events.wixVeloEventsActionEvent",
+              "displayName": "ActionEvent"
+            }
+          ],
+          "doc": ""
+        },
+        {
+          "name": "createdEvent",
+          "optional": true,
+          "type": [
+            {
+              "referenceType": "wix-ratings-backend.Events.wixVeloEventsEntityCreatedEvent",
+              "displayName": "EntityCreatedEvent"
+            }
+          ],
+          "doc": ""
+        },
+        {
+          "name": "deletedEvent",
+          "optional": true,
+          "type": [
+            {
+              "referenceType": "wix-ratings-backend.Events.wixVeloEventsEntityDeletedEvent",
+              "displayName": "EntityDeletedEvent"
+            }
+          ],
+          "doc": ""
+        },
+        {
+          "name": "entityEventSequence",
+          "optional": true,
+          "type": [
+            {
+              "nativeType": "string"
+            }
+          ],
+          "doc": "A sequence number defining the order of updates to the underlying entity.\nFor example, given that some entity was updated at 16:00 and than again at 16:01,\nit is guaranteed that the sequence number of the second update is strictly higher than the first.\nAs the consumer, you can use this value to ensure that you handle messages in the correct order.\nTo do so, you will need to persist this number on your end, and compare the sequence number from the\nmessage against the one you have stored. Given that the stored number is higher, you should ignore the message."
+        },
+        {
+          "name": "entityFqdn",
+          "optional": true,
+          "type": [
+            {
+              "nativeType": "string"
+            }
+          ],
+          "doc": "Assumes actions are also always typed to an entity_type\nExample: wix.stores.catalog.product, wix.bookings.session, wix.payments.transaction"
+        },
+        {
+          "name": "entityId",
+          "optional": true,
+          "type": [
+            {
+              "nativeType": "string"
+            }
+          ],
+          "doc": "Assuming that all messages including Actions have id\nExample: The id of the specific order, the id of a specific campaign"
+        },
+        {
+          "name": "eventTime",
+          "optional": true,
+          "type": [
+            {
+              "nativeType": "Date"
+            }
+          ],
+          "doc": "The time of the event. Useful if there was a delay in dispatching"
+        },
+        {
+          "name": "originatedFrom",
+          "optional": true,
+          "type": [
+            {
+              "nativeType": "string"
+            }
+          ],
+          "doc": "If present, indicates the action that triggered the event."
+        },
+        {
+          "name": "slug",
+          "optional": true,
+          "type": [
+            {
+              "nativeType": "string"
+            }
+          ],
+          "doc": "This is top level to ease client code dispatching of messages (switch on entity_fqdn+slug)\nThis is although the created/updated/deleted notion is duplication of the oneof types\nExample: created/updated/deleted/started/completed/email_opened"
+        },
+        {
+          "name": "triggeredByAnonymizeRequest",
+          "optional": true,
+          "type": [
+            {
+              "nativeType": "boolean"
+            }
+          ],
+          "doc": "A field that should be set if this event was triggered by an anonymize request.\nFor example you must set it to true when sending an event as a result of a GDPR right to be forgotten request.\nNOTE: This field is not relevant for `EntityCreatedEvent` but is located here for better ergonomics of consumers."
+        },
+        {
+          "name": "updatedEvent",
+          "optional": true,
+          "type": [
+            {
+              "referenceType": "wix-ratings-backend.Events.wixVeloEventsEntityUpdatedEvent",
+              "displayName": "EntityUpdatedEvent"
+            }
+          ],
+          "doc": ""
+        }
+      ],
+      "extra": {
+        "oneOfGroups": [
+          {
+            "name": "oneOfDomainEventBodyOneOf",
+            "members": [
+              "actionEvent",
+              "createdEvent",
+              "deletedEvent",
+              "updatedEvent"
+            ]
+          }
+        ]
+      },
+      "docs": {
+        "description": [
+          ""
+        ]
+      }
+    },
+    {
+      "name": "wixVeloEventsDomainEventBodyOneOf",
+      "members": [
+        {
+          "name": "actionEvent",
+          "optional": true,
+          "type": [
+            {
+              "referenceType": "wix-ratings-backend.Events.wixVeloEventsActionEvent",
+              "displayName": "ActionEvent"
+            }
+          ],
+          "doc": ""
+        },
+        {
+          "name": "createdEvent",
+          "optional": true,
+          "type": [
+            {
+              "referenceType": "wix-ratings-backend.Events.wixVeloEventsEntityCreatedEvent",
+              "displayName": "EntityCreatedEvent"
+            }
+          ],
+          "doc": ""
+        },
+        {
+          "name": "deletedEvent",
+          "optional": true,
+          "type": [
+            {
+              "referenceType": "wix-ratings-backend.Events.wixVeloEventsEntityDeletedEvent",
+              "displayName": "EntityDeletedEvent"
+            }
+          ],
+          "doc": ""
+        },
+        {
+          "name": "updatedEvent",
+          "optional": true,
+          "type": [
+            {
+              "referenceType": "wix-ratings-backend.Events.wixVeloEventsEntityUpdatedEvent",
+              "displayName": "EntityUpdatedEvent"
+            }
+          ],
+          "doc": ""
+        }
+      ],
+      "docs": {
+        "description": [
+          ""
+        ]
+      }
+    },
+    {
+      "name": "wixVeloEventsEmpty",
+      "members": [],
+      "docs": {
+        "description": [
+          ""
+        ]
+      }
+    },
+    {
+      "name": "wixVeloEventsEntityAttributeSummaryUpdated",
+      "members": [
+        {
+          "name": "attributeSummary",
+          "optional": true,
+          "type": [
+            {
+              "referenceType": "wix-ratings-backend.Events.wixVeloEventsAttributeSummary",
+              "displayName": "AttributeSummary"
+            }
+          ],
+          "doc": "Rating summary of the attributes."
+        },
+        {
+          "name": "entityId",
+          "optional": true,
+          "type": [
+            {
+              "nativeType": "string"
+            }
+          ],
+          "doc": "ID of the entity."
+        },
+        {
+          "name": "group",
+          "optional": true,
+          "type": [
+            {
+              "nativeType": "string"
+            }
+          ],
+          "doc": "A group of entities in a namespace. A namespace can have one or more groups. For example, `blog` and `forum` groups in the `comments` namespace."
+        },
+        {
+          "name": "namespace",
+          "optional": true,
+          "type": [
+            {
+              "nativeType": "string"
+            }
+          ],
+          "doc": "The Wix module or app that the Ratings API is integrated with. For example, Wix Reviews as `reviews`."
+        }
+      ],
+      "docs": {
+        "description": [
+          ""
+        ]
+      }
+    },
+    {
+      "name": "wixVeloEventsEntityAverage",
+      "members": [
+        {
+          "name": "average",
+          "optional": true,
+          "type": [
+            {
+              "nativeType": "number"
+            }
+          ],
+          "doc": "Average rating for the attributes of the entity."
+        },
+        {
+          "name": "entityId",
+          "optional": true,
+          "type": [
+            {
+              "nativeType": "string"
+            }
+          ],
+          "doc": "Entity ID."
+        },
+        {
+          "name": "total",
+          "optional": true,
+          "type": [
+            {
+              "nativeType": "number"
+            }
+          ],
+          "doc": "Total number of ratings for the entity."
+        }
+      ],
+      "docs": {
+        "description": [
+          ""
+        ]
+      }
+    },
+    {
+      "name": "wixVeloEventsEntityCreatedEvent",
+      "members": [
+        {
+          "name": "entityAsJson",
+          "optional": true,
+          "type": [
+            {
+              "nativeType": "string"
+            }
+          ],
+          "doc": ""
+        }
+      ],
+      "docs": {
+        "description": [
+          ""
+        ]
+      }
+    },
+    {
+      "name": "wixVeloEventsEntityDeletedEvent",
+      "members": [],
+      "docs": {
+        "description": [
+          ""
+        ]
+      }
+    },
+    {
+      "name": "wixVeloEventsEntityUpdatedEvent",
+      "members": [
+        {
+          "name": "currentEntityAsJson",
+          "optional": true,
+          "type": [
+            {
+              "nativeType": "string"
+            }
+          ],
+          "doc": "Since platformized APIs only expose PATCH and not PUT we can't assume that the fields sent from the client are the actual diff.\nThis means that to generate a list of changed fields (as opposed to sent fields) one needs to traverse both objects.\nWe don't want to impose this on all developers and so we leave this traversal to the notification recipients which need it."
+        }
+      ],
+      "docs": {
+        "description": [
+          ""
+        ]
+      }
+    },
+    {
+      "name": "wixVeloEventsGetEntitySummaryRequest",
+      "members": [
+        {
+          "name": "attributeNames",
+          "optional": true,
+          "type": [
+            {
+              "complexType": {
+                "nativeType": "Array",
+                "typeParams": [
+                  {
+                    "nativeType": "string"
+                  }
+                ]
+              }
+            }
+          ],
+          "doc": "List of attributes for the summaries."
+        },
+        {
+          "name": "entityId",
+          "type": [
+            {
+              "nativeType": "string"
+            }
+          ],
+          "doc": "Entity ID."
+        },
+        {
+          "name": "group",
+          "type": [
+            {
+              "nativeType": "string"
+            }
+          ],
+          "doc": "Name of group to calculate the summaries for."
+        },
+        {
+          "name": "namespace",
+          "optional": true,
+          "type": [
+            {
+              "nativeType": "string"
+            }
+          ],
+          "doc": "Namespace for the summaries."
+        }
+      ],
+      "docs": {
+        "description": [
+          ""
+        ]
+      }
+    },
+    {
+      "name": "wixVeloEventsGetEntitySummaryResponse",
+      "members": [
+        {
+          "name": "attributeSummaries",
+          "optional": true,
+          "type": [
+            {
+              "complexType": {
+                "nativeType": "Array",
+                "typeParams": [
+                  {
+                    "referenceType": "wix-ratings-backend.Events.wixVeloEventsAttributeSummary",
+                    "displayName": "AttributeSummary"
+                  }
+                ]
+              }
+            }
+          ],
+          "doc": "List of attribute summaries."
+        },
+        {
+          "name": "entityId",
+          "optional": true,
+          "type": [
+            {
+              "nativeType": "string"
+            }
+          ],
+          "doc": "Entity ID."
+        },
+        {
+          "name": "group",
+          "optional": true,
+          "type": [
+            {
+              "nativeType": "string"
+            }
+          ],
+          "doc": "Group name."
+        }
+      ],
+      "docs": {
+        "description": [
+          ""
+        ]
+      }
+    },
+    {
+      "name": "wixVeloEventsGetGroupSummaryRequest",
+      "members": [
+        {
+          "name": "attributeNames",
+          "optional": true,
+          "type": [
+            {
+              "complexType": {
+                "nativeType": "Array",
+                "typeParams": [
+                  {
+                    "nativeType": "string"
+                  }
+                ]
+              }
+            }
+          ],
+          "doc": "List of attributes for the summaries."
+        },
+        {
+          "name": "group",
+          "type": [
+            {
+              "nativeType": "string"
+            }
+          ],
+          "doc": "Name of group to calculate the rating summaries for."
+        },
+        {
+          "name": "namespace",
+          "optional": true,
+          "type": [
+            {
+              "nativeType": "string"
+            }
+          ],
+          "doc": "Namespace for the summaries."
+        }
+      ],
+      "docs": {
+        "description": [
+          ""
+        ]
+      }
+    },
+    {
+      "name": "wixVeloEventsGetGroupSummaryResponse",
+      "members": [
+        {
+          "name": "attributeSummaries",
+          "optional": true,
+          "type": [
+            {
+              "complexType": {
+                "nativeType": "Array",
+                "typeParams": [
+                  {
+                    "referenceType": "wix-ratings-backend.Events.wixVeloEventsAttributeSummary",
+                    "displayName": "AttributeSummary"
+                  }
+                ]
+              }
+            }
+          ],
+          "doc": "List of attribute summaries."
+        },
+        {
+          "name": "group",
+          "optional": true,
+          "type": [
+            {
+              "nativeType": "string"
+            }
+          ],
+          "doc": "Group name."
+        }
+      ],
+      "docs": {
+        "description": [
+          ""
+        ]
+      }
+    },
+    {
+      "name": "wixVeloEventsGetRatingRequest",
+      "members": [
+        {
+          "name": "_id",
+          "type": [
+            {
+              "nativeType": "string"
+            }
+          ],
+          "doc": "ID of the rating to retrieve."
+        }
+      ],
+      "docs": {
+        "description": [
+          ""
+        ]
+      }
+    },
+    {
+      "name": "wixVeloEventsGetRatingResponse",
+      "members": [
+        {
+          "name": "rating",
+          "optional": true,
+          "type": [
+            {
+              "referenceType": "wix-ratings-backend.Events.wixVeloEventsRating",
+              "displayName": "Rating"
+            }
+          ],
+          "doc": "Retrieved rating."
+        }
+      ],
+      "docs": {
+        "description": [
+          ""
+        ]
+      }
+    },
+    {
+      "name": "wixVeloEventsGroupAttributeSummaryUpdated",
+      "members": [
+        {
+          "name": "attributeSummary",
+          "optional": true,
+          "type": [
+            {
+              "referenceType": "wix-ratings-backend.Events.wixVeloEventsAttributeSummary",
+              "displayName": "AttributeSummary"
+            }
+          ],
+          "doc": "Rating summary of the attributes."
+        },
+        {
+          "name": "group",
+          "optional": true,
+          "type": [
+            {
+              "nativeType": "string"
+            }
+          ],
+          "doc": "A group of entities in a namespace. A namespace can have one or more groups. For example, `blog` and `forum` groups in the `comments` namespace."
+        },
+        {
+          "name": "namespace",
+          "optional": true,
+          "type": [
+            {
+              "nativeType": "string"
+            }
+          ],
+          "doc": "The Wix module or app that the Ratings API is integrated with. For example, Wix Reviews as `reviews`."
+        }
+      ],
+      "docs": {
+        "description": [
+          ""
+        ]
+      }
+    },
+    {
+      "name": "wixVeloEventsIdentificationData",
+      "members": [
+        {
+          "name": "anonymousVisitorId",
+          "optional": true,
+          "type": [
+            {
+              "nativeType": "string"
+            }
+          ],
+          "doc": "ID of a site visitor that has not logged in to the site."
+        },
+        {
+          "name": "contactId",
+          "optional": true,
+          "type": [
+            {
+              "nativeType": "string"
+            }
+          ],
+          "doc": "ID of a contact in the site's [CRM by Ascend](https://www.wix.com/ascend/crm) system."
+        },
+        {
+          "name": "memberId",
+          "optional": true,
+          "type": [
+            {
+              "nativeType": "string"
+            }
+          ],
+          "doc": "ID of a site visitor that has logged in to the site."
+        }
+      ],
+      "extra": {
+        "oneOfGroups": [
+          {
+            "name": "oneOfIdentificationDataIdOneOf",
+            "members": [
+              "anonymousVisitorId",
+              "memberId"
+            ]
+          }
+        ]
+      },
+      "docs": {
+        "description": [
+          ""
+        ]
+      }
+    },
+    {
+      "name": "wixVeloEventsIdentificationDataIdOneOf",
+      "members": [
+        {
+          "name": "anonymousVisitorId",
+          "optional": true,
+          "type": [
+            {
+              "nativeType": "string"
+            }
+          ],
+          "doc": "ID of a site visitor that has not logged in to the site."
+        },
+        {
+          "name": "memberId",
+          "optional": true,
+          "type": [
+            {
+              "nativeType": "string"
+            }
+          ],
+          "doc": "ID of a site visitor that has logged in to the site."
+        }
+      ],
+      "docs": {
+        "description": [
+          ""
+        ]
+      }
+    },
+    {
+      "name": "wixVeloEventsListAttributeAveragesByEntityRequest",
+      "members": [
+        {
+          "name": "attributeName",
+          "type": [
+            {
+              "nativeType": "string"
+            }
+          ],
+          "doc": "Attribute to calculate rating averages for."
+        },
+        {
+          "name": "entityIds",
+          "optional": true,
+          "type": [
+            {
+              "complexType": {
+                "nativeType": "Array",
+                "typeParams": [
+                  {
+                    "nativeType": "string"
+                  }
+                ]
+              }
+            }
+          ],
+          "doc": "Entity IDs to calculate rating averages for."
+        },
+        {
+          "name": "group",
+          "type": [
+            {
+              "nativeType": "string"
+            }
+          ],
+          "doc": "Name of group to calculate rating averages for."
+        },
+        {
+          "name": "namespace",
+          "optional": true,
+          "type": [
+            {
+              "nativeType": "string"
+            }
+          ],
+          "doc": "Namespace to calculate rating averages for."
+        }
+      ],
+      "docs": {
+        "description": [
+          ""
+        ]
+      }
+    },
+    {
+      "name": "wixVeloEventsListAttributeAveragesByEntityResponse",
+      "members": [
+        {
+          "name": "entityAverages",
+          "optional": true,
+          "type": [
+            {
+              "complexType": {
+                "nativeType": "Array",
+                "typeParams": [
+                  {
+                    "referenceType": "wix-ratings-backend.Events.wixVeloEventsEntityAverage",
+                    "displayName": "EntityAverage"
+                  }
+                ]
+              }
+            }
+          ],
+          "doc": "Entity averages."
+        },
+        {
+          "name": "group",
+          "optional": true,
+          "type": [
+            {
+              "nativeType": "string"
+            }
+          ],
+          "doc": "Group name."
+        }
+      ],
+      "docs": {
+        "description": [
+          ""
+        ]
+      }
+    },
+    {
+      "name": "wixVeloEventsPagingMetadataV2",
+      "members": [
+        {
+          "name": "count",
+          "optional": true,
+          "type": [
+            {
+              "nativeType": "number"
+            }
+          ],
+          "doc": "Number of items returned in the response."
+        },
+        {
+          "name": "cursors",
+          "optional": true,
+          "type": [
+            {
+              "referenceType": "wix-ratings-backend.Events.wixVeloEventsCursors",
+              "displayName": "Cursors"
+            }
+          ],
+          "doc": "Cursors to navigate through the result pages using `next` and `prev`. Returned if cursor paging is used."
+        }
+      ],
+      "docs": {
+        "description": [
+          ""
+        ]
+      }
+    },
+    {
+      "name": "wixVeloEventsQueryRatingsRequest",
+      "members": [
+        {
+          "name": "query",
+          "optional": true,
+          "type": [
+            {
+              "referenceType": "wix-ratings-backend.Events.wixVeloEventsQueryV2",
+              "displayName": "QueryV2"
+            }
+          ],
+          "doc": "Rating query."
+        }
+      ],
+      "docs": {
+        "description": [
+          ""
+        ]
+      }
+    },
+    {
+      "name": "wixVeloEventsQueryRatingsResponse",
+      "members": [
+        {
+          "name": "metadata",
+          "optional": true,
+          "type": [
+            {
+              "referenceType": "wix-ratings-backend.Events.wixVeloEventsPagingMetadataV2",
+              "displayName": "PagingMetadataV2"
+            }
+          ],
+          "doc": "Paging metadata."
+        },
+        {
+          "name": "ratings",
+          "optional": true,
+          "type": [
+            {
+              "complexType": {
+                "nativeType": "Array",
+                "typeParams": [
+                  {
+                    "referenceType": "wix-ratings-backend.Events.wixVeloEventsRating",
+                    "displayName": "Rating"
+                  }
+                ]
+              }
+            }
+          ],
+          "doc": "List of returned ratings."
+        }
+      ],
+      "docs": {
+        "description": [
+          ""
+        ]
+      }
+    },
+    {
+      "name": "wixVeloEventsQueryV2",
+      "members": [
+        {
+          "name": "cursorPaging",
+          "optional": true,
+          "type": [
+            {
+              "referenceType": "wix-ratings-backend.Events.wixVeloEventsCursorPaging",
+              "displayName": "CursorPaging"
+            }
+          ],
+          "doc": "Cursor paging options."
+        },
+        {
+          "name": "filter",
+          "optional": true,
+          "type": [
+            {
+              "nativeType": "Object"
+            }
+          ],
+          "doc": "Filter object. See [API Query Language](https://dev.wix.com/api/rest/getting-started/api-query-language) for more information.\nFor a detailed list of supported filters, see [Ratings: Supported Filters and Sorting](https://dev.wix.com/api/rest/ratings/sort-and-filter),"
+        },
+        {
+          "name": "sort",
+          "optional": true,
+          "type": [
+            {
+              "complexType": {
+                "nativeType": "Array",
+                "typeParams": [
+                  {
+                    "referenceType": "wix-ratings-backend.Events.wixVeloEventsSorting",
+                    "displayName": "Sorting"
+                  }
+                ]
+              }
+            }
+          ],
+          "doc": "Sorting options. See [Ratings: Supported Filters and Sorting](https://dev.wix.com/api/rest/ratings/sort-and-filter) for more information,"
+        }
+      ],
+      "docs": {
+        "description": [
+          ""
+        ]
+      }
+    },
+    {
+      "name": "wixVeloEventsRating",
+      "members": [
+        {
+          "name": "_createdDate",
+          "readOnly": true,
+          "optional": true,
+          "type": [
+            {
+              "nativeType": "Date"
+            }
+          ],
+          "doc": "Date and time the rating was created."
+        },
+        {
+          "name": "_id",
+          "readOnly": true,
+          "optional": true,
+          "type": [
+            {
+              "nativeType": "string"
+            }
+          ],
+          "doc": "Rating ID."
+        },
+        {
+          "name": "_updatedDate",
+          "readOnly": true,
+          "optional": true,
+          "type": [
+            {
+              "nativeType": "Date"
+            }
+          ],
+          "doc": "Date and time the rating was updated."
+        },
+        {
+          "name": "attributeName",
+          "optional": true,
+          "type": [
+            {
+              "nativeType": "string"
+            }
+          ],
+          "doc": "Characteristic of an entity that can be rated individually. For example, `value for money`."
+        },
+        {
+          "name": "entityId",
+          "optional": true,
+          "type": [
+            {
+              "nativeType": "string"
+            }
+          ],
+          "doc": "ID of the entity being rated. For example, a Wix Stores product."
+        },
+        {
+          "name": "group",
+          "optional": true,
+          "type": [
+            {
+              "nativeType": "string"
+            }
+          ],
+          "doc": "A group of entities in a namespace. A namespace can have one or more groups. For example, `blog` and `forum` groups in the `comments` namespace."
+        },
+        {
+          "name": "namespace",
+          "optional": true,
+          "type": [
+            {
+              "nativeType": "string"
+            }
+          ],
+          "doc": "The Wix module or app that the Ratings API is integrated with. For example, Wix Reviews as `reviews`."
+        },
+        {
+          "name": "owner",
+          "optional": true,
+          "type": [
+            {
+              "referenceType": "wix-ratings-backend.Events.wixVeloEventsIdentificationData",
+              "displayName": "IdentificationData"
+            }
+          ],
+          "doc": "Rating owner."
+        },
+        {
+          "name": "relatedEntityIds",
+          "optional": true,
+          "type": [
+            {
+              "complexType": {
+                "nativeType": "Array",
+                "typeParams": [
+                  {
+                    "nativeType": "string"
+                  }
+                ]
+              }
+            }
+          ],
+          "doc": "[Query Ratings](https://dev.wix.com/api/rest/ratings/query-ratings) can filter by this parameter."
+        },
+        {
+          "name": "revision",
+          "readOnly": true,
+          "optional": true,
+          "type": [
+            {
+              "nativeType": "string"
+            }
+          ],
+          "doc": "Revision number, which increments by 1 each time the rating is updated.\nTo prevent conflicting changes,\nthe current revision must be passed when updating the rating.\nIgnored when creating a rating."
+        },
+        {
+          "name": "value",
+          "optional": true,
+          "type": [
+            {
+              "nativeType": "number"
+            }
+          ],
+          "doc": "Rating score.\n\nMin = `0` <br />\nMax = `100`\n"
+        }
+      ],
+      "docs": {
+        "description": [
+          "A Rating object includes all of the details related to the rating of an entity or its attributes.\nAn entity is a resource to be rated, for example, a Wix Stores product.\nYou can manage existing ratings, create new ratings, and retrieve rating data.\nRead more about ratings in this [tutorial](https://support.wix.com/en/article/velo-tutorial-capturing-and-displaying-ratings)."
+        ]
+      }
+    },
+    {
+      "name": "wixVeloEventsRatingCreated",
+      "members": [
+        {
+          "name": "entity",
+          "type": [
+            {
+              "referenceType": "wix-ratings-backend.Events.wixVeloEventsRating",
+              "displayName": "Rating"
+            }
+          ],
+          "doc": ""
+        },
+        {
+          "name": "metadata",
+          "type": [
+            {
+              "referenceType": "wix-ratings-backend.Events.wixVeloEventsBackendEventMetadata",
+              "displayName": "BackendEventMetadata"
+            }
+          ],
+          "doc": ""
+        }
+      ],
+      "docs": {
+        "description": [
+          ""
+        ]
+      }
+    },
+    {
+      "name": "wixVeloEventsRatingDeleted",
+      "members": [
+        {
+          "name": "metadata",
+          "type": [
+            {
+              "referenceType": "wix-ratings-backend.Events.wixVeloEventsBackendEventMetadata",
+              "displayName": "BackendEventMetadata"
+            }
+          ],
+          "doc": ""
+        }
+      ],
+      "docs": {
+        "description": [
+          ""
+        ]
+      }
+    },
+    {
+      "name": "wixVeloEventsRatingEntityAttributeSummaryUpdated",
+      "members": [
+        {
+          "name": "data",
+          "type": [
+            {
+              "referenceType": "wix-ratings-backend.Events.wixVeloEventsEntityAttributeSummaryUpdated",
+              "displayName": "EntityAttributeSummaryUpdated"
+            }
+          ],
+          "doc": ""
+        },
+        {
+          "name": "metadata",
+          "type": [
+            {
+              "referenceType": "wix-ratings-backend.Events.wixVeloEventsBackendEventMetadata",
+              "displayName": "BackendEventMetadata"
+            }
+          ],
+          "doc": ""
+        }
+      ],
+      "docs": {
+        "description": [
+          ""
+        ]
+      }
+    },
+    {
+      "name": "wixVeloEventsRatingGroupAttributeSummaryUpdated",
+      "members": [
+        {
+          "name": "data",
+          "type": [
+            {
+              "referenceType": "wix-ratings-backend.Events.wixVeloEventsGroupAttributeSummaryUpdated",
+              "displayName": "GroupAttributeSummaryUpdated"
+            }
+          ],
+          "doc": ""
+        },
+        {
+          "name": "metadata",
+          "type": [
+            {
+              "referenceType": "wix-ratings-backend.Events.wixVeloEventsBackendEventMetadata",
+              "displayName": "BackendEventMetadata"
+            }
+          ],
+          "doc": ""
+        }
+      ],
+      "docs": {
+        "description": [
+          ""
+        ]
+      }
+    },
+    {
+      "name": "wixVeloEventsRatingUpdated",
+      "members": [
+        {
+          "name": "entity",
+          "type": [
+            {
+              "referenceType": "wix-ratings-backend.Events.wixVeloEventsRating",
+              "displayName": "Rating"
+            }
+          ],
+          "doc": ""
+        },
+        {
+          "name": "metadata",
+          "type": [
+            {
+              "referenceType": "wix-ratings-backend.Events.wixVeloEventsBackendEventMetadata",
+              "displayName": "BackendEventMetadata"
+            }
+          ],
+          "doc": ""
+        }
+      ],
+      "docs": {
+        "description": [
+          ""
+        ]
+      }
+    },
+    {
+      "name": "wixVeloEventsSorting",
+      "members": [
+        {
+          "name": "fieldName",
+          "optional": true,
+          "type": [
+            {
+              "nativeType": "string"
+            }
+          ],
+          "doc": "Name of the field to sort by."
+        },
+        {
+          "name": "order",
+          "optional": true,
+          "type": [
+            {
+              "nativeType": "string"
+            }
+          ],
+          "doc": "Sort order.\n\nDefault: `ASC`.\n"
+        }
+      ],
+      "docs": {
+        "description": [
+          "Sort options."
+        ]
+      }
+    },
+    {
+      "name": "wixVeloEventsUpdateRatingRequest",
+      "members": [
+        {
+          "name": "rating",
+          "type": [
+            {
+              "referenceType": "wix-ratings-backend.Events.wixVeloEventsRating",
+              "displayName": "Rating"
+            }
+          ],
+          "doc": "Rating to update."
+        }
+      ],
+      "docs": {
+        "description": [
+          ""
+        ]
+      }
+    },
+    {
+      "name": "wixVeloEventsUpdateRatingResponse",
+      "members": [
+        {
+          "name": "rating",
+          "optional": true,
+          "type": [
+            {
+              "referenceType": "wix-ratings-backend.Events.wixVeloEventsRating",
+              "displayName": "Rating"
+            }
+          ],
+          "doc": "Updated rating."
+        }
+      ],
+      "docs": {
+        "description": [
+          ""
+        ]
+      }
+    },
+    {
+      "name": "wixVeloEventsValueBreakdown",
+      "members": [
+        {
+          "name": "total",
+          "optional": true,
+          "type": [
+            {
+              "nativeType": "number"
+            }
+          ],
+          "doc": "Total number of ratings scored with the `value`."
+        },
+        {
+          "name": "value",
+          "optional": true,
+          "type": [
+            {
+              "nativeType": "number"
+            }
+          ],
+          "doc": "Rating score."
+        }
+      ],
+      "docs": {
+        "description": [
+          ""
+        ]
+      }
+    }
+  ]
+}
