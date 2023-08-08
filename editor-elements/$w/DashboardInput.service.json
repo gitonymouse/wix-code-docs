@@ -5,7 +5,7 @@
       "$w.FormElement",
       "$w.DisabledMixin" ],
   "labels":
-    [ "new" ],
+    [ "changed" ],
   "location":
     { "lineno": 1,
       "filename": "DashboardInput.js" },
@@ -85,14 +85,15 @@
         "extra":
           {  } },
       { "name": "prefix",
-        "labels": [],
+        "labels":
+          [ "changed" ],
         "get": true,
         "set": true,
         "type": "string",
         "locations":
           [ { "lineno": 125,
               "filename": "DashboardInput.js" },
-            { "lineno": 146,
+            { "lineno": 147,
               "filename": "DashboardInput.js" } ],
         "docs":
           { "summary": "Sets or gets the field prefix.",
@@ -104,12 +105,13 @@
                 "+ Set as a vector image from the Media Manager: `wix:vector://v1/<vector_uri>/<filename>`",
                 "+ Set as a vector image from the web: `http(s)://<vector image url>`",
                 "+ Set as a vector XML string: `<svg>...</svg>`",
-                "+ Set to null to disable" ],
+                "",
+                "To disable `prefix`, set to `null`." ],
             "links": [],
             "examples":
               [ { "title": "Get a button prefix",
                   "body":
-                    [ "let prefix = $w(\"#myInput\").prefix;" ],
+                    [ "let prefix = $w(\"#myInput\").prefix; // $" ],
                   "extra":
                     {  } },
                 { "title": "Set a button prefix to a simple unit",
@@ -164,14 +166,15 @@
         "extra":
           {  } },
       { "name": "suffix",
-        "labels": [],
+        "labels":
+          [ "changed" ],
         "get": true,
         "set": true,
         "type": "string",
         "locations":
-          [ { "lineno": 152,
+          [ { "lineno": 153,
               "filename": "DashboardInput.js" },
-            { "lineno": 173,
+            { "lineno": 175,
               "filename": "DashboardInput.js" } ],
         "docs":
           { "summary": "Sets or gets the field suffix.",
@@ -179,7 +182,7 @@
             "examples":
               [ { "title": "Get a button suffix",
                   "body":
-                    [ "let prefix = $w(\"#myInput\").suffix;" ],
+                    [ "let prefix = $w(\"#myInput\").suffix; // %" ],
                   "extra":
                     {  } },
                 { "title": "Set a button suffix",
@@ -234,7 +237,8 @@
         "extra":
           {  } },
       { "name": "value",
-        "labels": [],
+        "labels":
+          [ "changed" ],
         "get": true,
         "set": true,
         "type": "string",
@@ -254,12 +258,12 @@
             "examples":
               [ { "title": "Get an input field's value",
                   "body":
-                    [ "let myValue = $w(\"#myInput\").value; // \"Text\"" ],
+                    [ "let myValue = $w(\"#myInput\").value; // \"10 Main Street\"" ],
                   "extra":
                     {  } },
                 { "title": "Set an input field's value",
                   "body":
-                    [ "$w(\"#myInput\").value = \"Text\";" ],
+                    [ "$w(\"#myInput\").value = \"10 Main Street\";" ],
                   "extra":
                     {  } } ],
             "extra":
@@ -278,7 +282,7 @@
           { "type": "$w.Element",
             "doc": "The element on which the event is now registered." },
         "locations":
-          [ { "lineno": 179,
+          [ { "lineno": 181,
               "filename": "DashboardInput.js" } ],
         "docs":
           { "summary": "Adds an event handler that runs when a key is pressed inside the input field.",
@@ -332,7 +336,7 @@
           { "type": "$w.Element",
             "doc": "The element to which the event handler was added." },
         "locations":
-          [ { "lineno": 210,
+          [ { "lineno": 212,
               "filename": "DashboardInput.js" } ],
         "docs":
           { "summary": "Adds an event handler that runs when the key is released within the input.",
