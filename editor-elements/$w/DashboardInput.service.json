@@ -85,8 +85,7 @@
         "extra":
           {  } },
       { "name": "prefix",
-        "labels":
-          [ "changed" ],
+        "labels": [],
         "get": true,
         "set": true,
         "type": "string",
@@ -178,6 +177,16 @@
               "filename": "DashboardInput.js" } ],
         "docs":
           { "summary": "Sets or gets the field suffix.",
+            "description":
+              [ "You can get or set a suffix for a dashboard text button's value. For example, you can set a suffix to be a unit of measurement, such as '$'.",
+                "A suffix can be:",
+                "",
+                "+ Set as a string that can include a symbol, such as '$'",
+                "+ Set as a vector image from the Media Manager: `wix:vector://v1/<vector_uri>/<filename>`",
+                "+ Set as a vector image from the web: `http(s)://<vector image url>`",
+                "+ Set as a vector XML string: `<svg>...</svg>`",
+                "",
+                "To disable `suffix`, set to `null`." ],
             "links": [],
             "examples":
               [ { "title": "Get a button suffix",
@@ -237,8 +246,7 @@
         "extra":
           {  } },
       { "name": "value",
-        "labels":
-          [ "changed" ],
+        "labels": [],
         "get": true,
         "set": true,
         "type": "string",
