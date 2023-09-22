@@ -41,7 +41,9 @@
       },
       "docs": {
         "summary": "Executes a regular search query.\nIf you are unsure, this is likely the search method you want to used.",
-        "description": [],
+        "description": [
+          "This function is not a universal function and runs only on the backend."
+        ],
         "examples": [
           {
             "title": "search example",
@@ -69,7 +71,8 @@
           "id": "maturity-beta"
         }
       ],
-      "syntaxName": "search"
+      "syntaxName": "search",
+      "isAdminMethod": true
     }
   ],
   "messages": [
@@ -372,83 +375,6 @@
       }
     },
     {
-      "name": "DiffMatokyPayload",
-      "members": [
-        {
-          "name": "compareChannel",
-          "optional": true,
-          "type": [
-            {
-              "nativeType": "string"
-            }
-          ],
-          "doc": ""
-        },
-        {
-          "name": "entityId",
-          "optional": true,
-          "type": [
-            {
-              "nativeType": "string"
-            }
-          ],
-          "doc": ""
-        },
-        {
-          "name": "errorInformation",
-          "optional": true,
-          "type": [
-            {
-              "referenceType": "wix-search-v2.SiteSearch.ErrorInformation"
-            }
-          ],
-          "doc": ""
-        },
-        {
-          "name": "left",
-          "optional": true,
-          "type": [
-            {
-              "nativeType": "string"
-            }
-          ],
-          "doc": ""
-        },
-        {
-          "name": "right",
-          "optional": true,
-          "type": [
-            {
-              "nativeType": "string"
-            }
-          ],
-          "doc": ""
-        },
-        {
-          "name": "tags",
-          "optional": true,
-          "type": [
-            {
-              "complexType": {
-                "nativeType": "Array",
-                "typeParams": [
-                  {
-                    "nativeType": "string"
-                  }
-                ]
-              }
-            }
-          ],
-          "doc": ""
-        }
-      ],
-      "docs": {
-        "description": [
-          ""
-        ]
-      }
-    },
-    {
       "name": "DocumentImage",
       "members": [
         {
@@ -548,26 +474,6 @@
     {
       "name": "Empty",
       "members": [],
-      "docs": {
-        "description": [
-          ""
-        ]
-      }
-    },
-    {
-      "name": "ErrorInformation",
-      "members": [
-        {
-          "name": "stackTrace",
-          "optional": true,
-          "type": [
-            {
-              "nativeType": "string"
-            }
-          ],
-          "doc": ""
-        }
-      ],
       "docs": {
         "description": [
           ""
