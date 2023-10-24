@@ -1,7 +1,8 @@
 { "name": "WixDataQueryResult",
   "memberOf": "wix-data",
   "mixes": [],
-  "labels": [],
+  "labels":
+    [ "changed" ],
   "location":
     { "lineno": 302,
       "filename": "query.js" },
@@ -240,7 +241,8 @@
         "extra":
           {  } },
       { "name": "partialIncludes",
-        "labels": [],
+        "labels":
+          [ "changed" ],
         "get": true,
         "set": false,
         "type": "boolean",
@@ -255,7 +257,8 @@
                 " only 50 will be returned and `partialIncludes` will be true.",
                 "",
                 " To retrieve more than 50 referenced items, use the",
-                " [`queryReferenced()`](wix-data.html#queryReferenced) function." ],
+                " [`queryReferenced()`](wix-data.html#queryReferenced) function.",
+                " >**Note:** `partialIncludes`is not supported for Single Item Collections." ],
             "links": [],
             "examples":
               [ { "title": "Get whether there are partial includes in a query result",
@@ -410,7 +413,7 @@
           { "type": "boolean",
             "doc": "`true` if there are more results." },
         "locations":
-          [ { "lineno": 490,
+          [ { "lineno": 491,
               "filename": "query.js" } ],
         "docs":
           { "summary": "Indicates if the query has more results.",
@@ -448,7 +451,7 @@
           { "type": "boolean",
             "doc": "`true` if there are previous results." },
         "locations":
-          [ { "lineno": 501,
+          [ { "lineno": 502,
               "filename": "query.js" } ],
         "docs":
           { "summary": "Indicates the query has previous results.",
@@ -474,7 +477,7 @@
                   [ "wix-data.WixDataQueryResult" ] },
             "doc": "Fulfilled - A query result object with the next page of query results.\nRejected - The errors that caused the rejection." },
         "locations":
-          [ { "lineno": 444,
+          [ { "lineno": 445,
               "filename": "query.js" } ],
         "docs":
           { "summary": "Retrieves the next page of query results.",
@@ -543,7 +546,7 @@
                   [ "wix-data.WixDataQueryResult" ] },
             "doc": "Fulfilled - A query result object with the previous page of query results.\nRejected - The errors that caused the rejection." },
         "locations":
-          [ { "lineno": 468,
+          [ { "lineno": 469,
               "filename": "query.js" } ],
         "docs":
           { "summary": "Retrieves the previous page of query results.",
