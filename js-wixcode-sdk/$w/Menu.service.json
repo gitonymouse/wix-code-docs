@@ -359,7 +359,9 @@
   "messages":
     [ { "name": "MenuItem",
         "locations":
-          [ { "lineno": 35,
+          [ { "lineno": 101,
+              "filename": "Lottie-fake.js" },
+            { "lineno": 35,
               "filename": "Menu.js" } ],
         "docs":
           { "summary": "An object that contains the attributes of a menu item.",
