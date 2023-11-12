@@ -37,7 +37,7 @@ customer, let them select their slot of choice and create the related booking.
 ## Book a Class 
 
 
-Your app could display available sessions for a class to the customer, let 
+Your site could display available sessions for a class to the customer, let 
 them select their session of choice, create the related booking, and handle the 
 in-person payment flow.
 
