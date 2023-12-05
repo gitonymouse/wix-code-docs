@@ -27,7 +27,8 @@ import wixBlogBackend from 'wix-blog-backend';
 
 ## Terminology
 
-- **Post**: A published article on a blog site. It is also referred to as a publication. A blog can have up to 100K posts. 
+- **Post**: A published article on a blog site. It is also referred to as a publication. A blog can have up to 100K posts.
+- **Draft Post**: An article written by a site owner, blog editor, blog writer, or a guest writer that is not yet published.
 - **Category**: A grouping of similar and related posts. A post can be assigned to a maximum of 10 categories.
 - **Tag**: A way to further sort and organize blog posts. Tags provide the ability to filter a blog's articles.
 
