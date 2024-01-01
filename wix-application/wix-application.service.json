@@ -24,8 +24,7 @@
   "properties": [],
   "operations":
     [ { "name": "getAppPageUrl",
-        "labels":
-          [ "changed" ],
+        "labels": [],
         "nameParams": [],
         "params":
           [ { "name": "pageId",
@@ -91,8 +90,6 @@
               [ { "title": "Retrieve the Vendor Product ID",
                   "body":
                     [ "import wixApplication from 'wix-application';",
-                      "",
-                      "// ...",
                       "",
                       "wixApplication.getDecodedAppInstance().then(instance => {",
                       "    const plan = instance.vendorProductId; // 'basic'",
@@ -214,7 +211,6 @@
               "doc": "The plan's expiration date." } ],
         "extra":
           {  },
-        "labels":
-          [ "changed" ] } ],
+        "labels": [] } ],
   "extra":
     {  } }
