@@ -4,7 +4,8 @@
     [ "$w.Element",
       "$w.HiddenCollapsedMixin",
       "$w.EffectsMixin" ],
-  "labels": [],
+  "labels":
+    [ "changed" ],
   "location":
     { "lineno": 1,
       "filename": "Repeater.js" },
@@ -530,16 +531,17 @@
           {  } } ],
   "operations":
     [ { "name": "forEachItem",
-        "labels": [],
+        "labels":
+          [ "changed" ],
         "nameParams": [],
         "params":
           [ { "name": "callback",
               "type": "$w.ForItemCallback",
-              "doc": "The name of the function to run for each repeated item." } ],
+              "doc": "The name of the function or the function expression to run for each repeated item." } ],
         "ret":
           { "type": "void" },
         "locations":
-          [ { "lineno": 403,
+          [ { "lineno": 401,
               "filename": "Repeater.js" } ],
         "docs":
           { "summary": "Runs a function for each repeated item.",
@@ -616,7 +618,8 @@
         "extra":
           {  } },
       { "name": "forItems",
-        "labels": [],
+        "labels":
+          [ "changed" ],
         "nameParams": [],
         "params":
           [ { "name": "itemIds",
@@ -627,11 +630,11 @@
               "doc": "The IDs of the items on which to run the callback function." },
             { "name": "callback",
               "type": "$w.ForItemCallback",
-              "doc": "The name of the function to run for each repeated item." } ],
+              "doc": "The name of the function or the function expression to run for each repeated item." } ],
         "ret":
           { "type": "void" },
         "locations":
-          [ { "lineno": 451,
+          [ { "lineno": 449,
               "filename": "Repeater.js" } ],
         "docs":
           { "summary": "Runs a function for each repeated item with the given IDs.",
@@ -689,7 +692,8 @@
         "extra":
           {  } },
       { "name": "onItemReady",
-        "labels": [],
+        "labels":
+          [ "changed" ],
         "nameParams": [],
         "params":
           [ { "name": "handler",
@@ -707,9 +711,7 @@
               [ "Use the `onItemReady()` function for code you want to run before new",
                 " repeated items are rendered. ",
                 "",
-                " The `onItemReady()` function can be added as a static event handler using the Properties & Events Panel, or as a dynamic event handler using the `$w` selector. ",
-                "",
-                "> **Note:** When calling this function, make sure to call it only once, and only in the page’s `onReady()` function.",
+                " The `onItemReady()` function should only be set once, and only in the page’s `onReady()` function.",
                 "",
                 " The callback is triggered when you add new items by setting the",
                 " [`data`](#data) property or when new items are created based on a",
@@ -809,7 +811,7 @@
           { "type": "$w.Repeater",
             "doc": "The element on which the event is now registered." },
         "locations":
-          [ { "lineno": 372,
+          [ { "lineno": 370,
               "filename": "Repeater.js" } ],
         "docs":
           { "summary": "Sets the function that runs when a repeated item is removed.",

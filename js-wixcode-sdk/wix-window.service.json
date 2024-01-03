@@ -1,6 +1,7 @@
 { "name": "wix-window",
   "mixes": [],
-  "labels": [],
+  "labels":
+    [ "changed" ],
   "location":
     { "lineno": 1,
       "filename": "window.js" },
@@ -468,7 +469,8 @@
         "extra":
           {  } },
       { "name": "getAppPageData",
-        "labels": [],
+        "labels":
+          [ "removed" ],
         "nameParams": [],
         "params": [],
         "ret":
@@ -893,7 +895,8 @@
         "extra":
           {  } },
       { "name": "postMessage",
-        "labels": [],
+        "labels":
+          [ "changed" ],
         "nameParams": [],
         "params":
           [ { "name": "message",
@@ -908,7 +911,7 @@
               { "name": "Promise",
                 "typeParams":
                   [ "Object" ] },
-            "doc": "Fulfilled - The data returned from the page's parent.\nRejected - The error that caused the rejection." },
+            "doc": "Fulfilled - The data returned from the modal window.\nRejected - The error that caused the rejection." },
         "locations":
           [ { "lineno": 1141,
               "filename": "window.js" } ],
