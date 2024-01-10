@@ -94,7 +94,8 @@
           { "customLabels":
               [ { "id": "maturity-beta" } ] } },
       { "name": "getPaymentSettings",
-        "labels": [],
+        "labels":
+          [ "changed" ],
         "nameParams": [],
         "params":
           [ { "name": "options",
@@ -141,13 +142,22 @@
                   "body":
                     [ "export const getPaymentSettings = async (options) => {",
                       "  return {",
-                      "      paymentSettings: {",
-                      "          // Extract the subtotal price from the order, convert it to a number and check if the price is equal or greater than $50.",
-                      "          // If so, `requires3dSecure sets to `true` and 3DS is required for the order.",
-                      "          requires3dSecure: parseFloat(options.order.priceSummary.subtotal.amount) >= 50",
-                      "      }",
+                      "    paymentSettings: {",
+                      "      // Extract the subtotal price from the order, convert it to a number ",
+                      "      // and check if the price is equal or greater than $50.",
+                      "      requires3dSecure: parseFloat(options.order.priceSummary.subtotal.amount) >= 50",
+                      "    }",
                       "  };",
-                      "};" ],
+                      "};",
+                      "",
+                      "/* If the subtotal price is less than 50, the following payment settings are returned:",
+                      " *",
+                      " * {",
+                      " *   \"paymentSettings\": {",
+                      " *     \"requires3dSecure\": \"false\"",
+                      " *   }",
+                      " * }",
+                      " */" ],
                   "extra":
                     {  } } ],
             "extra":
