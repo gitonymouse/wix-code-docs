@@ -172,8 +172,7 @@
               "doc": "Order information." } ],
         "extra":
           {  },
-        "labels":
-          [ "changed" ] },
+        "labels": [] },
       { "name": "PaymentSettings",
         "locations":
           [ { "lineno": 74,
@@ -190,7 +189,7 @@
         "extra":
           {  },
         "labels":
-          [ "new" ] },
+          [ "removed" ] },
       { "name": "PaymentSettingsConfigResponse",
         "locations":
           [ { "lineno": 31,
@@ -222,7 +221,6 @@
               "doc": "Retrieved payment settings." } ],
         "extra":
           {  },
-        "labels":
-          [ "changed" ] } ],
+        "labels": [] } ],
   "extra":
     {  } }
