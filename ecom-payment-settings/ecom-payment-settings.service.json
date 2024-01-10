@@ -1,6 +1,7 @@
 { "name": "ecom-payment-settings",
   "mixes": [],
-  "labels": [],
+  "labels":
+    [ "changed" ],
   "location":
     { "lineno": 1,
       "filename": "payment-settings-spi-index.js" },
@@ -42,7 +43,8 @@
   "properties": [],
   "operations":
     [ { "name": "getConfig",
-        "labels": [],
+        "labels":
+          [ "changed" ],
         "nameParams": [],
         "params":
           [ { "name": "fallbackValueForRequires3dSecure",
@@ -52,7 +54,7 @@
           { "type":
               { "name": "Promise",
                 "typeParams":
-                  [ "payment-settings.PaymentSettings" ] },
+                  [ "ecom-payment-settings.PaymentSettings" ] },
             "doc": "Fulfilled - The configuration settings." },
         "locations":
           [ { "lineno": 1,
@@ -154,6 +156,23 @@
           { "customLabels":
               [ { "id": "maturity-beta" } ] } } ],
   "callbacks": [],
-  "messages": [],
+  "messages":
+    [ { "name": "PaymentSettings",
+        "locations":
+          [ { "lineno": 29,
+              "filename": "payment-settings-spi.js" } ],
+        "docs":
+          { "links": [],
+            "examples": [],
+            "extra":
+              {  } },
+        "members":
+          [ { "name": "fallbackValueForRequires3dSecure",
+              "type": "boolean",
+              "doc": "The value to set for `paymentSettings.requires3dSecure` if the SPI call fails. Default: `false`" } ],
+        "extra":
+          {  },
+        "labels":
+          [ "new" ] } ],
   "extra":
     {  } }
