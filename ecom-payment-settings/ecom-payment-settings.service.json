@@ -1,6 +1,7 @@
 { "name": "ecom-payment-settings",
   "mixes": [],
-  "labels": [],
+  "labels":
+    [ "changed" ],
   "location":
     { "lineno": 1,
       "filename": "payment-settings-spi-index.js" },
@@ -197,7 +198,7 @@
         "extra":
           {  },
         "labels":
-          [ "removed" ] },
+          [ "new" ] },
       { "name": "PaymentSettingsConfigResponse",
         "locations":
           [ { "lineno": 31,
@@ -225,10 +226,11 @@
               {  } },
         "members":
           [ { "name": "paymentSettings",
-              "type": "payment-settings.PaymentSettings",
+              "type": "ecom-payment-settings.PaymentSettings",
               "doc": "Retrieved payment settings." } ],
         "extra":
           {  },
-        "labels": [] } ],
+        "labels":
+          [ "changed" ] } ],
   "extra":
     {  } }
