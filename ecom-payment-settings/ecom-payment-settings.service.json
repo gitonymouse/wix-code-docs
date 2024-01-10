@@ -49,7 +49,7 @@
         "params":
           [ { "name": "fallbackValueForRequires3dSecure",
               "type": "boolean",
-              "doc": "The value to set for `paymentSettings.requires3dSecure` if the SPI call fails. Default: `false`" } ],
+              "doc": "The value to set for `paymentSettings.requires3dSecure` if the SPI call fails.\n\nDefault: `false`" } ],
         "ret":
           { "type":
               { "name": "Promise",
@@ -107,7 +107,7 @@
                   [ "payment-settings.Response" ] },
             "doc": "Fulfilled - Retrieved payment settings." },
         "locations":
-          [ { "lineno": 34,
+          [ { "lineno": 38,
               "filename": "payment-settings-spi.js" } ],
         "docs":
           { "summary": "Retrieves the payment settings to apply to an order based on your custom logic. Wix passes on the settings to the payment provider.",
@@ -176,7 +176,7 @@
           [ "removed" ] },
       { "name": "PaymentSettingsResponse",
         "locations":
-          [ { "lineno": 29,
+          [ { "lineno": 31,
               "filename": "payment-settings-spi.js" } ],
         "docs":
           { "links": [],
@@ -186,10 +186,10 @@
         "members":
           [ { "name": "fallbackValueForRequires3dSecure",
               "type": "boolean",
-              "doc": "The value to set for `paymentSettings.requires3dSecure` if the SPI call fails. Default: `false`" } ],
+              "doc": "The value to set for `paymentSettings.requires3dSecure` if the SPI call fails.\n\nDefault: `false`" } ],
         "extra":
           {  },
         "labels":
-          [ "new" ] } ],
+          [ "changed" ] } ],
   "extra":
     {  } }
