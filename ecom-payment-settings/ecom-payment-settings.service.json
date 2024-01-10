@@ -18,7 +18,8 @@
           "for certain payment methods. Note that each payment provider may have specific payment settings they accept with their Wix integration. ",
           "For example, [Tranzila](https://support.wix.com/en/article/connecting-tranzila-as-a-payment-provider) is a payment provider that ",
           "supports 3DS payments, but not all payment providers offer this feature. We recommend [contacting payment providers directly](https://support.wix.com/en/article/receiving-payouts-from-third-party-payment-providers) ",
-          "to confirm which payment settings they have implemented as part of their Wix integration.",
+          "to confirm which payment settings they have implemented as part of their Wix integration. Currently, the only payment setting available to customize ",
+          "is whether to apply 3DS to an order.",
           "",
           "## Configuration",
           "Adding a custom extension to your site has 3 steps:",
@@ -54,7 +55,7 @@
           { "type":
               { "name": "Promise",
                 "typeParams":
-                  [ "ecom-payment-settings.PaymentSettingsResponse" ] },
+                  [ "ecom-payment-settings.PaymentSettingsConfigResponse" ] },
             "doc": "Fulfilled - The configuration settings." },
         "locations":
           [ { "lineno": 1,
@@ -94,7 +95,8 @@
           { "customLabels":
               [ { "id": "maturity-beta" } ] } },
       { "name": "getPaymentSettings",
-        "labels": [],
+        "labels":
+          [ "changed" ],
         "nameParams": [],
         "params":
           [ { "name": "options",
@@ -104,7 +106,7 @@
           { "type":
               { "name": "Promise",
                 "typeParams":
-                  [ "payment-settings.Response" ] },
+                  [ "ecom-payment-settings.PaymentSettingsResponse" ] },
             "doc": "Fulfilled - Retrieved payment settings." },
         "locations":
           [ { "lineno": 38,
@@ -117,7 +119,7 @@
                 "**<your-extension-name>.js**.",
                 "",
                 "The second of these files, **<your-extension-name>.js**, is used to write the code to determine which payment settings to apply to an order. ",
-                "Currently, the only payment settings available to customize are whether to apply [3 domain security](https://support.wix.com/en/article/about-3d-secure-3ds-payments-with-third-party-payment-providers) (3DS) ",
+                "Currently, the only payment setting available to customize is whether to apply [3 domain security](https://support.wix.com/en/article/about-3d-secure-3ds-payments-with-third-party-payment-providers) (3DS) ",
                 "to an order. If the code fails, then `requires3dSecure` will be set to the value for `fallbackValueForRequires3dSecure` set in ",
                 "[`getConfig()`](https://www.wix.com/velo/reference/spis/ecom-payment-settings/getconfig).",
                 "",
@@ -157,7 +159,24 @@
               [ { "id": "maturity-beta" } ] } } ],
   "callbacks": [],
   "messages":
-    [ { "name": "PaymentSettings",
+    [ { "name": "Options",
+        "locations":
+          [ { "lineno": 62,
+              "filename": "payment-settings-spi.js" } ],
+        "docs":
+          { "links": [],
+            "examples": [],
+            "extra":
+              {  } },
+        "members":
+          [ { "name": "order",
+              "type": "ecom-payment-settings.Order",
+              "doc": "Order information." } ],
+        "extra":
+          {  },
+        "labels":
+          [ "new" ] },
+      { "name": "PaymentSettings",
         "locations":
           [ { "lineno": 29,
               "filename": "payment-settings-spi.js" } ],
@@ -174,7 +193,7 @@
           {  },
         "labels":
           [ "removed" ] },
-      { "name": "PaymentSettingsResponse",
+      { "name": "PaymentSettingsConfigResponse",
         "locations":
           [ { "lineno": 31,
               "filename": "payment-settings-spi.js" } ],
@@ -187,6 +206,23 @@
           [ { "name": "fallbackValueForRequires3dSecure",
               "type": "boolean",
               "doc": "The value to set for `paymentSettings.requires3dSecure` if the SPI call fails.\n\nDefault: `false`" } ],
+        "extra":
+          {  },
+        "labels":
+          [ "new" ] },
+      { "name": "PaymentSettingsResponse",
+        "locations":
+          [ { "lineno": 68,
+              "filename": "payment-settings-spi.js" } ],
+        "docs":
+          { "links": [],
+            "examples": [],
+            "extra":
+              {  } },
+        "members":
+          [ { "name": "requires3dSecure",
+              "type": "boolean",
+              "doc": "Whether to apply [3D Secure](https://support.wix.com/en/article/about-3d-secure-3ds-payments-with-third-party-payment-providers) during the payment process." } ],
         "extra":
           {  },
         "labels":
