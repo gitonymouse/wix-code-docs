@@ -54,7 +54,7 @@
           { "type":
               { "name": "Promise",
                 "typeParams":
-                  [ "ecom-payment-settings.PaymentSettings" ] },
+                  [ "ecom-payment-settings.PaymentSettingsResponse" ] },
             "doc": "Fulfilled - The configuration settings." },
         "locations":
           [ { "lineno": 1,
@@ -158,6 +158,23 @@
   "callbacks": [],
   "messages":
     [ { "name": "PaymentSettings",
+        "locations":
+          [ { "lineno": 29,
+              "filename": "payment-settings-spi.js" } ],
+        "docs":
+          { "links": [],
+            "examples": [],
+            "extra":
+              {  } },
+        "members":
+          [ { "name": "fallbackValueForRequires3dSecure",
+              "type": "boolean",
+              "doc": "The value to set for `paymentSettings.requires3dSecure` if the SPI call fails. Default: `false`" } ],
+        "extra":
+          {  },
+        "labels":
+          [ "removed" ] },
+      { "name": "PaymentSettingsResponse",
         "locations":
           [ { "lineno": 29,
               "filename": "payment-settings-spi.js" } ],
