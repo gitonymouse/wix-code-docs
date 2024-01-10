@@ -44,8 +44,7 @@
   "properties": [],
   "operations":
     [ { "name": "getConfig",
-        "labels":
-          [ "changed" ],
+        "labels": [],
         "nameParams": [],
         "params":
           [ { "name": "fallbackValueForRequires3dSecure",
@@ -95,8 +94,7 @@
           { "customLabels":
               [ { "id": "maturity-beta" } ] } },
       { "name": "getPaymentSettings",
-        "labels":
-          [ "changed" ],
+        "labels": [],
         "nameParams": [],
         "params":
           [ { "name": "options",
@@ -170,15 +168,15 @@
               {  } },
         "members":
           [ { "name": "order",
-              "type": "ecom-payment-settings.Order",
+              "type": "payment-settings.Order",
               "doc": "Order information." } ],
         "extra":
           {  },
         "labels":
-          [ "new" ] },
+          [ "changed" ] },
       { "name": "PaymentSettings",
         "locations":
-          [ { "lineno": 29,
+          [ { "lineno": 74,
               "filename": "payment-settings-spi.js" } ],
         "docs":
           { "links": [],
@@ -186,13 +184,13 @@
             "extra":
               {  } },
         "members":
-          [ { "name": "fallbackValueForRequires3dSecure",
+          [ { "name": "requires3dSecure",
               "type": "boolean",
-              "doc": "The value to set for `paymentSettings.requires3dSecure` if the SPI call fails. Default: `false`" } ],
+              "doc": "Whether to apply [3D Secure](https://support.wix.com/en/article/about-3d-secure-3ds-payments-with-third-party-payment-providers) during the payment process." } ],
         "extra":
           {  },
         "labels":
-          [ "removed" ] },
+          [ "new" ] },
       { "name": "PaymentSettingsConfigResponse",
         "locations":
           [ { "lineno": 31,
@@ -208,8 +206,7 @@
               "doc": "The value to set for `paymentSettings.requires3dSecure` if the SPI call fails.\n\nDefault: `false`" } ],
         "extra":
           {  },
-        "labels":
-          [ "new" ] },
+        "labels": [] },
       { "name": "PaymentSettingsResponse",
         "locations":
           [ { "lineno": 68,
@@ -220,9 +217,9 @@
             "extra":
               {  } },
         "members":
-          [ { "name": "requires3dSecure",
-              "type": "boolean",
-              "doc": "Whether to apply [3D Secure](https://support.wix.com/en/article/about-3d-secure-3ds-payments-with-third-party-payment-providers) during the payment process." } ],
+          [ { "name": "paymentSettings",
+              "type": "payment-settings.PaymentSettings",
+              "doc": "Retrieved payment settings." } ],
         "extra":
           {  },
         "labels":
