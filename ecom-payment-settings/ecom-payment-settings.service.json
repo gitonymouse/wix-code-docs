@@ -1,7 +1,7 @@
 { "name": "ecom-payment-settings",
   "mixes": [],
   "labels":
-    [ "new" ],
+    [ "changed" ],
   "location":
     { "lineno": 1,
       "filename": "payment-settings-spi-index.js" },
@@ -43,7 +43,8 @@
   "properties": [],
   "operations":
     [ { "name": "getConfig",
-        "labels": [],
+        "labels":
+          [ "changed" ],
         "nameParams": [],
         "params":
           [ { "name": "fallbackValueForRequires3dSecure",
@@ -53,7 +54,7 @@
           { "type":
               { "name": "Promise",
                 "typeParams":
-                  [ "fallbackValueForRequires3dSecure" ] },
+                  [ "payment-settings.PaymentSettings" ] },
             "doc": "Fulfilled - The configuration settings." },
         "locations":
           [ { "lineno": 1,
@@ -106,7 +107,7 @@
                   [ "payment-settings.Response" ] },
             "doc": "Fulfilled - Retrieved payment settings." },
         "locations":
-          [ { "lineno": 29,
+          [ { "lineno": 34,
               "filename": "payment-settings-spi.js" } ],
         "docs":
           { "summary": "Retrieves the payment settings to apply to an order based on your custom logic. Wix passes on the settings to the payment provider.",
