@@ -1,6 +1,7 @@
 { "name": "ecom-payment-settings",
   "mixes": [],
-  "labels": [],
+  "labels":
+    [ "changed" ],
   "location":
     { "lineno": 1,
       "filename": "payment-settings-spi-index.js" },
@@ -165,7 +166,616 @@
               [ { "id": "maturity-beta" } ] } } ],
   "callbacks": [],
   "messages":
-    [ { "name": "Options",
+    [ { "name": "Activities",
+        "locations":
+          [ { "lineno": 310,
+              "filename": "payment-settings-spi.js" } ],
+        "docs":
+          { "summary": "Order activities.",
+            "links": [],
+            "examples": [],
+            "extra":
+              {  } },
+        "members":
+          [ { "name": "_createdDate",
+              "type": "string",
+              "doc": "Activity creation date and time." },
+            { "name": "_id",
+              "type": "string",
+              "doc": "Activity ID." },
+            { "name": "authorEmail",
+              "type": "string",
+              "doc": "Activity author's email." },
+            { "name": "type",
+              "type": "string",
+              "doc": "Activity type.\n\nSupported values: `ORDER_REFUNDED`, `ORDER_PLACED`, `ORDER_PAID`, `ORDER_FULFILLED`, `ORDER_NOT_FULFILLED`, \n`ORDER_CANCELED`, `DOWNLOAD_LINK_SENT`, `TRACKING_NUMBER_ADDED`, `TRACKING_NUMBER_EDITED`, `TRACKING_LINK_ADDED`, \n`SHIPPING_CONFIRMATION_EMAIL_SENT`, `INVOICE_ADDED`, `INVOICE_REMOVED`, `INVOICE_SENT`, `FULFILLER_EMAIL_SENT`, \n`SHIPPING_ADDRESS_EDITED`, `EMAIL_EDITED`, `PICKUP_READY_EMAIL_SENT`, `CUSTOM_ACTIVITY`, `MERCHANT_COMMENT`, \n`ORDER_CREATED_FROM_EXCHANGE`, `NEW_EXCHANGE_ORDER_CREATED`, `ORDER_PARTIALLY_PAID`, `DRAFT_ORDER_CHANGES_APPLIED`" },
+            { "name": "customActivity",
+              "type": "ecom-payment-settings.CustomActivity",
+              "doc": "Custom activity details. `activity.type` must be `CUSTOM_ACTIVITY`." },
+            { "name": "merchantComment",
+              "type": "ecom-payment-settings.MerchantComment",
+              "doc": "Merchant comment details. `activity.type` must be `MERCHANT_COMMENT`.",
+              "optional": true },
+            { "name": "orderRefunded",
+              "type": "ecom-payment-settings.OrderRefunded",
+              "doc": "Additional info about order refunded activity. `activity.type` must be `ORDER_REFUNDED`.",
+              "optional": true } ],
+        "extra":
+          { "oneOfGroups":
+              [ { "name": "customActivity",
+                  "members":
+                    [ "merchantComment",
+                      "orderRefunded" ] } ] },
+        "labels":
+          [ "new" ] },
+      { "name": "AdditionalFees",
+        "locations":
+          [ { "lineno": 395,
+              "filename": "payment-settings-spi.js" } ],
+        "docs":
+          { "summary": "Additional fees applied to the order.",
+            "links": [],
+            "examples": [],
+            "extra":
+              {  } },
+        "members":
+          [ { "name": "_id",
+              "type": "string",
+              "doc": "Additional fee's ID." },
+            { "name": "code",
+              "type": "string",
+              "doc": "Additional fee's unique code for future processing." },
+            { "name": "lineItemIds",
+              "type":
+                { "name": "Array",
+                  "typeParams":
+                    [ "string" ] },
+              "doc": "Optional. Line items associated with this additional fee. If no `lineItemIds` are provided, the fee will be associated with the whole cart/checkout/order." },
+            { "name": "name",
+              "type": "string",
+              "doc": "Name of additional fee." },
+            { "name": "price",
+              "type": "ecom-payment-settings.AdditionalFeesPrice",
+              "doc": "Additional fee's price." },
+            { "name": "priceBeforeTax",
+              "type": "ecom-payment-settings.AdditionalFeesPrice",
+              "doc": "Additional fee's price before tax." },
+            { "name": "providerAppId",
+              "type": "string",
+              "doc": "SPI implementer's `appId`." },
+            { "name": "taxDetails",
+              "type": "ecom-payment-settings.AdditionalFeesTaxDetails",
+              "doc": "Tax details." } ],
+        "extra":
+          {  },
+        "labels":
+          [ "new" ] },
+      { "name": "AdditionalFeesPrice",
+        "locations":
+          [ { "lineno": 409,
+              "filename": "payment-settings-spi.js" } ],
+        "docs":
+          { "summary": "Additional fee's price.",
+            "links": [],
+            "examples": [],
+            "extra":
+              {  } },
+        "members":
+          [ { "name": "amount",
+              "type": "string",
+              "doc": "Amount." },
+            { "name": "formattedAmount",
+              "type": "string",
+              "doc": "Amount formatted with currency symbol." } ],
+        "extra":
+          {  },
+        "labels":
+          [ "new" ] },
+      { "name": "AdditionalFeesTaxDetails",
+        "locations":
+          [ { "lineno": 417,
+              "filename": "payment-settings-spi.js" } ],
+        "docs":
+          { "summary": "Tax details.",
+            "links": [],
+            "examples": [],
+            "extra":
+              {  } },
+        "members":
+          [ { "name": "taxableAmount",
+              "type": "ecom-payment-settings.AdditionalFeesPrice",
+              "doc": "Taxable amount of this line item." },
+            { "name": "taxRate",
+              "type": "string",
+              "doc": "Tax rate percentage, as a decimal numeral between 0 and 1. For example, `0.13`." },
+            { "name": "totalTax",
+              "type": "ecom-payment-settings.AdditionalFeesPrice",
+              "doc": "The calculated tax, based on the `taxableAmount` and `taxRate`." } ],
+        "extra":
+          {  },
+        "labels":
+          [ "new" ] },
+      { "name": "Address",
+        "locations":
+          [ { "lineno": 183,
+              "filename": "payment-settings-spi.js" } ],
+        "docs":
+          { "summary": "An object representing address information.",
+            "links": [],
+            "examples": [],
+            "extra":
+              {  } },
+        "members":
+          [ { "name": "country",
+              "type": "string",
+              "doc": "Two-letter country code in [ISO-3166 alpha-2](https://www.iso.org/obp/ui/#search/code/) format.",
+              "optional": true },
+            { "name": "subdivision",
+              "type": "string",
+              "doc": "Code for a subdivision (such as state, prefecture, or province) in [ISO 3166-2](https://www.iso.org/standard/72483.html) format.",
+              "optional": true },
+            { "name": "city",
+              "type": "string",
+              "doc": "City name.",
+              "optional": true },
+            { "name": "postalCode",
+              "type": "string",
+              "doc": "Postal or zip code.",
+              "optional": true },
+            { "name": "streetAddress",
+              "type": "ecom-payment-settings.StreetAddress",
+              "doc": "Street address.",
+              "optional": true },
+            { "name": "addressLine",
+              "type": "string",
+              "doc": "Main address line (usually street name and number).",
+              "optional": true },
+            { "name": "addressLine2",
+              "type": "string",
+              "doc": "Free text providing more detailed address info. Usually contains apt, suite, floor.",
+              "optional": true },
+            { "name": "countryFullname",
+              "type": "string",
+              "doc": "Country's full name.",
+              "optional": true },
+            { "name": "subdivisionFullname",
+              "type": "string",
+              "doc": "Subdivision full-name.",
+              "optional": true } ],
+        "extra":
+          {  },
+        "labels":
+          [ "new" ] },
+      { "name": "AppliedCoupon",
+        "locations":
+          [ { "lineno": 550,
+              "filename": "payment-settings-spi.js" } ],
+        "docs":
+          { "summary": "An object representing a coupon applied to the order.",
+            "links": [],
+            "examples": [],
+            "extra":
+              {  } },
+        "members":
+          [ { "name": "couponId",
+              "type": "string",
+              "doc": "Coupon ID." },
+            { "name": "name",
+              "type": "string",
+              "doc": "Coupon name." },
+            { "name": "code",
+              "type": "string",
+              "doc": "Coupon code (used by a buyer to apply the coupon)." } ],
+        "extra":
+          {  },
+        "labels":
+          [ "new" ] },
+      { "name": "AppliedDiscountAmounts",
+        "locations":
+          [ { "lineno": 302,
+              "filename": "payment-settings-spi.js" } ],
+        "docs":
+          { "summary": "Amounts.",
+            "links": [],
+            "examples": [],
+            "extra":
+              {  } },
+        "members":
+          [ { "name": "amount",
+              "type": "string",
+              "doc": "Amount." },
+            { "name": "formattedAmount",
+              "type": "string",
+              "doc": "Amount formatted with currency symbol." } ],
+        "extra":
+          {  },
+        "labels":
+          [ "new" ] },
+      { "name": "AppliedDiscountRule",
+        "locations":
+          [ { "lineno": 273,
+              "filename": "payment-settings-spi.js" } ],
+        "docs":
+          { "summary": "Automatic discount.",
+            "links": [],
+            "examples": [],
+            "extra":
+              {  } },
+        "members":
+          [ { "name": "_id",
+              "type": "string",
+              "doc": "Discount rule ID." },
+            { "name": "name",
+              "type": "ecom-payment-settings.DiscountRuleName",
+              "doc": "Discount rule name." },
+            { "name": "amount",
+              "type": "ecom-payment-settings.AppliedDiscountAmounts",
+              "doc": "Discount value." } ],
+        "extra":
+          {  },
+        "labels":
+          [ "new" ] },
+      { "name": "AppliedDiscounts",
+        "locations":
+          [ { "lineno": 245,
+              "filename": "payment-settings-spi.js" } ],
+        "docs":
+          { "summary": "Applied discounts.",
+            "links": [],
+            "examples": [],
+            "extra":
+              {  } },
+        "members":
+          [ { "name": "_id",
+              "type": "string",
+              "doc": "Discount ID." },
+            { "name": "discountType",
+              "type": "string",
+              "doc": "Discount type.\nOne of:\n\n + `GLOBAL`: Discount applies to entire order.\n + `SPECIFIC-ITEMS`: Discount applies to specific items.\n + `SHIPPING`: Discount applies to shipping. For example, free shipping." },
+            { "name": "lineItemIds",
+              "type":
+                { "name": "Array",
+                  "typeParams":
+                    [ "string" ] },
+              "doc": "IDs of line items discount applies to." },
+            { "name": "coupon",
+              "type": "ecom-payment-settings.AppliedDiscountsCoupon",
+              "doc": "Applied coupon info.",
+              "optional": true },
+            { "name": "discountRule",
+              "type": "ecom-payment-settings.AppliedDiscountsDiscountRule",
+              "doc": "Automatic discount.",
+              "optional": true },
+            { "name": "merchantDiscount",
+              "type": "ecom-payment-settings.AppliedMerchantDiscount",
+              "doc": "Merchant discount." } ],
+        "extra":
+          { "oneOfGroups":
+              [ { "name": "appliedDiscount",
+                  "members":
+                    [ "coupon",
+                      "discountRule" ] } ] },
+        "labels":
+          [ "new" ] },
+      { "name": "AppliedDiscountsCoupon",
+        "locations":
+          [ { "lineno": 263,
+              "filename": "payment-settings-spi.js" } ],
+        "docs":
+          { "summary": "Applied coupon info.",
+            "links": [],
+            "examples": [],
+            "extra":
+              {  } },
+        "members":
+          [ { "name": "_id",
+              "type": "string",
+              "doc": "Coupon ID." },
+            { "name": "code",
+              "type": "string",
+              "doc": "Coupon code." },
+            { "name": "name",
+              "type": "string",
+              "doc": "Coupon name." },
+            { "name": "amount",
+              "type": "ecom-payment-settings.AppliedDiscountAmounts",
+              "doc": "Coupon value." } ],
+        "extra":
+          {  },
+        "labels":
+          [ "new" ] },
+      { "name": "AppliedMerchantDiscount",
+        "locations":
+          [ { "lineno": 282,
+              "filename": "payment-settings-spi.js" } ],
+        "docs":
+          { "summary": "Merchant discount.",
+            "links": [],
+            "examples": [],
+            "extra":
+              {  } },
+        "members":
+          [ { "name": "amount",
+              "type": "ecom-payment-settings.AppliedDiscountAmounts",
+              "doc": "Discount amount." },
+            { "name": "description",
+              "type": "string",
+              "doc": "Discount description as free text (optional).",
+              "optional": true },
+            { "name": "discountReason",
+              "type": "string",
+              "doc": "Pre-defined discount reason (optional).\n\n + `ITEMS_EXCHANGE`: Excgange balance acquired as a result of items exchange.",
+              "optional": true } ],
+        "extra":
+          { "oneOfGroups":
+              [ { "name": "reason",
+                  "members":
+                    [ "description",
+                      "discountReason" ] } ] },
+        "labels":
+          [ "new" ] },
+      { "name": "BillingInfo",
+        "locations":
+          [ { "lineno": 175,
+              "filename": "payment-settings-spi.js" } ],
+        "docs":
+          { "summary": "Billing address and contact details.",
+            "links": [],
+            "examples": [],
+            "extra":
+              {  } },
+        "members":
+          [ { "name": "address",
+              "type": "ecom-payment-settings.Address",
+              "doc": "Address.",
+              "optional": true },
+            { "name": "contactDetails",
+              "type": "ecom-payment-settings.ContactDetails",
+              "doc": "Contact Details.",
+              "optional": true } ],
+        "extra":
+          {  },
+        "labels":
+          [ "new" ] },
+      { "name": "BuyerInfo",
+        "locations":
+          [ { "lineno": 141,
+              "filename": "payment-settings-spi.js" } ],
+        "docs":
+          { "summary": "Buyer information.",
+            "links": [],
+            "examples": [],
+            "extra":
+              {  } },
+        "members":
+          [ { "name": "contactId",
+              "type": "string",
+              "doc": "Contact ID. Auto-created if one does not yet exist. For more information, see Contacts API.",
+              "optional": true },
+            { "name": "email",
+              "type": "string",
+              "doc": "Buyer email address.",
+              "optional": true },
+            { "name": "visitorId",
+              "type": "string",
+              "doc": "Visitor ID (if site visitor is not a member).",
+              "optional": true },
+            { "name": "memberId",
+              "type": "string",
+              "doc": "Member ID (if site visitor is a site member).",
+              "optional": true } ],
+        "extra":
+          { "oneOfGroups":
+              [ { "name": "id",
+                  "members":
+                    [ "visitorId",
+                      "memberId" ] } ] },
+        "labels":
+          [ "new" ] },
+      { "name": "ChannelInfo",
+        "locations":
+          [ { "lineno": 374,
+              "filename": "payment-settings-spi.js" } ],
+        "docs":
+          { "summary": "Information about the sales channel that submitted this order.",
+            "links": [],
+            "examples": [],
+            "extra":
+              {  } },
+        "members":
+          [ { "name": "externalOrderId",
+              "type": "string",
+              "doc": "Reference to an order ID from an external system.",
+              "optional": true },
+            { "name": "externalOrderUrl",
+              "type": "string",
+              "doc": "URL to the order in the external system.",
+              "optional": true },
+            { "name": "type",
+              "type": "string",
+              "doc": "Sales channel that submitted the order.\n\nOne of: `WEB`, `POS`, `EBAY`, `AMAZON`, `OTHER_PLATFORM`, `WIX_APP_STORE`, \n`WIX_INVOICES`, `BACKOFFICE_MERCHANT`, `WISH`, `CLASS_PASS`, `GLOBAL_E`" } ],
+        "extra":
+          {  },
+        "labels":
+          [ "new" ] },
+      { "name": "ContactDetails",
+        "locations":
+          [ { "lineno": 206,
+              "filename": "payment-settings-spi.js" } ],
+        "docs":
+          { "summary": "Contact details.",
+            "links": [],
+            "examples": [],
+            "extra":
+              {  } },
+        "members":
+          [ { "name": "firstName",
+              "type": "string",
+              "doc": "First name.",
+              "optional": true },
+            { "name": "lastName",
+              "type": "string",
+              "doc": "Last name.",
+              "optional": true },
+            { "name": "phone",
+              "type": "string",
+              "doc": "Phone number.",
+              "optional": true },
+            { "name": "company",
+              "type": "string",
+              "doc": "Company name.",
+              "optional": true },
+            { "name": "vatId",
+              "type": "ecom-payment-settings.VatId",
+              "doc": "Tax information (for Brazil only). If ID is provided, `vatId.type` must also be set, `UNSPECIFIED` is not allowed.",
+              "optional": true } ],
+        "extra":
+          {  },
+        "labels":
+          [ "new" ] },
+      { "name": "CreatedBy",
+        "locations":
+          [ { "lineno": 363,
+              "filename": "payment-settings-spi.js" } ],
+        "docs":
+          { "summary": "ID of the order's initiator.",
+            "links": [],
+            "examples": [],
+            "extra":
+              {  } },
+        "members":
+          [ { "name": "userId",
+              "type": "string",
+              "doc": "When the order was created by a Wix user on behalf of a buyer. For example, via POS (point of service).",
+              "optional": true },
+            { "name": "memberId",
+              "type": "string",
+              "doc": "When the order was created by a **logged in** site visitor.",
+              "optional": true },
+            { "name": "visitorId",
+              "type": "string",
+              "doc": "When the order was created by a site visitor that was **not** logged in.",
+              "optional": true },
+            { "name": "appId",
+              "type": "string",
+              "doc": "When the order was created by an external application.",
+              "optional": true } ],
+        "extra":
+          { "oneOfGroups":
+              [ { "name": "creator",
+                  "members":
+                    [ "userId",
+                      "memberId",
+                      "visitorId",
+                      "appId" ] } ] },
+        "labels":
+          [ "new" ] },
+      { "name": "CustomActivity",
+        "locations":
+          [ { "lineno": 330,
+              "filename": "payment-settings-spi.js" } ],
+        "docs":
+          { "summary": "Custom activity details. `activity.type` must be `CUSTOM_ACTIVITY`.",
+            "links": [],
+            "examples": [],
+            "extra":
+              {  } },
+        "members":
+          [ { "name": "appId",
+              "type": "string",
+              "doc": "ID of the app that created the custom activity." },
+            { "name": "type",
+              "type": "string",
+              "doc": "Custom activity type. For example, `\"Ticket number set\"`." },
+            { "name": "additionalData",
+              "type": "Object",
+              "doc": "Additional data in key-value form. For example, `{ \"Ticket number\": \"123456\" }`." } ],
+        "extra":
+          {  },
+        "labels":
+          [ "new" ] },
+      { "name": "CustomFields",
+        "locations":
+          [ { "lineno": 386,
+              "filename": "payment-settings-spi.js" } ],
+        "docs":
+          { "summary": "Custom fields.",
+            "links": [],
+            "examples": [],
+            "extra":
+              {  } },
+        "members":
+          [ { "name": "title",
+              "type": "string",
+              "doc": "Custom field title." },
+            { "name": "translatedTitle",
+              "type": "string",
+              "doc": "Translated custom field title." },
+            { "name": "value",
+              "type": "string",
+              "doc": "Custom field's text." } ],
+        "extra":
+          {  },
+        "labels":
+          [ "new" ] },
+      { "name": "Discount",
+        "locations":
+          [ { "lineno": 558,
+              "filename": "payment-settings-spi.js" } ],
+        "docs":
+          { "summary": "An object representing a discount applied to the order.",
+            "links": [],
+            "examples": [],
+            "extra":
+              {  } },
+        "members":
+          [ { "name": "appliedCoupon",
+              "type": "ecom-payment-settings.AppliedCoupon",
+              "doc": "Information about an applied coupon." } ],
+        "extra":
+          {  },
+        "labels":
+          [ "new" ] },
+      { "name": "DiscountRuleName",
+        "locations":
+          [ { "lineno": 294,
+              "filename": "payment-settings-spi.js" } ],
+        "docs":
+          { "summary": "Discount rule name.",
+            "links": [],
+            "examples": [],
+            "extra":
+              {  } },
+        "members":
+          [ { "name": "original",
+              "type": "string",
+              "doc": "Original discount rule name (in site's default language)." },
+            { "name": "translated",
+              "type": "string",
+              "doc": "Translated discount rule name according to buyer language. Defaults to `original` when not provided." } ],
+        "extra":
+          {  },
+        "labels":
+          [ "new" ] },
+      { "name": "MerchantComment",
+        "locations":
+          [ { "lineno": 339,
+              "filename": "payment-settings-spi.js" } ],
+        "docs":
+          { "summary": "Merchant comment details. `activity.type` must be `MERCHANT_COMMENT`.",
+            "links": [],
+            "examples": [],
+            "extra":
+              {  } },
+        "members":
+          [ { "name": "message",
+              "type": "string",
+              "doc": "Merchant comment message." } ],
+        "extra":
+          {  },
+        "labels":
+          [ "new" ] },
+      { "name": "Options",
         "locations":
           [ { "lineno": 62,
               "filename": "payment-settings-spi.js" } ],
@@ -212,11 +822,11 @@
               "type":
                 { "name": "Array",
                   "typeParams":
-                    [ "payment-settings.OrderLineItem" ] },
+                    [ "ecom-payment-settings.OrderLineItem" ] },
               "doc": "Order line items.",
               "optional": true },
             { "name": "buyerInfo",
-              "type": "payment-settings.BuyerInfo",
+              "type": "ecom-payment-settings.BuyerInfo",
               "doc": "Buyer information.",
               "optional": true },
             { "name": "paymentStatus",
@@ -248,15 +858,15 @@
               "doc": "Site language in which original values are shown.",
               "optional": true },
             { "name": "priceSummary",
-              "type": "payment-settings.PriceSummary",
+              "type": "ecom-payment-settings.PriceSummary",
               "doc": "Order price summary.",
               "optional": true },
             { "name": "billingInfo",
-              "type": "payment-settings.BillingInfo",
+              "type": "ecom-payment-settings.BillingInfo",
               "doc": "Billing address and contact details.",
               "optional": true },
             { "name": "shippingInfo",
-              "type": "payment-settings.OrderShippingInfo",
+              "type": "ecom-payment-settings.OrderShippingInfo",
               "doc": "Shipping information.",
               "optional": true },
             { "name": "buyerNote",
@@ -272,21 +882,21 @@
               "doc": "Whether order is archived.",
               "optional": true },
             { "name": "taxSummary",
-              "type": "payment-settings.TaxSummary",
+              "type": "ecom-payment-settings.TaxSummary",
               "doc": "Tax summary.",
               "optional": true },
             { "name": "appliedDiscounts",
               "type":
                 { "name": "Array",
                   "typeParams":
-                    [ "payment-settings.AppliedDiscounts" ] },
+                    [ "ecom-payment-settings.AppliedDiscounts" ] },
               "doc": "Applied discounts.",
               "optional": true },
             { "name": "activities",
               "type":
                 { "name": "Array",
                   "typeParams":
-                    [ "payment-settings.Activities" ] },
+                    [ "ecom-payment-settings.Activities" ] },
               "doc": "Log of updates related to the order.",
               "optional": true },
             { "name": "attributionSource",
@@ -294,11 +904,11 @@
               "doc": "Order attribution source.\n\nOne of: `UNSPECIFIED`, `FACEBOOK_ADS`",
               "optional": true },
             { "name": "createdBy",
-              "type": "payment-settings.CreatedBy",
+              "type": "ecom-payment-settings.CreatedBy",
               "doc": "ID of the order's initiator.",
               "optional": true },
             { "name": "channelInfo",
-              "type": "payment-settings.ChannelInfo",
+              "type": "ecom-payment-settings.ChannelInfo",
               "doc": "Information about the sales channel that submitted this order.",
               "optional": true },
             { "name": "seenByAHuman",
@@ -313,14 +923,14 @@
               "type":
                 { "name": "Array",
                   "typeParams":
-                    [ "payment-settings.CustomFields" ] },
+                    [ "ecom-payment-settings.CustomFields" ] },
               "doc": "Custom fields.",
               "optional": true },
             { "name": "additionalFees",
               "type":
                 { "name": "Array",
                   "typeParams":
-                    [ "payment-settings.AdditionalFees" ] },
+                    [ "ecom-payment-settings.AdditionalFees" ] },
               "doc": "Additional fees applied to the order.",
               "optional": true },
             { "name": "purchaseFlowId",
@@ -329,7 +939,32 @@
               "optional": true } ],
         "extra":
           {  },
-        "labels": [] },
+        "labels":
+          [ "changed" ] },
+      { "name": "OrderRefunded",
+        "locations":
+          [ { "lineno": 346,
+              "filename": "payment-settings-spi.js" } ],
+        "docs":
+          { "summary": "Additional info about order refunded activity. `activity.type` must be `ORDER_REFUNDED`.",
+            "links": [],
+            "examples": [],
+            "extra":
+              {  } },
+        "members":
+          [ { "name": "amount",
+              "type": "ecom-payment-settings.RefundAmount",
+              "doc": "Refund amount." },
+            { "name": "manual",
+              "type": "string",
+              "doc": "Whether order was refunded manually. For example, via payment provider or using cash." },
+            { "name": "reason",
+              "type": "string",
+              "doc": "Reason for refund." } ],
+        "extra":
+          {  },
+        "labels":
+          [ "new" ] },
       { "name": "PaymentSettings",
         "locations":
           [ { "lineno": 74,
@@ -377,6 +1012,184 @@
               "doc": "Retrieved payment settings." } ],
         "extra":
           {  },
-        "labels": [] } ],
+        "labels": [] },
+      { "name": "PriceSummary",
+        "locations":
+          [ { "lineno": 152,
+              "filename": "payment-settings-spi.js" } ],
+        "docs":
+          { "summary": "Order price summary.",
+            "links": [],
+            "examples": [],
+            "extra":
+              {  } },
+        "members":
+          [ { "name": "subtotal",
+              "type": "ecom-payment-settings.PriceSummaryAmounts",
+              "doc": "Subtotal of all the line items, before discounts and before tax.",
+              "optional": true },
+            { "name": "shipping",
+              "type": "ecom-payment-settings.PriceSummaryAmounts",
+              "doc": "Total shipping price, before discounts and before tax.",
+              "optional": true },
+            { "name": "tax",
+              "type": "ecom-payment-settings.PriceSummaryAmounts",
+              "doc": "Total tax on this order.",
+              "optional": true },
+            { "name": "discount",
+              "type": "ecom-payment-settings.PriceSummaryAmounts",
+              "doc": "Total calculated discount value.",
+              "optional": true },
+            { "name": "totalPrice",
+              "type": "ecom-payment-settings.PriceSummaryAmounts",
+              "doc": "Deprecated - use `total` instead.",
+              "optional": true },
+            { "name": "total",
+              "type": "ecom-payment-settings.PriceSummaryAmounts",
+              "doc": "Order’s total price after discounts and tax.",
+              "optional": true },
+            { "name": "totalWithGiftCard",
+              "type": "ecom-payment-settings.PriceSummaryAmounts",
+              "doc": "Order's total price including gift card.",
+              "optional": true },
+            { "name": "totalWithoutGiftCard",
+              "type": "ecom-payment-settings.PriceSummaryAmounts",
+              "doc": "Order's total price after without gift card.",
+              "optional": true },
+            { "name": "totalAdditionalFees",
+              "type": "ecom-payment-settings.PriceSummaryAmounts",
+              "doc": "Total price of additional fees before tax.",
+              "optional": true } ],
+        "extra":
+          {  },
+        "labels":
+          [ "new" ] },
+      { "name": "PriceSummaryAmounts",
+        "locations":
+          [ { "lineno": 167,
+              "filename": "payment-settings-spi.js" } ],
+        "docs":
+          { "summary": "Price summary amounts.",
+            "links": [],
+            "examples": [],
+            "extra":
+              {  } },
+        "members":
+          [ { "name": "amount",
+              "type": "string",
+              "doc": "Amount." },
+            { "name": "formattedAmount",
+              "type": "string",
+              "doc": "Amount formatted with currency symbol." } ],
+        "extra":
+          {  },
+        "labels":
+          [ "new" ] },
+      { "name": "RefundAmount",
+        "locations":
+          [ { "lineno": 355,
+              "filename": "payment-settings-spi.js" } ],
+        "docs":
+          { "summary": "Refund amount.",
+            "links": [],
+            "examples": [],
+            "extra":
+              {  } },
+        "members":
+          [ { "name": "amount",
+              "type": "string",
+              "doc": "Amount." },
+            { "name": "formattedAmount",
+              "type": "string",
+              "doc": "Amount formatted with currency symbol." } ],
+        "extra":
+          {  },
+        "labels":
+          [ "new" ] },
+      { "name": "StreetAddress",
+        "locations":
+          [ { "lineno": 198,
+              "filename": "payment-settings-spi.js" } ],
+        "docs":
+          { "summary": "Street address.",
+            "links": [],
+            "examples": [],
+            "extra":
+              {  } },
+        "members":
+          [ { "name": "name",
+              "type": "string",
+              "doc": "Street name.",
+              "optional": true },
+            { "name": "number",
+              "type": "string",
+              "doc": "Street number.",
+              "optional": true } ],
+        "extra":
+          {  },
+        "labels":
+          [ "new" ] },
+      { "name": "TaxSummary",
+        "locations":
+          [ { "lineno": 230,
+              "filename": "payment-settings-spi.js" } ],
+        "docs":
+          { "summary": "Order price summary.",
+            "links": [],
+            "examples": [],
+            "extra":
+              {  } },
+        "members":
+          [ { "name": "totalTax",
+              "type": "payment-settings.TaxSummaryAmounts",
+              "doc": "Total tax." } ],
+        "extra":
+          {  },
+        "labels":
+          [ "new" ] },
+      { "name": "TaxSummaryAmounts",
+        "locations":
+          [ { "lineno": 237,
+              "filename": "payment-settings-spi.js" } ],
+        "docs":
+          { "summary": "Total tax.",
+            "links": [],
+            "examples": [],
+            "extra":
+              {  } },
+        "members":
+          [ { "name": "amount",
+              "type": "string",
+              "doc": "Amount." },
+            { "name": "formattedAmount",
+              "type": "string",
+              "doc": "Amount formatted with currency symbol." } ],
+        "extra":
+          {  },
+        "labels":
+          [ "new" ] },
+      { "name": "VatId",
+        "locations":
+          [ { "lineno": 217,
+              "filename": "payment-settings-spi.js" } ],
+        "docs":
+          { "summary": "Tax information (for Brazil only). If ID is provided, `vatId.type` must also be set, `UNSPECIFIED` is not allowed.",
+            "links": [],
+            "examples": [],
+            "extra":
+              {  } },
+        "members":
+          [ { "name": "_id",
+              "type": "string",
+              "doc": "Customer's tax ID.",
+              "optional": true },
+            { "name": "type",
+              "type": "string",
+              "doc": "Tax type.\n\nOne of:\n\n + `CPF`: for individual tax payers\n + `CNPJ`: for corporations",
+              "optional": true } ],
+        "extra":
+          {  },
+        "labels":
+          [ "new" ] } ],
   "extra":
     {  } }
