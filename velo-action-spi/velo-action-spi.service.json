@@ -1,7 +1,7 @@
 { "name": "velo-action-spi",
   "mixes": [],
   "labels":
-    [ "new" ],
+    [ "changed" ],
   "location":
     { "lineno": 1,
       "filename": "invoke-action-index.js" },
@@ -18,14 +18,19 @@
   "properties": [],
   "operations":
     [ { "name": "invoke",
-        "labels": [],
+        "labels":
+          [ "changed" ],
         "nameParams": [],
         "params":
           [ { "name": "payload",
               "type": "Object",
               "doc": "The payload received from the trigger." } ],
         "ret":
-          { "type": "Promise" },
+          { "type":
+              { "name": "Promise",
+                "typeParams":
+                  [ "Object" ] },
+            "doc": "Fulfilled - The function returns an empty object." },
         "locations":
           [ { "lineno": 1,
               "filename": "invoke-action.js" } ],
