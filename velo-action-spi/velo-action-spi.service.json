@@ -1,0 +1,80 @@
+{ "name": "velo-action-spi",
+  "mixes": [],
+  "labels":
+    [ "new" ],
+  "location":
+    { "lineno": 1,
+      "filename": "invoke-action-index.js" },
+  "docs":
+    { "summary": "The Velo Action SPI.",
+      "description":
+        [ "The Velo Action SPI is a service provider interface that allows you to act as your own action provider for automations on your site.",
+          "When you create an automation, you can use the Velo Action SPI to write code for a custom action instead of selecting a premade action. The",
+          "action you create is specific for your site and cannot be used on other sites." ],
+      "links": [],
+      "examples": [],
+      "extra":
+        {  } },
+  "properties": [],
+  "operations":
+    [ { "name": "invoke",
+        "labels": [],
+        "nameParams": [],
+        "params":
+          [ { "name": "payload",
+              "type": "Object",
+              "doc": "The payload received from the trigger." } ],
+        "ret":
+          { "type": "Promise" },
+        "locations":
+          [ { "lineno": 1,
+              "filename": "invoke-action.js" } ],
+        "docs":
+          { "summary": "Runs your customized action when an automation is triggered.",
+            "description":
+              [ "Wix calls this function when an automation is triggered, for example by a form submission or a completed order. Therefore, write any code for ",
+                "your action in `invoke()`. Use the [Velo APIs](https://www.wix.com/velo/reference/api-overview) in your code.",
+                "",
+                "For example, let's say you want to save a site visitor's contact data to a collection when they submit a form. In this case,",
+                "Wix calls `invoke()` when the form is submitted. Write the code to save the ",
+                "contact data, using the relevant [wix-data](https://www.wix.com/velo/reference/wix-data) methods, in the `invoke()` function.",
+                "",
+                "`Invoke()` accepts the trigger payload as a parameter. This payload will change depending on what your trigger is. You can access the payload",
+                "fields and use them in your action code." ],
+            "links": [],
+            "examples":
+              [ { "title": "Save contact data to a collection on your site",
+                  "body":
+                    [ "import wixData from 'wix-data';",
+                      "",
+                      "export const invoke = async ({payload}) => {",
+                      "",
+                      "let toInsert = {",
+                      "  \"plan_id\": payload.plan_id,",
+                      "  \"Plan name\" : payload.plan_title,",
+                      "  \"name\": payload.contact.name ,",
+                      "  \"email\": payload.contact.email,",
+                      "  \"phone\": payload.contact.phone ",
+                      "  }",
+                      "",
+                      "  // Insert the contact into our site collection",
+                      "  // of contact data for plan purchasers",
+                      "  wixData.insert('PurchaserContactData',toInsert)",
+                      "  .then((results) => {",
+                      "    console.log('Data inserted successfully:', results._id);",
+                      "  })",
+                      "  .catch((err) => {",
+                      "    console.error('Error inserting data:', err);",
+                      "  });",
+                      "    return {} // The function must return an empty object",
+                      "};" ],
+                  "extra":
+                    {  } } ],
+            "extra":
+              {  } },
+        "extra":
+          {  } } ],
+  "callbacks": [],
+  "messages": [],
+  "extra":
+    {  } }
