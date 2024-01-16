@@ -1,0 +1,99 @@
+{
+  "name": "wix-generate-example",
+  "mixes": [],
+  "callbacks": [],
+  "extra": {},
+  "clientId": "wix-generate-example",
+  "docs": {},
+  "relatedGuides": [],
+  "properties": [],
+  "operations": [],
+  "messages": [
+    {
+      "name": "Example",
+      "members": [
+        {
+          "name": "_id",
+          "optional": true,
+          "type": [
+            {
+              "nativeType": "string"
+            }
+          ],
+          "doc": "ID of the example created."
+        },
+        {
+          "name": "action",
+          "optional": true,
+          "type": [
+            {
+              "nativeType": "string"
+            }
+          ],
+          "doc": "the method we generated the example for"
+        },
+        {
+          "name": "example",
+          "optional": true,
+          "type": [
+            {
+              "nativeType": "string"
+            }
+          ],
+          "doc": "the output of gpt"
+        }
+      ],
+      "docs": {
+        "description": [
+          ""
+        ]
+      }
+    },
+    {
+      "name": "GenerateExamplesForResourceRequest",
+      "members": [
+        {
+          "name": "resource",
+          "type": [
+            {
+              "nativeType": "string"
+            }
+          ],
+          "doc": "the main entity to generate examples for"
+        }
+      ],
+      "docs": {
+        "description": [
+          ""
+        ]
+      }
+    },
+    {
+      "name": "GenerateExamplesForResourceResponse",
+      "members": [
+        {
+          "name": "examples",
+          "optional": true,
+          "type": [
+            {
+              "complexType": {
+                "nativeType": "Array",
+                "typeParams": [
+                  {
+                    "referenceType": "wix-generate-example.Example"
+                  }
+                ]
+              }
+            }
+          ],
+          "doc": ""
+        }
+      ],
+      "docs": {
+        "description": [
+          ""
+        ]
+      }
+    }
+  ]
+}
