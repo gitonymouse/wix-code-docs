@@ -1,7 +1,6 @@
 { "name": "ecom-payment-settings",
   "mixes": [],
-  "labels":
-    [ "changed" ],
+  "labels": [],
   "location":
     { "lineno": 1,
       "filename": "payment-settings-spi-index.js" },
@@ -343,7 +342,7 @@
         "labels": [] },
       { "name": "AppliedCoupon",
         "locations":
-          [ { "lineno": 577,
+          [ { "lineno": 578,
               "filename": "payment-settings-spi.js" } ],
         "docs":
           { "summary": "An object representing a coupon applied to the order.",
@@ -502,8 +501,7 @@
                   "members":
                     [ "description",
                       "discountReason" ] } ] },
-        "labels":
-          [ "changed" ] },
+        "labels": [] },
       { "name": "BillingInfo",
         "locations":
           [ { "lineno": 175,
@@ -621,7 +619,7 @@
         "labels": [] },
       { "name": "CostAmount",
         "locations":
-          [ { "lineno": 454,
+          [ { "lineno": 455,
               "filename": "payment-settings-spi.js" } ],
         "docs":
           { "links": [],
@@ -637,11 +635,10 @@
               "doc": "Amount formatted with currency symbol." } ],
         "extra":
           {  },
-        "labels":
-          [ "new" ] },
+        "labels": [] },
       { "name": "CostTaxDetails",
         "locations":
-          [ { "lineno": 447,
+          [ { "lineno": 448,
               "filename": "payment-settings-spi.js" } ],
         "docs":
           { "links": [],
@@ -660,8 +657,7 @@
               "doc": "The calculated tax, based on the `taxableAmount` and `taxRate`." } ],
         "extra":
           {  },
-        "labels":
-          [ "new" ] },
+        "labels": [] },
       { "name": "CreatedBy",
         "locations":
           [ { "lineno": 363,
@@ -746,7 +742,7 @@
         "labels": [] },
       { "name": "Discount",
         "locations":
-          [ { "lineno": 585,
+          [ { "lineno": 586,
               "filename": "payment-settings-spi.js" } ],
         "docs":
           { "summary": "An object representing a discount applied to the order.",
@@ -962,8 +958,7 @@
               "optional": true } ],
         "extra":
           {  },
-        "labels":
-          [ "changed" ] },
+        "labels": [] },
       { "name": "OrderRefunded",
         "locations":
           [ { "lineno": 346,
@@ -1024,8 +1019,7 @@
               "optional": true } ],
         "extra":
           {  },
-        "labels":
-          [ "new" ] },
+        "labels": [] },
       { "name": "PaymentSettings",
         "locations":
           [ { "lineno": 74,
@@ -1191,11 +1185,10 @@
               "doc": "Deprecated. Use `totalPriceAfterTax` minus `taxDetails.totalTax` instead." } ],
         "extra":
           {  },
-        "labels":
-          [ "new" ] },
+        "labels": [] },
       { "name": "ShippingRegion",
         "locations":
-          [ { "lineno": 460,
+          [ { "lineno": 461,
               "filename": "payment-settings-spi.js" } ],
         "docs":
           { "links": [],
@@ -1208,8 +1201,7 @@
               "doc": "Name of shipping region. For example, `Metropolitan London`, or `Outer Melbourne suburbs`." } ],
         "extra":
           {  },
-        "labels":
-          [ "new" ] },
+        "labels": [] },
       { "name": "StreetAddress",
         "locations":
           [ { "lineno": 198,
