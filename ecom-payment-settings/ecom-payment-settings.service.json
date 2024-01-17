@@ -44,12 +44,10 @@
   "properties": [],
   "operations":
     [ { "name": "getConfig",
-        "labels": [],
+        "labels":
+          [ "changed" ],
         "nameParams": [],
-        "params":
-          [ { "name": "fallbackValueForRequires3dSecure",
-              "type": "boolean",
-              "doc": "The value to set for `paymentSettings.requires3dSecure` if the SPI call fails.\n\nDefault: `false`" } ],
+        "params": [],
         "ret":
           { "type":
               { "name": "Promise",
@@ -107,7 +105,7 @@
                   [ "ecom-payment-settings.PaymentSettingsResponse" ] },
             "doc": "Fulfilled - Retrieved payment settings." },
         "locations":
-          [ { "lineno": 38,
+          [ { "lineno": 35,
               "filename": "payment-settings-spi.js" } ],
         "docs":
           { "summary": "Retrieves the payment settings to apply to an order based on your custom logic. Wix passes on the settings to the payment provider.",
@@ -168,7 +166,7 @@
   "messages":
     [ { "name": "Activities",
         "locations":
-          [ { "lineno": 454,
+          [ { "lineno": 451,
               "filename": "payment-settings-spi.js" } ],
         "docs":
           { "summary": "Order activities.",
@@ -179,37 +177,44 @@
         "members":
           [ { "name": "_createdDate",
               "type": "string",
-              "doc": "Activity creation date and time." },
+              "doc": "Activity creation date and time.",
+              "optional": true },
             { "name": "_id",
               "type": "string",
-              "doc": "Activity ID." },
+              "doc": "Activity ID.",
+              "optional": true },
             { "name": "authorEmail",
               "type": "string",
-              "doc": "Activity author's email." },
+              "doc": "Activity author's email.",
+              "optional": true },
             { "name": "type",
               "type": "string",
-              "doc": "Activity type.\n\nSupported values: `ORDER_REFUNDED`, `ORDER_PLACED`, `ORDER_PAID`, `ORDER_FULFILLED`, `ORDER_NOT_FULFILLED`, \n`ORDER_CANCELED`, `DOWNLOAD_LINK_SENT`, `TRACKING_NUMBER_ADDED`, `TRACKING_NUMBER_EDITED`, `TRACKING_LINK_ADDED`, \n`SHIPPING_CONFIRMATION_EMAIL_SENT`, `INVOICE_ADDED`, `INVOICE_REMOVED`, `INVOICE_SENT`, `FULFILLER_EMAIL_SENT`, \n`SHIPPING_ADDRESS_EDITED`, `EMAIL_EDITED`, `PICKUP_READY_EMAIL_SENT`, `CUSTOM_ACTIVITY`, `MERCHANT_COMMENT`, \n`ORDER_CREATED_FROM_EXCHANGE`, `NEW_EXCHANGE_ORDER_CREATED`, `ORDER_PARTIALLY_PAID`, `DRAFT_ORDER_CHANGES_APPLIED`" },
+              "doc": "Activity type.\n\nSupported values: `\"ORDER_REFUNDED\"`, `\"ORDER_PLACED\"`, `\"ORDER_PAID\"`, `\"ORDER_FULFILLED\"`, `\"ORDER_NOT_FULFILLED\"`, \n`\"ORDER_CANCELED\"`, `\"DOWNLOAD_LINK_SENT\"`, `\"TRACKING_NUMBER_ADDED\"`, `\"TRACKING_NUMBER_EDITED\"`, `\"TRACKING_LINK_ADDED\"`, \n`\"SHIPPING_CONFIRMATION_EMAIL_SENT\"`, `\"INVOICE_ADDED\"`, `\"INVOICE_REMOVED\"`, `\"INVOICE_SENT\"`, `\"FULFILLER_EMAIL_SENT\"`, \n`\"SHIPPING_ADDRESS_EDITED\"`, `\"EMAIL_EDITED\"`, `\"PICKUP_READY_EMAIL_SENT\"`, `\"CUSTOM_ACTIVITY\"`, `\"MERCHANT_COMMENT\"`, \n`\"ORDER_CREATED_FROM_EXCHANGE\"`, `\"NEW_EXCHANGE_ORDER_CREATED\"`, `\"ORDER_PARTIALLY_PAID\"`, `\"DRAFT_ORDER_CHANGES_APPLIED\"`",
+              "optional": true },
             { "name": "customActivity",
               "type": "ecom-payment-settings.CustomActivity",
-              "doc": "Custom activity details. `activity.type` must be `CUSTOM_ACTIVITY`." },
+              "doc": "Custom activity details. `activity.type` must be `\"CUSTOM_ACTIVITY\"`.",
+              "optional": true },
             { "name": "merchantComment",
               "type": "ecom-payment-settings.MerchantComment",
-              "doc": "Merchant comment details. `activity.type` must be `MERCHANT_COMMENT`.",
+              "doc": "Merchant comment details. `activity.type` must be `\"MERCHANT_COMMENT\"`.",
               "optional": true },
             { "name": "orderRefunded",
               "type": "ecom-payment-settings.OrderRefunded",
-              "doc": "Additional info about order refunded activity. `activity.type` must be `ORDER_REFUNDED`.",
+              "doc": "Additional info about order refunded activity. `activity.type` must be `\"ORDER_REFUNDED\"`.",
               "optional": true } ],
         "extra":
           { "oneOfGroups":
-              [ { "name": "customActivity",
+              [ { "name": "Activity",
                   "members":
-                    [ "merchantComment",
+                    [ "customActivity",
+                      "merchantComment",
                       "orderRefunded" ] } ] },
-        "labels": [] },
+        "labels":
+          [ "changed" ] },
       { "name": "AdditionalFees",
         "locations":
-          [ { "lineno": 539,
+          [ { "lineno": 536,
               "filename": "payment-settings-spi.js" } ],
         "docs":
           { "summary": "Additional fees applied to the order.",
@@ -220,37 +225,46 @@
         "members":
           [ { "name": "_id",
               "type": "string",
-              "doc": "Additional fee's ID." },
+              "doc": "Additional fee's ID.",
+              "optional": true },
             { "name": "code",
               "type": "string",
-              "doc": "Additional fee's unique code for future processing." },
+              "doc": "Additional fee's unique code for future processing.",
+              "optional": true },
             { "name": "lineItemIds",
               "type":
                 { "name": "Array",
                   "typeParams":
                     [ "string" ] },
-              "doc": "Optional. Line items associated with this additional fee. If no `lineItemIds` are provided, the fee will be associated with the whole cart/checkout/order." },
+              "doc": "Optional. Line items associated with this additional fee. If no `lineItemIds` are provided, the fee will be associated with the whole cart/checkout/order.",
+              "optional": true },
             { "name": "name",
               "type": "string",
-              "doc": "Name of additional fee." },
+              "doc": "Name of additional fee.",
+              "optional": true },
             { "name": "price",
               "type": "ecom-payment-settings.AdditionalFeesPrice",
-              "doc": "Additional fee's price." },
+              "doc": "Additional fee's price.",
+              "optional": true },
             { "name": "priceBeforeTax",
               "type": "ecom-payment-settings.AdditionalFeesPrice",
-              "doc": "Additional fee's price before tax." },
+              "doc": "Additional fee's price before tax.",
+              "optional": true },
             { "name": "providerAppId",
               "type": "string",
-              "doc": "SPI implementer's `appId`." },
+              "doc": "SPI implementer's `appId`.",
+              "optional": true },
             { "name": "taxDetails",
               "type": "ecom-payment-settings.AdditionalFeesTaxDetails",
-              "doc": "Tax details." } ],
+              "doc": "Tax details.",
+              "optional": true } ],
         "extra":
           {  },
-        "labels": [] },
+        "labels":
+          [ "changed" ] },
       { "name": "AdditionalFeesPrice",
         "locations":
-          [ { "lineno": 553,
+          [ { "lineno": 550,
               "filename": "payment-settings-spi.js" } ],
         "docs":
           { "summary": "Additional fee's price.",
@@ -261,16 +275,19 @@
         "members":
           [ { "name": "amount",
               "type": "string",
-              "doc": "Amount." },
+              "doc": "Amount.",
+              "optional": true },
             { "name": "formattedAmount",
               "type": "string",
-              "doc": "Amount formatted with currency symbol." } ],
+              "doc": "Amount formatted with currency symbol.",
+              "optional": true } ],
         "extra":
           {  },
-        "labels": [] },
+        "labels":
+          [ "changed" ] },
       { "name": "AdditionalFeesTaxDetails",
         "locations":
-          [ { "lineno": 561,
+          [ { "lineno": 558,
               "filename": "payment-settings-spi.js" } ],
         "docs":
           { "summary": "Tax details.",
@@ -281,19 +298,23 @@
         "members":
           [ { "name": "taxableAmount",
               "type": "ecom-payment-settings.AdditionalFeesPrice",
-              "doc": "Taxable amount of this line item." },
+              "doc": "Taxable amount of this line item.",
+              "optional": true },
             { "name": "taxRate",
               "type": "string",
-              "doc": "Tax rate percentage, as a decimal numeral between 0 and 1. For example, `0.13`." },
+              "doc": "Tax rate percentage, as a decimal numeral between 0 and 1. For example, `0.13`.",
+              "optional": true },
             { "name": "totalTax",
               "type": "ecom-payment-settings.AdditionalFeesPrice",
-              "doc": "The calculated tax, based on the `taxableAmount` and `taxRate`." } ],
+              "doc": "The calculated tax, based on the `taxableAmount` and `taxRate`.",
+              "optional": true } ],
         "extra":
           {  },
-        "labels": [] },
+        "labels":
+          [ "changed" ] },
       { "name": "Address",
         "locations":
-          [ { "lineno": 329,
+          [ { "lineno": 326,
               "filename": "payment-settings-spi.js" } ],
         "docs":
           { "summary": "An object representing address information.",
@@ -335,7 +356,7 @@
         "labels": [] },
       { "name": "AddressWithContact",
         "locations":
-          [ { "lineno": 644,
+          [ { "lineno": 641,
               "filename": "payment-settings-spi.js" } ],
         "docs":
           { "links": [],
@@ -345,17 +366,19 @@
         "members":
           [ { "name": "address",
               "type": "ecom-payment-settings.Address",
-              "doc": "Address." },
+              "doc": "Address.",
+              "optional": true },
             { "name": "contactDetails",
               "type": "ecom-payment-settings.ContactDetails",
               "doc": "Contact Details.",
               "optional": true } ],
         "extra":
           {  },
-        "labels": [] },
+        "labels":
+          [ "changed" ] },
       { "name": "AppliedCoupon",
         "locations":
-          [ { "lineno": 767,
+          [ { "lineno": 652,
               "filename": "payment-settings-spi.js" } ],
         "docs":
           { "summary": "An object representing a coupon applied to the order.",
@@ -366,19 +389,23 @@
         "members":
           [ { "name": "couponId",
               "type": "string",
-              "doc": "Coupon ID." },
+              "doc": "Coupon ID.",
+              "optional": true },
             { "name": "name",
               "type": "string",
-              "doc": "Coupon name." },
+              "doc": "Coupon name.",
+              "optional": true },
             { "name": "code",
               "type": "string",
-              "doc": "Coupon code (used by a buyer to apply the coupon)." } ],
+              "doc": "Coupon code (used by a buyer to apply the coupon).",
+              "optional": true } ],
         "extra":
           {  },
-        "labels": [] },
+        "labels":
+          [ "changed" ] },
       { "name": "AppliedDiscountAmounts",
         "locations":
-          [ { "lineno": 446,
+          [ { "lineno": 443,
               "filename": "payment-settings-spi.js" } ],
         "docs":
           { "summary": "Amounts.",
@@ -389,16 +416,19 @@
         "members":
           [ { "name": "amount",
               "type": "string",
-              "doc": "Amount." },
+              "doc": "Amount.",
+              "optional": true },
             { "name": "formattedAmount",
               "type": "string",
-              "doc": "Amount formatted with currency symbol." } ],
+              "doc": "Amount formatted with currency symbol.",
+              "optional": true } ],
         "extra":
           {  },
-        "labels": [] },
+        "labels":
+          [ "changed" ] },
       { "name": "AppliedDiscountRule",
         "locations":
-          [ { "lineno": 417,
+          [ { "lineno": 414,
               "filename": "payment-settings-spi.js" } ],
         "docs":
           { "summary": "Automatic discount.",
@@ -409,19 +439,23 @@
         "members":
           [ { "name": "_id",
               "type": "string",
-              "doc": "Discount rule ID." },
+              "doc": "Discount rule ID.",
+              "optional": true },
             { "name": "name",
               "type": "ecom-payment-settings.DiscountRuleName",
-              "doc": "Discount rule name." },
+              "doc": "Discount rule name.",
+              "optional": true },
             { "name": "amount",
               "type": "ecom-payment-settings.AppliedDiscountAmounts",
-              "doc": "Discount value." } ],
+              "doc": "Discount value.",
+              "optional": true } ],
         "extra":
           {  },
-        "labels": [] },
+        "labels":
+          [ "changed" ] },
       { "name": "AppliedDiscounts",
         "locations":
-          [ { "lineno": 389,
+          [ { "lineno": 386,
               "filename": "payment-settings-spi.js" } ],
         "docs":
           { "summary": "Applied discounts.",
@@ -432,16 +466,19 @@
         "members":
           [ { "name": "_id",
               "type": "string",
-              "doc": "Discount ID." },
+              "doc": "Discount ID.",
+              "optional": true },
             { "name": "discountType",
               "type": "string",
-              "doc": "Discount type.\nOne of:\n\n + `GLOBAL`: Discount applies to entire order.\n + `SPECIFIC-ITEMS`: Discount applies to specific items.\n + `SHIPPING`: Discount applies to shipping. For example, free shipping." },
+              "doc": "Discount type.\nOne of:\n\n + `\"GLOBAL\"`: Discount applies to entire order.\n + `\"SPECIFIC-ITEMS\"`: Discount applies to specific items.\n + `\"SHIPPING\"`: Discount applies to shipping. For example, free shipping.",
+              "optional": true },
             { "name": "lineItemIds",
               "type":
                 { "name": "Array",
                   "typeParams":
                     [ "string" ] },
-              "doc": "IDs of line items discount applies to." },
+              "doc": "IDs of line items discount applies to.",
+              "optional": true },
             { "name": "coupon",
               "type": "ecom-payment-settings.AppliedDiscountsCoupon",
               "doc": "Applied coupon info.",
@@ -452,17 +489,19 @@
               "optional": true },
             { "name": "merchantDiscount",
               "type": "ecom-payment-settings.AppliedMerchantDiscount",
-              "doc": "Merchant discount." } ],
+              "doc": "Merchant discount.",
+              "optional": true } ],
         "extra":
           { "oneOfGroups":
               [ { "name": "appliedDiscount",
                   "members":
                     [ "coupon",
                       "discountRule" ] } ] },
-        "labels": [] },
+        "labels":
+          [ "changed" ] },
       { "name": "AppliedDiscountsCoupon",
         "locations":
-          [ { "lineno": 407,
+          [ { "lineno": 404,
               "filename": "payment-settings-spi.js" } ],
         "docs":
           { "summary": "Applied coupon info.",
@@ -473,22 +512,27 @@
         "members":
           [ { "name": "_id",
               "type": "string",
-              "doc": "Coupon ID." },
+              "doc": "Coupon ID.",
+              "optional": true },
             { "name": "code",
               "type": "string",
-              "doc": "Coupon code." },
+              "doc": "Coupon code.",
+              "optional": true },
             { "name": "name",
               "type": "string",
-              "doc": "Coupon name." },
+              "doc": "Coupon name.",
+              "optional": true },
             { "name": "amount",
               "type": "ecom-payment-settings.AppliedDiscountAmounts",
-              "doc": "Coupon value." } ],
+              "doc": "Coupon value.",
+              "optional": true } ],
         "extra":
           {  },
-        "labels": [] },
+        "labels":
+          [ "changed" ] },
       { "name": "AppliedMerchantDiscount",
         "locations":
-          [ { "lineno": 426,
+          [ { "lineno": 423,
               "filename": "payment-settings-spi.js" } ],
         "docs":
           { "summary": "Merchant discount.",
@@ -499,14 +543,15 @@
         "members":
           [ { "name": "amount",
               "type": "ecom-payment-settings.AppliedDiscountAmounts",
-              "doc": "Discount amount." },
+              "doc": "Discount amount.",
+              "optional": true },
             { "name": "description",
               "type": "string",
               "doc": "Discount description as free text (optional).",
               "optional": true },
             { "name": "discountReason",
               "type": "string",
-              "doc": "Pre-defined discount reason (optional).\n\n + `ITEMS_EXCHANGE`: Exchange balance acquired as a result of items exchange.",
+              "doc": "Pre-defined discount reason (optional).\n\n + `\"ITEMS_EXCHANGE\"`: Exchange balance acquired as a result of items exchange.",
               "optional": true } ],
         "extra":
           { "oneOfGroups":
@@ -514,10 +559,11 @@
                   "members":
                     [ "description",
                       "discountReason" ] } ] },
-        "labels": [] },
+        "labels":
+          [ "changed" ] },
       { "name": "BillingInfo",
         "locations":
-          [ { "lineno": 321,
+          [ { "lineno": 318,
               "filename": "payment-settings-spi.js" } ],
         "docs":
           { "summary": "Billing address and contact details.",
@@ -539,7 +585,7 @@
         "labels": [] },
       { "name": "BuyerInfo",
         "locations":
-          [ { "lineno": 287,
+          [ { "lineno": 284,
               "filename": "payment-settings-spi.js" } ],
         "docs":
           { "summary": "Buyer information.",
@@ -568,12 +614,13 @@
           { "oneOfGroups":
               [ { "name": "id",
                   "members":
-                    [ "visitorId",
-                      "memberId" ] } ] },
-        "labels": [] },
+                    [ "memberId",
+                      "visitorId" ] } ] },
+        "labels":
+          [ "changed" ] },
       { "name": "ChannelInfo",
         "locations":
-          [ { "lineno": 518,
+          [ { "lineno": 515,
               "filename": "payment-settings-spi.js" } ],
         "docs":
           { "summary": "Information about the sales channel that submitted this order.",
@@ -592,13 +639,15 @@
               "optional": true },
             { "name": "type",
               "type": "string",
-              "doc": "Sales channel that submitted the order.\n\nOne of: `WEB`, `POS`, `EBAY`, `AMAZON`, `OTHER_PLATFORM`, `WIX_APP_STORE`, \n`WIX_INVOICES`, `BACKOFFICE_MERCHANT`, `WISH`, `CLASS_PASS`, `GLOBAL_E`" } ],
+              "doc": "Sales channel that submitted the order.\n\nOne of: `\"WEB\"`, `\"POS\"`, `\"EBAY\"`, `\"AMAZON\"`, `\"OTHER_PLATFORM\"`, `\"WIX_APP_STORE\"`, \n`\"WIX_INVOICES\"`, `\"BACKOFFICE_MERCHANT\"`, `\"WISH\"`, `\"CLASS_PASS\"`, `\"GLOBAL_E\"`",
+              "optional": true } ],
         "extra":
           {  },
-        "labels": [] },
+        "labels":
+          [ "changed" ] },
       { "name": "Color",
         "locations":
-          [ { "lineno": 209,
+          [ { "lineno": 206,
               "filename": "payment-settings-spi.js" } ],
         "docs":
           { "links": [],
@@ -608,20 +657,23 @@
         "members":
           [ { "name": "code",
               "type": "string",
-              "doc": "HEX or RGB color code for display." },
+              "doc": "HEX or RGB color code for display.",
+              "optional": true },
             { "name": "original",
               "type": "string",
-              "doc": "Description line color name in site's default language." },
+              "doc": "Description line color name in site's default language.",
+              "optional": true },
             { "name": "translated",
               "type": "string",
-              "doc": "Translated description line color name according to buyer language. Defaults to `original` when not provided." } ],
+              "doc": "Translated description line color name according to buyer language. Defaults to `original` when not provided.",
+              "optional": true } ],
         "extra":
           {  },
         "labels":
-          [ "new" ] },
+          [ "changed" ] },
       { "name": "ContactDetails",
         "locations":
-          [ { "lineno": 350,
+          [ { "lineno": 347,
               "filename": "payment-settings-spi.js" } ],
         "docs":
           { "summary": "Contact details.",
@@ -648,14 +700,15 @@
               "optional": true },
             { "name": "vatId",
               "type": "ecom-payment-settings.VatId",
-              "doc": "Tax information (for Brazil only). If ID is provided, `vatId.type` must also be set, `UNSPECIFIED` is not allowed.",
+              "doc": "Tax information (for Brazil only). If ID is provided, `vatId.type` must also be set, `\"UNSPECIFIED\"` is not allowed.",
               "optional": true } ],
         "extra":
           {  },
-        "labels": [] },
+        "labels":
+          [ "changed" ] },
       { "name": "CostAmount",
         "locations":
-          [ { "lineno": 599,
+          [ { "lineno": 596,
               "filename": "payment-settings-spi.js" } ],
         "docs":
           { "links": [],
@@ -665,16 +718,19 @@
         "members":
           [ { "name": "amount",
               "type": "string",
-              "doc": "Amount." },
+              "doc": "Amount.",
+              "optional": true },
             { "name": "formattedAmount",
               "type": "string",
-              "doc": "Amount formatted with currency symbol." } ],
+              "doc": "Amount formatted with currency symbol.",
+              "optional": true } ],
         "extra":
           {  },
-        "labels": [] },
+        "labels":
+          [ "changed" ] },
       { "name": "CostTaxDetails",
         "locations":
-          [ { "lineno": 592,
+          [ { "lineno": 589,
               "filename": "payment-settings-spi.js" } ],
         "docs":
           { "links": [],
@@ -684,19 +740,23 @@
         "members":
           [ { "name": "taxRate",
               "type": "string",
-              "doc": "Tax rate percentage, as a decimal numeral between 0 and 1. For example, `0.13`." },
+              "doc": "Tax rate percentage, as a decimal numeral between 0 and 1. For example, `0.13`.",
+              "optional": true },
             { "name": "taxableAmount",
               "type": "ecom-payment-settings.CostAmount",
-              "doc": "Taxable amount of this line item." },
+              "doc": "Taxable amount of this line item.",
+              "optional": true },
             { "name": "totalTax",
               "type": "ecom-payment-settings.CostAmount",
-              "doc": "The calculated tax, based on the `taxableAmount` and `taxRate`." } ],
+              "doc": "The calculated tax, based on the `taxableAmount` and `taxRate`.",
+              "optional": true } ],
         "extra":
           {  },
-        "labels": [] },
+        "labels":
+          [ "changed" ] },
       { "name": "CreatedBy",
         "locations":
-          [ { "lineno": 507,
+          [ { "lineno": 504,
               "filename": "payment-settings-spi.js" } ],
         "docs":
           { "summary": "ID of the order's initiator.",
@@ -725,17 +785,18 @@
           { "oneOfGroups":
               [ { "name": "creator",
                   "members":
-                    [ "userId",
+                    [ "appId",
                       "memberId",
-                      "visitorId",
-                      "appId" ] } ] },
-        "labels": [] },
+                      "userId",
+                      "visitorId" ] } ] },
+        "labels":
+          [ "changed" ] },
       { "name": "CustomActivity",
         "locations":
-          [ { "lineno": 474,
+          [ { "lineno": 471,
               "filename": "payment-settings-spi.js" } ],
         "docs":
-          { "summary": "Custom activity details. `activity.type` must be `CUSTOM_ACTIVITY`.",
+          { "summary": "Custom activity details. `activity.type` must be `\"CUSTOM_ACTIVITY\"`.",
             "links": [],
             "examples": [],
             "extra":
@@ -743,19 +804,23 @@
         "members":
           [ { "name": "appId",
               "type": "string",
-              "doc": "ID of the app that created the custom activity." },
+              "doc": "ID of the app that created the custom activity.",
+              "optional": true },
             { "name": "type",
               "type": "string",
-              "doc": "Custom activity type. For example, `\"Ticket number set\"`." },
+              "doc": "Custom activity type. For example, `\"Ticket number set\"`.",
+              "optional": true },
             { "name": "additionalData",
               "type": "Object",
-              "doc": "Additional data in key-value form. For example, `{ \"Ticket number\": \"123456\" }`." } ],
+              "doc": "Additional data in key-value form. For example, `{ \"Ticket number\": \"123456\" }`.",
+              "optional": true } ],
         "extra":
           {  },
-        "labels": [] },
+        "labels":
+          [ "changed" ] },
       { "name": "CustomFields",
         "locations":
-          [ { "lineno": 530,
+          [ { "lineno": 527,
               "filename": "payment-settings-spi.js" } ],
         "docs":
           { "summary": "Custom fields.",
@@ -766,19 +831,23 @@
         "members":
           [ { "name": "title",
               "type": "string",
-              "doc": "Custom field title." },
+              "doc": "Custom field title.",
+              "optional": true },
             { "name": "translatedTitle",
               "type": "string",
-              "doc": "Translated custom field title." },
+              "doc": "Translated custom field title.",
+              "optional": true },
             { "name": "value",
               "type": "string",
-              "doc": "Custom field's text." } ],
+              "doc": "Custom field's text.",
+              "optional": true } ],
         "extra":
           {  },
-        "labels": [] },
+        "labels":
+          [ "changed" ] },
       { "name": "DeliveryLogistics",
         "locations":
-          [ { "lineno": 605,
+          [ { "lineno": 602,
               "filename": "payment-settings-spi.js" } ],
         "docs":
           { "summary": "Shipping logistics.",
@@ -813,13 +882,15 @@
               "optional": true } ],
         "extra":
           { "oneOfGroups":
-              [ { "name": "pickupDetails",
+              [ { "name": "Address",
                   "members":
-                    [ "shippingDestination" ] } ] },
-        "labels": [] },
+                    [ "pickupDetails",
+                      "shippingDestination" ] } ] },
+        "labels":
+          [ "changed" ] },
       { "name": "DeliveryTimeSlot",
         "locations":
-          [ { "lineno": 618,
+          [ { "lineno": 615,
               "filename": "payment-settings-spi.js" } ],
         "docs":
           { "summary": "Expected delivery time slot.",
@@ -830,16 +901,19 @@
         "members":
           [ { "name": "from",
               "type": "Date",
-              "doc": "Delivery slot starting time." },
+              "doc": "Delivery slot starting time.",
+              "optional": true },
             { "name": "to",
               "type": "Date",
-              "doc": "Delivery slot ending time." } ],
+              "doc": "Delivery slot ending time.",
+              "optional": true } ],
         "extra":
           {  },
-        "labels": [] },
+        "labels":
+          [ "changed" ] },
       { "name": "DepositAmount",
         "locations":
-          [ { "lineno": 189,
+          [ { "lineno": 186,
               "filename": "payment-settings-spi.js" } ],
         "docs":
           { "links": [],
@@ -849,17 +923,19 @@
         "members":
           [ { "name": "amount",
               "type": "string",
-              "doc": "Amount." },
+              "doc": "Amount.",
+              "optional": true },
             { "name": "formattedAmount",
               "type": "string",
-              "doc": "Amount formatted with currency symbol." } ],
+              "doc": "Amount formatted with currency symbol.",
+              "optional": true } ],
         "extra":
           {  },
         "labels":
-          [ "new" ] },
+          [ "changed" ] },
       { "name": "DescriptionLineName",
         "locations":
-          [ { "lineno": 203,
+          [ { "lineno": 200,
               "filename": "payment-settings-spi.js" } ],
         "docs":
           { "links": [],
@@ -869,17 +945,19 @@
         "members":
           [ { "name": "original",
               "type": "string",
-              "doc": "Description line name in site's default language." },
+              "doc": "Description line name in site's default language.",
+              "optional": true },
             { "name": "translated",
               "type": "string",
-              "doc": "Translated description line item according to buyer language. Defaults to `original` when not provided." } ],
+              "doc": "Translated description line item according to buyer language. Defaults to `original` when not provided.",
+              "optional": true } ],
         "extra":
           {  },
         "labels":
-          [ "new" ] },
+          [ "changed" ] },
       { "name": "DescriptionLines",
         "locations":
-          [ { "lineno": 195,
+          [ { "lineno": 192,
               "filename": "payment-settings-spi.js" } ],
         "docs":
           { "links": [],
@@ -889,24 +967,27 @@
         "members":
           [ { "name": "name",
               "type": "ecom-payment-settings.DescriptionLineName",
-              "doc": "Description line name." },
+              "doc": "Description line name.",
+              "optional": true },
             { "name": "colorInfo",
               "type": "ecom-payment-settings.Color",
-              "doc": "Description line color value." },
+              "doc": "Description line color value.",
+              "optional": true },
             { "name": "plainText",
               "type": "ecom-payment-settings.PlainTextValue",
               "doc": "Description line plain text value.",
               "optional": true } ],
         "extra":
           { "oneOfGroups":
-              [ { "name": "colorInfo",
+              [ { "name": "descriptionLineValue",
                   "members":
-                    [ "plainText" ] } ] },
+                    [ "colorInfo",
+                      "plainText" ] } ] },
         "labels":
-          [ "new" ] },
+          [ "changed" ] },
       { "name": "Discount",
         "locations":
-          [ { "lineno": 775,
+          [ { "lineno": 660,
               "filename": "payment-settings-spi.js" } ],
         "docs":
           { "summary": "An object representing a discount applied to the order.",
@@ -917,13 +998,15 @@
         "members":
           [ { "name": "appliedCoupon",
               "type": "ecom-payment-settings.AppliedCoupon",
-              "doc": "Information about an applied coupon." } ],
+              "doc": "Information about an applied coupon.",
+              "optional": true } ],
         "extra":
           {  },
-        "labels": [] },
+        "labels":
+          [ "changed" ] },
       { "name": "DiscountRuleName",
         "locations":
-          [ { "lineno": 438,
+          [ { "lineno": 435,
               "filename": "payment-settings-spi.js" } ],
         "docs":
           { "summary": "Discount rule name.",
@@ -934,16 +1017,19 @@
         "members":
           [ { "name": "original",
               "type": "string",
-              "doc": "Original discount rule name (in site's default language)." },
+              "doc": "Original discount rule name (in site's default language).",
+              "optional": true },
             { "name": "translated",
               "type": "string",
-              "doc": "Translated discount rule name according to buyer language. Defaults to `original` when not provided." } ],
+              "doc": "Translated discount rule name according to buyer language. Defaults to `original` when not provided.",
+              "optional": true } ],
         "extra":
           {  },
-        "labels": [] },
+        "labels":
+          [ "changed" ] },
       { "name": "ItemType",
         "locations":
-          [ { "lineno": 222,
+          [ { "lineno": 219,
               "filename": "payment-settings-spi.js" } ],
         "docs":
           { "links": [],
@@ -953,17 +1039,19 @@
         "members":
           [ { "name": "preset",
               "type": "string",
-              "doc": "Preset item type. Supported values: \"UNRECOGNISED\", \"DIGITAL\", \"GIFT_CARD\", \"PHYSICAL\", \"SERVICE\"" },
+              "doc": "Preset item type. Supported values: \"UNRECOGNISED\", \"DIGITAL\", \"GIFT_CARD\", \"PHYSICAL\", \"SERVICE\"",
+              "optional": true },
             { "name": "custom",
               "type": "string",
-              "doc": "Custom item type." } ],
+              "doc": "Custom item type.",
+              "optional": true } ],
         "extra":
           {  },
         "labels":
-          [ "new" ] },
+          [ "changed" ] },
       { "name": "LineItemTaxDetails",
         "locations":
-          [ { "lineno": 259,
+          [ { "lineno": 256,
               "filename": "payment-settings-spi.js" } ],
         "docs":
           { "links": [],
@@ -973,23 +1061,26 @@
         "members":
           [ { "name": "taxableAmount",
               "type": "ecom-payment-settings.Price",
-              "doc": "Taxable amount of this line item." },
+              "doc": "Taxable amount of this line item.",
+              "optional": true },
             { "name": "taxRate",
               "type": "string",
-              "doc": "Tax rate percentage, as a decimal numeral between 0 and 1. For example, `0.13`." },
+              "doc": "Tax rate percentage, as a decimal numeral between 0 and 1. For example, `0.13`.",
+              "optional": true },
             { "name": "totalTax",
               "type": "ecom-payment-settings.Price",
-              "doc": "The calculated tax, based on the `taxableAmount` and `taxRate`." } ],
+              "doc": "The calculated tax, based on the `taxableAmount` and `taxRate`.",
+              "optional": true } ],
         "extra":
           {  },
         "labels":
-          [ "new" ] },
+          [ "changed" ] },
       { "name": "MerchantComment",
         "locations":
-          [ { "lineno": 483,
+          [ { "lineno": 480,
               "filename": "payment-settings-spi.js" } ],
         "docs":
-          { "summary": "Merchant comment details. `activity.type` must be `MERCHANT_COMMENT`.",
+          { "summary": "Merchant comment details. `activity.type` must be `\"MERCHANT_COMMENT\"`.",
             "links": [],
             "examples": [],
             "extra":
@@ -997,13 +1088,15 @@
         "members":
           [ { "name": "message",
               "type": "string",
-              "doc": "Merchant comment message." } ],
+              "doc": "Merchant comment message.",
+              "optional": true } ],
         "extra":
           {  },
-        "labels": [] },
+        "labels":
+          [ "changed" ] },
       { "name": "Options",
         "locations":
-          [ { "lineno": 62,
+          [ { "lineno": 59,
               "filename": "payment-settings-spi.js" } ],
         "docs":
           { "links": [],
@@ -1019,7 +1112,7 @@
         "labels": [] },
       { "name": "Order",
         "locations":
-          [ { "lineno": 80,
+          [ { "lineno": 77,
               "filename": "payment-settings-spi.js" } ],
         "docs":
           { "summary": "An object representing an order.",
@@ -1057,11 +1150,11 @@
               "optional": true },
             { "name": "paymentStatus",
               "type": "string",
-              "doc": "Order payment status.\n\nOne of:\n\n + `NOT_PAID`: This can be an order made online, but not yet paid. In such cases `order.status` will be `INITIALIZED`. This status also applies when an offline order needs to be manually marked as paid. In such cases `order.status` will be `APPROVED`.\n + `PAID`: All payments associated with this order are paid.\n + `PARTIALLY_REFUNDED`: Order was refunded, but refund amount is less than order total price.\n + `FULLY_REFUNDED`: Order fully refunded. Refund amount equals total price.\n + `PENDING`: Payments received but not yet confirmed by the payment provider.\n + `PARTIALLY_PAID`: At least one payment was received and approved, covering less than total price amount.",
+              "doc": "Order payment status.\n\nOne of:\n\n + `\"NOT_PAID\"`: This can be an order made online, but not yet paid. In such cases `order.status` will be `INITIALIZED`. This status also applies when an offline order needs to be manually marked as paid. In such cases `order.status` will be `APPROVED`.\n + `\"PAID\"`: All payments associated with this order are paid.\n + `\"PARTIALLY_REFUNDED\"`: Order was refunded, but refund amount is less than order total price.\n + `\"FULLY_REFUNDED\"`: Order fully refunded. Refund amount equals total price.\n + `\"PENDING\"`: Payments received but not yet confirmed by the payment provider.\n + `\"PARTIALLY_PAID\"`: At least one payment was received and approved, covering less than total price amount.",
               "optional": true },
             { "name": "fulfillmentStatus",
               "type": "string",
-              "doc": "Order fulfillment status.\n\nOne of:\n\n + `NOT_FULFILLED`: Order is not yet fulfilled.\n + `FULFILLED`: Order was fulfilled successfully.\n + `PARTIALLY_FULFILLED`: Order was partially fulfilled. For example, when only some of the order's items were fulfilled.",
+              "doc": "Order fulfillment status.\n\nOne of:\n\n + `\"NOT_FULFILLED\"`: Order is not yet fulfilled.\n + `\"FULFILLED\"`: Order was fulfilled successfully.\n + `\"PARTIALLY_FULFILLED\"`: Order was partially fulfilled. For example, when only some of the order's items were fulfilled.",
               "optional": true },
             { "name": "buyerLanguage",
               "type": "string",
@@ -1069,7 +1162,7 @@
               "optional": true },
             { "name": "weightUnit",
               "type": "string",
-              "doc": "Weight measurement unit - defaults to site's weight unit.\n\nOne of: `UNSPECIFIED_WEIGHT_UNIT`, `KG`, `LB`",
+              "doc": "Weight measurement unit - defaults to site's weight unit.\n\nOne of: `\"UNSPECIFIED_WEIGHT_UNIT\"`, `\"KG\"`, `\"LB\"`",
               "optional": true },
             { "name": "currency",
               "type": "string",
@@ -1101,7 +1194,7 @@
               "optional": true },
             { "name": "status",
               "type": "string",
-              "doc": "Order status.\n\nOne of:\n\n + `INITIALIZED`: Order was created, but not yet approved or declined.\n + `APPROVED`: Order was approved. This happens when either the online payment succeeded or the order is an offline order. Once an order is approved, many side effects are triggered. For example, holding of stock in the inventory and sending of notification emails.\n + `CANCELED`: Order was canceled by the user.",
+              "doc": "Order status.\n\nOne of:\n\n + `\"INITIALIZED\"`: Order was created, but not yet approved or declined.\n + `\"APPROVED\"`: Order was approved. This happens when either the online payment succeeded or the order is an offline order. Once an order is approved, many side effects are triggered. For example, holding of stock in the inventory and sending of notification emails.\n + `\"CANCELED\"`: Order was canceled by the user.",
               "optional": true },
             { "name": "archived",
               "type": "boolean",
@@ -1127,7 +1220,7 @@
               "optional": true },
             { "name": "attributionSource",
               "type": "string",
-              "doc": "Order attribution source.\n\nOne of: `UNSPECIFIED`, `FACEBOOK_ADS`",
+              "doc": "Order attribution source.\n\nOne of: `\"UNSPECIFIED\"`, `\"FACEBOOK_ADS\"`",
               "optional": true },
             { "name": "createdBy",
               "type": "ecom-payment-settings.CreatedBy",
@@ -1165,10 +1258,11 @@
               "optional": true } ],
         "extra":
           {  },
-        "labels": [] },
+        "labels":
+          [ "changed" ] },
       { "name": "OrderLineItem",
         "locations":
-          [ { "lineno": 141,
+          [ { "lineno": 138,
               "filename": "payment-settings-spi.js" } ],
         "docs":
           { "summary": "Order line items.",
@@ -1179,75 +1273,94 @@
         "members":
           [ { "name": "_id",
               "type": "string",
-              "doc": "Line item ID." },
+              "doc": "Line item ID.",
+              "optional": true },
             { "name": "catalogReference",
               "type": "ecom-payment-settings.CatalogReference",
-              "doc": "References to the line item's origin catalog." },
+              "doc": "References to the line item's origin catalog.",
+              "optional": true },
             { "name": "depositAmount",
               "type": "ecom-payment-settings.DepositAmount",
-              "doc": "Item's price amount to be charged during checkout, relevant for items with `paymentOption` set to `\"DEPOSIT_ONLINE\"`." },
+              "doc": "Item's price amount to be charged during checkout, relevant for items with `paymentOption` set to `\"DEPOSIT_ONLINE\"`.",
+              "optional": true },
             { "name": "descriptionLines",
               "type": "ecom-payment-settimgs.DescriptionLines",
-              "doc": "Line item description lines. Used for display purposes for the cart, checkout and order." },
+              "doc": "Line item description lines. Used for display purposes for the cart, checkout and order.",
+              "optional": true },
             { "name": "fulfillerId",
               "type": "string",
-              "doc": "Fulfiller ID. Field is empty when the line item is self-fulfilled. To get fulfillment information, pass the order `_id` to [`listFulfillmentsForSingleOrder()`](https://www.wix.com/velo/reference/wix-ecom-backend/orderfulfillments/listfulfillmentsforsingleorder)." },
+              "doc": "Fulfiller ID. Field is empty when the line item is self-fulfilled. To get fulfillment information, pass the order `_id` to [`listFulfillmentsForSingleOrder()`](https://www.wix.com/velo/reference/wix-ecom-backend/orderfulfillments/listfulfillmentsforsingleorder).",
+              "optional": true },
             { "name": "image",
               "type": "string",
-              "doc": "Line item image in the following format: `\"wix:image://v1/<uri>/<filename>#originWidth=<width>&originHeight=<height>[&watermark=<watermark_manifest_string>]\"`." },
+              "doc": "Line item image in the following format: `\"wix:image://v1/<uri>/<filename>#originWidth=<width>&originHeight=<height>[&watermark=<watermark_manifest_string>]\"`.",
+              "optional": true },
             { "name": "itemType",
               "type": "ecom-payment-settings.ItemType",
-              "doc": "Item type. Either a preset type or custom." },
+              "doc": "Item type. Either a preset type or custom.",
+              "optional": true },
             { "name": "paymentOption",
               "type": "string",
               "doc": "Type of selected payment option for current item.\n\nOne of:\n\n + `\"FULL_PAYMENT_ONLINE\"`: The entire payment for this item happens as part of the checkout.\n + `\"FULL_PAYMENT_OFFLINE\"`: The entire payment for this item happens after the checkout. For example, when using cash, check, or other offline payment methods.\n + `\"MEMBERSHIP\"`: Payment for this item is done by charging a membership. When this option is used, `lineItem.price.amount` is 0.\n + `\"DEPOSIT_ONLINE\"`: Partial payment for the given item to be paid upfront during the checkout. Eligible for catalog items with type `\"DEPOSIT_ONLINE\"` only.\n\nDefault: `\"FULL_PAYMENT_ONLINE\"`",
               "optional": true },
-            { "name": "physicalProperties",
-              "type": "ecom-shipping-rates.PhysicalProperties",
-              "doc": "Physical properties of the item. When relevant, contains information such as SKU and item weight." },
             { "name": "price",
               "type": "ecom-payment-settings.Price",
-              "doc": "Line item price after line item discounts for display purposes." },
+              "doc": "Line item price after line item discounts for display purposes.",
+              "optional": true },
             { "name": "priceBeforeDiscounts",
               "type": "ecom-payment-settings.Price",
-              "doc": "Line item price before line item discounts for display purposes. Defaults to `price` when not provided." },
+              "doc": "Line item price before line item discounts for display purposes. Defaults to `price` when not provided.",
+              "optional": true },
             { "name": "priceDescription",
               "type": "ecom-payment-settings.PriceDescription",
-              "doc": "Additional description for the price. For example, when price is `0` but additional details about the actual price are needed - `\"Starts at $67\"`." },
+              "doc": "Additional description for the price. For example, when price is `0` but additional details about the actual price are needed - `\"Starts at $67\"`.",
+              "optional": true },
             { "name": "productName",
               "type": "ecom-payment-settings.ProductName",
-              "doc": "Item name.\n + Stores: `product.name`\n + Bookings: `service.info.name`\n + Events: `ticket.name`" },
+              "doc": "Item name.\n + Stores: `product.name`\n + Bookings: `service.info.name`\n + Events: `ticket.name`",
+              "optional": true },
             { "name": "quantity",
               "type": "number",
-              "doc": "Line item quantity." },
+              "doc": "Line item quantity.",
+              "optional": true },
             { "name": "restockQuantity",
               "type": "number",
-              "doc": "Quantity of inventory requested to be returned. Whether to restock or ignore the request is up the vertical." },
+              "doc": "Quantity of inventory requested to be returned. Whether to restock or ignore the request is up the vertical.",
+              "optional": true },
             { "name": "subscriptionInfo",
               "type": "ecom-payment-settings.SubscriptionInfo",
-              "doc": "Subscription info." },
+              "doc": "Subscription info.",
+              "optional": true },
             { "name": "taxDetails",
               "type": "ecom-payment-settings.LineItemTaxDetails",
-              "doc": "Tax details for this line item." },
+              "doc": "Tax details for this line item.",
+              "optional": true },
             { "name": "totalDiscount",
               "type": "ecom-payment-settings.Price",
-              "doc": "Total discount for this line item's entire quantity." },
+              "doc": "Total discount for this line item's entire quantity.",
+              "optional": true },
             { "name": "totalPriceAfterTax",
               "type": "ecom-payment-settings.Price",
-              "doc": "Total price after all discounts and tax." },
+              "doc": "Total price after all discounts and tax.",
+              "optional": true },
             { "name": "totalPriceBeforeTax",
               "type": "ecom-payment-settings.Price",
-              "doc": "Deprecated. Use `totalPriceAfterTax` minus `taxDetails.totalTax` instead." } ],
+              "doc": "Deprecated. Use `totalPriceAfterTax` minus `taxDetails.totalTax` instead.",
+              "optional": true },
+            { "name": "physicalProperties Physical",
+              "type": "ecom-shipping-rates.PhysicalProperties",
+              "doc": "properties of the item. When relevant, contains information such as SKU and item weight.",
+              "optional": true } ],
         "extra":
           {  },
         "labels":
-          [ "new" ] },
+          [ "changed" ] },
       { "name": "OrderRefunded",
         "locations":
-          [ { "lineno": 490,
+          [ { "lineno": 487,
               "filename": "payment-settings-spi.js" } ],
         "docs":
-          { "summary": "Additional info about order refunded activity. `activity.type` must be `ORDER_REFUNDED`.",
+          { "summary": "Additional info about order refunded activity. `activity.type` must be `\"ORDER_REFUNDED\"`.",
             "links": [],
             "examples": [],
             "extra":
@@ -1255,19 +1368,23 @@
         "members":
           [ { "name": "amount",
               "type": "ecom-payment-settings.RefundAmount",
-              "doc": "Refund amount." },
+              "doc": "Refund amount.",
+              "optional": true },
             { "name": "manual",
               "type": "string",
-              "doc": "Whether order was refunded manually. For example, via payment provider or using cash." },
+              "doc": "Whether order was refunded manually. For example, via payment provider or using cash.",
+              "optional": true },
             { "name": "reason",
               "type": "string",
-              "doc": "Reason for refund." } ],
+              "doc": "Reason for refund.",
+              "optional": true } ],
         "extra":
           {  },
-        "labels": [] },
+        "labels":
+          [ "changed" ] },
       { "name": "OrderShippingInfo",
         "locations":
-          [ { "lineno": 570,
+          [ { "lineno": 567,
               "filename": "payment-settings-spi.js" } ],
         "docs":
           { "summary": "Shipping info and selected shipping option details.",
@@ -1282,7 +1399,7 @@
               "optional": true },
             { "name": "code",
               "type": "string",
-              "doc": "Unique code (or ID) of selected shipping option. For example, `usps_std_overnight`.",
+              "doc": "Unique code (or ID) of selected shipping option. For example, `\"usps_std_overnight\"`.",
               "optional": true },
             { "name": "cost",
               "type": "ecom-payment-settings.ShippingCost",
@@ -1298,14 +1415,15 @@
               "optional": true },
             { "name": "title",
               "type": "string",
-              "doc": "Shipping option title. For example, `USPS Standard Overnight Delivery`, `Standard` or `First-Class Package International`.",
+              "doc": "Shipping option title. For example, `\"USPS Standard Overnight Delivery\"`, `\"Standard\"` or `\"First-Class Package International\"`.",
               "optional": true } ],
         "extra":
           {  },
-        "labels": [] },
+        "labels":
+          [ "changed" ] },
       { "name": "PaymentSettings",
         "locations":
-          [ { "lineno": 74,
+          [ { "lineno": 71,
               "filename": "payment-settings-spi.js" } ],
         "docs":
           { "links": [],
@@ -1321,7 +1439,7 @@
         "labels": [] },
       { "name": "PaymentSettingsConfigResponse",
         "locations":
-          [ { "lineno": 31,
+          [ { "lineno": 28,
               "filename": "payment-settings-spi.js" } ],
         "docs":
           { "links": [],
@@ -1337,7 +1455,7 @@
         "labels": [] },
       { "name": "PaymentSettingsResponse",
         "locations":
-          [ { "lineno": 68,
+          [ { "lineno": 65,
               "filename": "payment-settings-spi.js" } ],
         "docs":
           { "links": [],
@@ -1353,7 +1471,7 @@
         "labels": [] },
       { "name": "PickupAddress",
         "locations":
-          [ { "lineno": 631,
+          [ { "lineno": 628,
               "filename": "payment-settings-spi.js" } ],
         "docs":
           { "summary": "Pickup address.",
@@ -1395,7 +1513,7 @@
         "labels": [] },
       { "name": "PickupDetails",
         "locations":
-          [ { "lineno": 625,
+          [ { "lineno": 622,
               "filename": "payment-settings-spi.js" } ],
         "docs":
           { "links": [],
@@ -1405,16 +1523,19 @@
         "members":
           [ { "name": "address",
               "type": "ecom-payment-settings.PickupAddress",
-              "doc": "Pickup address." },
+              "doc": "Pickup address.",
+              "optional": true },
             { "name": "pickupMethod",
               "type": "string",
-              "doc": "Pickup method." } ],
+              "doc": "Pickup method.",
+              "optional": true } ],
         "extra":
           {  },
-        "labels": [] },
+        "labels":
+          [ "changed" ] },
       { "name": "PlainTextValue",
         "locations":
-          [ { "lineno": 216,
+          [ { "lineno": 213,
               "filename": "payment-settings-spi.js" } ],
         "docs":
           { "links": [],
@@ -1424,17 +1545,19 @@
         "members":
           [ { "name": "original",
               "type": "string",
-              "doc": "Description line plain text value in site's default language." },
+              "doc": "Description line plain text value in site's default language.",
+              "optional": true },
             { "name": "translated",
               "type": "string",
-              "doc": "Translated description line plain text value according to buyer language. Defaults to `original` when not provided." } ],
+              "doc": "Translated description line plain text value according to buyer language. Defaults to `original` when not provided.",
+              "optional": true } ],
         "extra":
           {  },
         "labels":
-          [ "new" ] },
+          [ "changed" ] },
       { "name": "Price",
         "locations":
-          [ { "lineno": 235,
+          [ { "lineno": 232,
               "filename": "payment-settings-spi.js" } ],
         "docs":
           { "links": [],
@@ -1444,17 +1567,19 @@
         "members":
           [ { "name": "amount",
               "type": "string",
-              "doc": "Amount." },
+              "doc": "Amount.",
+              "optional": true },
             { "name": "formattedAmount",
               "type": "string",
-              "doc": "Amount formatted with currency symbol." } ],
+              "doc": "Amount formatted with currency symbol.",
+              "optional": true } ],
         "extra":
           {  },
         "labels":
-          [ "new" ] },
+          [ "changed" ] },
       { "name": "PriceDescription",
         "locations":
-          [ { "lineno": 241,
+          [ { "lineno": 238,
               "filename": "payment-settings-spi.js" } ],
         "docs":
           { "links": [],
@@ -1464,17 +1589,19 @@
         "members":
           [ { "name": "original",
               "type": "string",
-              "doc": "*Required.* Original price description in site's default language." },
+              "doc": "*Required.* Original price description in site's default language.",
+              "optional": true },
             { "name": "translated",
               "type": "string",
-              "doc": "Translated price description according to buyer language. Defaults to `original` when not provided." } ],
+              "doc": "Translated price description according to buyer language. Defaults to `original` when not provided.",
+              "optional": true } ],
         "extra":
           {  },
         "labels":
-          [ "new" ] },
+          [ "changed" ] },
       { "name": "PriceSummary",
         "locations":
-          [ { "lineno": 298,
+          [ { "lineno": 295,
               "filename": "payment-settings-spi.js" } ],
         "docs":
           { "summary": "Order price summary.",
@@ -1524,7 +1651,7 @@
         "labels": [] },
       { "name": "PriceSummaryAmounts",
         "locations":
-          [ { "lineno": 313,
+          [ { "lineno": 310,
               "filename": "payment-settings-spi.js" } ],
         "docs":
           { "summary": "Price summary amounts.",
@@ -1535,16 +1662,19 @@
         "members":
           [ { "name": "amount",
               "type": "string",
-              "doc": "Amount." },
+              "doc": "Amount.",
+              "optional": true },
             { "name": "formattedAmount",
               "type": "string",
-              "doc": "Amount formatted with currency symbol." } ],
+              "doc": "Amount formatted with currency symbol.",
+              "optional": true } ],
         "extra":
           {  },
-        "labels": [] },
+        "labels":
+          [ "changed" ] },
       { "name": "ProductName",
         "locations":
-          [ { "lineno": 247,
+          [ { "lineno": 244,
               "filename": "payment-settings-spi.js" } ],
         "docs":
           { "links": [],
@@ -1554,17 +1684,19 @@
         "members":
           [ { "name": "original",
               "type": "string",
-              "doc": "*Required.* Original item name in site's default language.\n\nMin: 1 character \nMax: 200 characters" },
+              "doc": "*Required.* Original item name in site's default language.\n\nMin: 1 character \nMax: 200 characters",
+              "optional": true },
             { "name": "translated",
               "type": "string",
-              "doc": "Optional. Translated item name according to buyer language. Defaults to `original` when not provided. \n\nMin: 1 character \nMax: 400 characters." } ],
+              "doc": "Optional. Translated item name according to buyer language. Defaults to `original` when not provided. \n\nMin: 1 character \nMax: 400 characters.",
+              "optional": true } ],
         "extra":
           {  },
         "labels":
-          [ "new" ] },
+          [ "changed" ] },
       { "name": "RefundAmount",
         "locations":
-          [ { "lineno": 499,
+          [ { "lineno": 496,
               "filename": "payment-settings-spi.js" } ],
         "docs":
           { "summary": "Refund amount.",
@@ -1575,16 +1707,19 @@
         "members":
           [ { "name": "amount",
               "type": "string",
-              "doc": "Amount." },
+              "doc": "Amount.",
+              "optional": true },
             { "name": "formattedAmount",
               "type": "string",
-              "doc": "Amount formatted with currency symbol." } ],
+              "doc": "Amount formatted with currency symbol.",
+              "optional": true } ],
         "extra":
           {  },
-        "labels": [] },
+        "labels":
+          [ "changed" ] },
       { "name": "ShippingCost",
         "locations":
-          [ { "lineno": 582,
+          [ { "lineno": 579,
               "filename": "payment-settings-spi.js" } ],
         "docs":
           { "links": [],
@@ -1594,25 +1729,31 @@
         "members":
           [ { "name": "discount",
               "type": "ecom-payment-settings.CostAmount",
-              "doc": "Shipping discount before tax." },
+              "doc": "Shipping discount before tax.",
+              "optional": true },
             { "name": "price",
               "type": "ecom-payment-settings.CostAmount",
-              "doc": "Shipping price for display purposes." },
+              "doc": "Shipping price for display purposes.",
+              "optional": true },
             { "name": "taxDetails",
               "type": "ecom-payment-settings.CostTaxDetails",
-              "doc": "Tax details." },
+              "doc": "Tax details.",
+              "optional": true },
             { "name": "totalPriceAfterTax",
               "type": "ecom-payment-settings.CostAmount",
-              "doc": "Shipping price after all discounts (if any exist), and after tax." },
+              "doc": "Shipping price after all discounts (if any exist), and after tax.",
+              "optional": true },
             { "name": "totalPriceBeforeTax",
               "type": "ecom-payment-settings.CostAmount",
-              "doc": "Deprecated. Use `totalPriceAfterTax` minus `taxDetails.totalTax` instead." } ],
+              "doc": "Deprecated. Use `totalPriceAfterTax` minus `taxDetails.totalTax` instead.",
+              "optional": true } ],
         "extra":
           {  },
-        "labels": [] },
+        "labels":
+          [ "changed" ] },
       { "name": "ShippingRegion",
         "locations":
-          [ { "lineno": 650,
+          [ { "lineno": 647,
               "filename": "payment-settings-spi.js" } ],
         "docs":
           { "links": [],
@@ -1622,13 +1763,15 @@
         "members":
           [ { "name": "name",
               "type": "string",
-              "doc": "Name of shipping region. For example, `Metropolitan London`, or `Outer Melbourne suburbs`." } ],
+              "doc": "Name of shipping region. For example, `\"Metropolitan London\"`, or `\"Outer Melbourne suburbs\"`.",
+              "optional": true } ],
         "extra":
           {  },
-        "labels": [] },
+        "labels":
+          [ "changed" ] },
       { "name": "StreetAddress",
         "locations":
-          [ { "lineno": 342,
+          [ { "lineno": 339,
               "filename": "payment-settings-spi.js" } ],
         "docs":
           { "summary": "Street address.",
@@ -1650,7 +1793,7 @@
         "labels": [] },
       { "name": "SubscriptionInfo",
         "locations":
-          [ { "lineno": 267,
+          [ { "lineno": 264,
               "filename": "payment-settings-spi.js" } ],
         "docs":
           { "links": [],
@@ -1660,26 +1803,31 @@
         "members":
           [ { "name": "_id",
               "type": "string",
-              "doc": "Subscription ID." },
+              "doc": "Subscription ID.",
+              "optional": true },
             { "name": "cycleNumber",
               "type": "number",
-              "doc": "Subscription cycle. For example, if this order is for the 3rd cycle of a subscription, value will be `3`." },
+              "doc": "Subscription cycle. For example, if this order is for the 3rd cycle of a subscription, value will be `3`.",
+              "optional": true },
             { "name": "subscriptionOptionDescription",
               "type": "string",
-              "doc": "Subscription option description. For example, `\"1kg of selected coffee, once a month\"`." },
+              "doc": "Subscription option description. For example, `\"1kg of selected coffee, once a month\"`.",
+              "optional": true },
             { "name": "subscriptionOptionTitle",
               "type": "string",
-              "doc": "Subscription option title. For example, `\"Monthly coffee Subscription\"`." },
+              "doc": "Subscription option title. For example, `\"Monthly coffee Subscription\"`.",
+              "optional": true },
             { "name": "subscriptionSettings",
               "type": "ecom-payment-settings.SubscriptionSettings",
-              "doc": "Subscription detailed information." } ],
+              "doc": "Subscription detailed information.",
+              "optional": true } ],
         "extra":
           {  },
         "labels":
-          [ "new" ] },
+          [ "changed" ] },
       { "name": "SubscriptionSettings",
         "locations":
-          [ { "lineno": 277,
+          [ { "lineno": 274,
               "filename": "payment-settings-spi.js" } ],
         "docs":
           { "links": [],
@@ -1689,20 +1837,23 @@
         "members":
           [ { "name": "autoRenewal",
               "type": "boolean",
-              "doc": "Whether subscription is renewed automatically at the end of each period." },
+              "doc": "Whether subscription is renewed automatically at the end of each period.",
+              "optional": true },
             { "name": "billingCycles",
               "type": "number",
-              "doc": "Number of billing cycles before subscription ends. Ignored if `autoRenewal: true`." },
+              "doc": "Number of billing cycles before subscription ends. Ignored if `autoRenewal: true`.",
+              "optional": true },
             { "name": "frequency",
               "type": "string",
-              "doc": "Frequency of recurring payment.\n\nSupported values: `\"DAY\"`. `\"WEEK\"`, `\"MONTH\"`, `\"YEAR\"`" } ],
+              "doc": "Frequency of recurring payment.\n\nSupported values: `\"DAY\"`. `\"WEEK\"`, `\"MONTH\"`, `\"YEAR\"`",
+              "optional": true } ],
         "extra":
           {  },
         "labels":
-          [ "new" ] },
+          [ "changed" ] },
       { "name": "TaxSummary",
         "locations":
-          [ { "lineno": 374,
+          [ { "lineno": 371,
               "filename": "payment-settings-spi.js" } ],
         "docs":
           { "summary": "Order price summary.",
@@ -1713,13 +1864,15 @@
         "members":
           [ { "name": "totalTax",
               "type": "payment-settings.TaxSummaryAmounts",
-              "doc": "Total tax." } ],
+              "doc": "Total tax.",
+              "optional": true } ],
         "extra":
           {  },
-        "labels": [] },
+        "labels":
+          [ "changed" ] },
       { "name": "TaxSummaryAmounts",
         "locations":
-          [ { "lineno": 381,
+          [ { "lineno": 378,
               "filename": "payment-settings-spi.js" } ],
         "docs":
           { "summary": "Total tax.",
@@ -1730,19 +1883,22 @@
         "members":
           [ { "name": "amount",
               "type": "string",
-              "doc": "Amount." },
+              "doc": "Amount.",
+              "optional": true },
             { "name": "formattedAmount",
               "type": "string",
-              "doc": "Amount formatted with currency symbol." } ],
+              "doc": "Amount formatted with currency symbol.",
+              "optional": true } ],
         "extra":
           {  },
-        "labels": [] },
+        "labels":
+          [ "changed" ] },
       { "name": "VatId",
         "locations":
-          [ { "lineno": 361,
+          [ { "lineno": 358,
               "filename": "payment-settings-spi.js" } ],
         "docs":
-          { "summary": "Tax information (for Brazil only). If ID is provided, `vatId.type` must also be set, `UNSPECIFIED` is not allowed.",
+          { "summary": "Tax information (for Brazil only). If ID is provided, `vatId.type` must also be set, `\"UNSPECIFIED\"` is not allowed.",
             "links": [],
             "examples": [],
             "extra":
@@ -1754,10 +1910,11 @@
               "optional": true },
             { "name": "type",
               "type": "string",
-              "doc": "Tax type.\n\nOne of:\n\n + `CPF`: for individual tax payers\n + `CNPJ`: for corporations",
+              "doc": "Tax type.\n\nOne of:\n\n + `\"CPF\"`: for individual tax payers\n + `\"CNPJ\"`: for corporations",
               "optional": true } ],
         "extra":
           {  },
-        "labels": [] } ],
+        "labels":
+          [ "changed" ] } ],
   "extra":
     {  } }
