@@ -1,6 +1,7 @@
 { "name": "ecom-payment-settings",
   "mixes": [],
-  "labels": [],
+  "labels":
+    [ "changed" ],
   "location":
     { "lineno": 1,
       "filename": "payment-settings-spi-index.js" },
@@ -1002,7 +1003,7 @@
               "doc": "Unique code (or ID) of selected shipping option. For example, `usps_std_overnight`.",
               "optional": true },
             { "name": "cost",
-              "type": "payment-settings.ShippingCost",
+              "type": "ecom-payment-settings.ShippingCost",
               "doc": "Shipping costs.",
               "optional": true },
             { "name": "logistics",
@@ -1010,7 +1011,7 @@
               "doc": "Shipping logistics.",
               "optional": true },
             { "name": "region",
-              "type": "payment-settings.ShippingRegion",
+              "type": "ecom-payment-settings.ShippingRegion",
               "doc": "Shipping region.",
               "optional": true },
             { "name": "title",
@@ -1019,7 +1020,8 @@
               "optional": true } ],
         "extra":
           {  },
-        "labels": [] },
+        "labels":
+          [ "changed" ] },
       { "name": "PaymentSettings",
         "locations":
           [ { "lineno": 74,
