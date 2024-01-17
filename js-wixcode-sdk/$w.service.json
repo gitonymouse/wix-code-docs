@@ -1,6 +1,7 @@
 { "name": "$w",
   "mixes": [],
-  "labels": [],
+  "labels":
+    [ "changed" ],
   "location":
     { "lineno": 1,
       "filename": "wixCode.js" },
@@ -530,7 +531,8 @@
         "extra":
           {  } },
       { "name": "HtmlElementEventHandler",
-        "labels": [],
+        "labels":
+          [ "removed" ],
         "nameParams": [],
         "params":
           [ { "name": "event",
@@ -545,6 +547,27 @@
           { "description":
               [ "Handles events fired when a message is received from an HTML",
                 " Component." ],
+            "links": [],
+            "examples": [],
+            "extra":
+              {  } },
+        "extra":
+          {  } },
+      { "name": "IFrameMessageEventHandler",
+        "labels":
+          [ "new" ],
+        "nameParams": [],
+        "params":
+          [ { "name": "event",
+              "type": "$w.IFrameMessageEvent",
+              "doc": "The IFrame event that occurred." } ],
+        "ret":
+          { "type": "void" },
+        "locations":
+          [ { "lineno": 1,
+              "filename": "IFrameMessageEvent.js" } ],
+        "docs":
+          { "summary": "Handles events fired when the code in an IFrame sends a message.",
             "links": [],
             "examples": [],
             "extra":

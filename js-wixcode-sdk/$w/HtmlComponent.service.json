@@ -2,9 +2,10 @@
   "memberOf": "$w",
   "mixes":
     [ "$w.IFrame" ],
-  "labels": [],
+  "labels":
+    [ "changed" ],
   "location":
-    { "lineno": 9,
+    { "lineno": 1,
       "filename": "HtmlComponent.js" },
   "docs":
     { "summary": "An [HtmlComponent](https://support.wix.com/en/article/velo-working-with-the-html-iframe-element) is a container for internal or external HTML code.",
@@ -24,7 +25,8 @@
         {  } },
   "properties":
     [ { "name": "scrolling",
-        "labels": [],
+        "labels":
+          [ "removed" ],
         "get": true,
         "set": true,
         "type": "string",
@@ -64,7 +66,8 @@
         "extra":
           {  } },
       { "name": "src",
-        "labels": [],
+        "labels":
+          [ "removed" ],
         "get": true,
         "set": true,
         "type": "string",
@@ -110,7 +113,7 @@
         "ret":
           { "type": "$w.HtmlComponent" },
         "locations":
-          [ { "lineno": 222,
+          [ { "lineno": 23,
               "filename": "HtmlComponent.js" } ],
         "docs":
           { "summary": "Allows the HTML Component to be put into full screen mode.",
@@ -129,7 +132,8 @@
         "extra":
           {  } },
       { "name": "onMessage",
-        "labels": [],
+        "labels":
+          [ "removed" ],
         "nameParams": [],
         "params":
           [ { "name": "handler",
@@ -254,7 +258,8 @@
         "extra":
           { "eventType": "message" } },
       { "name": "postMessage",
-        "labels": [],
+        "labels":
+          [ "removed" ],
         "nameParams": [],
         "params":
           [ { "name": "message",

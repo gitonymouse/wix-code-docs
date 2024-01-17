@@ -1,37 +1,36 @@
-{ "name": "HtmlComponentMessageEvent",
+{ "name": "IFrameMessageEvent",
   "memberOf": "$w",
   "mixes":
     [ "$w.Event" ],
   "labels":
-    [ "changed" ],
+    [ "new" ],
   "location":
     { "lineno": 8,
-      "filename": "HtmlComponentMessageEvent.js" },
+      "filename": "IFrameMessageEvent.js" },
   "docs":
-    { "summary": "Event that is fired when the code in an HtmlComponent sends a message.",
+    { "summary": "Event that is fired when the code in an iframe element sends a message.",
       "links": [],
       "examples": [],
       "extra":
         {  } },
   "properties":
     [ { "name": "data",
-        "labels":
-          [ "changed" ],
+        "labels": [],
         "get": true,
         "set": false,
         "type": "*",
         "locations":
           [ { "lineno": 16,
-              "filename": "HtmlComponentMessageEvent.js" } ],
+              "filename": "IFrameMessageEvent.js" } ],
         "docs":
           { "summary": "Gets the event data.",
             "links": [],
             "examples":
-              [ { "title": "Receive a message from an HTML Component",
+              [ { "title": "Receive a message from an iframe element",
                   "body":
-                    [ "$w(\"#myHtmlComponent\").onMessage( (event) => {",
-                      "    let receivedMessage = event.data;",
-                      "  } );" ],
+                    [ "$w(\"#myIFrameElement\").onMessage( (event) => {",
+                      "  let receivedMessage = event.data;",
+                      "} );" ],
                   "extra":
                     {  } } ],
             "extra":
