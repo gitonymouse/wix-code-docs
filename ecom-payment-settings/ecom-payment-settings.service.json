@@ -1316,7 +1316,7 @@
               "optional": true },
             { "name": "restockQuantity",
               "type": "number",
-              "doc": "Quantity of inventory refunded or canceled to be restocked.",
+              "doc": "Quantity of inventory refunded or [canceled](https://www.wix.com/velo/reference/wix-ecom-backend/orders/cancelorder) to be restocked.",
               "optional": true },
             { "name": "subscriptionInfo",
               "type": "ecom-payment-settings.SubscriptionInfo",
