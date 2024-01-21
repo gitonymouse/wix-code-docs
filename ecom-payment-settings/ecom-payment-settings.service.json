@@ -44,8 +44,7 @@
   "properties": [],
   "operations":
     [ { "name": "getConfig",
-        "labels":
-          [ "changed" ],
+        "labels": [],
         "nameParams": [],
         "params": [],
         "ret":
@@ -90,8 +89,7 @@
           { "customLabels":
               [ { "id": "maturity-beta" } ] } },
       { "name": "getPaymentSettings",
-        "labels":
-          [ "changed" ],
+        "labels": [],
         "nameParams": [],
         "params":
           [ { "name": "options",
@@ -1099,7 +1097,7 @@
               "optional": true },
             { "name": "_updatedDate",
               "type": "string",
-              "doc": "Date and time the order was updated in [ISO-8601](https://en.wikipedia.org/wiki/ISO_8601#combined_date_and_time_representations) format.",
+              "doc": "Date and time the order was last updated in [ISO-8601](https://en.wikipedia.org/wiki/ISO_8601#combined_date_and_time_representations) format.",
               "optional": true },
             { "name": "activities",
               "type":
@@ -1226,7 +1224,8 @@
               "optional": true } ],
         "extra":
           {  },
-        "labels": [] },
+        "labels":
+          [ "changed" ] },
       { "name": "OrderLineItem",
         "locations":
           [ { "lineno": 135,
