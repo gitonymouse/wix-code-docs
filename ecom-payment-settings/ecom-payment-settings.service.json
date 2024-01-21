@@ -860,7 +860,7 @@
         "members":
           [ { "name": "deliverByDate",
               "type": "Date",
-              "doc": "*Deprecated.* Latest expected delivery date and time in [ISO-8601](https://en.wikipedia.org/wiki/ISO_8601#Combined_date_and_time_representations) format.",
+              "doc": "Deprecated. Latest expected delivery date and time in [ISO-8601](https://en.wikipedia.org/wiki/ISO_8601#Combined_date_and_time_representations) format.",
               "optional": true },
             { "name": "deliveryTime",
               "type": "string",
@@ -875,7 +875,7 @@
               "doc": "Instructions for carrier. For example, `\"Please knock on the door. If unanswered, please call contact number. Thanks.\"`.",
               "optional": true },
             { "name": "pickupDetails",
-              "type": "payment-settings.PickupDetails",
+              "type": "ecom-payment-settings.PickupDetails",
               "doc": "Pickup details.",
               "optional": true },
             { "name": "shippingDestination",
@@ -888,7 +888,8 @@
                   "members":
                     [ "pickupDetails",
                       "shippingDestination" ] } ] },
-        "labels": [] },
+        "labels":
+          [ "changed" ] },
       { "name": "DeliveryTimeSlot",
         "locations":
           [ { "lineno": 612,
@@ -1344,8 +1345,7 @@
               "optional": true } ],
         "extra":
           {  },
-        "labels":
-          [ "changed" ] },
+        "labels": [] },
       { "name": "OrderRefunded",
         "locations":
           [ { "lineno": 484,
