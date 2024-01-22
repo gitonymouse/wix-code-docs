@@ -18,8 +18,12 @@
           "for certain payment methods. Note that each payment provider may have specific payment settings they accept with their Wix integration. ",
           "For example, [Tranzila](https://support.wix.com/en/article/connecting-tranzila-as-a-payment-provider) is a payment provider that ",
           "supports 3DS payments, but not all payment providers offer this feature. We recommend [contacting payment providers directly](https://support.wix.com/en/article/receiving-payouts-from-third-party-payment-providers) ",
-          "to confirm which payment settings they have implemented as part of their Wix integration. Currently, the only payment setting available to customize ",
-          "is whether to apply 3DS to an order.",
+          "to confirm which payment settings they have implemented as part of their Wix integration.",
+          "",
+          "Currently, the only payment setting available to customize is whether to apply 3DS to an order. If 3DS is required, the customer will have to pass an additional ",
+          "layer of security before completing their payment. For example, they will have to pass a window like this before continuing:",
+          "",
+          "<img src=\"https://github.com/wix-incubator/wix-code-docs/assets/95754543/a8620f33-2c02-4f32-9b5e-6d636e3777bf\" style=\"max-width: 20vw\" />",
           "",
           "## Configuration",
           "Adding a custom extension to your site has 3 steps:",
@@ -888,8 +892,7 @@
                   "members":
                     [ "pickupDetails",
                       "shippingDestination" ] } ] },
-        "labels":
-          [ "changed" ] },
+        "labels": [] },
       { "name": "DeliveryTimeSlot",
         "locations":
           [ { "lineno": 612,
