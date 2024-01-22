@@ -1,7 +1,6 @@
 { "name": "ecom-payment-settings",
   "mixes": [],
-  "labels":
-    [ "changed" ],
+  "labels": [],
   "location":
     { "lineno": 1,
       "filename": "payment-settings-spi-index.js" },
