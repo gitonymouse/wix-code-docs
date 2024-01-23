@@ -1,6 +1,7 @@
 { "name": "$w",
   "mixes": [],
-  "labels": [],
+  "labels":
+    [ "changed" ],
   "location":
     { "lineno": 1,
       "filename": "wixCode.js" },
@@ -545,6 +546,29 @@
           { "description":
               [ "Handles events fired when a message is received from an HTML",
                 " Component." ],
+            "links": [],
+            "examples": [],
+            "extra":
+              {  } },
+        "extra":
+          {  } },
+      { "name": "IFrameMessageEventHandler",
+        "labels":
+          [ "new" ],
+        "nameParams": [],
+        "params":
+          [ { "name": "event",
+              "type": "$w.IFrameMessageEvent",
+              "doc": "The iframe event that occurred." } ],
+        "ret":
+          { "type": "void" },
+        "locations":
+          [ { "lineno": 1,
+              "filename": "IFrame.js" },
+            { "lineno": 1,
+              "filename": "IFrameMessageEvent.js" } ],
+        "docs":
+          { "summary": "Handles events fired when the code in an iframe sends a message.",
             "links": [],
             "examples": [],
             "extra":

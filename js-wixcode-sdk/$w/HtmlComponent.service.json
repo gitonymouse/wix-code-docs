@@ -1,15 +1,19 @@
 { "name": "HtmlComponent",
   "memberOf": "$w",
   "mixes":
-    [ "$w.IFrame" ],
-  "labels": [],
+    [ "$w.Element",
+      "$w.HiddenCollapsedMixin" ],
+  "labels":
+    [ "changed" ],
   "location":
     { "lineno": 9,
       "filename": "HtmlComponent.js" },
   "docs":
     { "summary": "An [HtmlComponent](https://support.wix.com/en/article/velo-working-with-the-html-iframe-element) is a container for internal or external HTML code.",
       "description":
-        [ "Messages can be sent",
+        [ "> This feature is only available in Editor.",
+          "",
+          " Messages can be sent",
           " from your page code to the code in an HTML component and from the HTML",
           " component to your page code using the [`postMessage()`](#postMessage) and",
           " [`onMessage()`](#onMessage) functions. To learn more about what code an HTML",
@@ -24,14 +28,15 @@
         {  } },
   "properties":
     [ { "name": "scrolling",
-        "labels": [],
+        "labels":
+          [ "changed" ],
         "get": true,
         "set": true,
         "type": "string",
         "locations":
-          [ { "lineno": 63,
+          [ { "lineno": 65,
               "filename": "HtmlComponent.js" },
-            { "lineno": 70,
+            { "lineno": 72,
               "filename": "HtmlComponent.js" } ],
         "docs":
           { "summary": "Sets or gets whether the HTML Component displays scrollbars.",
@@ -51,12 +56,12 @@
             "examples":
               [ { "title": "Set whether the Html Component displays scrollbars",
                   "body":
-                    [ "$w(\"#myHtmlComponent\").scrolling = \"no\";" ],
+                    [ "$w(\"#myElement\").scrolling = \"no\";" ],
                   "extra":
                     {  } },
                 { "title": "Get whether the Html Component displays scrollbars",
                   "body":
-                    [ "let compScrolling = $w(\"#myHtmlComponent\").scrolling; // \"auto\"" ],
+                    [ "let compScrolling = $w(\"#myElement\").scrolling; // \"auto\"" ],
                   "extra":
                     {  } } ],
             "extra":
@@ -64,14 +69,15 @@
         "extra":
           {  } },
       { "name": "src",
-        "labels": [],
+        "labels":
+          [ "changed" ],
         "get": true,
         "set": true,
         "type": "string",
         "locations":
-          [ { "lineno": 31,
+          [ { "lineno": 33,
               "filename": "HtmlComponent.js" },
-            { "lineno": 38,
+            { "lineno": 40,
               "filename": "HtmlComponent.js" } ],
         "docs":
           { "summary": "Sets or gets the URL of the HTML Component's code.",
@@ -89,13 +95,13 @@
             "examples":
               [ { "title": "Get the displayed website's URL",
                   "body":
-                    [ "let compUrl = $w(\"#myHtmlComponent\").src;",
+                    [ "let compUrl = $w(\"#myElement\").src;",
                       "// \"https://comp.com/page.html\"" ],
                   "extra":
                     {  } },
                 { "title": "Set the displayed website",
                   "body":
-                    [ "$w(\"#myHtmlComponent\").src = \"https://en.wikipedia.org/wiki/HTTPS\";" ],
+                    [ "$w(\"#myElement\").src = \"https://en.wikipedia.org/wiki/HTTPS\";" ],
                   "extra":
                     {  } } ],
             "extra":
@@ -110,7 +116,7 @@
         "ret":
           { "type": "$w.HtmlComponent" },
         "locations":
-          [ { "lineno": 222,
+          [ { "lineno": 224,
               "filename": "HtmlComponent.js" } ],
         "docs":
           { "summary": "Allows the HTML Component to be put into full screen mode.",
@@ -129,7 +135,8 @@
         "extra":
           {  } },
       { "name": "onMessage",
-        "labels": [],
+        "labels":
+          [ "changed" ],
         "nameParams": [],
         "params":
           [ { "name": "handler",
@@ -139,7 +146,7 @@
           { "type": "$w.HtmlComponent",
             "doc": "The HTML Code element that triggered the event." },
         "locations":
-          [ { "lineno": 169,
+          [ { "lineno": 171,
               "filename": "HtmlComponent.js" } ],
         "docs":
           { "summary": "Adds an event handler that runs when the HTML Component\n sends a message.",
@@ -170,7 +177,7 @@
             "examples":
               [ { "title": "Receive a message from an HTML Component",
                   "body":
-                    [ "$w(\"#myHtmlComponent\").onMessage( (event) => {",
+                    [ "$w(\"#myElement\").onMessage( (event) => {",
                       "  let receivedMessage = event.data;",
                       "} );" ],
                   "extra":
@@ -178,13 +185,13 @@
                 { "title": "Communicate with an HTML Component",
                   "body":
                     [ "$w.onReady(() => {",
-                      "  // Send message to HTML Component",
+                      "  // Send message to element",
                       "  $w('#sendButton').onClick(() => {",
-                      "    $w('#htmlComponent').postMessage('HELLO FROM THE PAGE');",
+                      "    $w('#myElement').postMessage('HELLO FROM THE PAGE');",
                       "  });",
                       "",
-                      "  // Handle messages that the HTML Component sends to the page",
-                      "  $w('#htmlComponent').onMessage((event) => {",
+                      "  // Handle messages that the element sends to the page",
+                      "  $w('#myElement').onMessage((event) => {",
                       "    $w('#message').text = event.data;",
                       "  });",
                       "});" ],
@@ -193,7 +200,7 @@
                 { "title": "Send a message to an HTML Component and receive a confirmation",
                   "body":
                     [ "/* * * * * * * * * * * * * * * * * * * * * * * * *",
-                      " * Paste the following into the HTML Component:  *",
+                      " * Paste the following into the element:  *",
                       " * * * * * * * * * * * * * * * * * * * * * * * * *",
                       "",
                       "<!doctype html>",
@@ -205,7 +212,7 @@
                       "  // when a message is received from the page code",
                       "  window.onmessage = (event) => {",
                       "    if (event.data) {",
-                      "      console.log(\"HTML Code Element received a message!\");",
+                      "      console.log(\"the element received a message!\");",
                       "      insertMessage(event.data);",
                       "    }",
                       "  }",
@@ -214,7 +221,7 @@
                       "// display received message",
                       "function insertMessage(msg) {",
                       "  document.getElementById('demo').innerHTML = msg;",
-                      "  sendReturnMessage(\"Message from the HTML Component!\");",
+                      "  sendReturnMessage(\"Message from the element!\");",
                       "}",
                       "",
                       "// send message to the page code",
@@ -226,7 +233,7 @@
                       "</head>",
                       "",
                       "<body onload=\"init();\" style=\"background-color:lightgray;\">",
-                      "<h1>HTML Component Test</h1>",
+                      "<h1>Element Test</h1>",
                       "<p id=\"demo\">Message will go here</p>",
                       "</body>",
                       "</html>",
@@ -236,15 +243,15 @@
                       " * * * * * * * * * * * * * * * * * * * * * * * * */",
                       "",
                       "$w.onReady(function () {",
-                      "  // when a message is received from the HTML Component",
-                      "  $w(\"#myHtmlComponent\").onMessage( (event) => {",
+                      "  // when a message is received from the element",
+                      "  $w(\"#myElement\").onMessage( (event) => {",
                       "    console.log(`Message received by page code: ${event.data}`);",
                       "  } );",
                       "} );",
                       "",
                       "export function messageSendButton_onClick() {",
-                      "  // send message to the HTML Component",
-                      "  $w(\"#myHtmlComponent\").postMessage(\"Message from page code!\");",
+                      "  // send message to the element",
+                      "  $w(\"#myElement\").postMessage(\"Message from page code!\");",
                       "}",
                       "" ],
                   "extra":
@@ -254,7 +261,8 @@
         "extra":
           { "eventType": "message" } },
       { "name": "postMessage",
-        "labels": [],
+        "labels":
+          [ "changed" ],
         "nameParams": [],
         "params":
           [ { "name": "message",
@@ -270,7 +278,7 @@
         "ret":
           { "type": "void" },
         "locations":
-          [ { "lineno": 97,
+          [ { "lineno": 99,
               "filename": "HtmlComponent.js" } ],
         "docs":
           { "summary": "Sends a message to the HTML Component.",
@@ -324,19 +332,19 @@
             "examples":
               [ { "title": "Send a message to an HTML Component",
                   "body":
-                    [ "$w(\"#myHtmlComponent\").postMessage(\"Message from page code!\");" ],
+                    [ "$w(\"#myElement\").postMessage(\"Message from page code!\");" ],
                   "extra":
                     {  } },
                 { "title": "Communicate with an HTML Component",
                   "body":
                     [ "$w.onReady(() => {",
-                      "  // Send message to HTML Component",
+                      "  // Send message to element",
                       "  $w('#sendButton').onClick(() => {",
-                      "    $w('#htmlComponent').postMessage('HELLO FROM THE PAGE');",
+                      "    $w('#myElement').postMessage('HELLO FROM THE PAGE');",
                       "  });",
                       "",
-                      "  // Handle messages that the HTML Component sends to the page",
-                      "  $w('#htmlComponent').onMessage((event) => {",
+                      "  // Handle messages that the element sends to the page",
+                      "  $w('#myElement').onMessage((event) => {",
                       "    $w('#message').text = event.data;",
                       "  });",
                       "});" ],
@@ -345,7 +353,7 @@
                 { "title": "Send a message to an HTML Component and receive a confirmation",
                   "body":
                     [ "/* * * * * * * * * * * * * * * * * * * * * * * * *",
-                      " * Paste the following into the HTML Component:  *",
+                      " * Paste the following into the element:  *",
                       " * * * * * * * * * * * * * * * * * * * * * * * * *",
                       "",
                       "<!doctype html>",
@@ -357,7 +365,7 @@
                       "  // when a message is received from the page code",
                       "  window.onmessage = (event) => {",
                       "    if (event.data) {",
-                      "      console.log(\"HTML Code Element received a message!\");",
+                      "      console.log(\"the element received a message!\");",
                       "      insertMessage(event.data);",
                       "    }",
                       "  }",
@@ -366,7 +374,7 @@
                       "// display received message",
                       "function insertMessage(msg) {",
                       "  document.getElementById('demo').innerHTML = msg;",
-                      "  sendReturnMessage(\"Message from the HTML Component!\");",
+                      "  sendReturnMessage(\"Message from the element!\");",
                       "}",
                       "",
                       "// send message to the page code",
@@ -378,7 +386,7 @@
                       "</head>",
                       "",
                       "<body onload=\"init();\" style=\"background-color:lightgray;\">",
-                      "<h1>HTML Component Test</h1>",
+                      "<h1>Element Test</h1>",
                       "<p id=\"demo\">Message will go here</p>",
                       "</body>",
                       "</html>",
@@ -388,15 +396,15 @@
                       " * * * * * * * * * * * * * * * * * * * * * * * * */",
                       "",
                       "$w.onReady(function () {",
-                      "  // when a message is received from the HTML Component",
-                      "  $w(\"#myHtmlComponent\").onMessage( (event) => {",
+                      "  // when a message is received from the element",
+                      "  $w(\"#myElement\").onMessage( (event) => {",
                       "    console.log(`Message received by page code: ${event.data}`);",
                       "  } );",
                       "} );",
                       "",
                       "export function messageSendButton_onClick() {",
-                      "  // send message to the HTML Component",
-                      "  $w(\"#myHtmlComponent\").postMessage(\"Message from page code!\");",
+                      "  // send message to the element",
+                      "  $w(\"#myElement\").postMessage(\"Message from page code!\");",
                       "}",
                       "" ],
                   "extra":
