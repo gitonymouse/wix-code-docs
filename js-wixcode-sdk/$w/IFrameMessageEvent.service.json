@@ -3,19 +3,20 @@
   "mixes":
     [ "$w.Event" ],
   "labels":
-    [ "new" ],
+    [ "changed" ],
   "location":
     { "lineno": 8,
       "filename": "IFrameMessageEvent.js" },
   "docs":
-    { "summary": "Event that is fired when the code in an iframe element sends a message.",
+    { "summary": "Event that is fired when the code in an iframe sends a message.",
       "links": [],
       "examples": [],
       "extra":
         {  } },
   "properties":
     [ { "name": "data",
-        "labels": [],
+        "labels":
+          [ "changed" ],
         "get": true,
         "set": false,
         "type": "*",
@@ -26,9 +27,9 @@
           { "summary": "Gets the event data.",
             "links": [],
             "examples":
-              [ { "title": "Receive a message from an iframe element",
+              [ { "title": "Receive a message from an iframe",
                   "body":
-                    [ "$w(\"#myIFrameElement\").onMessage( (event) => {",
+                    [ "$w(\"#myElement\").onMessage( (event) => {",
                       "  let receivedMessage = event.data;",
                       "} );" ],
                   "extra":

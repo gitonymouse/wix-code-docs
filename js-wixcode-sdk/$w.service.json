@@ -555,7 +555,7 @@
           {  } },
       { "name": "IFrameMessageEventHandler",
         "labels":
-          [ "new" ],
+          [ "changed" ],
         "nameParams": [],
         "params":
           [ { "name": "event",
@@ -567,7 +567,7 @@
           [ { "lineno": 1,
               "filename": "IFrameMessageEvent.js" } ],
         "docs":
-          { "summary": "Handles events fired when the code in an IFrame sends a message.",
+          { "summary": "Handles events fired when the code in an iframe sends a message.",
             "links": [],
             "examples": [],
             "extra":

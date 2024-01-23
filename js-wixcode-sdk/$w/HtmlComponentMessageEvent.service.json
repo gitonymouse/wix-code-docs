@@ -30,8 +30,8 @@
               [ { "title": "Receive a message from an HTML Component",
                   "body":
                     [ "$w(\"#myHtmlComponent\").onMessage( (event) => {",
-                      "    let receivedMessage = event.data;",
-                      "  } );" ],
+                      "  let receivedMessage = event.data;",
+                      "} );" ],
                   "extra":
                     {  } } ],
             "extra":
