@@ -3,8 +3,7 @@
   "mixes":
     [ "$w.Element",
       "$w.HiddenCollapsedMixin" ],
-  "labels":
-    [ "changed" ],
+  "labels": [],
   "location":
     { "lineno": 8,
       "filename": "IFrame.js" },
@@ -24,8 +23,7 @@
         {  } },
   "properties":
     [ { "name": "scrolling",
-        "labels":
-          [ "new" ],
+        "labels": [],
         "get": true,
         "set": true,
         "type": "string",
@@ -65,8 +63,7 @@
         "extra":
           {  } },
       { "name": "src",
-        "labels":
-          [ "new" ],
+        "labels": [],
         "get": true,
         "set": true,
         "type": "string",
@@ -106,8 +103,7 @@
           {  } } ],
   "operations":
     [ { "name": "onMessage",
-        "labels":
-          [ "new" ],
+        "labels": [],
         "nameParams": [],
         "params":
           [ { "name": "handler",
@@ -232,8 +228,7 @@
         "extra":
           { "eventType": "message" } },
       { "name": "postMessage",
-        "labels":
-          [ "new" ],
+        "labels": [],
         "nameParams": [],
         "params":
           [ { "name": "message",

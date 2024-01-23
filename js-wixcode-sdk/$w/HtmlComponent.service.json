@@ -3,8 +3,7 @@
   "mixes":
     [ "$w.Element",
       "$w.HiddenCollapsedMixin" ],
-  "labels":
-    [ "changed" ],
+  "labels": [],
   "location":
     { "lineno": 9,
       "filename": "HtmlComponent.js" },
@@ -28,8 +27,7 @@
         {  } },
   "properties":
     [ { "name": "scrolling",
-        "labels":
-          [ "changed" ],
+        "labels": [],
         "get": true,
         "set": true,
         "type": "string",
@@ -69,8 +67,7 @@
         "extra":
           {  } },
       { "name": "src",
-        "labels":
-          [ "changed" ],
+        "labels": [],
         "get": true,
         "set": true,
         "type": "string",
@@ -135,8 +132,7 @@
         "extra":
           {  } },
       { "name": "onMessage",
-        "labels":
-          [ "changed" ],
+        "labels": [],
         "nameParams": [],
         "params":
           [ { "name": "handler",
@@ -261,8 +257,7 @@
         "extra":
           { "eventType": "message" } },
       { "name": "postMessage",
-        "labels":
-          [ "changed" ],
+        "labels": [],
         "nameParams": [],
         "params":
           [ { "name": "message",

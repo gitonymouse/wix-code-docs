@@ -1,7 +1,6 @@
 { "name": "$w",
   "mixes": [],
-  "labels":
-    [ "changed" ],
+  "labels": [],
   "location":
     { "lineno": 1,
       "filename": "wixCode.js" },
@@ -553,8 +552,7 @@
         "extra":
           {  } },
       { "name": "IFrameMessageEventHandler",
-        "labels":
-          [ "new" ],
+        "labels": [],
         "nameParams": [],
         "params":
           [ { "name": "event",
