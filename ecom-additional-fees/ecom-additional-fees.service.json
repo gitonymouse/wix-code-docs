@@ -1,7 +1,7 @@
 { "name": "ecom-additional-fees",
   "mixes": [],
   "labels":
-    [ "new" ],
+    [ "changed" ],
   "location":
     { "lineno": 1,
       "filename": "additional-fees-index.js" },
@@ -50,7 +50,7 @@
                   [ "ecom-additional-fees.CalculateAdditionalFeesResponse" ] },
             "doc": "Fulfilled - Additional fees and currency info." },
         "locations":
-          [ { "lineno": 21,
+          [ { "lineno": 25,
               "filename": "additional-fees.js" } ],
         "docs":
           { "summary": "Calculates additional fees to include in the cart and checkout pages.",
@@ -121,7 +121,8 @@
         "extra":
           {  } },
       { "name": "getConfig",
-        "labels": [],
+        "labels":
+          [ "changed" ],
         "nameParams": [],
         "params": [],
         "ret":
@@ -145,7 +146,18 @@
                 "See [Tutorial: eCommerce Additional Fees Custom Extension](https://dev.wix.com/docs/develop-websites/articles/wix-apps/wix-e-commerce-stores/e-commerce-additional-fees-custom-extension#step-1-create-a-new-additional-fees-custom-extension) ",
                 "for a step-by-step tutorial." ],
             "links": [],
-            "examples": [],
+            "examples":
+              [ { "title": "Example of an `spi-config.js` file",
+                  "body":
+                    [ "// Place this code in the <my-extension-name>-config.js file",
+                      "// in the 'ecom-additional-fees' folder of the",
+                      "// Custom Extensions section on your site.",
+                      "",
+                      "export function getConfig() {",
+                      "  return {};",
+                      "};" ],
+                  "extra":
+                    {  } } ],
             "extra":
               {  } },
         "extra":
@@ -155,7 +167,7 @@
   "messages":
     [ { "name": "AdditionalFee",
         "locations":
-          [ { "lineno": 66,
+          [ { "lineno": 70,
               "filename": "additional-fees.js" } ],
         "docs":
           { "links": [],
@@ -178,9 +190,23 @@
         "extra":
           {  },
         "labels": [] },
+      { "name": "AdditionalFeesConfigResponse",
+        "locations":
+          [ { "lineno": 21,
+              "filename": "additional-fees.js" } ],
+        "docs":
+          { "links": [],
+            "examples": [],
+            "extra":
+              {  } },
+        "members": [],
+        "extra":
+          {  },
+        "labels":
+          [ "new" ] },
       { "name": "AddressDetails",
         "locations":
-          [ { "lineno": 109,
+          [ { "lineno": 113,
               "filename": "additional-fees.js" } ],
         "docs":
           { "links": [],
@@ -223,7 +249,7 @@
         "labels": [] },
       { "name": "AppliedDiscount",
         "locations":
-          [ { "lineno": 328,
+          [ { "lineno": 332,
               "filename": "additional-fees.js" } ],
         "docs":
           { "links": [],
@@ -262,7 +288,7 @@
         "labels": [] },
       { "name": "BuyerDetails",
         "locations":
-          [ { "lineno": 104,
+          [ { "lineno": 108,
               "filename": "additional-fees.js" } ],
         "docs":
           { "links": [],
@@ -278,7 +304,7 @@
         "labels": [] },
       { "name": "CalculateAdditionalFeesResponse",
         "locations":
-          [ { "lineno": 57,
+          [ { "lineno": 61,
               "filename": "additional-fees.js" } ],
         "docs":
           { "links": [],
@@ -300,7 +326,7 @@
         "labels": [] },
       { "name": "CatalogReference",
         "locations":
-          [ { "lineno": 148,
+          [ { "lineno": 152,
               "filename": "additional-fees.js" } ],
         "docs":
           { "links": [],
@@ -322,7 +348,7 @@
         "labels": [] },
       { "name": "ContactDetails",
         "locations":
-          [ { "lineno": 129,
+          [ { "lineno": 133,
               "filename": "additional-fees.js" } ],
         "docs":
           { "links": [],
@@ -356,7 +382,7 @@
         "labels": [] },
       { "name": "Coupon",
         "locations":
-          [ { "lineno": 344,
+          [ { "lineno": 348,
               "filename": "additional-fees.js" } ],
         "docs":
           { "links": [],
@@ -381,7 +407,7 @@
         "labels": [] },
       { "name": "DeliveryLogistics",
         "locations":
-          [ { "lineno": 210,
+          [ { "lineno": 214,
               "filename": "additional-fees.js" } ],
         "docs":
           { "links": [],
@@ -403,7 +429,7 @@
         "labels": [] },
       { "name": "DiscountRule",
         "locations":
-          [ { "lineno": 359,
+          [ { "lineno": 363,
               "filename": "additional-fees.js" } ],
         "docs":
           { "links": [],
@@ -425,7 +451,7 @@
         "labels": [] },
       { "name": "DiscountRuleName",
         "locations":
-          [ { "lineno": 367,
+          [ { "lineno": 371,
               "filename": "additional-fees.js" } ],
         "docs":
           { "links": [],
@@ -444,7 +470,7 @@
         "labels": [] },
       { "name": "ItemTaxFullDetails",
         "locations":
-          [ { "lineno": 271,
+          [ { "lineno": 275,
               "filename": "additional-fees.js" } ],
         "docs":
           { "links": [],
@@ -475,7 +501,7 @@
         "labels": [] },
       { "name": "LineItem",
         "locations":
-          [ { "lineno": 92,
+          [ { "lineno": 96,
               "filename": "additional-fees.js" } ],
         "docs":
           { "links": [],
@@ -509,7 +535,7 @@
         "labels": [] },
       { "name": "MerchantDiscount",
         "locations":
-          [ { "lineno": 353,
+          [ { "lineno": 357,
               "filename": "additional-fees.js" } ],
         "docs":
           { "links": [],
@@ -525,7 +551,7 @@
         "labels": [] },
       { "name": "MultiCurrencyPrice",
         "locations":
-          [ { "lineno": 262,
+          [ { "lineno": 266,
               "filename": "additional-fees.js" } ],
         "docs":
           { "links": [],
@@ -550,7 +576,7 @@
         "labels": [] },
       { "name": "Options",
         "locations":
-          [ { "lineno": 46,
+          [ { "lineno": 50,
               "filename": "additional-fees.js" } ],
         "docs":
           { "links": [],
@@ -581,7 +607,7 @@
         "labels": [] },
       { "name": "OtherCharge",
         "locations":
-          [ { "lineno": 317,
+          [ { "lineno": 321,
               "filename": "additional-fees.js" } ],
         "docs":
           { "links": [],
@@ -600,7 +626,7 @@
         "labels": [] },
       { "name": "OtherCharges",
         "locations":
-          [ { "lineno": 229,
+          [ { "lineno": 233,
               "filename": "additional-fees.js" } ],
         "docs":
           { "links": [],
@@ -622,7 +648,7 @@
         "labels": [] },
       { "name": "PhysicalProperties",
         "locations":
-          [ { "lineno": 156,
+          [ { "lineno": 160,
               "filename": "additional-fees.js" } ],
         "docs":
           { "links": [],
@@ -644,7 +670,7 @@
         "labels": [] },
       { "name": "PickupDetails",
         "locations":
-          [ { "lineno": 241,
+          [ { "lineno": 245,
               "filename": "additional-fees.js" } ],
         "docs":
           { "links": [],
@@ -666,7 +692,7 @@
         "labels": [] },
       { "name": "SelectedCarrierSeriveOptionPrices",
         "locations":
-          [ { "lineno": 253,
+          [ { "lineno": 257,
               "filename": "additional-fees.js" } ],
         "docs":
           { "links": [],
@@ -691,7 +717,7 @@
         "labels": [] },
       { "name": "SelectedCarrierServiceOption",
         "locations":
-          [ { "lineno": 197,
+          [ { "lineno": 201,
               "filename": "additional-fees.js" } ],
         "docs":
           { "links": [],
@@ -722,7 +748,7 @@
         "labels": [] },
       { "name": "SelectedCarrierServiceOptionCost",
         "locations":
-          [ { "lineno": 222,
+          [ { "lineno": 226,
               "filename": "additional-fees.js" } ],
         "docs":
           { "links": [],
@@ -741,7 +767,7 @@
         "labels": [] },
       { "name": "SelectedCarrierServiceOptionsOtherCharge",
         "locations":
-          [ { "lineno": 289,
+          [ { "lineno": 293,
               "filename": "additional-fees.js" } ],
         "docs":
           { "links": [],
@@ -763,7 +789,7 @@
         "labels": [] },
       { "name": "ServiceProperties",
         "locations":
-          [ { "lineno": 176,
+          [ { "lineno": 180,
               "filename": "additional-fees.js" } ],
         "docs":
           { "links": [],
@@ -782,7 +808,7 @@
         "labels": [] },
       { "name": "ShippingInfo",
         "locations":
-          [ { "lineno": 184,
+          [ { "lineno": 188,
               "filename": "additional-fees.js" } ],
         "docs":
           { "links": [],
@@ -798,7 +824,7 @@
         "labels": [] },
       { "name": "ShippingOption",
         "locations":
-          [ { "lineno": 301,
+          [ { "lineno": 305,
               "filename": "additional-fees.js" } ],
         "docs":
           { "links": [],
@@ -820,7 +846,7 @@
         "labels": [] },
       { "name": "ShippingPrice",
         "locations":
-          [ { "lineno": 310,
+          [ { "lineno": 314,
               "filename": "additional-fees.js" } ],
         "docs":
           { "links": [],
@@ -842,7 +868,7 @@
         "labels": [] },
       { "name": "ShippingRegion",
         "locations":
-          [ { "lineno": 190,
+          [ { "lineno": 194,
               "filename": "additional-fees.js" } ],
         "docs":
           { "links": [],
@@ -861,7 +887,7 @@
         "labels": [] },
       { "name": "StreetAddressInfo",
         "locations":
-          [ { "lineno": 123,
+          [ { "lineno": 127,
               "filename": "additional-fees.js" } ],
         "docs":
           { "links": [],
@@ -880,7 +906,7 @@
         "labels": [] },
       { "name": "SubscriptionSettings",
         "locations":
-          [ { "lineno": 164,
+          [ { "lineno": 168,
               "filename": "additional-fees.js" } ],
         "docs":
           { "links": [],
@@ -896,7 +922,7 @@
         "labels": [] },
       { "name": "TaxDetails",
         "locations":
-          [ { "lineno": 84,
+          [ { "lineno": 88,
               "filename": "additional-fees.js" } ],
         "docs":
           { "links": [],
@@ -912,7 +938,7 @@
         "labels": [] },
       { "name": "TaxRateBreakdown",
         "locations":
-          [ { "lineno": 281,
+          [ { "lineno": 285,
               "filename": "additional-fees.js" } ],
         "docs":
           { "links": [],
@@ -934,7 +960,7 @@
         "labels": [] },
       { "name": "VatId",
         "locations":
-          [ { "lineno": 139,
+          [ { "lineno": 143,
               "filename": "additional-fees.js" } ],
         "docs":
           { "links": [],
