@@ -105,7 +105,7 @@
               { "name": "Promise",
                 "typeParams":
                   [ "Object" ] },
-            "doc": "Fulfilled - The function returns the payload." },
+            "doc": "Fulfilled - An additional payload to pass to a chained action. Empty if no action follows the current one." },
         "locations":
           [ { "lineno": 1,
               "filename": "invoke-action.js" } ],
@@ -136,18 +136,19 @@
                       "    \"name\": payload.contact.name ,",
                       "    \"email\": payload.contact.email,",
                       "    \"phone\": payload.contact.phone ",
-                      "    };",
+                      "  };",
                       "",
-                      "    // Insert the contact into our site collection",
-                      "    // of contact data for plan purchasers",
-                      "    wixData.insert('PurchaserContactData', toInsert)",
-                      "      .then((results) => {",
-                      "        console.log('Data inserted successfully:', results._id);",
-                      "    })",
-                      "      .catch((err) => {",
-                      "        console.error('Error inserting data:', err);",
-                      "    });",
-                      "      return {}; // The function must return an empty object",
+                      "  // Insert the customer data into our site collection",
+                      "  // of contact data for plan purchasers",
+                      "  try {",
+                      "    const results = await wixData.insert('CustomerData', toInsert);",
+                      "    console.log('Data inserted successfully:', results._id); // Log the ID of the inserted item",
+                      "  } catch (error) {",
+                      "    console.error('Error inserting data:', error);",
+                      "    // Handle the error",
+                      "  }",
+                      "",
+                      "  return {}; // The function must return an empty object",
                       "}" ],
                   "extra":
                     {  } } ],
@@ -169,9 +170,10 @@
         "members":
           [ { "name": "payload",
               "type": "velo-action-spi.Object",
-              "doc": "The payload object." } ],
+              "doc": "The payload object. Fields vary depending on the selected trigger." } ],
         "extra":
           {  },
-        "labels": [] } ],
+        "labels":
+          [ "changed" ] } ],
   "extra":
     {  } }
