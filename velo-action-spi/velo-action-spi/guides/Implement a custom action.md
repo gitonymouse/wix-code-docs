@@ -1,7 +1,14 @@
-# Implementing a custom action in Velo
+# Implement a custom action in Velo
 
-The Velo Action SPI lets you create your own action specifically for your site. You can code the action through your site dashboard,
-directly in the automation you create.
+The Velo Action SPI lets you develop your custom action directly in your site dashboard. Once you create a new automation, you can write your own action code using the **Run Velo Code** feature.
+
+Working directly in the automation allows you to:
+
++ Easily verify you are working with the correct trigger.
++ View the full trigger payload.
++ Edit sample data provided by Wix and test your code with it.
+
+To write your action code, use the Velo APIs just like you would in your site's public or backend files.
 
 ## Before you start
 
@@ -15,14 +22,13 @@ directly in the automation you create.
 
 To use a custom action as part of an automation, start by creating a new automation in your site dashboard.
 
-1. Go to the [Automations](https://www.wix.com/my-account/site-selector/?buttonText=Select%20Site&title=Select%20a%20Site&autoSelectOnSingleSite=true&actionUrl=https:%2F%2Fwww.wix.com%2Fdashboard%2F%7B%7BmetaSiteId%7D%7D%2Ftriggers)
-page in your dashboard.
+1. Go to the [Automations](https://www.wix.com/my-account/site-selector/?buttonText=Select%20Site&title=Select%20a%20Site&autoSelectOnSingleSite=true&actionUrl=https:%2F%2Fwww.wix.com%2Fdashboard%2F%7B%7BmetaSiteId%7D%7D%2Ftriggers) page in your dashboard.
 2. Click **New Automation**, then **Start from Scratch**.
-3. Select and configure a [trigger](https://support.wix.com/en/article/wix-automations-creating-a-new-automation#step-2-choose-a-trigger).
+3. Select and configure a [trigger](https://support.wix.com/en/article/ wix-automations-creating-a-new-automation#step-2-choose-a-trigger).
 
     <blockquote class="important">
 
-    **Important:**
+    __Important:__
     The code file you create for your custom action is associated with the original trigger you selected. If you change the trigger,
     a new code file will be created and you'll have to write new code. The initial file you create is still saved, and if you restore
     the trigger it is associated with, you'll be able to access it again in the automation.
@@ -39,11 +45,8 @@ page in your dashboard.
 
     > **Note:**
     > A file is created with the name you give under the **Custom Extensions** tab in your site's backend code.
-          Though you can add or edit code in this file, we recommend working only in the file that appears in your
-          automation. When working directly in the automation you can:
-          + Easily verify you are working with the correct trigger.
-          + Access the payload view to see the full trigger payload.
-          + Edit the sample data Wix gives you and test your code as often as you need.
+    Though you can add or edit code in this file, we recommend working only in the file that appears in your
+    automation. This allows you to verify you're working with the correct trigger, as well as take advantage of features like testing and payload viewer.
 
     You should now see something like this:
 
