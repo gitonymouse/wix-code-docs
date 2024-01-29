@@ -37,7 +37,7 @@ To use a custom action as part of an automation, start by creating a new automat
 
 4. Under **Choose an Action**, select **Run Velo code**. Then click **Start Coding** to add your code.
 
-    ![Run velo code action](./images/run-velo-code.png)
+    ![Run velo code action](./images/run-velo-code0.png)
 
     You'll be prompted to create a new code file.
 
