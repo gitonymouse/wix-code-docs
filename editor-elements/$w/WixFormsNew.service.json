@@ -1,16 +1,15 @@
-{ "name": "WixForms",
+{ "name": "WixFormsNew",
   "memberOf": "$w",
   "mixes":
     [ "$w.Element",
       "$w.HiddenCollapsedMixin" ],
   "labels":
-    [ "changed",
-      "removed" ],
+    [ "new" ],
   "location":
     { "lineno": 1,
       "filename": "WixForms.js" },
   "docs":
-    { "summary": "A WixForms element displays customizable forms and collects all the info that site visitor entered into the form fields.",
+    { "summary": "Marta's WixForms element displays customizable forms and collects all the info that site visitor entered into the form fields.",
       "description":
         [ "This is a test." ],
       "links": [],
@@ -20,8 +19,7 @@
   "properties": [],
   "operations":
     [ { "name": "setFieldValues",
-        "labels":
-          [ "changed" ],
+        "labels": [],
         "nameParams": [],
         "params":
           [ { "name": "formValues",
