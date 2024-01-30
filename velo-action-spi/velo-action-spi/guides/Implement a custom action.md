@@ -24,7 +24,7 @@ To use a custom action as part of an automation, start by creating a new automat
 
 1. Go to the [Automations](https://www.wix.com/my-account/site-selector/?buttonText=Select%20Site&title=Select%20a%20Site&autoSelectOnSingleSite=true&actionUrl=https:%2F%2Fwww.wix.com%2Fdashboard%2F%7B%7BmetaSiteId%7D%7D%2Ftriggers) page in your dashboard.
 2. Click **New Automation**, then **Start from Scratch**.
-3. Select and configure a [trigger](https://support.wix.com/en/article/ wix-automations-creating-a-new-automation#step-2-choose-a-trigger).
+3. Select and configure a [trigger](https://support.wix.com/en/article/wix-automations-creating-a-new-automation#step-2-choose-a-trigger).
 
     <blockquote class="important">
 
