@@ -4,7 +4,7 @@
     [ "$w.Element",
       "$w.HiddenCollapsedMixin" ],
   "labels":
-    [ "new" ],
+    [ "changed" ],
   "location":
     { "lineno": 1,
       "filename": "WixForms.js" },
@@ -19,11 +19,12 @@
   "properties": [],
   "operations":
     [ { "name": "setFieldValues",
-        "labels": [],
+        "labels":
+          [ "changed" ],
         "nameParams": [],
         "params":
           [ { "name": "formValues",
-              "type": "wix-elements.WixForms.FieldInput",
+              "type": "$w.WixForms.FieldInput",
               "doc": "A data object that is passed to the event handler." } ],
         "ret":
           { "type": "void" },
@@ -31,7 +32,7 @@
           [ { "lineno": 11,
               "filename": "WixForms.js" } ],
         "docs":
-          { "summary": "Sets form field values.\n> **Note:**\n> The WixForms element is only available in Wix Studio.",
+          { "summary": "Sets form field values.\n> **Note:** The WixForms element is only available in Wix Studio.",
             "description":
               [ "The `setFieldValues()` function sets field values in a form.",
                 "Setting the invalid field values fires a `onFieldValuesChange` event. The event returns fields with previous valid values." ],
@@ -45,7 +46,7 @@
   "messages":
     [ { "name": "FieldInput",
         "locations":
-          [ { "lineno": 26,
+          [ { "lineno": 25,
               "filename": "WixForms.js" } ],
         "docs":
           { "summary": "An object containing information about an input field in a form.",
