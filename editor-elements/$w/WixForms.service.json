@@ -1,0 +1,64 @@
+{ "name": "WixForms",
+  "memberOf": "$w",
+  "mixes":
+    [ "$w.Element",
+      "$w.HiddenCollapsedMixin" ],
+  "labels":
+    [ "new" ],
+  "location":
+    { "lineno": 1,
+      "filename": "WixForms.js" },
+  "docs":
+    { "summary": "A WixForms element displays customizable forms and collects all the info that site visitor entered into the form fields.",
+      "description":
+        [ "This is a test." ],
+      "links": [],
+      "examples": [],
+      "extra":
+        {  } },
+  "properties": [],
+  "operations":
+    [ { "name": "setFieldValues",
+        "labels": [],
+        "nameParams": [],
+        "params":
+          [ { "name": "formValues",
+              "type": "wix-elements.WixForms.FieldInput",
+              "doc": "A data object that is passed to the event handler." } ],
+        "ret":
+          { "type": "void" },
+        "locations":
+          [ { "lineno": 11,
+              "filename": "WixForms.js" } ],
+        "docs":
+          { "summary": "Sets form field values.\n> **Note:**\n> The WixForms element is only available in Wix Studio.",
+            "description":
+              [ "The `setFieldValues()` function sets field values in a form.",
+                "Setting the invalid field values fires a `onFieldValuesChange` event. The event returns fields with previous valid values." ],
+            "links": [],
+            "examples": [],
+            "extra":
+              {  } },
+        "extra":
+          {  } } ],
+  "callbacks": [],
+  "messages":
+    [ { "name": "FieldInput",
+        "locations":
+          [ { "lineno": 26,
+              "filename": "WixForms.js" } ],
+        "docs":
+          { "summary": "An object containing information about an input field in a form.",
+            "links": [],
+            "examples": [],
+            "extra":
+              {  } },
+        "members":
+          [ { "name": "keyvalue",
+              "type": "string",
+              "doc": "Key is the form field name, and value is the data submitted for the given field." } ],
+        "extra":
+          {  },
+        "labels": [] } ],
+  "extra":
+    {  } }
