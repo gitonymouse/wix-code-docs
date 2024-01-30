@@ -65,10 +65,10 @@
           { "summary": "Sets the configuration settings of your payment settings extension.",
             "description":
               [ "When you [add the Payment Settings custom extension](https://dev.wix.com/docs/develop-websites/articles/wix-apps/wix-e-commerce-stores/tutorial-payment-settings-custom-extension#step-1-create-a-new-payment-settings-extension), ",
-                "it automatically adds a folder to your site. This folder contains two files, **<your-extension-name>-config.js** and ",
-                "**<your-extension-name>.js**. Use the first of these files, **<your-extension-name>-config.js**, to set any default configurations for your implementation of the custom extension.",
+                "it automatically adds a folder to your site. This folder contains two files, **<my-extension-name\\>-config.js** and ",
+                "**<my-extension-name\\>.js**. Use the first of these files, **<my-extension-name\\>-config.js**, to set any default configurations for your implementation of the custom extension.",
                 "",
-                "Set you configuration in the `return` of the `getConfig()` function. Wix calls this function when you publish your site.",
+                "Set your configuration in the `return` of the `getConfig()` function. Wix calls this function when you publish your site.",
                 "",
                 "For the payment settings extension, the only default currently available is to set a fallback value for whether to require ",
                 "3DS to an order payment if the [`getPaymentSettings()`](https://www.wix.com/velo/reference/spis/ecom-payment-settings/getpaymentsettings) ",
@@ -97,7 +97,8 @@
           { "customLabels":
               [ { "id": "maturity-beta" } ] } },
       { "name": "getPaymentSettings",
-        "labels": [],
+        "labels":
+          [ "changed" ],
         "nameParams": [],
         "params":
           [ { "name": "options",
@@ -116,8 +117,8 @@
           { "summary": "Retrieves the payment settings to apply to an order based on your custom logic. Wix passes on the settings to the payment provider.",
             "description":
               [ "When you [add the Payment Settings custom extension](https://dev.wix.com/docs/develop-websites/articles/wix-apps/wix-e-commerce-stores/tutorial-payment-settings-custom-extension#step-1-create-a-new-payment-settings-extension), ",
-                "it automatically adds a folder to your site. This file contains 2 files, **<your-extension-name>-config.js** and ",
-                "**<your-extension-name>.js**. Use the second of these files, **<your-extension-name>.js**, to write the code to determine which payment settings to apply to an order. ",
+                "it automatically adds a folder to your site. This file contains 2 files, **<my-extension-name\\>-config.js** and ",
+                "**<my-extension-name\\>.js**. Use the second of these files, **<my-extension-name\\>.js**, to write the code to determine which payment settings to apply to an order. ",
                 "",
                 "Currently, the only payment setting available to customize is whether to apply [3 domain security](https://support.wix.com/en/article/about-3d-secure-3ds-payments-with-third-party-payment-providers) (3DS) ",
                 "to an order. Note that if the code fails then `requires3dSecure` sets to the value for `fallbackValueForRequires3dSecure` set in ",
