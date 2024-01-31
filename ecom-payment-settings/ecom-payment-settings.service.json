@@ -62,13 +62,13 @@
           [ { "lineno": 1,
               "filename": "payment-settings-spi.js" } ],
         "docs":
-          { "summary": "Sets the configuration settings of your payment settings extension.",
+          { "summary": "Retrieves the configuration settings of your payment settings extension.",
             "description":
-              [ "When you [add the Payment Settings custom extension](https://dev.wix.com/docs/develop-websites/articles/wix-apps/wix-e-commerce-stores/tutorial-payment-settings-custom-extension#step-1-create-a-new-payment-settings-extension), ",
+              [ "Set your payment settings configuration in the `return` of the `getConfig()` function. Wix calls this function when you publish your site.",
+                "",
+                "When you [add the Payment Settings custom extension](https://dev.wix.com/docs/develop-websites/articles/wix-apps/wix-e-commerce-stores/tutorial-payment-settings-custom-extension#step-1-create-a-new-payment-settings-extension), ",
                 "it automatically adds a folder to your site. This folder contains two files, **<my-extension-name\\>-config.js** and ",
                 "**<my-extension-name\\>.js**. Use the first of these files, **<my-extension-name\\>-config.js**, to set any default configurations for your implementation of the custom extension.",
-                "",
-                "Set your configuration in the `return` of the `getConfig()` function. Wix calls this function when you publish your site.",
                 "",
                 "For the payment settings extension, the only default currently available is to set a fallback value for whether to require ",
                 "3DS to an order payment if the [`getPaymentSettings()`](https://www.wix.com/velo/reference/spis/ecom-payment-settings/getpaymentsettings) ",
@@ -97,8 +97,7 @@
           { "customLabels":
               [ { "id": "maturity-beta" } ] } },
       { "name": "getPaymentSettings",
-        "labels":
-          [ "changed" ],
+        "labels": [],
         "nameParams": [],
         "params":
           [ { "name": "options",
