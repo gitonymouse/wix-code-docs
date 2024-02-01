@@ -3689,6 +3689,16 @@
       "name": "ReservationCreated",
       "members": [
         {
+          "name": "_updatedDate",
+          "optional": true,
+          "type": [
+            {
+              "nativeType": "Date"
+            }
+          ],
+          "doc": "Reservation update timestamp."
+        },
+        {
           "name": "eventId",
           "optional": true,
           "type": [
@@ -3765,6 +3775,16 @@
     {
       "name": "ReservationUpdated",
       "members": [
+        {
+          "name": "_updatedDate",
+          "optional": true,
+          "type": [
+            {
+              "nativeType": "Date"
+            }
+          ],
+          "doc": "Reservation update timestamp."
+        },
         {
           "name": "eventId",
           "optional": true,
@@ -4871,6 +4891,16 @@
     {
       "name": "TicketQuantity",
       "members": [
+        {
+          "name": "_updatedDate",
+          "optional": true,
+          "type": [
+            {
+              "nativeType": "Date"
+            }
+          ],
+          "doc": "Quantity update timestamp."
+        },
         {
           "name": "quantity",
           "optional": true,
