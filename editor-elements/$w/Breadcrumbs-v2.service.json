@@ -1,0 +1,136 @@
+{ "name": "Breadcrumbs-v2",
+  "memberOf": "$w",
+  "mixes":
+    [ "$w.HiddenCollapsedMixin",
+      "$w.ViewportMixin" ],
+  "labels":
+    [ "new" ],
+  "location":
+    { "lineno": 1,
+      "filename": "Breadcrumbs copy.js" },
+  "docs":
+    { "summary": "This is test to see what happens when you add 'v2' to the class name.",
+      "description":
+        [ "This is also a test." ],
+      "links": [],
+      "examples": [],
+      "extra":
+        {  } },
+  "properties":
+    [ { "name": "items",
+        "labels": [],
+        "get": true,
+        "set": true,
+        "type":
+          { "name": "Array",
+            "typeParams":
+              [ "$w.Breadcrumbs-v2.Item" ] },
+        "defaultValue": "An empty array",
+        "locations":
+          [ { "lineno": 40,
+              "filename": "Breadcrumbs copy.js" },
+            { "lineno": 84,
+              "filename": "Breadcrumbs copy.js" } ],
+        "docs":
+          { "summary": "Sets or gets breadcrumbs items.",
+            "description":
+              [ "Setting the `items` property sets the items",
+                " for a breadcrumbs element.",
+                "",
+                " Set `items` to an empty array (`[]`) to remove all breadcrumbs items.",
+                "",
+                " Getting the `items` property returns breadcrumbs items that have been set using code. If no",
+                " items have been set using code, your site generates a default items array based on your home page, the site visitor's location, ",
+                " and the organization of your site's pages including ",
+                " any [menu folders](https://support.wix.com/en/article/wix-editor-creating-and-managing-a-dropdown-submenu) you have added to your site. ",
+                "",
+                " Properties that don't have a value are omitted from the returned array.",
+                "",
+                " You can't modify the items array in-place. To add, change, or remove",
+                " individual breadcrumbs items:",
+                "",
+                "   1. Store the value of the `items` property in a variable.",
+                "   1. Make changes to the variable's array of items.",
+                "   1. Reset the `items` property with the variable's modified array.",
+                " ",
+                " This example demonstrates how to customize breadcrumbs for dynamic pages.",
+                "",
+                " > **Note**: In the interest of simplicity the code doesn't deal with display considerations",
+                " > or validations that would normally be required to make sure site visitors perform the flow as ",
+                " > intended. ",
+                "",
+                "The customization includes: ",
+                "",
+                "+ A \"tourism\" collection that contains countries and places to visit. The example queries for places to visit in Italy. ",
+                "+ 2 dynamic pages: ",
+                "    + A dynamic list page called \"Tourism (All)\" that lists travel destinations (places). The link to this dynamic page is based on the prefix in the \"link-tourism-all\" collection field.",
+                "    + A dynamic item page called \"Tourism (Title)\" for viewing a specific place. The link to this dynamic page is based on the path in the \"link-tourism-title\" collection field. ",
+                "+ A breadcrumbs element created with code. breadcrumbs elements should be added to all pages. This ",
+                "  example sets the \"customBreadCrumbs\" element for the \"Tourism (Title)\" dynamic item page." ],
+            "links": [],
+            "examples": [],
+            "extra":
+              {  } },
+        "extra":
+          {  } } ],
+  "operations":
+    [ { "name": "showEllipsis",
+        "labels": [],
+        "nameParams": [],
+        "params": [],
+        "ret":
+          { "type": "void" },
+        "locations":
+          [ { "lineno": 90,
+              "filename": "Breadcrumbs copy.js" } ],
+        "docs":
+          { "summary": "Displays an ellipsis in a breadcrumbs element instead of the middle items of the breadcrumbs trail.",
+            "description":
+              [ "The number of items hidden in the breadcrumbs trail when you use `showEllipsis()` depends on the values of the [`itemsBeforeEllipsis`](#items) ",
+                "and [`itemsAfterEllipsis`](#itemsAfterEllipsis) properties. Any items not accounted for by those properties are hidden and replaced by an ellipsis.",
+                "",
+                "For example, if your breadcrumbs trail includes 5 items and `itemsBeforeEllipsis` and `itemsAfterEllipsis` are both set to `1`, the 3 middle items in the trail",
+                "are hidden when you use `showEllipsis()`.",
+                "",
+                "Using `showEllipsis()` changes the value of [`isEllipsisVisible`](#isEllipsisVisible)." ],
+            "links":
+              [ "[itemsAfterEllipsis](#itemsAfterEllipsis), [itemsBeforeEllipsis](#itemsBeforeEllipsis), [isEllipsisVisible](#isEllipsisVisible), [hideEllipsis](#hideEllipsis)" ],
+            "examples": [],
+            "extra":
+              {  } },
+        "extra":
+          {  } } ],
+  "callbacks": [],
+  "messages":
+    [ { "name": "Item",
+        "locations":
+          [ { "lineno": 14,
+              "filename": "Breadcrumbs copy.js" } ],
+        "docs":
+          { "summary": "An object that contains the attributes of a breadcrumbs item.",
+            "links": [],
+            "examples": [],
+            "extra":
+              {  } },
+        "members":
+          [ { "name": "label",
+              "type": "string",
+              "doc": "The label of the breadcrumbs item. This is text that the site visitor sees and can click to navigate. Required if `icon` isn't specified. If not specified, `label` is omitted from the returned array.",
+              "optional": true },
+            { "name": "icon",
+              "type": "string",
+              "doc": "The icon of the breadcrumbs item. This is a vector image that the site visitor sees and can click to navigate. Required if `label` isn't specified. If not specified, the `icon` key is omitted from the returned array.\n\n The vector image file can be an image file from the Media Manager, an external SVG image from any web location, or a literal SVG XML string.\n\n The formats supported are:\n + Vector images from the Media Manager: `wix:vector://v1/<vector_uri>/<filename>`\n + Vector images from the web: `http(s)://<vector image url>`\n + Vector XML string: `<svg>...</svg>`",
+              "optional": true },
+            { "name": "link",
+              "type": "string",
+              "doc": "Optional link for the breadcrumbs item as a URL relative to your site's home page. This is the link the site visitor navigates to when they click on a breadcrumbs item. The page opens in the same window/tab. \n\n If a link isn't specified, it's `undefined` in the breadcrumbs object. The corresponding label or icon isn't clickable. \n\n >**Note:**\n > In the default breadcrumbs `items` array generated for a page, any `link` properties contain absolute URLs, not relative ones.",
+              "optional": true },
+            { "name": "isCurrent",
+              "type": "boolean",
+              "doc": "Setting `isCurrent` to `true` for a breadcrumbs item causes the item to appear highlighted in the breadcrumbs element.\nYou can use this property to indicate which page in a breadcrumbs trail is currently displayed. In a default `items` array, the last item's `isCurrent` value is `true`.\n>**Note:** The value of `isCurrent` isn't validated against which page is actually displayed. It can also be set to `true` for multiple breadcrumbs items.",
+              "optional": true } ],
+        "extra":
+          {  },
+        "labels": [] } ],
+  "extra":
+    { "queryable": true } }
