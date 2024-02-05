@@ -3686,6 +3686,66 @@
       }
     },
     {
+      "name": "ReservationCount",
+      "members": [
+        {
+          "name": "confirmedCount",
+          "optional": true,
+          "type": [
+            {
+              "nativeType": "number"
+            }
+          ],
+          "doc": "Confirmed reservation count."
+        },
+        {
+          "name": "paidExists",
+          "optional": true,
+          "type": [
+            {
+              "nativeType": "boolean"
+            }
+          ],
+          "doc": "True if paid ticket reservation exist."
+        },
+        {
+          "name": "pendingCount",
+          "optional": true,
+          "type": [
+            {
+              "nativeType": "number"
+            }
+          ],
+          "doc": "Pending reservation count."
+        },
+        {
+          "name": "ticketDefinitionId",
+          "optional": true,
+          "type": [
+            {
+              "nativeType": "string"
+            }
+          ],
+          "doc": "Ticket Definition ID."
+        },
+        {
+          "name": "timestamp",
+          "optional": true,
+          "type": [
+            {
+              "nativeType": "Date"
+            }
+          ],
+          "doc": "Reservation Count snapshot timestamp."
+        }
+      ],
+      "docs": {
+        "description": [
+          ""
+        ]
+      }
+    },
+    {
       "name": "ReservationCreated",
       "members": [
         {
@@ -3697,6 +3757,23 @@
             }
           ],
           "doc": "Reservation update timestamp."
+        },
+        {
+          "name": "counts",
+          "optional": true,
+          "type": [
+            {
+              "complexType": {
+                "nativeType": "Array",
+                "typeParams": [
+                  {
+                    "referenceType": "wix-events-v3.TicketDefinitions.ReservationCount"
+                  }
+                ]
+              }
+            }
+          ],
+          "doc": "Reservation counts."
         },
         {
           "name": "eventId",
@@ -3784,6 +3861,23 @@
             }
           ],
           "doc": "Reservation update timestamp."
+        },
+        {
+          "name": "counts",
+          "optional": true,
+          "type": [
+            {
+              "complexType": {
+                "nativeType": "Array",
+                "typeParams": [
+                  {
+                    "referenceType": "wix-events-v3.TicketDefinitions.ReservationCount"
+                  }
+                ]
+              }
+            }
+          ],
+          "doc": "Reservation counts."
         },
         {
           "name": "eventId",
