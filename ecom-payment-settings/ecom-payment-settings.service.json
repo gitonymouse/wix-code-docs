@@ -32,8 +32,8 @@
           "",
           "## Terminology",
           "",
-          "**3 Domain Security (3DS):** An additional layer of security for online credit and debit card transactions. The name refers to the three domains which interact using the protocol: the card issuer, the acquiring bank, and the payment gateway that facilitates the transaction. Learn more [about 3DS payments with third-party payment providers](https://support.wix.com/en/article/about-3d-secure-3ds-payments-with-third-party-payment-providers).",
-          "**Payment Providers:** Different payment methods available to your Wix site. Learn more about [accepting payments](https://support.wix.com/en/article/accepting-payments-an-overview)." ],
+          "+ **3 Domain Security (3DS):** An additional layer of security for online credit and debit card transactions. The name refers to the three domains which interact using the protocol: the card issuer, the acquiring bank, and the payment gateway that facilitates the transaction. Learn more [about 3DS payments with third-party payment providers](https://support.wix.com/en/article/about-3d-secure-3ds-payments-with-third-party-payment-providers).",
+          "+ **Payment Providers:** Different payment methods available to your Wix site. Learn more about [accepting payments](https://support.wix.com/en/article/accepting-payments-an-overview)." ],
       "links": [],
       "examples": [],
       "extra":
