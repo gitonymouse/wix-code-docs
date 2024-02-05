@@ -13,11 +13,8 @@
           "## Before you begin",
           "It's important to note the following points before starting to code:",
           "+ To collect payments, a Wix site must [connect a payment provider](https://support.wix.com/en/article/connecting-a-payment-provider). ",
-          "+ Each payment provider has specific payment settings they accept with their Wix integration. For example, ",
-          "[Tranzila](https://support.wix.com/en/article/connecting-tranzila-as-a-payment-provider) is a payment provider that ",
-          "supports [3 domain security](https://support.wix.com/en/article/about-3d-secure-3ds-payments-with-third-party-payment-providers) (3DS), but not all payment providers offer this feature. ",
-          "+ We recommend [contacting payment providers directly](https://support.wix.com/en/article/receiving-payouts-from-third-party-payment-providers) ",
-          "to confirm which payment settings they have implemented as part of their Wix integration.",
+          "+ Each payment provider has specific payment settings they accept with their Wix integration. For example, [Tranzila](https://support.wix.com/en/article/connecting-tranzila-as-a-payment-provider) is a payment provider that supports [3 domain security](https://support.wix.com/en/article/about-3d-secure-3ds-payments-with-third-party-payment-providers) (3DS), but not all payment providers offer this feature. ",
+          "+ We recommend [contacting payment providers directly](https://support.wix.com/en/article/receiving-payouts-from-third-party-payment-providers) to confirm which payment settings they have implemented as part of their Wix integration.",
           "",
           "Currently, the only payment setting available to customize is whether to apply 3DS to an order. ",
           "If 3DS is required, the customer will have to pass an additional layer of security before completing their payment. For example:",
@@ -44,8 +41,7 @@
   "properties": [],
   "operations":
     [ { "name": "getConfig",
-        "labels":
-          [ "changed" ],
+        "labels": [],
         "nameParams": [],
         "params": [],
         "ret":
@@ -94,8 +90,7 @@
           { "customLabels":
               [ { "id": "maturity-beta" } ] } },
       { "name": "getPaymentSettings",
-        "labels":
-          [ "changed" ],
+        "labels": [],
         "nameParams": [],
         "params":
           [ { "name": "options",
@@ -1431,8 +1426,7 @@
               "doc": "Whether to apply [3 domain security](https://support.wix.com/en/article/about-3d-secure-3ds-payments-with-third-party-payment-providers) during the payment process." } ],
         "extra":
           {  },
-        "labels":
-          [ "changed" ] },
+        "labels": [] },
       { "name": "PaymentSettingsConfigResponse",
         "locations":
           [ { "lineno": 25,
