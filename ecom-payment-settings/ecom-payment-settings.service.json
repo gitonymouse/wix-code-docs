@@ -16,8 +16,8 @@
           "![3DS popup](..assets/images/3ds.png \"3DS popup\")",
           "",
           "Learn more:",
-          "+ [Tutorial: Payment Settings Custom Extension](https://support.wix.com/en/article/tutorial-payment-settings-custom-extension)",
           "+ [Velo: Custom App Extensions Using SPIs](https://support.wix.com/en/article/velo-custom-business-app-extensions-using-spis-beta)",
+          "+ [Tutorial: Payment Settings Custom Extension](https://support.wix.com/en/article/tutorial-payment-settings-custom-extension)",
           "",
           "### Before you begin",
           "It's important to note the following points before starting to code:",
@@ -40,8 +40,7 @@
   "properties": [],
   "operations":
     [ { "name": "getConfig",
-        "labels":
-          [ "changed" ],
+        "labels": [],
         "nameParams": [],
         "params": [],
         "ret":
@@ -91,8 +90,7 @@
           { "customLabels":
               [ { "id": "maturity-beta" } ] } },
       { "name": "getPaymentSettings",
-        "labels":
-          [ "changed" ],
+        "labels": [],
         "nameParams": [],
         "params":
           [ { "name": "options",
