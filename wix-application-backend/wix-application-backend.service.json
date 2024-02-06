@@ -38,7 +38,7 @@
           [ { "lineno": 16,
               "filename": "application-backend.js" } ],
         "docs":
-          { "summary": "Gets the Wix Blocks App data as a decoded Json Web Token (JWT) object.",
+          { "summary": "Gets the Wix Blocks App data as a decoded JSON Web Token (JWT) object.",
             "description":
               [ "The `getDecodedAppInstance()` function returns a Promise that resolves to an object with data about the installation of your app on a specific site. ",
                 "It is useful when [managing your application's pricing](https://support.wix.com/en/article/wix-blocks-setting-up-and-managing-your-apps-pricing)." ],
@@ -91,7 +91,6 @@
               "doc": "The plan's expiration date." } ],
         "extra":
           {  },
-        "labels":
-          [ "new" ] } ],
+        "labels": [] } ],
   "extra":
     {  } }
