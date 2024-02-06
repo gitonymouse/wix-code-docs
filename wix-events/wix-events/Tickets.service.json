@@ -1,7 +1,8 @@
 { "name": "Tickets",
   "memberOf": "wix-events",
   "mixes": [],
-  "labels": [],
+  "labels":
+    [ "changed" ],
   "location":
     { "lineno": 1,
       "filename": "tickets.js" },
@@ -43,7 +44,8 @@
   "properties": [],
   "operations":
     [ { "name": "checkout",
-        "labels": [],
+        "labels":
+          [ "changed" ],
         "nameParams": [],
         "params":
           [ { "name": "eventId",
@@ -86,7 +88,10 @@
                 "",
                 "",
                 "> **Note:**",
-                " To work with the Wix Events API, you need to publish your site." ],
+                " To work with the Wix Events API, you need to publish your site.",
+                "",
+                "> **Note:**",
+                "> With this function it's not possible to create separate form submissions for each ticket. You can only have one submission per order." ],
             "links":
               [ "[reserve( )](#reserve)",
                 "[updateOrder( )](#updateOrder)" ],
@@ -975,7 +980,7 @@
                   [ "wix-events.Tickets.UpdateOrderResponse" ] },
             "doc": "Fulfilled - Information about the order that was updated." },
         "locations":
-          [ { "lineno": 92,
+          [ { "lineno": 96,
               "filename": "tickets.js" } ],
         "docs":
           { "summary": "Updates a ticket order.",
@@ -1407,7 +1412,7 @@
                   [ "wix-events.Tickets.VerifyCouponResponse" ] },
             "doc": "Fulfilled - Information about coupon verification." },
         "locations":
-          [ { "lineno": 115,
+          [ { "lineno": 119,
               "filename": "tickets.js" } ],
         "docs":
           { "summary": "Verifies a ticket coupon.",
@@ -1840,7 +1845,7 @@
   "messages":
     [ { "name": "CheckoutInfo",
         "locations":
-          [ { "lineno": 252,
+          [ { "lineno": 256,
               "filename": "tickets.js" } ],
         "docs":
           { "summary": "An object containing information about a checkout.",
@@ -2127,7 +2132,7 @@
         "labels": [] },
       { "name": "CheckoutResponse",
         "locations":
-          [ { "lineno": 168,
+          [ { "lineno": 172,
               "filename": "tickets.js" } ],
         "docs":
           { "summary": "An object containing information about a checkout performed using the [`checkout()`](#reserve) function.",
@@ -2416,7 +2421,7 @@
         "labels": [] },
       { "name": "Discount",
         "locations":
-          [ { "lineno": 349,
+          [ { "lineno": 353,
               "filename": "tickets.js" } ],
         "docs":
           { "summary": "An object representing a discount.",
@@ -2902,7 +2907,7 @@
         "labels": [] },
       { "name": "DiscountError",
         "locations":
-          [ { "lineno": 203,
+          [ { "lineno": 207,
               "filename": "tickets.js" } ],
         "docs":
           { "summary": "An object containing information about a discount error.",
@@ -3113,7 +3118,7 @@
         "labels": [] },
       { "name": "DiscountErrors",
         "locations":
-          [ { "lineno": 195,
+          [ { "lineno": 199,
               "filename": "tickets.js" } ],
         "docs":
           { "summary": "An object containing information about discount errors.",
@@ -3327,7 +3332,7 @@
         "labels": [] },
       { "name": "Fee",
         "locations":
-          [ { "lineno": 381,
+          [ { "lineno": 385,
               "filename": "tickets.js" } ],
         "docs":
           { "summary": "An object representing a fee.",
@@ -3810,7 +3815,7 @@
         "labels": [] },
       { "name": "Invoice",
         "locations":
-          [ { "lineno": 309,
+          [ { "lineno": 313,
               "filename": "tickets.js" } ],
         "docs":
           { "summary": "An object representing a ticket order invoice.",
@@ -4313,7 +4318,7 @@
         "labels": [] },
       { "name": "InvoiceItem",
         "locations":
-          [ { "lineno": 332,
+          [ { "lineno": 336,
               "filename": "tickets.js" } ],
         "docs":
           { "summary": "An object representing a ticket order invoice item.",
@@ -4813,7 +4818,7 @@
         "labels": [] },
       { "name": "Money",
         "locations":
-          [ { "lineno": 245,
+          [ { "lineno": 249,
               "filename": "tickets.js" } ],
         "docs":
           { "summary": "An object representing a monetary amount.",
@@ -4833,7 +4838,7 @@
         "labels": [] },
       { "name": "Order",
         "locations":
-          [ { "lineno": 269,
+          [ { "lineno": 273,
               "filename": "tickets.js" } ],
         "docs":
           { "summary": "An object containing information about a ticket order.",
@@ -5401,7 +5406,7 @@
         "labels": [] },
       { "name": "Reservation",
         "locations":
-          [ { "lineno": 219,
+          [ { "lineno": 223,
               "filename": "tickets.js" } ],
         "docs":
           { "summary": "An object representing ticket reservations.",
@@ -5634,7 +5639,7 @@
         "labels": [] },
       { "name": "ReservationResponse",
         "locations":
-          [ { "lineno": 157,
+          [ { "lineno": 161,
               "filename": "tickets.js" } ],
         "docs":
           { "summary": "An object containing information about a reservation created using the [`reserve()`](#reserve) function.",
@@ -5876,7 +5881,7 @@
         "labels": [] },
       { "name": "Tax",
         "locations":
-          [ { "lineno": 363,
+          [ { "lineno": 367,
               "filename": "tickets.js" } ],
         "docs":
           { "summary": "An object representing a tax.",
@@ -6362,7 +6367,7 @@
         "labels": [] },
       { "name": "Ticket",
         "locations":
-          [ { "lineno": 228,
+          [ { "lineno": 232,
               "filename": "tickets.js" } ],
         "docs":
           { "summary": "An object representing a ticket.",
@@ -6616,7 +6621,7 @@
         "labels": [] },
       { "name": "TicketSelection",
         "locations":
-          [ { "lineno": 148,
+          [ { "lineno": 152,
               "filename": "tickets.js" } ],
         "docs":
           { "summary": "An object representing an event ticket.",
@@ -6849,7 +6854,7 @@
         "labels": [] },
       { "name": "UpdateInfo",
         "locations":
-          [ { "lineno": 261,
+          [ { "lineno": 265,
               "filename": "tickets.js" } ],
         "docs":
           { "summary": "An object containing information about an order update.",
@@ -7088,7 +7093,7 @@
         "labels": [] },
       { "name": "UpdateOrderResponse",
         "locations":
-          [ { "lineno": 178,
+          [ { "lineno": 182,
               "filename": "tickets.js" } ],
         "docs":
           { "summary": "An object containing information about an order updated using the [`updateOrder()`](#updateOrder) function.",
@@ -7324,7 +7329,7 @@
         "labels": [] },
       { "name": "VerifyCouponResponse",
         "locations":
-          [ { "lineno": 186,
+          [ { "lineno": 190,
               "filename": "tickets.js" } ],
         "docs":
           { "summary": "An object containing information about a coupon being verified using the [`verifyCoupon()`](#verifyCoupon) function.",
