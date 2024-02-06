@@ -1,0 +1,69 @@
+{ "name": "wix-application-backend",
+  "mixes": [],
+  "labels":
+    [ "new" ],
+  "location":
+    { "lineno": 1,
+      "filename": "application-backend.js" },
+  "docs":
+    { "summary": "The wix-application module contains functionality for getting information about a Blocks application that is installed on a site.",
+      "description":
+        [ "> **This module is available only in Wix Blocks**  ",
+          "> [Wix Blocks](https://support.wix.com/en/article/wix-blocks-check-out-our-articles) is a workspace for building Wix apps. It is currently a Beta version, open to a limited number of users.",
+          "",
+          "",
+          "To use the wixApplicationBackend API, import `wixApplicationBackend` from the `wix-application-backend` module:",
+          "",
+          "```javascript",
+          "import wixApplicationBackend from 'wix-application-backend';",
+          "```" ],
+      "links": [],
+      "examples": [],
+      "extra":
+        {  } },
+  "properties": [],
+  "operations":
+    [ { "name": "getDecodedAppInstance",
+        "labels": [],
+        "nameParams": [],
+        "params": [],
+        "ret":
+          { "type":
+              { "name": "Promise",
+                "typeParams":
+                  [ "wix-application.decodedAppInstance" ] },
+            "doc": "Fulfilled - An object with data about the installation of your app on a specific site." },
+        "locations":
+          [ { "lineno": 16,
+              "filename": "application-backend.js" } ],
+        "docs":
+          { "summary": "Gets the Wix Blocks App data as a decoded Json Web Token (JWT) object.",
+            "description":
+              [ "The `getDecodedAppInstance()` function returns a Promise that resolves to an object with data about the installation of your app on a specific site. ",
+                "It is useful when [managing your application's pricing](https://support.wix.com/en/article/wix-blocks-setting-up-and-managing-your-apps-pricing)." ],
+            "links": [],
+            "examples":
+              [ { "title": "Retrieve the Vendor Product ID",
+                  "body":
+                    [ "import wixApplication from 'wix-application';",
+                      "",
+                      "// ...",
+                      "",
+                      "wixApplication.getDecodedAppInstance()",
+                      "  .then((decodedAppInstance) => {",
+                      "    const plan = decodedAppInstance.vendorProductId;  // 'basic'",
+                      "  })",
+                      "  .catch((error) => {",
+                      "    console.error(error);",
+                      "    // Handle the error",
+                      "  });" ],
+                  "extra":
+                    {  } } ],
+            "extra":
+              {  } },
+        "extra":
+          {  } } ],
+  "callbacks": [],
+  "messages": [],
+  "extra":
+    {  } }
