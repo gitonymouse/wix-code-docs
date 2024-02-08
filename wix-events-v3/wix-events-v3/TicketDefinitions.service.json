@@ -2165,46 +2165,6 @@
       }
     },
     {
-      "name": "GetTicketDefinitionReservationRequest",
-      "members": [
-        {
-          "name": "reservationId",
-          "optional": true,
-          "type": [
-            {
-              "nativeType": "string"
-            }
-          ],
-          "doc": "Reservation id."
-        }
-      ],
-      "docs": {
-        "description": [
-          ""
-        ]
-      }
-    },
-    {
-      "name": "GetTicketDefinitionReservationResponse",
-      "members": [
-        {
-          "name": "reservation",
-          "optional": true,
-          "type": [
-            {
-              "referenceType": "wix-events-v3.TicketDefinitions.TicketDefinitionReservation"
-            }
-          ],
-          "doc": "Reservation"
-        }
-      ],
-      "docs": {
-        "description": [
-          ""
-        ]
-      }
-    },
-    {
       "name": "GetTicketDefinitionResponse",
       "members": [
         {
@@ -4864,49 +4824,6 @@
       }
     },
     {
-      "name": "TicketDefinitionReservation",
-      "members": [
-        {
-          "name": "_updatedDate",
-          "readOnly": true,
-          "optional": true,
-          "type": [
-            {
-              "nativeType": "Date"
-            }
-          ],
-          "doc": "Date and time of the reservation latest update in `yyyy-mm-ddThh:mm:sssZ` format."
-        },
-        {
-          "name": "eventId",
-          "readOnly": true,
-          "optional": true,
-          "type": [
-            {
-              "nativeType": "string"
-            }
-          ],
-          "doc": "Event ID to which the reservation belongs."
-        },
-        {
-          "name": "reservationId",
-          "readOnly": true,
-          "optional": true,
-          "type": [
-            {
-              "nativeType": "string"
-            }
-          ],
-          "doc": "Reservation id."
-        }
-      ],
-      "docs": {
-        "description": [
-          ""
-        ]
-      }
-    },
-    {
       "name": "TicketDefinitionSummary",
       "members": [
         {
@@ -4943,7 +4860,7 @@
           "doc": "Event ID to which the ticket definition summary belongs."
         },
         {
-          "name": "free",
+          "name": "paidExists",
           "readOnly": true,
           "optional": true,
           "type": [
@@ -4951,7 +4868,7 @@
               "nativeType": "boolean"
             }
           ],
-          "doc": "Free."
+          "doc": "Paid exists."
         },
         {
           "name": "reservedCount",
