@@ -202,7 +202,7 @@
           "doc": ""
         },
         {
-          "name": "resource",
+          "name": "package",
           "optional": true,
           "type": [
             {
