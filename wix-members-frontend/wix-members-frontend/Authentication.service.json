@@ -723,8 +723,7 @@
         "extra":
           {  } },
       { "name": "register",
-        "labels":
-          [ "changed" ],
+        "labels": [],
         "nameParams": [],
         "params":
           [ { "name": "email",
@@ -744,7 +743,7 @@
                   [ "wix-members-frontend.Authentication.RegistrationResult" ] },
             "doc": "Fulfilled - When the member is registered.\nRejected - Error message." },
         "locations":
-          [ { "lineno": 61,
+          [ { "lineno": 60,
               "filename": "register.js" } ],
         "docs":
           { "summary": "Registers a new site member.",
@@ -979,7 +978,7 @@
                 [ "string",
                   "number",
                   "Date" ],
-              "doc": "Any\n number of custom fields. [Custom fields](https://www.wix.com/velo/reference/wix-members-frontend/introduction#wix-members-frontend_introduction_custom-fields)\n are used to store additional information about your site's contacts. When\n setting a custom field, use a key:value pair in the top level of the `contactInfo` object.\n\nWhen setting a custom field, use a [key](https://www.wix.com/velo/reference/wix-members-frontend/introduction#wix-members-frontend_introduction_retrieve-custom-field-keys):value pair in the top level of the `contactInfo` object. For example: `{options: {contactInfo: {\"my-custom-field-key\": \"my-custom-field-value\"}}}`.\n\n >**Note:** `customFields` is not the name of a field in the `contactInfo` object. Here, it represents any custom field(s) that you've chosen to implement.",
+              "doc": "Any number of custom fields. [Custom fields](https://www.wix.com/velo/reference/wix-members-frontend/introduction#wix-members-frontend_introduction_custom-fields)\n are used to store additional information about your site's contacts. When\n setting a custom field, use a key:value pair in the top level of the `contactInfo` object.\n\nWhen setting a custom field, use a [key](https://www.wix.com/velo/reference/wix-members-frontend/introduction#wix-members-frontend_introduction_retrieve-custom-field-keys):value pair in the top level of the `contactInfo` object. For example: `{options: {contactInfo: {\"my-custom-field-key\": \"my-custom-field-value\"}}}`.\n\n >**Note:** `customFields` is not the name of a field in the `contactInfo` object. Here, it represents any custom field(s) that you've chosen to implement.",
               "optional": true } ],
         "extra":
           {  },
@@ -1052,7 +1051,7 @@
         "labels": [] },
       { "name": "RegistrationResult",
         "locations":
-          [ { "lineno": 41,
+          [ { "lineno": 40,
               "filename": "register.js" } ],
         "docs":
           { "links": [],
