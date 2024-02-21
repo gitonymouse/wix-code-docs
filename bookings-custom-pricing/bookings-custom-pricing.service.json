@@ -1,7 +1,7 @@
 { "name": "bookings-custom-pricing",
   "mixes": [],
   "labels":
-    [ "new" ],
+    [ "changed" ],
   "location":
     { "lineno": 1,
       "filename": "custom-pricing-index.js" },
@@ -35,7 +35,8 @@
   "properties": [],
   "operations":
     [ { "name": "calculatePrice",
-        "labels": [],
+        "labels":
+          [ "changed" ],
         "nameParams": [],
         "params":
           [ { "name": "options",
@@ -56,7 +57,7 @@
               [ "The `calculatePrice()` function calculates custom pricing for use on the checkout pages of a merchant's site.",
                 "The function is automatically called by Wix when the booking is being checked out for payment.",
                 "",
-                "### Where to find `getPaymentSettings()`",
+                "### Where to find `calculatePrice()`",
                 "When you [add the Custom Pricing extension](https://dev.wix.com/docs/develop-websites/articles/code-tutorials/wix-bookings/tutorial-bookings-pricing-custom-extension#step-1-create-a-bookings-pricing-extension), ",
                 "a folder is automatically added to your site. Use the `<my-extension-name>.js` file in the folder to write the code to calculate the price for the booking. ",
                 "",
@@ -699,9 +700,6 @@
             { "name": "endDate",
               "type": "string",
               "doc": "The end time of this slot in [RFC 3339](https://www.rfc-editor.org/rfc/rfc3339) format." },
-            { "name": "timezone",
-              "type": "string",
-              "doc": "The timezone according to which the slot was shown to the user when booking, and should be shown in future." },
             { "name": "updatedDate",
               "type": "string",
               "doc": "The date the booking was last updated." },
@@ -713,7 +711,8 @@
               "doc": "Location where the slot's session takes place." } ],
         "extra":
           {  },
-        "labels": [] },
+        "labels":
+          [ "changed" ] },
       { "name": "StreetAddress",
         "locations":
           [ { "lineno": 98,
