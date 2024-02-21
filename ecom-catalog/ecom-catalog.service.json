@@ -1,7 +1,7 @@
 { "name": "ecom-catalog",
   "mixes": [],
   "labels":
-    [ "new" ],
+    [ "changed" ],
   "location":
     { "lineno": 1,
       "filename": "ecom-catalog-spi-index.js" },
@@ -48,7 +48,7 @@
                         [ "ecom-catalog.CatalogItems" ] } ] },
             "doc": "Fulfilled - An array of catalog items and their data." },
         "locations":
-          [ { "lineno": 23,
+          [ { "lineno": 27,
               "filename": "ecom-catalog-spi.js" } ],
         "docs":
           { "summary": "Retrieves item data from a custom catalog.",
@@ -251,7 +251,7 @@
   "messages":
     [ { "name": "BasicCatalogItem",
         "locations":
-          [ { "lineno": 200,
+          [ { "lineno": 204,
               "filename": "ecom-catalog-spi.js" } ],
         "docs":
           { "links": [],
@@ -296,9 +296,23 @@
         "extra":
           {  },
         "labels": [] },
+      { "name": "CatalogConfigResponse",
+        "locations":
+          [ { "lineno": 23,
+              "filename": "ecom-catalog-spi.js" } ],
+        "docs":
+          { "links": [],
+            "examples": [],
+            "extra":
+              {  } },
+        "members": [],
+        "extra":
+          {  },
+        "labels":
+          [ "new" ] },
       { "name": "CatalogItems",
         "locations":
-          [ { "lineno": 91,
+          [ { "lineno": 95,
               "filename": "ecom-catalog-spi.js" } ],
         "docs":
           { "links": [],
@@ -317,7 +331,7 @@
         "labels": [] },
       { "name": "CatalogReference",
         "locations":
-          [ { "lineno": 75,
+          [ { "lineno": 79,
               "filename": "ecom-catalog-spi.js" } ],
         "docs":
           { "links": [],
@@ -340,7 +354,7 @@
         "labels": [] },
       { "name": "CatalogReferenceQuantity",
         "locations":
-          [ { "lineno": 69,
+          [ { "lineno": 73,
               "filename": "ecom-catalog-spi.js" } ],
         "docs":
           { "links": [],
@@ -359,7 +373,7 @@
         "labels": [] },
       { "name": "ColorInfo",
         "locations":
-          [ { "lineno": 170,
+          [ { "lineno": 174,
               "filename": "ecom-catalog-spi.js" } ],
         "docs":
           { "links": [],
@@ -384,7 +398,7 @@
         "labels": [] },
       { "name": "DescriptionLine",
         "locations":
-          [ { "lineno": 162,
+          [ { "lineno": 166,
               "filename": "ecom-catalog-spi.js" } ],
         "docs":
           { "links": [],
@@ -431,7 +445,7 @@
         "labels": [] },
       { "name": "ItemData",
         "locations":
-          [ { "lineno": 97,
+          [ { "lineno": 101,
               "filename": "ecom-catalog-spi.js" } ],
         "docs":
           { "links": [],
@@ -500,7 +514,7 @@
         "labels": [] },
       { "name": "ItemType",
         "locations":
-          [ { "lineno": 153,
+          [ { "lineno": 157,
               "filename": "ecom-catalog-spi.js" } ],
         "docs":
           { "links": [],
@@ -516,7 +530,7 @@
         "labels": [] },
       { "name": "Metadata",
         "locations":
-          [ { "lineno": 209,
+          [ { "lineno": 213,
               "filename": "ecom-catalog-spi.js" } ],
         "docs":
           { "links": [],
@@ -541,7 +555,7 @@
         "labels": [] },
       { "name": "Name",
         "locations":
-          [ { "lineno": 132,
+          [ { "lineno": 136,
               "filename": "ecom-catalog-spi.js" } ],
         "docs":
           { "links": [],
@@ -561,7 +575,7 @@
         "labels": [] },
       { "name": "Options",
         "locations":
-          [ { "lineno": 60,
+          [ { "lineno": 64,
               "filename": "ecom-catalog-spi.js" } ],
         "docs":
           { "links": [],
@@ -584,7 +598,7 @@
         "labels": [] },
       { "name": "OriginalAndTranslatedText",
         "locations":
-          [ { "lineno": 139,
+          [ { "lineno": 143,
               "filename": "ecom-catalog-spi.js" } ],
         "docs":
           { "links": [],
@@ -604,7 +618,7 @@
         "labels": [] },
       { "name": "Paging",
         "locations":
-          [ { "lineno": 83,
+          [ { "lineno": 87,
               "filename": "ecom-catalog-spi.js" } ],
         "docs":
           { "links": [],
@@ -623,7 +637,7 @@
         "labels": [] },
       { "name": "PhysicalProperties",
         "locations":
-          [ { "lineno": 178,
+          [ { "lineno": 182,
               "filename": "ecom-catalog-spi.js" } ],
         "docs":
           { "links": [],
@@ -645,7 +659,7 @@
         "labels": [] },
       { "name": "QueryResponse",
         "locations":
-          [ { "lineno": 194,
+          [ { "lineno": 198,
               "filename": "ecom-catalog-spi.js" } ],
         "docs":
           { "links": [],
@@ -667,7 +681,7 @@
         "labels": [] },
       { "name": "ServiceProperties",
         "locations":
-          [ { "lineno": 185,
+          [ { "lineno": 189,
               "filename": "ecom-catalog-spi.js" } ],
         "docs":
           { "links": [],
@@ -688,7 +702,7 @@
         "labels": [] },
       { "name": "URL",
         "locations":
-          [ { "lineno": 146,
+          [ { "lineno": 150,
               "filename": "ecom-catalog-spi.js" } ],
         "docs":
           { "links": [],
