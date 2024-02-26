@@ -1,7 +1,7 @@
 { "name": "payment-provider",
   "mixes": [],
   "labels":
-    [ "new" ],
+    [ "changed" ],
   "location":
     { "lineno": 1,
       "filename": "payment-provider-spi.js" },
@@ -839,13 +839,19 @@
           [ { "name": "title",
               "type": "string",
               "doc": "**Required.** Title of payment method." },
-            { "type": "void" },
             { "name": "logos",
               "type": "payment-provider.Logos",
-              "doc": "URLs to the payment method's logo." } ],
+              "doc": "URLs to the payment method's logo." },
+            { "name": "billingAddressMandatoryFields",
+              "type":
+                { "name": "Array",
+                  "typeParams":
+                    [ "string" ] },
+              "doc": "Array of billing address fields that buyers must include in order to use this payment method.  \n\nOptions: `\"ADDRESS\"`, `\"CITY\"`, `\"COUNTRY_CODE\"`, `\"EMAIL\"`, `\"FIRST_NAME\"`, `\"HOUSE_NUMBER\"`, `\"LAST_NAME\"`, `\"PHONE\"`, `\"STATE\"`, `\"STREET\"`, `\"TAX_IDENTIFIER\"`, `\"ZIPCODE\"`" } ],
         "extra":
           {  },
-        "labels": [] },
+        "labels":
+          [ "changed" ] },
       { "name": "PaymentProviderConfigResponse",
         "locations":
           [ { "lineno": 66,
@@ -865,10 +871,16 @@
                   "typeParams":
                     [ "payment-provider.PaymentMethods" ] },
               "doc": "**Required.** Payment methods supported by this provider.  \n\nCurrently, only `hostedPage` is supported for this value." },
-            { "type": "void" } ],
+            { "name": "credentialsFields",
+              "type":
+                { "name": "Array",
+                  "typeParams":
+                    [ "payment-provider.CredentialsFields" ] },
+              "doc": "**Required.** Credentials to connect an account for the payment provider." } ],
         "extra":
           {  },
-        "labels": [] },
+        "labels":
+          [ "changed" ] },
       { "name": "RefundOptions",
         "locations":
           [ { "lineno": 347,
