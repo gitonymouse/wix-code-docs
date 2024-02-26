@@ -36,8 +36,7 @@
   "properties": [],
   "operations":
     [ { "name": "calculateAdditionalFees",
-        "labels":
-          [ "changed" ],
+        "labels": [],
         "nameParams": [],
         "params":
           [ { "name": "options",
@@ -120,7 +119,8 @@
         "extra":
           {  } },
       { "name": "getConfig",
-        "labels": [],
+        "labels":
+          [ "changed" ],
         "nameParams": [],
         "params": [],
         "ret":
@@ -138,7 +138,7 @@
               [ "Set your additional fees configuration in the `return` of the `getConfig()` function. Wix calls this function when you publish your site. ",
                 "Changes to the configuration don't take effect until you publish your site.",
                 "",
-                "Currently no configurations are available so set `getConfig()` to return an empty object.",
+                "Currently no configurations are available for this extension, so set `getConfig()` to return an empty object.",
                 "",
                 "### Where to find `getConfig()`",
                 "When you [add the Additional Fees custom extension](https://dev.wix.com/docs/develop-websites/articles/code-tutorials/wix-e-commerce-stores/e-commerce-additional-fees-custom-extension#step-1-create-a-new-additional-fees-custom-extension), ",
