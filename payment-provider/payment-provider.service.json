@@ -41,7 +41,7 @@
                   [ "payment-provider.ConnectAccountResponse" ] },
             "doc": "Fulfilled - Information about the created account." },
         "locations":
-          [ { "lineno": 139,
+          [ { "lineno": 142,
               "filename": "payment-provider-spi.js" } ],
         "docs":
           { "summary": "Retrieves information for connecting a new payment provider account.",
@@ -135,7 +135,7 @@
                   [ "payment-provider.CreateTransactionResponse" ] },
             "doc": "Fulfilled - <placeholder>" },
         "locations":
-          [ { "lineno": 191,
+          [ { "lineno": 194,
               "filename": "payment-provider-spi.js" } ],
         "docs":
           { "summary": "Retrieves information about a newly created payment provider transaction.",
@@ -333,7 +333,7 @@
                   [ "payment-provider.RefundResponse" ] },
             "doc": "Fulfilled - <placeholder>" },
         "locations":
-          [ { "lineno": 321,
+          [ { "lineno": 324,
               "filename": "payment-provider-spi.js" } ],
         "docs":
           { "summary": "Retrieves payment provider information about a newly created refund.",
@@ -392,7 +392,7 @@
   "messages":
     [ { "name": "Address",
         "locations":
-          [ { "lineno": 260,
+          [ { "lineno": 263,
               "filename": "payment-provider-spi.js" } ],
         "docs":
           { "links": [],
@@ -447,7 +447,7 @@
         "labels": [] },
       { "name": "BuyerInfo",
         "locations":
-          [ { "lineno": 296,
+          [ { "lineno": 299,
               "filename": "payment-provider-spi.js" } ],
         "docs":
           { "links": [],
@@ -466,7 +466,7 @@
         "labels": [] },
       { "name": "Charges",
         "locations":
-          [ { "lineno": 288,
+          [ { "lineno": 291,
               "filename": "payment-provider-spi.js" } ],
         "docs":
           { "links": [],
@@ -488,7 +488,7 @@
         "labels": [] },
       { "name": "CheckboxField",
         "locations":
-          [ { "lineno": 118,
+          [ { "lineno": 121,
               "filename": "payment-provider-spi.js" } ],
         "docs":
           { "links": [],
@@ -510,7 +510,7 @@
         "labels": [] },
       { "name": "Colored",
         "locations":
-          [ { "lineno": 98,
+          [ { "lineno": 100,
               "filename": "payment-provider-spi.js" } ],
         "docs":
           { "links": [],
@@ -529,7 +529,7 @@
         "labels": [] },
       { "name": "ConnectAccountOptions",
         "locations":
-          [ { "lineno": 166,
+          [ { "lineno": 169,
               "filename": "payment-provider-spi.js" } ],
         "docs":
           { "links": [],
@@ -554,7 +554,7 @@
         "labels": [] },
       { "name": "ConnectAccountResponse",
         "locations":
-          [ { "lineno": 177,
+          [ { "lineno": 180,
               "filename": "payment-provider-spi.js" } ],
         "docs":
           { "links": [],
@@ -586,7 +586,7 @@
         "labels": [] },
       { "name": "CreateTransactionOptions",
         "locations":
-          [ { "lineno": 218,
+          [ { "lineno": 221,
               "filename": "payment-provider-spi.js" } ],
         "docs":
           { "links": [],
@@ -617,7 +617,7 @@
         "labels": [] },
       { "name": "CreateTransactionResponse",
         "locations":
-          [ { "lineno": 308,
+          [ { "lineno": 311,
               "filename": "payment-provider-spi.js" } ],
         "docs":
           { "links": [],
@@ -645,7 +645,7 @@
         "labels": [] },
       { "name": "CredentialsFields",
         "locations":
-          [ { "lineno": 104,
+          [ { "lineno": 106,
               "filename": "payment-provider-spi.js" } ],
         "docs":
           { "summary": "Credentials to connect an account for the payment provider.",
@@ -668,7 +668,7 @@
         "labels": [] },
       { "name": "DropdownField",
         "locations":
-          [ { "lineno": 125,
+          [ { "lineno": 128,
               "filename": "payment-provider-spi.js" } ],
         "docs":
           { "links": [],
@@ -690,11 +690,10 @@
               "doc": "Options to display in the dropdown field. Each option is a key-value pair." } ],
         "extra":
           {  },
-        "labels":
-          [ "changed" ] },
+        "labels": [] },
       { "name": "DropdownOptions",
         "locations":
-          [ { "lineno": 132,
+          [ { "lineno": 135,
               "filename": "payment-provider-spi.js" } ],
         "docs":
           { "links": [],
@@ -713,7 +712,7 @@
         "labels": [] },
       { "name": "FraudInfo",
         "locations":
-          [ { "lineno": 235,
+          [ { "lineno": 238,
               "filename": "payment-provider-spi.js" } ],
         "docs":
           { "links": [],
@@ -729,7 +728,7 @@
         "labels": [] },
       { "name": "Logos",
         "locations":
-          [ { "lineno": 85,
+          [ { "lineno": 86,
               "filename": "payment-provider-spi.js" } ],
         "docs":
           { "summary": "URLs to the payment method's logo.",
@@ -740,16 +739,17 @@
         "members":
           [ { "name": "white",
               "type": "payment-provider.White",
-              "doc": "URL to use with a white background." },
+              "doc": "URL to use for a white themed logo." },
             { "name": "colored",
               "type": "payment-provider.Colored",
-              "doc": "URL to use with a colorful background." } ],
+              "doc": "URL to use for a colorful logo." } ],
         "extra":
           {  },
-        "labels": [] },
+        "labels":
+          [ "changed" ] },
       { "name": "OrderData",
         "locations":
-          [ { "lineno": 228,
+          [ { "lineno": 231,
               "filename": "payment-provider-spi.js" } ],
         "docs":
           { "links": [],
@@ -771,7 +771,7 @@
         "labels": [] },
       { "name": "OrderDetails",
         "locations":
-          [ { "lineno": 240,
+          [ { "lineno": 243,
               "filename": "payment-provider-spi.js" } ],
         "docs":
           { "links": [],
@@ -808,7 +808,7 @@
         "labels": [] },
       { "name": "OrderItem",
         "locations":
-          [ { "lineno": 279,
+          [ { "lineno": 282,
               "filename": "payment-provider-spi.js" } ],
         "docs":
           { "links": [],
@@ -887,7 +887,7 @@
         "labels": [] },
       { "name": "RefundOptions",
         "locations":
-          [ { "lineno": 347,
+          [ { "lineno": 350,
               "filename": "payment-provider-spi.js" } ],
         "docs":
           { "links": [],
@@ -918,7 +918,7 @@
         "labels": [] },
       { "name": "RefundResponse",
         "locations":
-          [ { "lineno": 357,
+          [ { "lineno": 360,
               "filename": "payment-provider-spi.js" } ],
         "docs":
           { "links": [],
@@ -943,7 +943,7 @@
         "labels": [] },
       { "name": "ReturnUrls",
         "locations":
-          [ { "lineno": 251,
+          [ { "lineno": 254,
               "filename": "payment-provider-spi.js" } ],
         "docs":
           { "links": [],
@@ -968,7 +968,7 @@
         "labels": [] },
       { "name": "SimpleField",
         "locations":
-          [ { "lineno": 112,
+          [ { "lineno": 115,
               "filename": "payment-provider-spi.js" } ],
         "docs":
           { "links": [],
@@ -987,7 +987,7 @@
         "labels": [] },
       { "name": "TaxIdentifier",
         "locations":
-          [ { "lineno": 302,
+          [ { "lineno": 305,
               "filename": "payment-provider-spi.js" } ],
         "docs":
           { "links": [],
@@ -1006,7 +1006,7 @@
         "labels": [] },
       { "name": "White",
         "locations":
-          [ { "lineno": 92,
+          [ { "lineno": 94,
               "filename": "payment-provider-spi.js" } ],
         "docs":
           { "links": [],
