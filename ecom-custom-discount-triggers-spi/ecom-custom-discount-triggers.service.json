@@ -1,7 +1,7 @@
 { "name": "ecom-custom-discount-triggers",
   "mixes": [],
   "labels":
-    [ "new" ],
+    [ "changed" ],
   "location":
     { "lineno": 1,
       "filename": "ecom-custom-discount-triggers-spi-index.js" },
@@ -31,7 +31,8 @@
   "properties": [],
   "operations":
     [ { "name": "getConfig",
-        "labels": [],
+        "labels":
+          [ "changed" ],
         "nameParams": [],
         "params": [],
         "ret":
@@ -49,7 +50,7 @@
               [ "Set your custom discount trigger configuration in the `return` of the `getConfig()` function. Wix calls this function when you publish your site. ",
                 "Changes to the configuration don't take effect until you publish your site.",
                 "",
-                "Currently no configurations are available so set `getConfig()` to return an empty object.",
+                "Currently no configurations are available for this extension, so set `getConfig()` to return an empty object.",
                 "",
                 "### Where to find `getConfig()`",
                 "When you [add the Custom Discount Trigger extension](https://dev.wix.com/docs/develop-websites/articles/coding-with-velo/integrations/custom-extensions-spis/custom-app-extensions-using-sp-is#step-1-create-a-new-extension-on-your-wix-site), ",
@@ -58,7 +59,18 @@
                 "",
                 "For more information on setting your configuration, see [Implement your extension with custom code](https://dev.wix.com/docs/develop-websites/articles/coding-with-velo/integrations/custom-extensions-spis/custom-app-extensions-using-spis#step-2-implement-your-extension-with-custom-code)." ],
             "links": [],
-            "examples": [],
+            "examples":
+              [ { "title": "Example of a configuration file",
+                  "body":
+                    [ "// Place this code in the <my-extension-name>-config.js file",
+                      "// in the 'ecom-discounts-trigger' folder of the",
+                      "// Custom Extensions section on your site.",
+                      "",
+                      "export function getConfig() {",
+                      "  return {};",
+                      "};" ],
+                  "extra":
+                    {  } } ],
             "extra":
               {  } },
         "extra":
