@@ -682,10 +682,16 @@
             { "name": "label",
               "type": "string",
               "doc": "Label of the field to display on the dashboard." },
-            { "type": "void" } ],
+            { "name": "options",
+              "type":
+                { "name": "Array",
+                  "typeParams":
+                    [ "payment-provider.DropdownOptions" ] },
+              "doc": "Options to display in the dropdown field. Each option is a key-value pair." } ],
         "extra":
           {  },
-        "labels": [] },
+        "labels":
+          [ "changed" ] },
       { "name": "DropdownOptions",
         "locations":
           [ { "lineno": 132,
@@ -850,8 +856,7 @@
               "doc": "Array of billing address fields that buyers must include in order to use this payment method.  \n\nOptions: `\"ADDRESS\"`, `\"CITY\"`, `\"COUNTRY_CODE\"`, `\"EMAIL\"`, `\"FIRST_NAME\"`, `\"HOUSE_NUMBER\"`, `\"LAST_NAME\"`, `\"PHONE\"`, `\"STATE\"`, `\"STREET\"`, `\"TAX_IDENTIFIER\"`, `\"ZIPCODE\"`" } ],
         "extra":
           {  },
-        "labels":
-          [ "changed" ] },
+        "labels": [] },
       { "name": "PaymentProviderConfigResponse",
         "locations":
           [ { "lineno": 66,
@@ -879,8 +884,7 @@
               "doc": "**Required.** Credentials to connect an account for the payment provider." } ],
         "extra":
           {  },
-        "labels":
-          [ "changed" ] },
+        "labels": [] },
       { "name": "RefundOptions",
         "locations":
           [ { "lineno": 347,
