@@ -1,14 +1,20 @@
 { "name": "Members",
   "memberOf": "wix-members-backend",
   "mixes": [],
-  "labels": [],
+  "labels":
+    [ "changed" ],
   "location":
-    { "lineno": 109,
+    { "lineno": 53,
       "filename": "index.js" },
   "docs":
     { "summary": "The Members API contains functionality for viewing and managing site members from backend code.",
       "description":
-        [ "To use the Members API, import `{members}` from the `wix-members-backend` module:",
+        [ "> **Note:**",
+          "> There is a [new version](https://www.wix.com/velo/reference/wix-members-v2) of this API.",
+          "> If you're already using this module in your code,",
+          "> it will continue to work.",
+          "",
+          "To use the Members API, import `{members}` from the `wix-members-backend` module:",
           "",
           "```javascript",
           "import { members } from 'wix-members-backend';",
@@ -341,7 +347,8 @@
         "extra":
           {  } },
       { "name": "getMember",
-        "labels": [],
+        "labels":
+          [ "changed" ],
         "nameParams": [],
         "params":
           [ { "name": "id",
@@ -366,9 +373,7 @@
               [ "<!--ONLY:VELO-->",
                 "This function returns a Promise that resolves to a member object.",
                 "",
-                "> **Notes:**",
-                "> - This function replaces the deprecated `wix-users-backend.getUser()`. The deprecated function will continue to work, but it will not receive updates. To keep any existing code compatible with future changes, see the [migration instructions](wix-users-backend/getuser#migration-instructions).",
-                "> - The resolved Member object contains only the fields that were explicity added to the Member object. Custom Contact fields are **not** automatically added to the Member object. They must be [added to the Member object by the site owner](https://support.wix.com/en/article/customizing-your-member-profile-fields).",
+                "> **Note:** The resolved Member object contains only the fields that were explicity added to the Member object. Custom Contact fields are **not** automatically added to the Member object. They must be [added to the Member object by the site owner](https://support.wix.com/en/article/customizing-your-member-profile-fields).",
                 "<!--END:ONLY:VELO-->" ],
             "links": [],
             "examples":
@@ -443,7 +448,8 @@
         "extra":
           {  } },
       { "name": "updateMember",
-        "labels": [],
+        "labels":
+          [ "changed" ],
         "nameParams": [],
         "params":
           [ { "name": "id",
@@ -459,7 +465,7 @@
                   [ "wix-members-backend.Members.Member" ] },
             "doc": "Fulfilled - Updated member.\nRejected - Error message." },
         "locations":
-          [ { "lineno": 106,
+          [ { "lineno": 108,
               "filename": "updateMember.js" } ],
         "docs":
           { "summary": "Updates a member's properties.",
@@ -479,9 +485,7 @@
                 "The `updateMember()` function returns a Promise that resolves to a member object",
                 "when the specified member is updated.",
                 "",
-                "> **Notes:**",
-                "> - This function replaces the deprecated `wix-users-backend.updateUserFields()`. The deprecated function will continue to work, but it will not receive updates. To keep any existing code compatible with future changes, see the [migration instructions](wix-users-backend/updateuserfields#migration-instructions).",
-                "> - The updated Member object contains only the fields that were explicity added to the Member object. Custom Contact fields are **not** automatically added to the Member object. They must be [added to the Member object by the site owner](https://support.wix.com/en/article/customizing-your-member-profile-fields).",
+                "> **Note:** The updated Member object contains only the fields that were explicity added to the Member object. Custom Contact fields are **not** automatically added to the Member object. They must be [added to the Member object by the site owner](https://support.wix.com/en/article/customizing-your-member-profile-fields).",
                 "",
                 "Only the requested fields are updated.",
                 "",
@@ -729,7 +733,7 @@
               "optional": true },
             { "name": "customFields",
               "type": "object",
-              "doc": "Custom fields,\n[structured as key:object pairs](wix-members-backend/introduction#data-structure).\nCustom field keys are defined in the\n[Contacts Extended Fields API](wix-crm-backend/contacts).\nThe paired object contains the `name` and `value` properties,\nwhere `name` is the display name and `value` is the value stored for the member.\n\nOnly custom fields\n[added to the member profile in the Dashboard](https://www.wix.com/my-account/site-selector/?buttonText=Select%20Site&title=Select%20a%20Site&autoSelectOnSingleSite=true&actionUrl=https:%2F%2Fwww.wix.com%2Fdashboard%2F%7B%7BmetaSiteId%7D%7D%2Fmembers-account)\nare available through the Members API.\nEmpty fields are not returned.\n\nWhen updating a member, `name` is ignored." } ],
+              "doc": "Custom fields,\n[structured as key:object pairs](wix-members-backend/introduction#data-structure).\nCustom field IDs are defined in the\n[Contacts Extended Fields API](wix-crm-backend/contacts).\nThe paired object contains the `name` and `value` properties,\nwhere `name` is the display name and `value` is the value stored for the member.\n\nOnly custom fields\n[added to the member profile in the Dashboard](https://www.wix.com/my-account/site-selector/?buttonText=Select%20Site&title=Select%20a%20Site&autoSelectOnSingleSite=true&actionUrl=https:%2F%2Fwww.wix.com%2Fdashboard%2F%7B%7BmetaSiteId%7D%7D%2Fmembers-account)\nare available through the Members API.\nEmpty fields are not returned.\n\nWhen updating a member, `name` is ignored." } ],
         "extra":
           {  },
         "labels": [] },
@@ -787,11 +791,12 @@
               "optional": true },
             { "name": "customFields",
               "type": "Object",
-              "doc": "Custom fields,\n[structured as key:object pairs](wix-members-backend/introduction#data-structure).\nCustom field keys are defined in the\n[Contacts Extended Fields API](wix-crm-backend/contacts), where each key is the field key,\nand each value is the field's value for the member.\n\nOnly custom fields\n[added to the member profile in the Dashboard](https://www.wix.com/my-account/site-selector/?buttonText=Select%20Site&title=Select%20a%20Site&autoSelectOnSingleSite=true&actionUrl=https:%2F%2Fwww.wix.com%2Fdashboard%2F%7B%7BmetaSiteId%7D%7D%2Fmembers-account)\nare available through the Members API.\nEmpty fields are not returned.\n\nWhen updating a member, `name` is ignored.",
+              "doc": "Custom fields,\n[structured as key:object pairs](wix-members-frontend/introduction#data-structure).\nCustom field IDs are defined in the\n[Contacts Extended Fields API](wix-crm-backend/contacts).\nThe paired object contains the `name` and `value` properties,\nwhere `name` is the display name and `value` is the value stored for the member.\n\nOnly custom fields\n[added to the member profile in the Dashboard](https://www.wix.com/my-account/site-selector/?buttonText=Select%20Site&title=Select%20a%20Site&autoSelectOnSingleSite=true&actionUrl=https:%2F%2Fwww.wix.com%2Fdashboard%2F%7B%7BmetaSiteId%7D%7D%2Fmembers-account)\nare available through the Members API.\nEmpty fields are not returned.\n\nWhen updating a member, `name` is ignored.",
               "optional": true } ],
         "extra":
           {  },
-        "labels": [] },
+        "labels":
+          [ "changed" ] },
       { "name": "CustomField",
         "locations":
           [ { "lineno": 48,
@@ -917,7 +922,7 @@
         "labels": [] },
       { "name": "MemberInfo",
         "locations":
-          [ { "lineno": 51,
+          [ { "lineno": 53,
               "filename": "updateMember.js" } ],
         "docs":
           { "summary": "Member details to update.",
@@ -971,7 +976,7 @@
         "labels": [] },
       { "name": "ProfileImageInfo",
         "locations":
-          [ { "lineno": 89,
+          [ { "lineno": 91,
               "filename": "updateMember.js" } ],
         "docs":
           { "summary": "Member's profile photo.",
@@ -1009,7 +1014,7 @@
         "labels": [] },
       { "name": "ProfileInfo",
         "locations":
-          [ { "lineno": 65,
+          [ { "lineno": 67,
               "filename": "updateMember.js" } ],
         "docs":
           { "summary": "Profile display info.",
@@ -1059,7 +1064,7 @@
         "labels": [] },
       { "name": "StreetAddressInfo",
         "locations":
-          [ { "lineno": 81,
+          [ { "lineno": 83,
               "filename": "updateMember.js" } ],
         "docs":
           { "summary": "Street address object, with number and name in separate fields.",

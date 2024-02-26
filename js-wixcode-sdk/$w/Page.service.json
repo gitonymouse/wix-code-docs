@@ -4,13 +4,12 @@
     [ "$w.Element",
       "$w.ClickableMixin",
       "$w.ContainableMixin" ],
-  "labels":
-    [ "changed" ],
+  "labels": [],
   "location":
     { "lineno": 1,
       "filename": "Page.js" },
   "docs":
-    { "summary": "A [Page](https://support.wix.com/en/article/wix-editor-adding-a-page-to-your-site) is a web page that can contain other elements.",
+    { "summary": "A [page](https://support.wix.com/en/article/wix-editor-adding-a-page-to-your-site) is a web page that can contain other elements.",
       "description":
         [ "Some Page properties refer only to the central part of the web page as shown here:",
           "",
@@ -92,8 +91,7 @@
         "extra":
           {  } },
       { "name": "title",
-        "labels":
-          [ "changed" ],
+        "labels": [],
         "get": true,
         "set": false,
         "type": "string",
@@ -156,6 +154,8 @@
   "messages": [],
   "extra":
     { "queryable": true },
+  "relatedGuides":
+    [ { "path": "./page/guides/CSS Classes.md" } ],
   "FAQs":
     [ { "title": "Are all elements on a page considered the page's 'children'?",
         "markdown": "Only elements placed in the central part of the [page](https://www.wix.com/code/reference/$w.Page.html) are the page's [`children`](https://www.wix.com/code/reference/$w.Page.html#children)." },
