@@ -203,7 +203,8 @@
         "extra":
           {  } },
       { "name": "getConfig",
-        "labels": [],
+        "labels":
+          [ "changed" ],
         "nameParams": [],
         "params": [],
         "ret":
@@ -221,7 +222,7 @@
               [ "Set your catalog configuration in the `return` of the `getConfig()` function. Wix calls this function when you publish your site. ",
                 "Changes to the configuration don't take effect until you publish your site.",
                 "",
-                "Currently no configurations are available so set `getConfig()` to return an empty object.",
+                "Currently no configurations are available for this extension, so set `getConfig()` to return an empty object.",
                 "",
                 "### Where to find `getConfig()`",
                 "When you [add the Catalog custom extension](https://dev.wix.com/docs/develop-websites/articles/code-tutorials/wix-e-commerce-stores/e-commerce-catalog-custom-extension-beta#step-1-create-a-new-catalog-custom-extension), ",
@@ -308,8 +309,7 @@
         "members": [],
         "extra":
           {  },
-        "labels":
-          [ "new" ] },
+        "labels": [] },
       { "name": "CatalogItems",
         "locations":
           [ { "lineno": 95,
