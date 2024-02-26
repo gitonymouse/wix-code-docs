@@ -1,7 +1,7 @@
 { "name": "ecom-shipping-rates",
   "mixes": [],
   "labels":
-    [ "new" ],
+    [ "changed" ],
   "location":
     { "lineno": 1,
       "filename": "shipping-rates-spi-index.js" },
@@ -80,7 +80,8 @@
           { "customLabels":
               [ { "id": "maturity-beta" } ] } },
       { "name": "getShippingRates",
-        "labels": [],
+        "labels":
+          [ "changed" ],
         "nameParams": [],
         "params":
           [ { "name": "options",
@@ -185,20 +186,6 @@
                       "  };",
                       "};" ],
                   "extra":
-                    {  } },
-                { "title": "Example of [`spi-integration-config.js`](https://support.wix.com/en/article/velo-tutorial-shipping-rates-custom-extension-beta#my-extension-name-configjs) file",
-                  "body":
-                    [ "// Place this code in the <my-extension-name>-config.js file",
-                      "// in the 'ecom-shipping-rates' folder of the",
-                      "// Custom Extensions section on your site.",
-                      "",
-                      "export function getConfig() {",
-                      "  return {",
-                      "    name: \"East-Coast Shipping Provider\",",
-                      "    description: \"Providing shipping options for the US east-coast\"",
-                      "  };",
-                      "};" ],
-                  "extra":
                     {  } } ],
             "extra":
               {  } },
@@ -208,7 +195,7 @@
   "messages":
     [ { "name": "AdditionalCharges",
         "locations":
-          [ { "lineno": 170,
+          [ { "lineno": 169,
               "filename": "shipping-rates-spi.js" } ],
         "docs":
           { "links": [],
@@ -230,7 +217,7 @@
         "labels": [] },
       { "name": "AddressDetails",
         "locations":
-          [ { "lineno": 95,
+          [ { "lineno": 94,
               "filename": "shipping-rates-spi.js" } ],
         "docs":
           { "links": [],
@@ -267,7 +254,7 @@
         "labels": [] },
       { "name": "BuyerContactDetails",
         "locations":
-          [ { "lineno": 123,
+          [ { "lineno": 122,
               "filename": "shipping-rates-spi.js" } ],
         "docs":
           { "links": [],
@@ -297,7 +284,7 @@
         "labels": [] },
       { "name": "CatalogReference",
         "locations":
-          [ { "lineno": 81,
+          [ { "lineno": 80,
               "filename": "shipping-rates-spi.js" } ],
         "docs":
           { "links": [],
@@ -319,7 +306,7 @@
         "labels": [] },
       { "name": "Cost",
         "locations":
-          [ { "lineno": 163,
+          [ { "lineno": 162,
               "filename": "shipping-rates-spi.js" } ],
         "docs":
           { "links": [],
@@ -341,7 +328,7 @@
         "labels": [] },
       { "name": "LineItem",
         "locations":
-          [ { "lineno": 69,
+          [ { "lineno": 68,
               "filename": "shipping-rates-spi.js" } ],
         "docs":
           { "links": [],
@@ -378,7 +365,7 @@
         "labels": [] },
       { "name": "Logistics",
         "locations":
-          [ { "lineno": 156,
+          [ { "lineno": 155,
               "filename": "shipping-rates-spi.js" } ],
         "docs":
           { "links": [],
@@ -400,7 +387,7 @@
         "labels": [] },
       { "name": "Options",
         "locations":
-          [ { "lineno": 59,
+          [ { "lineno": 58,
               "filename": "shipping-rates-spi.js" } ],
         "docs":
           { "links": [],
@@ -434,7 +421,7 @@
         "labels": [] },
       { "name": "PhysicalProperties",
         "locations":
-          [ { "lineno": 88,
+          [ { "lineno": 87,
               "filename": "shipping-rates-spi.js" } ],
         "docs":
           { "links": [],
@@ -456,7 +443,7 @@
         "labels": [] },
       { "name": "PickupAddressDetails",
         "locations":
-          [ { "lineno": 112,
+          [ { "lineno": 111,
               "filename": "shipping-rates-spi.js" } ],
         "docs":
           { "links": [],
@@ -489,7 +476,7 @@
         "labels": [] },
       { "name": "PickupDetails",
         "locations":
-          [ { "lineno": 179,
+          [ { "lineno": 178,
               "filename": "shipping-rates-spi.js" } ],
         "docs":
           { "links": [],
@@ -508,7 +495,7 @@
         "labels": [] },
       { "name": "ShippingRate",
         "locations":
-          [ { "lineno": 148,
+          [ { "lineno": 147,
               "filename": "shipping-rates-spi.js" } ],
         "docs":
           { "links": [],
@@ -533,7 +520,7 @@
         "labels": [] },
       { "name": "ShippingRates",
         "locations":
-          [ { "lineno": 143,
+          [ { "lineno": 142,
               "filename": "shipping-rates-spi.js" } ],
         "docs":
           { "links": [],
@@ -571,7 +558,7 @@
         "labels": [] },
       { "name": "StreetAddressInfo",
         "locations":
-          [ { "lineno": 106,
+          [ { "lineno": 105,
               "filename": "shipping-rates-spi.js" } ],
         "docs":
           { "links": [],
@@ -590,7 +577,7 @@
         "labels": [] },
       { "name": "VatId",
         "locations":
-          [ { "lineno": 132,
+          [ { "lineno": 131,
               "filename": "shipping-rates-spi.js" } ],
         "docs":
           { "links": [],
