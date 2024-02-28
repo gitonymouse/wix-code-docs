@@ -1,7 +1,7 @@
 { "name": "ecom-shipping-rates",
   "mixes": [],
   "labels":
-    [ "new" ],
+    [ "changed" ],
   "location":
     { "lineno": 1,
       "filename": "shipping-rates-spi-index.js" },
@@ -29,7 +29,8 @@
   "properties": [],
   "operations":
     [ { "name": "getConfig",
-        "labels": [],
+        "labels":
+          [ "changed" ],
         "nameParams": [],
         "params": [],
         "ret":
@@ -47,10 +48,7 @@
               [ "Set your shipping rates configuration in the `return` of the `getConfig()` function. Wix calls this function when you publish your site. ",
                 "Changes to the configuration don't take effect until you publish your site.",
                 "",
-                "The only default currently available is to set a fallback value for whether to require ",
-                "[3 domain security](https://support.wix.com/en/article/about-3d-secure-3ds-payments-with-third-party-payment-providers) ",
-                "to an order payment if the [`getPaymentSettings()`](https://www.wix.com/velo/reference/spis/wix-ecom/ecom-payment-settings/getpaymentsettings) ",
-                "function fails.",
+                "The object returned here contains values used to display the extended shipping rate on your site's dashboard. ",
                 "",
                 "### Where to find `getConfig()`",
                 "When you [add the Shipping Rates custom extension](https://dev.wix.com/docs/develop-websites/articles/code-tutorials/wix-e-commerce-stores/e-commerce-shipping-rates-custom-extension#step-1-create-a-new-shipping-rates-extension), ",
@@ -93,7 +91,7 @@
                   [ "ecom-shipping-rates.ShippingRates" ] },
             "doc": "Fulfilled - Available shipping rates." },
         "locations":
-          [ { "lineno": 32,
+          [ { "lineno": 29,
               "filename": "shipping-rates-spi.js" } ],
         "docs":
           { "summary": "Retrieves shipping rates provided by a custom shipping rates extension.",
@@ -194,7 +192,7 @@
   "messages":
     [ { "name": "AdditionalCharges",
         "locations":
-          [ { "lineno": 169,
+          [ { "lineno": 166,
               "filename": "shipping-rates-spi.js" } ],
         "docs":
           { "links": [],
@@ -216,7 +214,7 @@
         "labels": [] },
       { "name": "AddressDetails",
         "locations":
-          [ { "lineno": 94,
+          [ { "lineno": 91,
               "filename": "shipping-rates-spi.js" } ],
         "docs":
           { "links": [],
@@ -253,7 +251,7 @@
         "labels": [] },
       { "name": "BuyerContactDetails",
         "locations":
-          [ { "lineno": 122,
+          [ { "lineno": 119,
               "filename": "shipping-rates-spi.js" } ],
         "docs":
           { "links": [],
@@ -283,7 +281,7 @@
         "labels": [] },
       { "name": "CatalogReference",
         "locations":
-          [ { "lineno": 80,
+          [ { "lineno": 77,
               "filename": "shipping-rates-spi.js" } ],
         "docs":
           { "links": [],
@@ -305,7 +303,7 @@
         "labels": [] },
       { "name": "Cost",
         "locations":
-          [ { "lineno": 162,
+          [ { "lineno": 159,
               "filename": "shipping-rates-spi.js" } ],
         "docs":
           { "links": [],
@@ -327,7 +325,7 @@
         "labels": [] },
       { "name": "LineItem",
         "locations":
-          [ { "lineno": 68,
+          [ { "lineno": 65,
               "filename": "shipping-rates-spi.js" } ],
         "docs":
           { "links": [],
@@ -364,7 +362,7 @@
         "labels": [] },
       { "name": "Logistics",
         "locations":
-          [ { "lineno": 155,
+          [ { "lineno": 152,
               "filename": "shipping-rates-spi.js" } ],
         "docs":
           { "links": [],
@@ -386,7 +384,7 @@
         "labels": [] },
       { "name": "Options",
         "locations":
-          [ { "lineno": 58,
+          [ { "lineno": 55,
               "filename": "shipping-rates-spi.js" } ],
         "docs":
           { "links": [],
@@ -420,7 +418,7 @@
         "labels": [] },
       { "name": "PhysicalProperties",
         "locations":
-          [ { "lineno": 87,
+          [ { "lineno": 84,
               "filename": "shipping-rates-spi.js" } ],
         "docs":
           { "links": [],
@@ -442,7 +440,7 @@
         "labels": [] },
       { "name": "PickupAddressDetails",
         "locations":
-          [ { "lineno": 111,
+          [ { "lineno": 108,
               "filename": "shipping-rates-spi.js" } ],
         "docs":
           { "links": [],
@@ -475,7 +473,7 @@
         "labels": [] },
       { "name": "PickupDetails",
         "locations":
-          [ { "lineno": 178,
+          [ { "lineno": 175,
               "filename": "shipping-rates-spi.js" } ],
         "docs":
           { "links": [],
@@ -494,7 +492,7 @@
         "labels": [] },
       { "name": "ShippingRate",
         "locations":
-          [ { "lineno": 147,
+          [ { "lineno": 144,
               "filename": "shipping-rates-spi.js" } ],
         "docs":
           { "links": [],
@@ -519,7 +517,7 @@
         "labels": [] },
       { "name": "ShippingRates",
         "locations":
-          [ { "lineno": 142,
+          [ { "lineno": 139,
               "filename": "shipping-rates-spi.js" } ],
         "docs":
           { "links": [],
@@ -538,7 +536,7 @@
         "labels": [] },
       { "name": "ShippingRatesConfigResponse",
         "locations":
-          [ { "lineno": 26,
+          [ { "lineno": 23,
               "filename": "shipping-rates-spi.js" } ],
         "docs":
           { "links": [],
@@ -557,7 +555,7 @@
         "labels": [] },
       { "name": "StreetAddressInfo",
         "locations":
-          [ { "lineno": 105,
+          [ { "lineno": 102,
               "filename": "shipping-rates-spi.js" } ],
         "docs":
           { "links": [],
@@ -576,7 +574,7 @@
         "labels": [] },
       { "name": "VatId",
         "locations":
-          [ { "lineno": 131,
+          [ { "lineno": 128,
               "filename": "shipping-rates-spi.js" } ],
         "docs":
           { "links": [],
