@@ -41,7 +41,7 @@
                   [ "payment-provider.ConnectAccountResponse" ] },
             "doc": "Fulfilled - Information about the created account." },
         "locations":
-          [ { "lineno": 142,
+          [ { "lineno": 124,
               "filename": "payment-provider-spi.js" } ],
         "docs":
           { "summary": "Retrieves information for connecting a new payment provider account.",
@@ -135,7 +135,7 @@
                   [ "payment-provider.CreateTransactionResponse" ] },
             "doc": "Fulfilled - <placeholder>" },
         "locations":
-          [ { "lineno": 194,
+          [ { "lineno": 176,
               "filename": "payment-provider-spi.js" } ],
         "docs":
           { "summary": "Retrieves information about a newly created payment provider transaction.",
@@ -221,7 +221,8 @@
         "extra":
           {  } },
       { "name": "getConfig",
-        "labels": [],
+        "labels":
+          [ "changed" ],
         "nameParams": [],
         "params": [],
         "ret":
@@ -239,31 +240,7 @@
               [ "Set your payment provider configuration in the `return` of the `getConfig()` function. Wix calls this function when you publish your site. ",
                 "Changes to the configuration don't take effect until you publish your site.",
                 "",
-                "The object returned by `getConfig()` includes the following properties.",
-                "+ **`title`**: (required) The name of the payment service provider as a string. This name is displayed when selecting payment providers to connect to on your site's dashboard.",
-                "+ **`paymentMethods`**: (required) An array of `paymentMethod` objects defining the different payment methods supported by this provider. Each payment method object has a key whose value is the name of payment method. For now, only `'hostedPage'` is supported. The value of this key is an object that can include the following properties:",
-                "  + **`title`**: (required) The payment method title as a string. This title is used to display the payment method on your site's dashboard.",
-                "  + **`billingAddressMandatoryFields`**: An array of strings representing the billing address fields that buyers must include in order to use this payment method.  ",
-                "",
-                "      Options: `\"ADDRESS\"`, `\"CITY\"`, `\"COUNTRY_CODE\"`, `\"EMAIL\"`, `\"FIRST_NAME\"`, `\"HOUSE_NUMBER\"`, `\"LAST_NAME\"`, `\"PHONE\"`, `\"STATE\"`, `\"STREET\"`, `\"TAX_IDENTIFIER\"`, `\"ZIPCODE\"`",
-                "  + **`logos`**: An object containing URLs to the payment method's logo as strings. These logos are displayed on the site's dashboard and the checkout cart. You can provide different logos for white and colored backgrounds. See the example return object below for details.",
-                "    ",
-                "+ **`credentialsFields`**: (at least 1 credentials object is required) An array of objects representing the credentials required to connect an account for the payment provider. The credentials fields are displayed on the **Connect <payment provider>** page in your site's dashboard. The following credentials objects are supported:",
-                "  + **`simpleField`**: An object representing a text field.  ",
-                "    + **`name`**: The key to use for the field in your code as a string.",
-                "    + **`label`**: The label of the field to display on the dashboard as a string.",
-                "        ",
-                "  + **`checkboxField`**: An object representing a checkbox field.  ",
-                "    + **`name`**: The key to use for the field in your code as a string.",
-                "    + **`label`**: The label of the field to display on the dashboard as a string.",
-                "    + **`tooltip`**: Tooltip text to display when the user hovers over the field as a string.",
-                "        ",
-                "  + **`dropdownField`**: An object representing a dropdown field.  ",
-                "    + **`name`**: The key to use for the field in your code as a string.",
-                "    + **`label`**: The label of the field to display on the dashboard as a string.",
-                "    + **`options`**: An array of objects representing the options to display in the dropdown field. Each options object contains the following properties:  ",
-                "      + **`key`**: The name of the option to use in your code as a string.",
-                "      + **`value`**: The label of the option to display on the dashboard as a string.",
+                "The object returned by `getConfig()` includes the information about your extension that displays in 3 different pages on your site: **Connect**, **Accept Payments**, and **Checkout**.",
                 "",
                 "### Where to find `getConfig()`",
                 "When you [add the Payment Provider custom extension](https://dev.wix.com/docs/develop-websites/articles/code-tutorials/wix-pay/tutorial-payment-provider-custom-extension#step-1-create-a-new-payment-provider-extension), ",
@@ -333,7 +310,7 @@
                   [ "payment-provider.RefundResponse" ] },
             "doc": "Fulfilled - <placeholder>" },
         "locations":
-          [ { "lineno": 324,
+          [ { "lineno": 306,
               "filename": "payment-provider-spi.js" } ],
         "docs":
           { "summary": "Retrieves payment provider information about a newly created refund.",
@@ -392,7 +369,7 @@
   "messages":
     [ { "name": "Address",
         "locations":
-          [ { "lineno": 263,
+          [ { "lineno": 245,
               "filename": "payment-provider-spi.js" } ],
         "docs":
           { "links": [],
@@ -447,7 +424,7 @@
         "labels": [] },
       { "name": "BuyerInfo",
         "locations":
-          [ { "lineno": 299,
+          [ { "lineno": 281,
               "filename": "payment-provider-spi.js" } ],
         "docs":
           { "links": [],
@@ -466,7 +443,7 @@
         "labels": [] },
       { "name": "Charges",
         "locations":
-          [ { "lineno": 291,
+          [ { "lineno": 273,
               "filename": "payment-provider-spi.js" } ],
         "docs":
           { "links": [],
@@ -488,7 +465,7 @@
         "labels": [] },
       { "name": "CheckboxField",
         "locations":
-          [ { "lineno": 121,
+          [ { "lineno": 103,
               "filename": "payment-provider-spi.js" } ],
         "docs":
           { "links": [],
@@ -510,7 +487,7 @@
         "labels": [] },
       { "name": "Colored",
         "locations":
-          [ { "lineno": 100,
+          [ { "lineno": 82,
               "filename": "payment-provider-spi.js" } ],
         "docs":
           { "links": [],
@@ -529,7 +506,7 @@
         "labels": [] },
       { "name": "ConnectAccountOptions",
         "locations":
-          [ { "lineno": 169,
+          [ { "lineno": 151,
               "filename": "payment-provider-spi.js" } ],
         "docs":
           { "links": [],
@@ -554,7 +531,7 @@
         "labels": [] },
       { "name": "ConnectAccountResponse",
         "locations":
-          [ { "lineno": 180,
+          [ { "lineno": 162,
               "filename": "payment-provider-spi.js" } ],
         "docs":
           { "links": [],
@@ -586,7 +563,7 @@
         "labels": [] },
       { "name": "CreateTransactionOptions",
         "locations":
-          [ { "lineno": 221,
+          [ { "lineno": 203,
               "filename": "payment-provider-spi.js" } ],
         "docs":
           { "links": [],
@@ -617,7 +594,7 @@
         "labels": [] },
       { "name": "CreateTransactionResponse",
         "locations":
-          [ { "lineno": 311,
+          [ { "lineno": 293,
               "filename": "payment-provider-spi.js" } ],
         "docs":
           { "links": [],
@@ -645,7 +622,7 @@
         "labels": [] },
       { "name": "CredentialsFields",
         "locations":
-          [ { "lineno": 106,
+          [ { "lineno": 88,
               "filename": "payment-provider-spi.js" } ],
         "docs":
           { "summary": "Credentials to connect an account for the payment provider.",
@@ -668,7 +645,7 @@
         "labels": [] },
       { "name": "DropdownField",
         "locations":
-          [ { "lineno": 128,
+          [ { "lineno": 110,
               "filename": "payment-provider-spi.js" } ],
         "docs":
           { "links": [],
@@ -693,7 +670,7 @@
         "labels": [] },
       { "name": "DropdownOptions",
         "locations":
-          [ { "lineno": 135,
+          [ { "lineno": 117,
               "filename": "payment-provider-spi.js" } ],
         "docs":
           { "links": [],
@@ -712,7 +689,7 @@
         "labels": [] },
       { "name": "FraudInfo",
         "locations":
-          [ { "lineno": 238,
+          [ { "lineno": 220,
               "filename": "payment-provider-spi.js" } ],
         "docs":
           { "links": [],
@@ -728,7 +705,7 @@
         "labels": [] },
       { "name": "Logos",
         "locations":
-          [ { "lineno": 86,
+          [ { "lineno": 68,
               "filename": "payment-provider-spi.js" } ],
         "docs":
           { "summary": "URLs to the payment method's logo.",
@@ -745,11 +722,10 @@
               "doc": "URL to use for a colorful logo." } ],
         "extra":
           {  },
-        "labels":
-          [ "changed" ] },
+        "labels": [] },
       { "name": "OrderData",
         "locations":
-          [ { "lineno": 231,
+          [ { "lineno": 213,
               "filename": "payment-provider-spi.js" } ],
         "docs":
           { "links": [],
@@ -771,7 +747,7 @@
         "labels": [] },
       { "name": "OrderDetails",
         "locations":
-          [ { "lineno": 243,
+          [ { "lineno": 225,
               "filename": "payment-provider-spi.js" } ],
         "docs":
           { "links": [],
@@ -808,7 +784,7 @@
         "labels": [] },
       { "name": "OrderItem",
         "locations":
-          [ { "lineno": 282,
+          [ { "lineno": 264,
               "filename": "payment-provider-spi.js" } ],
         "docs":
           { "links": [],
@@ -833,7 +809,7 @@
         "labels": [] },
       { "name": "PaymentMethods",
         "locations":
-          [ { "lineno": 75,
+          [ { "lineno": 55,
               "filename": "payment-provider-spi.js" } ],
         "docs":
           { "summary": "Payment methods supported by this provider.",
@@ -847,7 +823,7 @@
               "doc": "**Required.** Title of payment method." },
             { "name": "logos",
               "type": "payment-provider.Logos",
-              "doc": "URLs to the payment method's logo." },
+              "doc": "URLs to the payment method's logo.  \n\nThese logos are displayed on the site's dashboard and the checkout cart." },
             { "name": "billingAddressMandatoryFields",
               "type":
                 { "name": "Array",
@@ -856,10 +832,11 @@
               "doc": "Array of billing address fields that buyers must include in order to use this payment method.  \n\nOptions: `\"ADDRESS\"`, `\"CITY\"`, `\"COUNTRY_CODE\"`, `\"EMAIL\"`, `\"FIRST_NAME\"`, `\"HOUSE_NUMBER\"`, `\"LAST_NAME\"`, `\"PHONE\"`, `\"STATE\"`, `\"STREET\"`, `\"TAX_IDENTIFIER\"`, `\"ZIPCODE\"`" } ],
         "extra":
           {  },
-        "labels": [] },
+        "labels":
+          [ "changed" ] },
       { "name": "PaymentProviderConfigResponse",
         "locations":
-          [ { "lineno": 66,
+          [ { "lineno": 42,
               "filename": "payment-provider-spi.js" } ],
         "docs":
           { "links": [],
@@ -869,25 +846,26 @@
         "members":
           [ { "name": "title",
               "type": "string",
-              "doc": "**Required.** Name of the payment service provider." },
+              "doc": "**Required.** Name of the payment service provider.  \n\nThis name is displayed on your site's dashboard when selecting payment providers to connect to." },
             { "name": "paymentMethods",
               "type":
                 { "name": "Array",
                   "typeParams":
                     [ "payment-provider.PaymentMethods" ] },
-              "doc": "**Required.** Payment methods supported by this provider.  \n\nCurrently, only `hostedPage` is supported for this value." },
+              "doc": "**Required.** Payment methods supported by this provider.  \n\nEach payment method is a key:value pair where key is the name of the payment method. Currently, only `\"hostedPage\"` is supported for this key. The value of this key is an object that includes `title`, `billingAddressMandatoryFields`, and `logos`." },
             { "name": "credentialsFields",
               "type":
                 { "name": "Array",
                   "typeParams":
                     [ "payment-provider.CredentialsFields" ] },
-              "doc": "**Required.** Credentials to connect an account for the payment provider." } ],
+              "doc": "**Required.** Credentials to connect an account for the payment provider.  \n\nThese fields are displayed on the **Connect** page in your site's dashboard." } ],
         "extra":
           {  },
-        "labels": [] },
+        "labels":
+          [ "changed" ] },
       { "name": "RefundOptions",
         "locations":
-          [ { "lineno": 350,
+          [ { "lineno": 332,
               "filename": "payment-provider-spi.js" } ],
         "docs":
           { "links": [],
@@ -918,7 +896,7 @@
         "labels": [] },
       { "name": "RefundResponse",
         "locations":
-          [ { "lineno": 360,
+          [ { "lineno": 342,
               "filename": "payment-provider-spi.js" } ],
         "docs":
           { "links": [],
@@ -943,7 +921,7 @@
         "labels": [] },
       { "name": "ReturnUrls",
         "locations":
-          [ { "lineno": 254,
+          [ { "lineno": 236,
               "filename": "payment-provider-spi.js" } ],
         "docs":
           { "links": [],
@@ -968,7 +946,7 @@
         "labels": [] },
       { "name": "SimpleField",
         "locations":
-          [ { "lineno": 115,
+          [ { "lineno": 97,
               "filename": "payment-provider-spi.js" } ],
         "docs":
           { "links": [],
@@ -987,7 +965,7 @@
         "labels": [] },
       { "name": "TaxIdentifier",
         "locations":
-          [ { "lineno": 305,
+          [ { "lineno": 287,
               "filename": "payment-provider-spi.js" } ],
         "docs":
           { "links": [],
@@ -1006,7 +984,7 @@
         "labels": [] },
       { "name": "White",
         "locations":
-          [ { "lineno": 94,
+          [ { "lineno": 76,
               "filename": "payment-provider-spi.js" } ],
         "docs":
           { "links": [],
