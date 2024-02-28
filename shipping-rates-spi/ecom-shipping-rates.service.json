@@ -48,7 +48,7 @@
               [ "Set your shipping rates configuration in the `return` of the `getConfig()` function. Wix calls this function when you publish your site. ",
                 "Changes to the configuration don't take effect until you publish your site.",
                 "",
-                "The object returned here contains values used to display the extended shipping rate on your site's dashboard. ",
+                "The object returned by `getConfig()` contains values used to display the extended shipping rate on your site's dashboard. ",
                 "",
                 "### Where to find `getConfig()`",
                 "When you [add the Shipping Rates custom extension](https://dev.wix.com/docs/develop-websites/articles/code-tutorials/wix-e-commerce-stores/e-commerce-shipping-rates-custom-extension#step-1-create-a-new-shipping-rates-extension), ",
