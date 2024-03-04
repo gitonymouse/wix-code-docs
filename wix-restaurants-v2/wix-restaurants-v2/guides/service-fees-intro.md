@@ -34,6 +34,6 @@ It's important to note the following point before starting to code:
 
 ## Terminology
 * **Order**: Information about an order that is placed by a customer. It contains necessary information to calculate service fees. The order has not yet been placed, it is in the pre-checkout stage.
-* **Condition**: Evaluates a specific field in the order. [Learn more](https://dev.wix.com/docs/rest/api-reference/wix-restaurants/service-fees/rules/sample-flows).
-* **Condition Tree**: Contains two conditions and an operator. [Learn more](https://dev.wix.com/docs/rest/api-reference/wix-restaurants/service-fees/rules/sample-flows).
+* **Condition**: Evaluates a specific field in the order.
+* **Condition Tree**: Contains two conditions and an operator.
 * **Rule**: Defines the fee that is applied when specific conditions (also defined by the rule) are met.
