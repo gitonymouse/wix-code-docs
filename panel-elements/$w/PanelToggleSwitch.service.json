@@ -4,17 +4,18 @@
     [ "$w.HiddenCollapsedMixin",
       "$w.Element",
       "$w.DisabledMixin" ],
-  "labels": [],
+  "labels":
+    [ "changed" ],
   "location":
     { "lineno": 1,
       "filename": "PanelToggleSwitch.js" },
   "docs":
     { "summary": "Toggle switches are used in a Blocks panel for a single binary choice.",
       "description":
-        [ "Panel toggle switches are used in a Blocks panel for a single binary choice.",
-          "> **Important**:  ",
-          "> This element is available only in [custom panels built in Blocks](https://support.wix.com/en/article/wix-blocks-designing-custom-panels-for-your-widgets-action-bar-buttons).  ",
-          "> [Wix Blocks](https://support.wix.com/en/article/wix-blocks-check-out-our-articles) is a an editor for building Wix apps. It is currently open to a limited number of users." ],
+        [ "> This element is only available in [custom panels built in Blocks](https://support.wix.com/en/article/wix-blocks-designing-custom-panels-for-your-widgets-action-bar-buttons).   ",
+          "> [Wix Blocks](https://support.wix.com/en/article/wix-blocks-check-out-our-articles) is an editor for building Wix apps. It is currently open to a limited number of users.",
+          "",
+          "Panel toggle switches are used in a Blocks panel for a single binary choice." ],
       "links": [],
       "examples": [],
       "extra":

@@ -2,14 +2,18 @@
   "memberOf": "$w",
   "mixes":
     [ "$w.LabelMixin" ],
-  "labels": [],
+  "labels":
+    [ "changed" ],
   "location":
     { "lineno": 1,
       "filename": "PanelElementMixin.js" },
   "docs":
     { "summary": "Provides functionality for panel elements.",
       "description":
-        [ "**About Mixins**",
+        [ "> This mixin is only available in [custom panels built in Blocks](https://support.wix.com/en/article/wix-blocks-designing-custom-panels-for-your-widgets-action-bar-buttons).   ",
+          "> [Wix Blocks](https://support.wix.com/en/article/wix-blocks-check-out-our-articles) is an editor for building Wix apps. It is currently open to a limited number of users.",
+          "",
+          " **About Mixins**",
           "",
           " [Mixins](https://support.wix.com/en/article/velu-about-mixins) provide functionality that other elements can inherit and use. ",
           " ",
@@ -39,9 +43,9 @@
         "set": true,
         "type": "string",
         "locations":
-          [ { "lineno": 29,
+          [ { "lineno": 32,
               "filename": "PanelElementMixin.js" },
-            { "lineno": 45,
+            { "lineno": 48,
               "filename": "PanelElementMixin.js" } ],
         "docs":
           { "summary": "Sets or gets the type of divider displayed under the element.",
