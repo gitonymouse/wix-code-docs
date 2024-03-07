@@ -18,7 +18,7 @@
           "## Before you begin",
           "",
           "- The Form Submission SPI is only available in Wix Studio and Editor X.",
-          "- There are several apps that use forms. To validate form submission for a specific Wix app, configure the custom extension's config file for that Wix app by defining the relevant namespace field. For example, the namespace for the Wix Forms app is \"wix.form_app.form\".",
+          "- There are several apps that use forms. To validate form submission for a specific Wix app, configure the custom extension's config file for that Wix app by defining the relevant namespace field. For example, the `namespace` for the Wix Forms app is `wix.form_app.form`.",
           "",
           "### To add a custom extension",
           "1. [Add the extension to your site](https://dev.wix.com/docs/develop-websites/articles/coding-with-velo/integrations/custom-extensions-spis/custom-app-extensions-using-sp-is#step-1-create-a-new-extension-on-your-wix-site).",
