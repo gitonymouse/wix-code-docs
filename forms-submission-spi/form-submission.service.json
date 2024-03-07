@@ -1,7 +1,6 @@
 { "name": "form-submission",
   "mixes": [],
-  "labels":
-    [ "new" ],
+  "labels": [],
   "location":
     { "lineno": 1,
       "filename": "submission-index.js" },
@@ -48,8 +47,7 @@
   "properties": [],
   "operations":
     [ { "name": "getConfig",
-        "labels":
-          [ "new" ],
+        "labels": [],
         "nameParams": [],
         "params": [],
         "ret":
@@ -97,8 +95,7 @@
           { "customLabels":
               [ { "id": "maturity-beta" } ] } },
       { "name": "validateSubmission",
-        "labels":
-          [ "new" ],
+        "labels": [],
         "nameParams": [],
         "params":
           [ { "name": "options",
