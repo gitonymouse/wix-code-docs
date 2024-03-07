@@ -1,6 +1,7 @@
 { "name": "form-submission",
   "mixes": [],
-  "labels": [],
+  "labels":
+    [ "removed" ],
   "location":
     { "lineno": 1,
       "filename": "submission-index.js" },

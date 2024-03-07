@@ -1,18 +1,18 @@
 { "name": "ecom-validations",
   "mixes": [],
   "labels":
-    [ "removed" ],
+    [ "new" ],
   "location":
     { "lineno": 1,
-      "filename": "validations-index.js" },
+      "filename": "submission-index.js" },
   "docs":
-    { "summary": "The eCommerce Validations SPI.",
+    { "summary": "The WixForms Submissions SPI.",
       "description":
-        [ "The Validations SPI [custom extension](https://support.wix.com/en/article/velo-custom-app-extensions-using-spis) allows site owners and collaborators to validate a site visitor's cart and checkout. For example, you can validate a specific line item’s quantity if the quantity per order is limited.",
+        [ "The Form Submission SPI [custom extension](https://support.wix.com/en/article/velo-custom-app-extensions-using-spis) allows site owners and collaborators to validate a site visitor's filled form. For example, you can validate whether a correct email is entered into the field.",
           "Site owners and collaborators can either write their own custom validation logic, or integrate with a 3rd-party validations provider.",
           "",
-          "Wix eCommerce calls [`getValidationViolations()`](https://www.wix.com/velo/reference/spis/wix-ecom/ecom-validations/getvalidationviolations) to retrieve any violations in a site visitor's cart and checkout.",
-          "The custom validation extension code validates the request, and returns any validation violation data in a site visitor's cart and checkout (using the structure provided by Wix eCommerce).",
+          "WixForms calls [`validateSubmission()`](https://www.wix.com/velo/reference/spis/wix-ecom/ecom-validations/getvalidationviolations) to validate a site visitor's filled form.",
+          "The custom validation extension code validates the request, and returns any validation violation data in a site visitor's form (using the structure provided by Wix Forms).",
           "If there aren't any validation violations, the endpoint should return an object containing an empty array. Site visitors can see validation violations in their cart and checkout pages. For example, see the images below:",
           "",
           "The image below shows a cart page with both a general validation violation warning and a line item validation violation warning.",
@@ -75,7 +75,7 @@
             "doc": "Fulfilled - Validation violations." },
         "locations":
           [ { "lineno": 1,
-              "filename": "validations.js" } ],
+              "filename": "submission.js" } ],
         "docs":
           { "summary": "Retrieves any validation violations in a site visitor's cart or checkout.",
             "description":
@@ -155,7 +155,7 @@
     [ { "name": "AdditionalFees",
         "locations":
           [ { "lineno": 211,
-              "filename": "validations.js" } ],
+              "filename": "submission.js" } ],
         "docs":
           { "links": [],
             "examples": [],
@@ -171,7 +171,7 @@
       { "name": "AddressDetails",
         "locations":
           [ { "lineno": 229,
-              "filename": "validations.js" } ],
+              "filename": "submission.js" } ],
         "docs":
           { "links": [],
             "examples": [],
@@ -208,7 +208,7 @@
       { "name": "Amount",
         "locations":
           [ { "lineno": 299,
-              "filename": "validations.js" } ],
+              "filename": "submission.js" } ],
         "docs":
           { "links": [],
             "examples": [],
@@ -224,7 +224,7 @@
       { "name": "AmountMerchant",
         "locations":
           [ { "lineno": 309,
-              "filename": "validations.js" } ],
+              "filename": "submission.js" } ],
         "docs":
           { "links": [],
             "examples": [],
@@ -240,7 +240,7 @@
       { "name": "AmountRule",
         "locations":
           [ { "lineno": 328,
-              "filename": "validations.js" } ],
+              "filename": "submission.js" } ],
         "docs":
           { "links": [],
             "examples": [],
@@ -256,7 +256,7 @@
       { "name": "AppliedDiscounts",
         "locations":
           [ { "lineno": 280,
-              "filename": "validations.js" } ],
+              "filename": "submission.js" } ],
         "docs":
           { "links": [],
             "examples": [],
@@ -295,7 +295,7 @@
       { "name": "BillingInfo",
         "locations":
           [ { "lineno": 217,
-              "filename": "validations.js" } ],
+              "filename": "submission.js" } ],
         "docs":
           { "links": [],
             "examples": [],
@@ -314,7 +314,7 @@
       { "name": "BuyerDetails",
         "locations":
           [ { "lineno": 58,
-              "filename": "validations.js" } ],
+              "filename": "submission.js" } ],
         "docs":
           { "links": [],
             "examples": [],
@@ -333,7 +333,7 @@
       { "name": "CatalogReference",
         "locations":
           [ { "lineno": 96,
-              "filename": "validations.js" } ],
+              "filename": "submission.js" } ],
         "docs":
           { "links": [],
             "examples": [],
@@ -355,7 +355,7 @@
       { "name": "ContactDetails",
         "locations":
           [ { "lineno": 246,
-              "filename": "validations.js" } ],
+              "filename": "submission.js" } ],
         "docs":
           { "links": [],
             "examples": [],
@@ -385,7 +385,7 @@
       { "name": "Coupon",
         "locations":
           [ { "lineno": 291,
-              "filename": "validations.js" } ],
+              "filename": "submission.js" } ],
         "docs":
           { "links": [],
             "examples": [],
@@ -410,7 +410,7 @@
       { "name": "CustomFields",
         "locations":
           [ { "lineno": 275,
-              "filename": "validations.js" } ],
+              "filename": "submission.js" } ],
         "docs":
           { "links": [],
             "examples": [],
@@ -429,7 +429,7 @@
       { "name": "Description",
         "locations":
           [ { "lineno": 169,
-              "filename": "validations.js" } ],
+              "filename": "submission.js" } ],
         "docs":
           { "links": [],
             "examples": [],
@@ -448,7 +448,7 @@
       { "name": "Discount",
         "locations":
           [ { "lineno": 201,
-              "filename": "validations.js" } ],
+              "filename": "submission.js" } ],
         "docs":
           { "links": [],
             "examples": [],
@@ -464,7 +464,7 @@
       { "name": "DiscountRule",
         "locations":
           [ { "lineno": 314,
-              "filename": "validations.js" } ],
+              "filename": "submission.js" } ],
         "docs":
           { "links": [],
             "examples": [],
@@ -486,7 +486,7 @@
       { "name": "Field",
         "locations":
           [ { "lineno": 345,
-              "filename": "validations.js" } ],
+              "filename": "submission.js" } ],
         "docs":
           { "links": [],
             "examples": [],
@@ -508,7 +508,7 @@
       { "name": "GetValidationViolationsResponse",
         "locations":
           [ { "lineno": 352,
-              "filename": "validations.js" } ],
+              "filename": "submission.js" } ],
         "docs":
           { "links": [],
             "examples": [],
@@ -527,7 +527,7 @@
       { "name": "ItemType",
         "locations":
           [ { "lineno": 130,
-              "filename": "validations.js" } ],
+              "filename": "submission.js" } ],
         "docs":
           { "links": [],
             "examples": [],
@@ -552,7 +552,7 @@
       { "name": "LineItem",
         "locations":
           [ { "lineno": 77,
-              "filename": "validations.js" } ],
+              "filename": "submission.js" } ],
         "docs":
           { "links": [],
             "examples": [],
@@ -589,7 +589,7 @@
       { "name": "LineItemViolation",
         "locations":
           [ { "lineno": 384,
-              "filename": "validations.js" } ],
+              "filename": "submission.js" } ],
         "docs":
           { "links": [],
             "examples": [],
@@ -608,7 +608,7 @@
       { "name": "MerchantDiscount",
         "locations":
           [ { "lineno": 304,
-              "filename": "validations.js" } ],
+              "filename": "submission.js" } ],
         "docs":
           { "links": [],
             "examples": [],
@@ -624,7 +624,7 @@
       { "name": "NameRule",
         "locations":
           [ { "lineno": 321,
-              "filename": "validations.js" } ],
+              "filename": "submission.js" } ],
         "docs":
           { "links": [],
             "examples": [],
@@ -643,7 +643,7 @@
       { "name": "Options",
         "locations":
           [ { "lineno": 21,
-              "filename": "validations.js" } ],
+              "filename": "submission.js" } ],
         "docs":
           { "links": [],
             "examples": [],
@@ -662,7 +662,7 @@
       { "name": "Other",
         "locations":
           [ { "lineno": 376,
-              "filename": "validations.js" } ],
+              "filename": "submission.js" } ],
         "docs":
           { "links": [],
             "examples": [],
@@ -678,7 +678,7 @@
       { "name": "PhysicalProperties",
         "locations":
           [ { "lineno": 123,
-              "filename": "validations.js" } ],
+              "filename": "submission.js" } ],
         "docs":
           { "links": [],
             "examples": [],
@@ -700,7 +700,7 @@
       { "name": "Price",
         "locations":
           [ { "lineno": 118,
-              "filename": "validations.js" } ],
+              "filename": "submission.js" } ],
         "docs":
           { "links": [],
             "examples": [],
@@ -716,7 +716,7 @@
       { "name": "PriceSummary",
         "locations":
           [ { "lineno": 175,
-              "filename": "validations.js" } ],
+              "filename": "submission.js" } ],
         "docs":
           { "links": [],
             "examples": [],
@@ -747,7 +747,7 @@
       { "name": "ProductName",
         "locations":
           [ { "lineno": 105,
-              "filename": "validations.js" } ],
+              "filename": "submission.js" } ],
         "docs":
           { "links": [],
             "examples": [],
@@ -766,7 +766,7 @@
       { "name": "SelectedCarrierServiceOption",
         "locations":
           [ { "lineno": 270,
-              "filename": "validations.js" } ],
+              "filename": "submission.js" } ],
         "docs":
           { "links": [],
             "examples": [],
@@ -782,7 +782,7 @@
       { "name": "Shipping",
         "locations":
           [ { "lineno": 191,
-              "filename": "validations.js" } ],
+              "filename": "submission.js" } ],
         "docs":
           { "links": [],
             "examples": [],
@@ -798,7 +798,7 @@
       { "name": "ShippingAddress",
         "locations":
           [ { "lineno": 223,
-              "filename": "validations.js" } ],
+              "filename": "submission.js" } ],
         "docs":
           { "links": [],
             "examples": [],
@@ -817,7 +817,7 @@
       { "name": "ShippingInfo",
         "locations":
           [ { "lineno": 265,
-              "filename": "validations.js" } ],
+              "filename": "submission.js" } ],
         "docs":
           { "links": [],
             "examples": [],
@@ -833,7 +833,7 @@
       { "name": "SourceInfo",
         "locations":
           [ { "lineno": 27,
-              "filename": "validations.js" } ],
+              "filename": "submission.js" } ],
         "docs":
           { "links": [],
             "examples": [],
@@ -852,7 +852,7 @@
       { "name": "StreetAddressInfo",
         "locations":
           [ { "lineno": 240,
-              "filename": "validations.js" } ],
+              "filename": "submission.js" } ],
         "docs":
           { "links": [],
             "examples": [],
@@ -871,7 +871,7 @@
       { "name": "SubscriptionOptionInfo",
         "locations":
           [ { "lineno": 143,
-              "filename": "validations.js" } ],
+              "filename": "submission.js" } ],
         "docs":
           { "links": [],
             "examples": [],
@@ -893,7 +893,7 @@
       { "name": "SubscriptionSettings",
         "locations":
           [ { "lineno": 150,
-              "filename": "validations.js" } ],
+              "filename": "submission.js" } ],
         "docs":
           { "links": [],
             "examples": [],
@@ -915,7 +915,7 @@
       { "name": "Subtotal",
         "locations":
           [ { "lineno": 186,
-              "filename": "validations.js" } ],
+              "filename": "submission.js" } ],
         "docs":
           { "links": [],
             "examples": [],
@@ -931,7 +931,7 @@
       { "name": "Target",
         "locations":
           [ { "lineno": 369,
-              "filename": "validations.js" } ],
+              "filename": "submission.js" } ],
         "docs":
           { "links": [],
             "examples": [],
@@ -956,7 +956,7 @@
       { "name": "Tax",
         "locations":
           [ { "lineno": 196,
-              "filename": "validations.js" } ],
+              "filename": "submission.js" } ],
         "docs":
           { "links": [],
             "examples": [],
@@ -972,7 +972,7 @@
       { "name": "Title",
         "locations":
           [ { "lineno": 163,
-              "filename": "validations.js" } ],
+              "filename": "submission.js" } ],
         "docs":
           { "links": [],
             "examples": [],
@@ -991,7 +991,7 @@
       { "name": "Total",
         "locations":
           [ { "lineno": 206,
-              "filename": "validations.js" } ],
+              "filename": "submission.js" } ],
         "docs":
           { "links": [],
             "examples": [],
@@ -1007,7 +1007,7 @@
       { "name": "ValidationInfo",
         "locations":
           [ { "lineno": 38,
-              "filename": "validations.js" } ],
+              "filename": "submission.js" } ],
         "docs":
           { "links": [],
             "examples": [],
@@ -1053,7 +1053,7 @@
       { "name": "Value",
         "locations":
           [ { "lineno": 333,
-              "filename": "validations.js" } ],
+              "filename": "submission.js" } ],
         "docs":
           { "links": [],
             "examples": [],
@@ -1101,7 +1101,7 @@
       { "name": "VatId",
         "locations":
           [ { "lineno": 255,
-              "filename": "validations.js" } ],
+              "filename": "submission.js" } ],
         "docs":
           { "links": [],
             "examples": [],
@@ -1120,7 +1120,7 @@
       { "name": "Violation",
         "locations":
           [ { "lineno": 357,
-              "filename": "validations.js" } ],
+              "filename": "submission.js" } ],
         "docs":
           { "links": [],
             "examples": [],
@@ -1142,7 +1142,7 @@
       { "name": "giftAmount",
         "locations":
           [ { "lineno": 72,
-              "filename": "validations.js" } ],
+              "filename": "submission.js" } ],
         "docs":
           { "links": [],
             "examples": [],
@@ -1158,7 +1158,7 @@
       { "name": "giftCard",
         "locations":
           [ { "lineno": 64,
-              "filename": "validations.js" } ],
+              "filename": "submission.js" } ],
         "docs":
           { "links": [],
             "examples": [],
