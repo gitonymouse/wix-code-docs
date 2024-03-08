@@ -157,7 +157,24 @@
               [ { "id": "maturity-beta" } ] } } ],
   "callbacks": [],
   "messages":
-    [ { "name": "FormSubmissionConfigResponse",
+    [ { "name": "ExtendedFields",
+        "locations":
+          [ { "lineno": 94,
+              "filename": "submission.js" } ],
+        "docs":
+          { "links": [],
+            "examples": [],
+            "extra":
+              {  } },
+        "members":
+          [ { "name": "namespaces",
+              "type": "form-submission.Namespaces",
+              "doc": "An object containing data extension extended fields in `key:value` pairs." } ],
+        "extra":
+          {  },
+        "labels":
+          [ "new" ] },
+      { "name": "FormSubmissionConfigResponse",
         "locations":
           [ { "lineno": 23,
               "filename": "submission.js" } ],
@@ -197,6 +214,23 @@
         "extra":
           {  },
         "labels": [] },
+      { "name": "Namespaces",
+        "locations":
+          [ { "lineno": 99,
+              "filename": "submission.js" } ],
+        "docs":
+          { "links": [],
+            "examples": [],
+            "extra":
+              {  } },
+        "members":
+          [ { "name": "key:value",
+              "type": "string",
+              "doc": "`key` is the namespace, and `value` is extended fields data in `Struct` format." } ],
+        "extra":
+          {  },
+        "labels":
+          [ "new" ] },
       { "name": "Options",
         "locations":
           [ { "lineno": 55,
@@ -228,8 +262,36 @@
                   "members":
                     [ "updateOptions",
                       "createOptions" ] } ] },
+        "labels": [] },
+      { "name": "OrderDetails",
+        "locations":
+          [ { "lineno": 104,
+              "filename": "submission.js" } ],
+        "docs":
+          { "links": [],
+            "examples": [],
+            "extra":
+              {  } },
+        "members":
+          [ { "name": "order_id",
+              "type": "string",
+              "doc": "ID of the order related to submission (only applicable if a form has payments)." },
+            { "name": "number",
+              "type": "number",
+              "doc": "Order number." },
+            { "name": "currency",
+              "type": "string",
+              "doc": "Currency." },
+            { "name": "itemSubtotal",
+              "type": "string",
+              "doc": "Item subtotal." },
+            { "name": "checkoutId",
+              "type": "string",
+              "doc": "ID of the checkout related to submission (only applicable if a form has payments)." } ],
+        "extra":
+          {  },
         "labels":
-          [ "changed" ] },
+          [ "new" ] },
       { "name": "Submission",
         "locations":
           [ { "lineno": 69,
@@ -248,7 +310,7 @@
               "doc": "Status of the submission.\n\nSupported values:\n- `PENDING`: A submission is created, but has not yet been recorded in the Wix Forms collection.\n- `PAYMENT_WAITING`: A form submission requiring payment is created.\n- `PAYMENT_CANCELED`: An order of a form submission is canceled.\n- `CONFIRMED`: A submission is recorded in the Wix Forms collection." },
             { "name": "submission",
               "type": "form-submission.Submissions",
-              "doc": "Submission values where `key` is the form field and `value` is the data submitted for the given field." },
+              "doc": "An object containing information about input fields in a form." },
             { "name": "seen",
               "type": "boolean",
               "doc": "Whether a site owner marked a submission as \"seen\"." },
@@ -257,14 +319,20 @@
               "doc": "Order details.  \n\n**Note:** This object is only applicable when submitting a form in the Wix Payments app." },
             { "name": "extendedFields",
               "type": "form-submission.ExtendedFields",
-              "doc": "Data extension object that holds users' and apps' fields." } ],
+              "doc": "Data extension object that holds users' and apps' fields." },
+            { "name": "id",
+              "type": "string",
+              "doc": "Submission ID." },
+            { "name": "namespace",
+              "type": "string",
+              "doc": "The app which the form submissions belong to. For example, the namespace for the Wix Forms app is `wix.form_app.form`. Call [`getSubmission`](https://www.wix.com/velo/reference/wix-forms-v2/submissions/getsubmission) to retrieve the namespace." } ],
         "extra":
           {  },
         "labels":
           [ "changed" ] },
       { "name": "Submissions",
         "locations":
-          [ { "lineno": 87,
+          [ { "lineno": 89,
               "filename": "submission.js" } ],
         "docs":
           { "links": [],
@@ -274,11 +342,11 @@
         "members":
           [ { "name": "key:value",
               "type": "string",
-              "doc": "Key is the form field name, and value is the data submitted for the given field." } ],
+              "doc": "`key` is the form field name, and `value` is the data submitted for the given field." } ],
         "extra":
           {  },
         "labels":
-          [ "new" ] } ],
+          [ "changed" ] } ],
   "extra":
     { "customLabels":
         [ { "id": "maturity-beta" } ] } }
