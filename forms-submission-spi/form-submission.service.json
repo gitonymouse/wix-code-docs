@@ -190,7 +190,7 @@
         "members":
           [ { "name": "namespace",
               "type": "string",
-              "doc": "The app which the form submissions belong to:\n- Wix Forms: `wix.form_app.form``\n- Wix Pricing Plans: `wix.pricing_plans.v1.custom_form`\n- Wix Online Programs: `wix.achievements.quizzes.v1.quiz`" },
+              "doc": "The app which the form submissions belong to:\n- Wix Forms: `wix.form_app.form`\n- Wix Pricing Plans: `wix.pricing_plans.v1.custom_form`\n- Wix Online Programs: `wix.achievements.quizzes.v1.quiz`" },
             { "name": "submissionValidationEnabled",
               "type": "boolean",
               "doc": "Whether to enable the submission validation in your app." } ],
@@ -210,10 +210,42 @@
         "members":
           [ { "name": "submission",
               "type": "form-submission.Submission",
-              "doc": "Information about the source of the request." },
-            { "name": "validationInfo",
+              "doc": "Submission to validate." },
+            { "name": "actionType",
               "type": "form-submission.ActionType",
-              "doc": "Information to validate." } ],
+              "doc": "Whether to create or update the submission. \nSupported values:\n- `CREATE`: create a submission.\n- `UPDATE`: update an existing submission." } ],
+        "extra":
+          {  },
+        "labels":
+          [ "changed" ] },
+      { "name": "Submission",
+        "locations":
+          [ { "lineno": 64,
+              "filename": "submission.js" } ],
+        "docs":
+          { "links": [],
+            "examples": [],
+            "extra":
+              {  } },
+        "members":
+          [ { "name": "formId",
+              "type": "string",
+              "doc": "ID of the form which the submission belongs to." },
+            { "name": "status",
+              "type": "string",
+              "doc": "Status of the submission.\nSupported values:\n- `PENDING`: A submission is created, but has not yet been recorded in the Wix Forms collection.\n- `PAYMENT_WAITING`: A form submission requiring payment is created.\n- `PAYMENT_CANCELED`: An order of a form submission is canceled.\n- `CONFIRMED`: A submission is recorded in the Wix Forms collection." },
+            { "name": "submission",
+              "type": "form-submission.Submissions",
+              "doc": "Submission values where `key` is the form field and `value` is the data submitted for the given field." },
+            { "name": "seen",
+              "type": "boolean",
+              "doc": "Whether a site owner marked a submission as \"seen\"." },
+            { "name": "submission",
+              "type": "form-submission.ExtendedFields",
+              "doc": "Submission values where `key` is the form field and `value` is the data submitted for the given field." },
+            { "name": "orderDetails",
+              "type": "form-submission.OrderDetails",
+              "doc": "Order details.\n**Note:** This object is only applicable when submitting a form in the Wix Payments app." } ],
         "extra":
           {  },
         "labels":
