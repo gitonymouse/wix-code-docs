@@ -99,8 +99,7 @@
           { "customLabels":
               [ { "id": "maturity-beta" } ] } },
       { "name": "validateSubmission",
-        "labels":
-          [ "changed" ],
+        "labels": [],
         "nameParams": [],
         "params":
           [ { "name": "options",
@@ -180,9 +179,6 @@
             { "name": "status",
               "type": "string",
               "doc": "Status of the submission.\n\nSupported values:\n- `PENDING`: A submission is created, but has not yet been recorded in the Wix Forms collection.\n- `PAYMENT_WAITING`: A form submission requiring payment is created.\n- `PAYMENT_CANCELED`: An order of a form submission is canceled.\n- `CONFIRMED`: A submission is recorded in the Wix Forms collection." },
-            { "name": "submission",
-              "type": "form-submission.Submissions",
-              "doc": "An object containing information about input fields in a form." },
             { "name": "seen",
               "type": "boolean",
               "doc": "Whether a site owner marked a submission as \"seen\"." },
@@ -191,11 +187,14 @@
               "doc": "Data extension object that holds users' and apps' fields." },
             { "name": "orderDetails",
               "type": "form-submission.OrderDetails",
-              "doc": "Order details.  \n\n**Note:** This object is only applicable when submitting a form in the Wix Payments app." } ],
+              "doc": "Order details.  \n\n**Note:** This object is only applicable when submitting a form in the Wix Payments app." },
+            { "name": "submissions",
+              "type": "form-submission.Submissions",
+              "doc": "An object containing information about input fields in a form." } ],
         "extra":
           {  },
         "labels":
-          [ "new" ] },
+          [ "changed" ] },
       { "name": "ExtendedFields",
         "locations":
           [ { "lineno": 101,
@@ -211,8 +210,7 @@
               "doc": "An object containing data extension fields in `key:value` pairs." } ],
         "extra":
           {  },
-        "labels":
-          [ "changed" ] },
+        "labels": [] },
       { "name": "FormSubmissionConfigResponse",
         "locations":
           [ { "lineno": 23,
@@ -268,8 +266,7 @@
               "doc": "`key` is the namespace, and `value` is extended fields data in `struct` format." } ],
         "extra":
           {  },
-        "labels":
-          [ "changed" ] },
+        "labels": [] },
       { "name": "Options",
         "locations":
           [ { "lineno": 55,
@@ -301,8 +298,7 @@
                   "members":
                     [ "updateOptions",
                       "createOptions" ] } ] },
-        "labels":
-          [ "changed" ] },
+        "labels": [] },
       { "name": "OrderDetails",
         "locations":
           [ { "lineno": 111,
@@ -347,9 +343,6 @@
             { "name": "status",
               "type": "string",
               "doc": "Status of the submission.\n\nSupported values:\n- `PENDING`: A submission is created, but has not yet been recorded in the Wix Forms collection.\n- `PAYMENT_WAITING`: A form submission requiring payment is created.\n- `PAYMENT_CANCELED`: An order of a form submission is canceled.\n- `CONFIRMED`: A submission is recorded in the Wix Forms collection." },
-            { "name": "submission",
-              "type": "form-submission.Submissions",
-              "doc": "An object containing information about input fields in a form." },
             { "name": "seen",
               "type": "boolean",
               "doc": "Whether a site owner marked a submission as \"seen\"." },
@@ -364,10 +357,14 @@
               "doc": "Submission ID." },
             { "name": "namespace",
               "type": "string",
-              "doc": "The app which the form submissions belong to. For example, the namespace for the Wix Forms app is `wix.form_app.form`. Call [`getSubmission`](https://www.wix.com/velo/reference/wix-forms-v2/submissions/getsubmission) to retrieve the namespace." } ],
+              "doc": "The app which the form submissions belong to. For example, the namespace for the Wix Forms app is `wix.form_app.form`. Call [`getSubmission`](https://www.wix.com/velo/reference/wix-forms-v2/submissions/getsubmission) to retrieve the namespace." },
+            { "name": "submissions",
+              "type": "form-submission.Submissions",
+              "doc": "An object containing information about input fields in a form." } ],
         "extra":
           {  },
-        "labels": [] },
+        "labels":
+          [ "changed" ] },
       { "name": "Submissions",
         "locations":
           [ { "lineno": 96,
@@ -399,8 +396,7 @@
               "doc": "Submission to update." } ],
         "extra":
           {  },
-        "labels":
-          [ "new" ] } ],
+        "labels": [] } ],
   "extra":
     { "customLabels":
         [ { "id": "maturity-beta" } ] } }
