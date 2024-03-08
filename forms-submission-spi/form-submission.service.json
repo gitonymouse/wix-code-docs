@@ -200,7 +200,7 @@
             "extra":
               {  } },
         "members":
-          [ { "name": "form-submission~NamespaceConfigs",
+          [ { "name": "namespaceConfigs",
               "type":
                 { "name": "Array",
                   "typeParams":
@@ -229,7 +229,8 @@
               "doc": "Whether to enable the submission validation in your app." } ],
         "extra":
           {  },
-        "labels": [] } ],
+        "labels":
+          [ "removed" ] } ],
   "extra":
     { "customLabels":
         [ { "id": "maturity-beta" } ] } }
