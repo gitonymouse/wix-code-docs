@@ -47,8 +47,7 @@
   "properties": [],
   "operations":
     [ { "name": "getConfig",
-        "labels":
-          [ "changed" ],
+        "labels": [],
         "nameParams": [],
         "params": [],
         "ret":
@@ -202,12 +201,15 @@
               {  } },
         "members":
           [ { "name": "form-submission~NamespaceConfigs",
-              "type": "void",
+              "type":
+                { "name": "Array",
+                  "typeParams":
+                    [ "Object" ] },
               "doc": "A collection of Wix apps." } ],
         "extra":
           {  },
         "labels":
-          [ "new" ] },
+          [ "changed" ] },
       { "name": "NamespaceConfigs",
         "locations":
           [ { "lineno": 28,
@@ -227,8 +229,7 @@
               "doc": "Whether to enable the submission validation in your app." } ],
         "extra":
           {  },
-        "labels":
-          [ "new" ] } ],
+        "labels": [] } ],
   "extra":
     { "customLabels":
         [ { "id": "maturity-beta" } ] } }
