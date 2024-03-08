@@ -112,7 +112,7 @@
                   [ "ecom-validations.GetValidationViolationsResponse" ] },
             "doc": "Fulfilled - Validation violations." },
         "locations":
-          [ { "lineno": 31,
+          [ { "lineno": 34,
               "filename": "submission.js" } ],
         "docs":
           { "summary": "Retrieves any validation violations in a site visitor's cart or checkout.",
@@ -204,14 +204,8 @@
               "type":
                 { "name": "Array",
                   "typeParams":
-                    [ "Object" ] },
-              "doc": "A collection of Wix apps." },
-            { "name": "namespaceConfigs[].namespace",
-              "type": "string",
-              "doc": "The app which the form submissions belong to." },
-            { "name": "namespaceConfigs[].submissionValidationEnabled",
-              "type": "boolean",
-              "doc": "Whether to enable the submission validation in your app." } ],
+                    [ "form-submission.NamespaceConfigs" ] },
+              "doc": "A collection of Wix apps." } ],
         "extra":
           {  },
         "labels":
@@ -221,7 +215,8 @@
           [ { "lineno": 28,
               "filename": "submission.js" } ],
         "docs":
-          { "summary": "An array of objects containing information about a collection of Wix apps.",
+          { "description":
+              [ "A collection of Wix apps." ],
             "links": [],
             "examples": [],
             "extra":
@@ -236,7 +231,7 @@
         "extra":
           {  },
         "labels":
-          [ "removed" ] } ],
+          [ "new" ] } ],
   "extra":
     { "customLabels":
         [ { "id": "maturity-beta" } ] } }
