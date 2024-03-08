@@ -99,8 +99,7 @@
           { "customLabels":
               [ { "id": "maturity-beta" } ] } },
       { "name": "validateSubmission",
-        "labels":
-          [ "changed" ],
+        "labels": [],
         "nameParams": [],
         "params":
           [ { "name": "options",
@@ -113,7 +112,7 @@
                   [ "form-submission.FormSubmissionResponse" ] },
             "doc": "Fulfilled - Form submission validation violations." },
         "locations":
-          [ { "lineno": 34,
+          [ { "lineno": 37,
               "filename": "submission.js" } ],
         "docs":
           { "summary": "Validates a form submission.",
@@ -191,13 +190,34 @@
         "members":
           [ { "name": "namespace",
               "type": "string",
-              "doc": "The app which the form submissions belong to." },
+              "doc": "The app which the form submissions belong to:\n- Wix Forms: `wix.form_app.form``\n- Wix Pricing Plans: `wix.pricing_plans.v1.custom_form`\n- Wix Online Programs: `wix.achievements.quizzes.v1.quiz`" },
             { "name": "submissionValidationEnabled",
               "type": "boolean",
               "doc": "Whether to enable the submission validation in your app." } ],
         "extra":
           {  },
-        "labels": [] } ],
+        "labels":
+          [ "changed" ] },
+      { "name": "Options",
+        "locations":
+          [ { "lineno": 55,
+              "filename": "submission.js" } ],
+        "docs":
+          { "links": [],
+            "examples": [],
+            "extra":
+              {  } },
+        "members":
+          [ { "name": "submission",
+              "type": "form-submission.Submission",
+              "doc": "Information about the source of the request." },
+            { "name": "validationInfo",
+              "type": "form-submission.ActionType",
+              "doc": "Information to validate." } ],
+        "extra":
+          {  },
+        "labels":
+          [ "new" ] } ],
   "extra":
     { "customLabels":
         [ { "id": "maturity-beta" } ] } }
