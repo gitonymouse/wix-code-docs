@@ -31,7 +31,6 @@
           " + Field validations: Check if the email address is in the correct format or that the name contains only alphabetic characters.",
           " + Prevent submission of invalid data: Disable the submit button until all fields are correctly filled out.",
           " + Real-time feedback: Highlight the invalid fields.",
-          " + Restrict purchases to site members only.",
           " + Prevent duplicate submissions: Check for duplicate submissions based on certain criteria and prevent site visitors from submitting the same form multiple times.",
           "",
           "## Terminology",
@@ -48,44 +47,49 @@
   "properties": [],
   "operations":
     [ { "name": "getConfig",
-        "labels": [],
+        "labels":
+          [ "changed" ],
         "nameParams": [],
         "params": [],
         "ret":
           { "type":
               { "name": "Promise",
                 "typeParams":
-                  [ "ecom-validations.ValidationsConfigResponse" ] },
+                  [ "form-submission.FormSubmissionConfigResponse" ] },
             "doc": "Fulfilled - The configuration settings." },
         "locations":
           [ { "lineno": 1,
               "filename": "submission.js" } ],
         "docs":
-          { "summary": "Retrieves the configuration of your validations extension.",
+          { "summary": "Retrieves the configuration of your form submission extension.",
             "description":
-              [ "Set your validations configuration in the `return` of the `getConfig()` function. Wix calls this function when you publish your site. ",
+              [ "Set your form submission configuration in the `return` of the `getConfig()` function. Wix calls this function when you publish your site. ",
                 "Changes to the configuration don't take effect until you publish your site.",
                 "",
-                "By default, the Validations SPI only validates a site visitor's checkout. To also validate a site visitor's cart, ",
-                "set `validateInCart` to `true`.",
+                "There are several apps that use forms. To validate form submission for a specific Wix app, configure the custom extension's config file for that Wix app by defining the relevant namespace field. For example, the `namespace` for the Wix Forms app is `wix.form_app.form`.",
                 "",
                 "### Where to find `getConfig()`",
-                "When you [add the Validations custom extension](https://dev.wix.com/docs/develop-websites/articles/code-tutorials/wix-e-commerce-stores/tutorial-validations-custom-extension#step-1-create-a-new-validation-extension), ",
+                "When you [add the Form Submission custom extension](), ",
                 "a folder is automatically added to your site. Use the `<my-extension-name>-config.js` file in the folder to set the default configuration for your ",
                 "implementation of the custom extension.",
                 "",
-                "For more information on setting your configuration, see [Tutorial: Validations Custom Extension](https://dev.wix.com/docs/develop-websites/articles/code-tutorials/wix-e-commerce-stores/tutorial-validations-custom-extension#minimum-configjs)." ],
+                "For more information on setting your configuration, see [Tutorial: Form Submission Custom Extension]()." ],
             "links": [],
             "examples":
               [ { "title": "Example of a configuration file",
                   "body":
                     [ "// Place this code in the <my-extension-name>-config.js file",
-                      "// in the 'ecom-validations' folder of the",
+                      "// in the 'form-submission' folder of the",
                       "// Custom Extensions section on your site.",
                       "",
                       "export function getConfig() {",
                       "  return {",
-                      "    validateInCart: true",
+                      "    namespaceConfigs: [",
+                      "      {",
+                      "        namespace: \"wix.form_app.form\",",
+                      "        submissionValidationEnabled: true",
+                      "      }",
+                      "    ]",
                       "  };",
                       "};" ],
                   "extra":
@@ -109,7 +113,7 @@
                   [ "ecom-validations.GetValidationViolationsResponse" ] },
             "doc": "Fulfilled - Validation violations." },
         "locations":
-          [ { "lineno": 31,
+          [ { "lineno": 35,
               "filename": "submission.js" } ],
         "docs":
           { "summary": "Retrieves any validation violations in a site visitor's cart or checkout.",
@@ -186,7 +190,45 @@
           { "customLabels":
               [ { "id": "maturity-beta" } ] } } ],
   "callbacks": [],
-  "messages": [],
+  "messages":
+    [ { "name": "FormSubmissionConfigResponse",
+        "locations":
+          [ { "lineno": 23,
+              "filename": "submission.js" } ],
+        "docs":
+          { "links": [],
+            "examples": [],
+            "extra":
+              {  } },
+        "members":
+          [ { "name": "form-submission~NamespaceConfigs",
+              "type": "void",
+              "doc": "A collection of Wix apps." } ],
+        "extra":
+          {  },
+        "labels":
+          [ "new" ] },
+      { "name": "NamespaceConfigs",
+        "locations":
+          [ { "lineno": 28,
+              "filename": "submission.js" } ],
+        "docs":
+          { "summary": "An array of objects containing information about a collection of Wix apps.",
+            "links": [],
+            "examples": [],
+            "extra":
+              {  } },
+        "members":
+          [ { "name": "namespace",
+              "type": "string",
+              "doc": "The app which the form submissions belong to." },
+            { "name": "submissionValidationEnabled",
+              "type": "boolean",
+              "doc": "Whether to enable the submission validation in your app." } ],
+        "extra":
+          {  },
+        "labels":
+          [ "new" ] } ],
   "extra":
     { "customLabels":
         [ { "id": "maturity-beta" } ] } }
