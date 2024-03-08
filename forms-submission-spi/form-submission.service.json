@@ -112,7 +112,7 @@
                   [ "ecom-validations.GetValidationViolationsResponse" ] },
             "doc": "Fulfilled - Validation violations." },
         "locations":
-          [ { "lineno": 35,
+          [ { "lineno": 31,
               "filename": "submission.js" } ],
         "docs":
           { "summary": "Retrieves any validation violations in a site visitor's cart or checkout.",
@@ -205,7 +205,13 @@
                 { "name": "Array",
                   "typeParams":
                     [ "Object" ] },
-              "doc": "A collection of Wix apps." } ],
+              "doc": "A collection of Wix apps." },
+            { "name": "namespaceConfigs[].namespace",
+              "type": "string",
+              "doc": "The app which the form submissions belong to." },
+            { "name": "namespaceConfigs[].submissionValidationEnabled",
+              "type": "boolean",
+              "doc": "Whether to enable the submission validation in your app." } ],
         "extra":
           {  },
         "labels":
