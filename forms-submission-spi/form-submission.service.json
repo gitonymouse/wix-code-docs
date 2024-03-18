@@ -152,7 +152,7 @@
                       "    }",
                       "};" ],
                   "extra":
-                    { "description": "This example validates a form submission. A site visitor can only enter the first name in the alphabetical characters." } } ],
+                    { "description": "This example validates a form submission. The message text box has a limitation of 200 characters." } } ],
             "extra":
               {  } },
         "extra":
