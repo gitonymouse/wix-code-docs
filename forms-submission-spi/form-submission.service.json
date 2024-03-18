@@ -49,7 +49,8 @@
   "properties": [],
   "operations":
     [ { "name": "getConfig",
-        "labels": [],
+        "labels":
+          [ "changed" ],
         "nameParams": [],
         "params": [],
         "ret":
@@ -62,11 +63,9 @@
           [ { "lineno": 1,
               "filename": "submission.js" } ],
         "docs":
-          { "summary": "Retrieves the configuration of your form submission extension.",
+          { "summary": ">**Note**: The Form Submission SPI is only available in Wix Studio.\nRetrieves the configuration of your form submission extension.",
             "description":
-              [ ">**Note**: The Form Submission SPI is only available in Wix Studio.",
-                "",
-                "Set your form submission configuration in the `return` of the `getConfig()` function. Wix calls this function when you publish your site. ",
+              [ "Set your form submission configuration in the `return` of the `getConfig()` function. Wix calls this function when you publish your site. ",
                 "Changes to the configuration don't take effect until you publish your site.",
                 "",
                 "There are several apps that use forms. To validate form submission for a specific Wix app, configure the custom extension's config file for that Wix app by defining the relevant namespace field. For example, the `namespace` for the Wix Forms app is `wix.form_app.form`.",
@@ -120,11 +119,9 @@
           [ { "lineno": 40,
               "filename": "submission.js" } ],
         "docs":
-          { "summary": "Validates a form submission.",
+          { "summary": ">**Note**: The Form Submission SPI is only available in Wix Studio.\nValidates a form submission.",
             "description":
-              [ ">**Note**: The Form Submission SPI is only available in Wix Studio.",
-                "",
-                "Validates a site visitor's form submission and returns any validation violations.",
+              [ "Validates a site visitor's form submission and returns any validation violations.",
                 "",
                 "Site visitors can see the validation violations on their forms. For example, notification messages can appear on the screen." ],
             "links": [],
@@ -162,7 +159,7 @@
   "messages":
     [ { "name": "CurrentSubmission",
         "locations":
-          [ { "lineno": 125,
+          [ { "lineno": 124,
               "filename": "submission.js" } ],
         "docs":
           { "links": [],
@@ -199,7 +196,7 @@
         "labels": [] },
       { "name": "ExtendedFields",
         "locations":
-          [ { "lineno": 106,
+          [ { "lineno": 105,
               "filename": "submission.js" } ],
         "docs":
           { "links": [],
@@ -255,7 +252,7 @@
         "labels": [] },
       { "name": "Namespaces",
         "locations":
-          [ { "lineno": 111,
+          [ { "lineno": 110,
               "filename": "submission.js" } ],
         "docs":
           { "links": [],
@@ -271,7 +268,7 @@
         "labels": [] },
       { "name": "Options",
         "locations":
-          [ { "lineno": 60,
+          [ { "lineno": 59,
               "filename": "submission.js" } ],
         "docs":
           { "summary": "Form submission information.",
@@ -303,7 +300,7 @@
         "labels": [] },
       { "name": "OrderDetails",
         "locations":
-          [ { "lineno": 116,
+          [ { "lineno": 115,
               "filename": "submission.js" } ],
         "docs":
           { "links": [],
@@ -331,7 +328,7 @@
         "labels": [] },
       { "name": "Submission",
         "locations":
-          [ { "lineno": 76,
+          [ { "lineno": 75,
               "filename": "submission.js" } ],
         "docs":
           { "links": [],
@@ -368,7 +365,7 @@
         "labels": [] },
       { "name": "Submissions",
         "locations":
-          [ { "lineno": 101,
+          [ { "lineno": 100,
               "filename": "submission.js" } ],
         "docs":
           { "links": [],
@@ -384,7 +381,7 @@
         "labels": [] },
       { "name": "UpdateOptions",
         "locations":
-          [ { "lineno": 96,
+          [ { "lineno": 95,
               "filename": "submission.js" } ],
         "docs":
           { "links": [],
