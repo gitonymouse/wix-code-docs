@@ -144,7 +144,7 @@
                       "        return {",
                       "            errors: [{",
                       "                errorPath: \"first_name\",",
-                      "                customErrorMessage: \"You can only use alphabetical characters!\",",
+                      "                customErrorMessage: \"First name can only contain alphabetical characters!\",",
                       "            }]",
                       "        };",
                       "    } else {",
