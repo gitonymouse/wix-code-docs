@@ -8,7 +8,9 @@
   "docs":
     { "summary": "The WixForms Submissions SPI.",
       "description":
-        [ "The Form Submission SPI [custom extension](https://support.wix.com/en/article/velo-custom-app-extensions-using-spis) allows site owners and collaborators to validate a site visitor's filled form. For example, you can validate whether a correct email is entered into the field.",
+        [ ">**Note**: The Form Submission SPI is only available in Wix Studio.",
+          "",
+          "The Form Submission SPI [custom extension](https://support.wix.com/en/article/velo-custom-app-extensions-using-spis) allows site owners and collaborators to validate a site visitor's filled form. For example, you can validate whether a correct email is entered into the field.",
           "Site owners and collaborators can either write their own custom validation logic, or integrate with a 3rd-party validations provider.",
           "",
           "Wix Forms calls [`validateSubmission()`](https://www.wix.com/velo/reference/spis/wix-ecom/ecom-validations/getvalidationviolations) to validate a site visitor's filled form.",
@@ -47,7 +49,8 @@
   "properties": [],
   "operations":
     [ { "name": "getConfig",
-        "labels": [],
+        "labels":
+          [ "changed" ],
         "nameParams": [],
         "params": [],
         "ret":
@@ -62,7 +65,9 @@
         "docs":
           { "summary": "Retrieves the configuration of your form submission extension.",
             "description":
-              [ "Set your form submission configuration in the `return` of the `getConfig()` function. Wix calls this function when you publish your site. ",
+              [ ">**Note**: The Form Submission SPI is only available in Wix Studio.",
+                "",
+                "Set your form submission configuration in the `return` of the `getConfig()` function. Wix calls this function when you publish your site. ",
                 "Changes to the configuration don't take effect until you publish your site.",
                 "",
                 "There are several apps that use forms. To validate form submission for a specific Wix app, configure the custom extension's config file for that Wix app by defining the relevant namespace field. For example, the `namespace` for the Wix Forms app is `wix.form_app.form`.",
@@ -113,14 +118,16 @@
                   [ "form-submission.FormSubmissionResponse" ] },
             "doc": "Fulfilled - Form submission validation violations." },
         "locations":
-          [ { "lineno": 37,
+          [ { "lineno": 40,
               "filename": "submission.js" } ],
         "docs":
           { "summary": "Validates a form submission.",
             "description":
-              [ "Validates a site visitor's form submission and returns any validation violations.",
+              [ ">**Note**: The Form Submission SPI is only available in Wix Studio.",
                 "",
-                "Site visitors can see the validation violations on their forms. For example, invalid fields are highlighted in red." ],
+                "Validates a site visitor's form submission and returns any validation violations.",
+                "",
+                "Site visitors can see the validation violations on their forms. For example, notification messages can appear on the screen." ],
             "links": [],
             "examples":
               [ { "title": "Validate a form submission",
@@ -132,10 +139,9 @@
                       "}",
                       "",
                       "export const validateSubmission = async (options, context) => {",
-                      "const validate = options.submission.submissions[\"first_name_abae\"];",
-                      "const pattern = new RegExp(\"^[a-zA-Z]+$\")",
-                      "console.log(validate)",
-                      "if (!validate.match(pattern)) {",
+                      "const firstNameValidation = options.submission.submissions[\"first_name_abae\"];",
+                      "const alphabeticalPattern = new RegExp(\"^[a-zA-Z]+$\")",
+                      "if (!firstNameValidation.match(alphabeticalPattern)) {",
                       "    return {",
                       "        errors: [{",
                       "            errorPath: \"first_name\",",
@@ -157,7 +163,7 @@
   "messages":
     [ { "name": "CurrentSubmission",
         "locations":
-          [ { "lineno": 120,
+          [ { "lineno": 125,
               "filename": "submission.js" } ],
         "docs":
           { "links": [],
@@ -194,7 +200,7 @@
         "labels": [] },
       { "name": "ExtendedFields",
         "locations":
-          [ { "lineno": 101,
+          [ { "lineno": 106,
               "filename": "submission.js" } ],
         "docs":
           { "links": [],
@@ -210,7 +216,7 @@
         "labels": [] },
       { "name": "FormSubmissionConfigResponse",
         "locations":
-          [ { "lineno": 23,
+          [ { "lineno": 26,
               "filename": "submission.js" } ],
         "docs":
           { "links": [],
@@ -229,7 +235,7 @@
         "labels": [] },
       { "name": "NamespaceConfigs",
         "locations":
-          [ { "lineno": 28,
+          [ { "lineno": 31,
               "filename": "submission.js" } ],
         "docs":
           { "description":
@@ -250,7 +256,7 @@
         "labels": [] },
       { "name": "Namespaces",
         "locations":
-          [ { "lineno": 106,
+          [ { "lineno": 111,
               "filename": "submission.js" } ],
         "docs":
           { "links": [],
@@ -266,7 +272,7 @@
         "labels": [] },
       { "name": "Options",
         "locations":
-          [ { "lineno": 55,
+          [ { "lineno": 60,
               "filename": "submission.js" } ],
         "docs":
           { "summary": "Form submission information.",
@@ -298,7 +304,7 @@
         "labels": [] },
       { "name": "OrderDetails",
         "locations":
-          [ { "lineno": 111,
+          [ { "lineno": 116,
               "filename": "submission.js" } ],
         "docs":
           { "links": [],
@@ -326,7 +332,7 @@
         "labels": [] },
       { "name": "Submission",
         "locations":
-          [ { "lineno": 71,
+          [ { "lineno": 76,
               "filename": "submission.js" } ],
         "docs":
           { "links": [],
@@ -363,7 +369,7 @@
         "labels": [] },
       { "name": "Submissions",
         "locations":
-          [ { "lineno": 96,
+          [ { "lineno": 101,
               "filename": "submission.js" } ],
         "docs":
           { "links": [],
@@ -379,7 +385,7 @@
         "labels": [] },
       { "name": "UpdateOptions",
         "locations":
-          [ { "lineno": 91,
+          [ { "lineno": 96,
               "filename": "submission.js" } ],
         "docs":
           { "links": [],
