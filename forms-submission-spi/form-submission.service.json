@@ -99,7 +99,8 @@
           { "customLabels":
               [ { "id": "maturity-beta" } ] } },
       { "name": "validateSubmission",
-        "labels": [],
+        "labels":
+          [ "changed" ],
         "nameParams": [],
         "params":
           [ { "name": "options",
@@ -124,32 +125,29 @@
             "examples":
               [ { "title": "Validate a form submission",
                   "body":
-                    [ "export const validateSubmission = async (options) => {",
-                      "  const tShirtColorKey = \"t_shirt_color\"",
-                      "  const availableColors = fetchAvailableTShirtColors()",
-                      "  const submissionsData = options.submission.submissions;",
-                      "  const actionType = options.actionType;",
-                      "  if (actionType === \"CREATE\" && availableColors.includes(submissionsData[tShirtColorKey])) {",
-                      "      return {",
-                      "          errors: [",
-                      "              {",
-                      "                  errorPath: tShirtColorKey,",
-                      "                  customErrorMessage: \"Incorrect choice for T-shirt color\",",
-                      "                  params: {",
-                      "                      availableColors",
-                      "                  }",
-                      "              }",
-                      "          ]",
-                      "      };",
-                      "  }",
-                      "  return {errors: []};",
-                      "};",
+                    [ "const options = {",
+                      "    \"submission\": {",
+                      "       \"formId\": \"e9e8c6ff-a771-401b-b46e-82f7c742ef3d\"",
+                      "    }",
+                      "}",
                       "",
-                      "function fetchAvailableTShirtColors() {",
-                      "  return [\"RED\", \"GREEN\"]",
-                      "}" ],
+                      "export const validateSubmission = async (options, context) => {",
+                      "const validate = options.submission.submissions[\"first_name_abae\"];",
+                      "const pattern = new RegExp(\"^[a-zA-Z]+$\")",
+                      "console.log(validate)",
+                      "if (!validate.match(pattern)) {",
+                      "    return {",
+                      "        errors: [{",
+                      "            errorPath: \"first_name\",",
+                      "            customErrorMessage: \"You can only use alphabetical characters!\",",
+                      "        }]",
+                      "    };",
+                      "} else {",
+                      "    return {}",
+                      "}",
+                      "};" ],
                   "extra":
-                    { "description": "This example validates a form submission. A site visitor can only choose between red and green t-shirts." } } ],
+                    { "description": "This example validates a form submission. A site visitor can only enter the first name in the alphabetical characters." } } ],
             "extra":
               {  } },
         "extra":
@@ -193,8 +191,7 @@
               "doc": "An object containing information about input fields in a form." } ],
         "extra":
           {  },
-        "labels":
-          [ "changed" ] },
+        "labels": [] },
       { "name": "ExtendedFields",
         "locations":
           [ { "lineno": 101,
@@ -363,8 +360,7 @@
               "doc": "An object containing information about input fields in a form." } ],
         "extra":
           {  },
-        "labels":
-          [ "changed" ] },
+        "labels": [] },
       { "name": "Submissions",
         "locations":
           [ { "lineno": 96,
