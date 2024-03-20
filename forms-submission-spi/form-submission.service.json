@@ -19,7 +19,7 @@
           "",
           "## Before you begin",
           "",
-          "- The Form Submission SPI is only available in Wix Studio and Editor X.",
+          "- The Form Submission SPI is only available in Wix Studio.",
           "- There are several apps that use forms. To validate form submission for a specific Wix app, configure the custom extension's config file for that Wix app by defining the relevant namespace field. For example, the `namespace` for the Wix Forms app is `wix.form_app.form`.",
           "",
           "### To add a custom extension",
@@ -31,8 +31,6 @@
           "",
           "With the Validations SPI you can define the validations for a site form that fit your site's needs. Possible validations include:",
           " + Field validations: Check if the email address is in the correct format or that the name contains only alphabetic characters.",
-          " + Prevent submission of invalid data: Disable the submit button until all fields are correctly filled out.",
-          " + Real-time feedback: Highlight the invalid fields.",
           " + Prevent duplicate submissions: Check for duplicate submissions based on certain criteria and prevent site visitors from submitting the same form multiple times.",
           "",
           "## Terminology",
@@ -49,8 +47,7 @@
   "properties": [],
   "operations":
     [ { "name": "getConfig",
-        "labels":
-          [ "changed" ],
+        "labels": [],
         "nameParams": [],
         "params": [],
         "ret":
@@ -102,8 +99,7 @@
           { "customLabels":
               [ { "id": "maturity-beta" } ] } },
       { "name": "validateSubmission",
-        "labels":
-          [ "changed" ],
+        "labels": [],
         "nameParams": [],
         "params":
           [ { "name": "options",
