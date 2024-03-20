@@ -8,9 +8,7 @@
   "docs":
     { "summary": "The WixForms Submissions SPI.",
       "description":
-        [ ">**Note**: The Form Submission SPI is only available in Wix Studio.",
-          "",
-          "The Form Submission SPI [custom extension](https://support.wix.com/en/article/velo-custom-app-extensions-using-spis) allows site owners and collaborators to validate a site visitor's filled form. For example, you can validate whether a correct email is entered into the field.",
+        [ "The Form Submission SPI [custom extension](https://support.wix.com/en/article/velo-custom-app-extensions-using-spis) allows site owners and collaborators to validate a site visitor's filled form. For example, you can validate whether a correct email is entered into the field.",
           "Site owners and collaborators can either write their own custom validation logic, or integrate with a 3rd-party validations provider.",
           "",
           "Wix Forms calls [`validateSubmission()`](https://www.wix.com/velo/reference/spis/wix-ecom/ecom-validations/getvalidationviolations) to validate a site visitor's filled form.",
