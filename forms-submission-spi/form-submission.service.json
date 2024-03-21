@@ -46,7 +46,8 @@
   "properties": [],
   "operations":
     [ { "name": "getConfig",
-        "labels": [],
+        "labels":
+          [ "changed" ],
         "nameParams": [],
         "params": [],
         "ret":
@@ -67,11 +68,11 @@
                 "There are several apps that use forms. To validate form submission for a specific Wix app, configure the custom extension's config file for that Wix app by defining the relevant namespace field. For example, the `namespace` for the Wix Forms app is `wix.form_app.form`.",
                 "",
                 "### Where to find `getConfig()`",
-                "When you [add the Form Submission custom extension](), ",
+                "When you [add the Form Submission custom extension](https://dev.wix.com/docs/develop-websites/articles/code-tutorials/wix-forms/tutorial-form-submission-custom-extension), ",
                 "a folder is automatically added to your site. Use the `<my-extension-name>-config.js` file in the folder to set the default configuration for your ",
                 "implementation of the custom extension.",
                 "",
-                "For more information on setting your configuration, see [Tutorial: Form Submission Custom Extension]()." ],
+                "For more information on setting your configuration, see [Tutorial: Form Submission Custom Extension](https://dev.wix.com/docs/develop-websites/articles/code-tutorials/wix-forms/tutorial-form-submission-custom-extension)." ],
             "links": [],
             "examples":
               [ { "title": "Example of a configuration file",
