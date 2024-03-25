@@ -41,9 +41,7 @@
       },
       "docs": {
         "summary": "Executes a regular search query.\nIf you are unsure, this is likely the search method you want to used.",
-        "description": [
-          "This function is not a universal function and runs only on the backend."
-        ],
+        "description": [],
         "examples": [
           {
             "title": "search example",
@@ -1670,6 +1668,16 @@
             }
           ],
           "doc": "what type of users should documents be visible to"
+        },
+        {
+          "name": "isPopup",
+          "optional": true,
+          "type": [
+            {
+              "nativeType": "boolean"
+            }
+          ],
+          "doc": "if true the page is a lightbox popup"
         },
         {
           "name": "payload",
