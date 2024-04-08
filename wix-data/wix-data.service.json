@@ -3,34 +3,72 @@
   "labels":
     [ "changed" ],
   "location":
-    { "lineno": 37,
+    { "lineno": 72,
       "filename": "data-api.js" },
   "docs":
     { "summary": "The wix-data module contains functionality for working with data in collections.",
       "description":
-        [ "To use the data module, import `wixData` from the `wix-data` module:",
+        [ "The Data API allows you to interact programmatically with your site's [database collections](https://support.wix.com/en/article/content-manager-creating-a-collection). ",
+          " ",
+          " With the Data API, you can:",
+          "",
+          " + Manage the data in your site's collections.",
+          " + [Filter](https://www.wix.com/velo/reference/wix-data/wixdatafilter), [sort](https://www.wix.com/velo/reference/wix-data/wixdatasort), and [query](https://www.wix.com/velo/reference/wix-data/query) your data.",
+          " + Intercept interactions with your collections using [data hooks](https://www.wix.com/velo/reference/wix-data/hooks).",
+          " + Work programmatically with [reference fields](https://support.wix.com/en/article/about-reference-fields-in-database-collections).",
+          " + [Aggregate](https://www.wix.com/velo/reference/wix-data/aggregate) data from your collections.",
+          "",
+          " For more information, see [Working with the Data API](https://support.wix.com/en/article/velo-working-with-the-data-api) and [Overview of the Wix Data and Wix Dataset APIs](https://support.wix.com/en/article/velo-overview-of-the-wix-data-and-wix-dataset-apis).",
+          "",
+          " Get hands-on experience with the Data API on our [Hello Data](https://www.wix.com/velo/example/hello-data) example page.",
+          "",
+          " To use the data module, import `wixData` from the `wix-data` module:",
           "",
           "   ``` javascript",
           "   import wixData from 'wix-data';",
           "   ```",
           "",
-          " The wix-data API can be used in your site’s front-end or backend code.",
+          " ## Before you begin",
+          " ",
+          " It's important to note the following points before starting to code:",
           "",
-          " The wix-data API includes functions for managing the data in your collections,",
-          " building queries on collections, and registering hooks.",
+          " + The Data API can be used in your site’s frontend or backend code.",
+          " + The maximum size of an item that you can save to a collection is 500 kb.",
+          " + When using data retrieval methods such as `query()` or `get()` following a change to your database collection, the data retrieved may not yet contain ",
+          "   your most recent changes. See [Wix-data and Eventual Consistency](https://www.wix.com/velo/reference/wix-data/introduction#wix-data_introduction_wix-data-and-eventual-consistency) for more information.",
+          " + When querying [Wix App Collections](https://support.wix.com/en/article/content-manager-working-with-wix-app-collections), check which fields can be filtered in the relevant [collection field article](https://support.wix.com/en/search?term=velo%20collection%20fields).",
+          " + [Updating](wix-data/update) a collection item replaces the existing database item. If the existing item had properties with values and those properties are not included in the updated item, ",
+          "   the values in those properties are lost.",
+          " + Aggregations can only be used on collections you created. They cannot be used on [Wix App Collections](https://support.wix.com/en/article/content-manager-working-with-wix-app-collections).",
+          " + Some functions don't apply to [Single Item Collections](https://support.wix.com/en/article/content-manager-about-collections-with-a-single-item).",
+          " + Depending on the [permissions](https://support.wix.com/en/article/collection-permissions-an-overview) defined for your database collection, ",
+          "   your site visitors may not have the permissions required to run a specific function. A function called with insufficient permissions will fail. When necessary, you can override permission ",
+          "   checks in backend code by using the `SuppressAuth` option.",
+          " + You can connect [external database collections](https://support.wix.com/en/article/velo-integrating-external-databases-with-your-wix-site) to your Wix site and use any of the Wix Data APIs to manage and retrieve data from those collections. ",
           "",
-          " For more information, see [Working with the Data API](https://support.wix.com/en/article/velo-working-with-the-data-api) and [Overview of the Wix Data and Wix Dataset APIs](https://support.wix.com/en/article/velo-overview-of-the-wix-data-and-wix-dataset-apis).",
+          " ",
+          " ## Terminology",
+          " ",
+          " + **Aggregate**: Perform calculations on collection data to retrieve meaningful summaries. ",
+          " + **Distinct**: Function that returns the distinct values that match a query, without duplicates.",
+          " + **Hooks**: Hooks run code before or after certain interactions with your site's collections, sometimes allowing you to interact with ",
+          "   the data handled in the interaction. For example, you can use the [`beforeInsert()`](wix-data/hooks/beforeinsert) hook to capitalize text before it's inserted into a collection.",
+          " + **Query**: Retrieve information from a database.",
+          " + **Reference field**: Fields in a database collection that let you link one collection with other collections. ",
+          "   Specifically, a reference field associates an item in one collection with an item in a different collection.",
+          " + **Truncate**: Removes all items from a collection.",
           "",
+          " ",
           " ### Data Types",
           "",
           " The Wix Data API works with a schemaless database behind the scenes. In theory,",
           " you can store any type of data in any database collection field. In practice, each collection has a",
           " non-enforced schema that you should conform to. This schema is used to determine",
           " which page elements can connect to which fields and to provide a better experience",
-          " in the [Content Manager](https://support.wix.com/en/article/managing-your-database-collections-5018117).",
+          " in the [Content Management System (CMS)](https://support.wix.com/en/article/managing-your-database-collections-5018117).",
           " For example, if you set a field's type to **Date and Time**, you can then connect",
           " that field to elements that work with dates, such as DatePicker and Text elements.",
-          " Also, in the Content Manager, values will appear as dates and you can add new values",
+          " Also, in the CMS, values will appear as dates and you can add new values",
           " using a date picker.",
           "",
           " The following is a list of the field types from database collections and their",
@@ -47,7 +85,8 @@
           "|Array|JavaScript array||",
           "|Audio| JavaScript string| A Media Manager audio URL as described [here]($w.AudioPlayer.html#src).|",
           "|Boolean| JavaScript boolean|| ",
-          "|Date and Time| JavaScript Date object|| ",
+          "|Date and Time| JavaScript Date object| Note that Javascript Date Objects are displayed as strings. Learn more about [Date Fields](https://support.wix.com/en/article/velo-working-with-the-data-api#date-fields).|",
+          "|Date| JavaScript string | A date in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) date format (YYYY-MM-DD). Learn more about [Date Fields](https://support.wix.com/en/article/velo-working-with-the-data-api#date-fields).| ",
           "|Document| JavaScript string| A Media Manager document URL as described [here]($w.LinkableMixin.html#link).|",
           "|Image| JavaScript string| An image URL as described [here](https://www.wix.com/velo/reference/$w/image/src).|",
           "|Media Gallery| JavaScript array| Each element in the array is either an `ImageItem` or `VideoItem` as described [here]($w.Gallery.html#items).|",
@@ -60,6 +99,7 @@
           "|Time| JavaScript string| Time in the HH.mm.ss.SSS format.|",
           "|URL|JavaScript string| A valid URL.|",
           "|Video| JavaScript string| A video URL as described [here]($w.Gallery.html#items).|",
+          "",
           "",
           "### Wix Data and Eventual Consistency",
           "",
@@ -77,7 +117,7 @@
           "### Data Quotas",
           "",
           "Wix places quotas on requests made by your site using the wix-data API. These quotas affect the number of requests your site can make per minute and",
-          "the amount of time your requests can run for. To find more about these quotas and how to work with them, see [About Data Quotas](https://support.wix.com/en/article/velo-about-data-quotas)." ],
+          "the amount of time your requests can run for. Learn more about [data quotas](https://dev.wix.com/docs/develop-websites/articles/coding-with-velo/premium-plans/data-platform-features) and how to work with them." ],
       "links": [],
       "examples": [],
       "extra":
@@ -95,7 +135,7 @@
           { "type": "wix-data.WixDataAggregate",
             "doc": "An aggregate object." },
         "locations":
-          [ { "lineno": 927,
+          [ { "lineno": 1037,
               "filename": "data-api.js" } ],
         "docs":
           { "summary": "Creates an aggregation.",
@@ -178,7 +218,7 @@
         "params":
           [ { "name": "collectionId",
               "type": "string",
-              "doc": "The ID of the collection to add the item to. \n\nTo find your `collectionId`, select the **Databases** tab in the [Velo Sidebar](https://support.wix.com/en/article/velo-working-with-the-velo-sidebar). \nHover over your collection, click the three dots, and select **Edit Settings**." },
+              "doc": "The ID of the collection to add the item to. \n\nThe array must contain at least one item. Passing an empty array returns an error.\n\nTo find your `collectionId`, select the **Databases** tab in the [Velo Sidebar](https://support.wix.com/en/article/velo-working-with-the-velo-sidebar). \nHover over your collection, click the three dots, and select **Edit Settings**." },
             { "name": "items",
               "type":
                 { "name": "Array",
@@ -196,14 +236,14 @@
                   [ "wix-data.WixDataBulkResult" ] },
             "doc": "Fulfilled - The results of the bulk insert.\nRejected - The error that caused the rejection." },
         "locations":
-          [ { "lineno": 754,
+          [ { "lineno": 853,
               "filename": "data-api.js" } ],
         "docs":
           { "summary": "Adds a number of items to a collection.",
             "description":
               [ "The `bulkInsert()` function returns a Promise that resolves after the items",
                 " have been added to the specified collection.",
-                " The Promise is rejected if the current user does not have create permissions",
+                " The Promise is rejected if the current user does not have \"create\" permissions",
                 " for the collection. Items are skipped if they include an `_id` property whose",
                 " value matches an existing ID in the collection. Meaning, `bulkInsert()` cannot",
                 " overwrite an existing item in the collection.",
@@ -236,7 +276,8 @@
                 "> **Notes:** ",
                 "> - If an item's `_id` property value is set to `null` or an empty string, an error is thrown.",
                 "> - Bulk operations are limited to 1000 items per function call.",
-                "> - The `bulkInsert()` function is not supported for Single Item Collections." ],
+                "> - The `bulkInsert()` function is not supported for Single Item Collections.",
+                "> - The `bulkInsert()` function does not support multi-reference fields. For multi-reference fields, use [`insertReference()`](https://www.wix.com/velo/reference/wix-data/insertreference)." ],
             "links": [],
             "examples":
               [ { "title": "Insert multiple items into a collection",
@@ -451,7 +492,7 @@
                 { "name": "Array",
                   "typeParams":
                     [ "string" ] },
-              "doc": "IDs of the items to remove." },
+              "doc": "IDs of the items to remove.\n\nThe array must contain at least one item. Passing an empty array returns an error." },
             { "name": "options",
               "type": "wix-data.WixDataOptions",
               "doc": "An object containing options to use when processing this operation.",
@@ -463,14 +504,14 @@
                   [ "wix-data.WixDataBulkRemoveResult" ] },
             "doc": "Fulfilled - The results of the bulk remove.\nRejected - The error that caused the rejection." },
         "locations":
-          [ { "lineno": 381,
+          [ { "lineno": 467,
               "filename": "data-api.js" } ],
         "docs":
           { "summary": "Removes a number of items from a collection.",
             "description":
               [ "The `bulkRemove()` function returns a Promise that resolves after the items",
                 " have been removed from the specified collection.",
-                " The Promise is rejected if the current user does not have delete permissions",
+                " The Promise is rejected if the current user does not have \"delete\" permissions",
                 " for the collection. If the delete permissions for the collection are set to",
                 " **Site member author**, the only items that will be deleted are those for",
                 " which the current user is the owner. All other items will be skipped.",
@@ -565,7 +606,7 @@
                 { "name": "Array",
                   "typeParams":
                     [ "Object" ] },
-              "doc": "The items to insert or update." },
+              "doc": "The items to insert or update.\n\nThe array must contain at least one item. Passing an empty array returns an error." },
             { "name": "options",
               "type": "wix-data.WixDataOptions",
               "doc": "An object containing options to use when processing this operation.",
@@ -577,7 +618,7 @@
                   [ "wix-data.WixDataBulkResult" ] },
             "doc": "Fulfilled - The results of the bulk save.\nRejected - The error that caused the rejection." },
         "locations":
-          [ { "lineno": 812,
+          [ { "lineno": 916,
               "filename": "data-api.js" } ],
         "docs":
           { "summary": "Inserts or updates a number of items in a collection.",
@@ -616,7 +657,8 @@
                 "> **Notes:** ",
                 "> - If an item's `_id` property value is set to `null` or an empty string, an error is thrown.",
                 "> - Bulk operations are limited to 1000 items per function call.",
-                "> - The `bulkSave()` function is not supported for Single Item Collections." ],
+                "> - The `bulkSave()` function is not supported for Single Item Collections.",
+                "> - The `bulkSave()` function does not support multi-reference fields. For multi-reference fields, use [`replaceReferences()`](https://www.wix.com/velo/reference/wix-data/replacereferences) or [`insertReference()`](https://www.wix.com/velo/reference/wix-data/insertreference)." ],
             "links": [],
             "examples":
               [ { "title": "Save multiple items in a collection",
@@ -831,7 +873,7 @@
                 { "name": "Array",
                   "typeParams":
                     [ "Object" ] },
-              "doc": "The items to update." },
+              "doc": "The items to update.\n\nThe array must contain at least one item. Passing an empty array returns an error." },
             { "name": "options",
               "type": "wix-data.WixDataOptions",
               "doc": "An object containing options to use when processing this operation.",
@@ -843,7 +885,7 @@
                   [ "wix-data.WixDataBulkResult" ] },
             "doc": "Fulfilled - The results of the bulk save.\nRejected - The error that caused the rejection." },
         "locations":
-          [ { "lineno": 869,
+          [ { "lineno": 976,
               "filename": "data-api.js" } ],
         "docs":
           { "summary": "Updates a number of items in a collection.",
@@ -884,7 +926,8 @@
                 "The maximum size of an item that you can update in a collection is 500kb.",
                 "> **Notes:** ",
                 "> - Bulk operations are limited to 1000 items per function call.",
-                "> - The `bulkUpdate()` function is not supported for Single Item Collections." ],
+                "> - The `bulkUpdate()` function is not supported for Single Item Collections.",
+                "> - The `bulkUpdate()` function does not support multi-reference fields. For multi-reference fields, use [`replaceReferences()`](https://www.wix.com/velo/reference/wix-data/replacereferences) or [`insertReference()`](https://www.wix.com/velo/reference/wix-data/insertreference)." ],
             "links": [],
             "examples":
               [ { "title": "Update multiple items with specified IDs in a collection",
@@ -1044,7 +1087,7 @@
           { "type": "wix-data.WixDataFilter",
             "doc": "A filter object." },
         "locations":
-          [ { "lineno": 273,
+          [ { "lineno": 355,
               "filename": "data-api.js" } ],
         "docs":
           { "summary": "Creates a filter to be used with datasets and aggregations.",
@@ -1092,7 +1135,7 @@
                   [ "Object" ] },
             "doc": "Fulfilled - The retrieved item or null if not found.\nRejected - The error that caused the rejection." },
         "locations":
-          [ { "lineno": 115,
+          [ { "lineno": 192,
               "filename": "data-api.js" } ],
         "docs":
           { "summary": "Retrieves an item from a collection.",
@@ -1109,9 +1152,9 @@
                 " Use the `options` parameter to run `get()` from backend code without",
                 " checking for permissions or without its registered hooks.",
                 "",
-                " > **Note:** When using the `query()` or `get()` functions or another data retrieval method following a change to your database collection, ",
-                "the data retrieved may not contain your most recent changes. See [Wix-data and Eventual Consistency](wix-data.html#wix-data-and-eventual-consistency) for more information. To solve this problem, ",
-                "you can use the [`setTimeout()`](https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Asynchronous/Timeouts_and_intervals#setTimeout) function to delay retrieving data following any changes to your database collection." ],
+                " > **Notes:** ",
+                " > - When using the `query()` or `get()` functions or another data retrieval method following a change to your database collection, the data retrieved may not contain your most recent changes. See [Wix-data and Eventual Consistency](wix-data.html#wix-data-and-eventual-consistency) for more information. To solve this problem, you can use the [`setTimeout()`](https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Asynchronous/Timeouts_and_intervals#setTimeout) function to delay retrieving data following any changes to your database collection.",
+                " > - An `itemId` is required to retrieve an item even from a single-item collection." ],
             "links": [],
             "examples":
               [ { "title": "Get an item from a collection",
@@ -1180,8 +1223,7 @@
         "extra":
           {  } },
       { "name": "insert",
-        "labels":
-          [ "changed" ],
+        "labels": [],
         "nameParams": [],
         "params":
           [ { "name": "collectionId",
@@ -1201,14 +1243,14 @@
                   [ "Object" ] },
             "doc": "Fulfilled - The item that was added.\nRejected - The error that caused the rejection." },
         "locations":
-          [ { "lineno": 150,
+          [ { "lineno": 227,
               "filename": "data-api.js" } ],
         "docs":
           { "summary": "Adds an item to a collection.",
             "description":
               [ "The `insert()` function returns a Promise that resolves to the inserted item",
                 " after it has been added to the specified collection.",
-                " The Promise is rejected if the current user does not have create permissions",
+                " The Promise is rejected if the current user does not have \"create\" permissions",
                 " for the collection or the specified item includes an `_id` property whose",
                 " value matches an existing ID in the collection. Meaning, `insert()` cannot",
                 " overwrite an existing item in the collection.",
@@ -1241,7 +1283,8 @@
                 "> **Notes:** ",
                 "> - If an item's `_id` property value is set to `null` or an empty string, an error is thrown.",
                 "> - When creating a Single Item Collection, an item with the system field `_id` is pre-inserted into the collection. Single Item Collections may contain only one item. ",
-                "> - If there is a pre-existing item in a Single Item Collection, the `insert()` function will not run. To update or change an item in a Single Item Collection see the [`update()`](#update) and [`save()`](#save) functions." ],
+                "> - If there is a pre-existing item in a Single Item Collection, the `insert()` function will not run. To update or change an item in a Single Item Collection see the [`update()`](#update) and [`save()`](#save) functions. ",
+                "> - The `insert()` function does not support multi-reference fields. For multi-reference fields, use [`insertReference()`](https://www.wix.com/velo/reference/wix-data/insertreference)." ],
             "links": [],
             "examples":
               [ { "title": "Insert an item into a collection",
@@ -1428,7 +1471,24 @@
                       " *  }",
                       " */" ],
                   "extra":
-                    {  } } ],
+                    {  } },
+                { "title": "Insert an item into a collection using a custom function",
+                  "body":
+                    [ "import wixData from 'wix-data';",
+                      "",
+                      "// Code for a create operation using insert() //",
+                      "",
+                      "function createGreeting(language, greeting) {",
+                      "  const toInsert = {",
+                      "    language,",
+                      "    greeting",
+                      "  };",
+                      "",
+                      "  return wixData.insert('Greetings', toInsert);",
+                      "}",
+                      "" ],
+                  "extra":
+                    { "description": "In this example, we demonstrate how you can you can build a CRUD \"create\" function using `insert()`. You can test out the code in our [example template](https://manage.wix.com/edit-template/from?originTemplateId=d802a21e-b944-4bfb-92c3-eb4efd6fdee4&templateId=839cba18-7956-4dbc-bf2b-5b416b4097b6&autoDevMode=true)." } } ],
             "extra":
               {  } },
         "extra":
@@ -1470,7 +1530,7 @@
                   [ "void" ] },
             "doc": "Fulfilled - When the references have been inserted.\nRejected - The error that caused the rejection." },
         "locations":
-          [ { "lineno": 608,
+          [ { "lineno": 708,
               "filename": "data-api.js" } ],
         "docs":
           { "summary": "Inserts a reference in the specified property.",
@@ -1554,7 +1614,7 @@
                   [ "boolean" ] },
             "doc": "Fulfilled - Whether the referring item contains a reference to the referenced item or not.\nRejected - The error that caused the rejection." },
         "locations":
-          [ { "lineno": 710,
+          [ { "lineno": 810,
               "filename": "data-api.js" } ],
         "docs":
           { "summary": "Checks if a reference to the referenced item exists in the specified\n  property of the referring item.",
@@ -1600,7 +1660,7 @@
           { "type": "wix-data.WixDataQuery",
             "doc": "A query object." },
         "locations":
-          [ { "lineno": 208,
+          [ { "lineno": 288,
               "filename": "data-api.js" } ],
         "docs":
           { "summary": "Creates a query for retrieving items from a database collection.",
@@ -1822,7 +1882,21 @@
                       "  *       }",
                       "  */" ],
                   "extra":
-                    {  } } ],
+                    {  } },
+                { "title": "Query a collection using a custom function",
+                  "body":
+                    [ "import wixData from 'wix-data';",
+                      "",
+                      "// Code for a read operation using query() //",
+                      "",
+                      "async function readGreetings() {",
+                      "  const results = await wixData.query('Greetings').ascending('language').find();",
+                      "",
+                      "  return results.items;",
+                      "}",
+                      "" ],
+                  "extra":
+                    { "description": "In this example, we demonstrate how you can you can build a CRUD \"read\" function using `query()`. You can test out the code in our [example template](https://manage.wix.com/edit-template/from?originTemplateId=d802a21e-b944-4bfb-92c3-eb4efd6fdee4&templateId=839cba18-7956-4dbc-bf2b-5b416b4097b6&autoDevMode=true)." } } ],
             "extra":
               {  } },
         "extra":
@@ -1853,7 +1927,7 @@
                   [ "wix-data.WixDataQueryReferencedResult" ] },
             "doc": "Fulfilled - The referenced items.\nRejected - The error that caused the rejection." },
         "locations":
-          [ { "lineno": 558,
+          [ { "lineno": 658,
               "filename": "data-api.js" } ],
         "docs":
           { "summary": "Gets the full items referenced in the specified property.",
@@ -1977,16 +2051,16 @@
               { "name": "Promise",
                 "typeParams":
                   [ "Object" ] },
-            "doc": "Fulfilled - The removed item.\nRejected - The error that caused the rejection." },
+            "doc": "Fulfilled - The removed item, or `null` if the item was not found.\nRejected - The error that caused the rejection." },
         "locations":
-          [ { "lineno": 301,
+          [ { "lineno": 383,
               "filename": "data-api.js" } ],
         "docs":
           { "summary": "Removes an item from a collection.",
             "description":
               [ "The `remove()` function returns a Promise that resolves to the removed item",
                 " after it has been removed from the specified collection.",
-                " The Promise is rejected if the current user does not have delete permissions",
+                " The Promise is rejected if the current user does not have \"delete\" permissions",
                 " for the collection.",
                 "",
                 " Calling the `remove()` function triggers the [`beforeRemove()`](wix-data.Hooks.html#beforeRemove)",
@@ -1995,7 +2069,8 @@
                 " Use the `options` parameter to run `remove()` from backend code without",
                 " checking for permissions or without its registered hooks.",
                 "",
-                "> **Note:** `remove()` also clears multiple-item reference fields for items in collections referenced by the specified item.",
+                "> **Notes:**",
+                "> - The `remove()` function also clears multiple-item reference fields for items in collections referenced by the specified item.",
                 "For example, suppose you have a **Movies** collection with an **Actors** field that contains multiple references",
                 "to items in a **People** collection. Removing an item in the **Movies** collection also clears the data in the corresponding",
                 "multiple-item reference fields in the **People** collection." ],
@@ -2008,14 +2083,14 @@
                       "// ...",
                       "",
                       "wixData.remove(\"myCollection\", \"00001\")",
-                      "  .then((results) => {",
-                      "    console.log(results); //see item below",
+                      "  .then((result) => {",
+                      "    console.log(result); // see removed item below",
                       "  })",
                       "  .catch((err) => {",
                       "    console.log(err);",
                       "  });",
                       "",
-                      "/*  item is:",
+                      "/*  removed item is:",
                       " *",
                       " *  {",
                       " *    \"_id\":          \"00001\",",
@@ -2041,18 +2116,14 @@
                       "};",
                       "",
                       "wixData.remove(\"myCollection\", \"00001\", options)",
-                      "  .then((results) => {",
-                      "    if(results.items.length > 0) {",
-                      "      console.log(results.items[0]); //see item below",
-                      "    } else {",
-                      "      // handle case where no matching items found",
-                      "    }",
+                      "  .then((result) => {",
+                      "    console.log(result); // see removed item below",
                       "  })",
                       "  .catch((err) => {",
                       "    console.log(err);",
                       "  });",
                       "",
-                      "/*  item is:",
+                      "/*  removed item is:",
                       " *",
                       " *  {",
                       " *    \"_id\":          \"00001\",",
@@ -2065,7 +2136,19 @@
                       " *  }",
                       " */" ],
                   "extra":
-                    {  } } ],
+                    {  } },
+                { "title": "Remove a collection using a custom function",
+                  "body":
+                    [ "import wixData from 'wix-data';",
+                      "",
+                      "// Code for a delete operation using remove() //",
+                      "",
+                      "function deleteGreeting(itemId) {",
+                      "  return wixData.remove('Greetings', itemId);",
+                      "}",
+                      "" ],
+                  "extra":
+                    { "description": "In this example, we demonstrate how you can you can build a CRUD \"delete\" function using `remove()`. You can test out the code in our [example template](https://manage.wix.com/edit-template/from?originTemplateId=d802a21e-b944-4bfb-92c3-eb4efd6fdee4&templateId=839cba18-7956-4dbc-bf2b-5b416b4097b6&autoDevMode=true)." } } ],
             "extra":
               {  } },
         "extra":
@@ -2107,7 +2190,7 @@
                   [ "void" ] },
             "doc": "Fulfilled - When the references have been removed.\nRejected - The error that caused the rejection." },
         "locations":
-          [ { "lineno": 677,
+          [ { "lineno": 777,
               "filename": "data-api.js" } ],
         "docs":
           { "summary": "Removes a reference from the specified property.",
@@ -2195,7 +2278,7 @@
                   [ "void" ] },
             "doc": "Fulfilled - When the references have been inserted.\nRejected - The error that caused the rejection." },
         "locations":
-          [ { "lineno": 643,
+          [ { "lineno": 743,
               "filename": "data-api.js" } ],
         "docs":
           { "summary": "Replaces current references with references in the specified property.",
@@ -2267,7 +2350,7 @@
                   [ "Object" ] },
             "doc": "Fulfilled - The item that was either inserted or updated, depending on whether it previously existed in the collection.\nRejected - The error that caused the rejection." },
         "locations":
-          [ { "lineno": 418,
+          [ { "lineno": 507,
               "filename": "data-api.js" } ],
         "docs":
           { "summary": "Inserts or updates an item in a collection.",
@@ -2300,7 +2383,9 @@
                 "",
                 " The maximum size of an item that you can save to a collection is 500kb.",
                 "",
-                " > **Note:** If an item's `_id` property value is set to `null` or an empty string, an error is thrown." ],
+                " > **Notes:**",
+                " > - If an item's `_id` property value is set to `null` or an empty string, an error is thrown.",
+                " > - The `save()` function does not support multi-reference fields. For multi-reference fields, use [`insertReference()`](https://www.wix.com/velo/reference/wix-data/insertreference) or [`replaceReferences()`](https://www.wix.com/velo/reference/wix-data/replacereferences) ." ],
             "links": [],
             "examples":
               [ { "title": "Save an item in a collection",
@@ -2500,7 +2585,7 @@
           { "type": "wix-data.WixDataSort",
             "doc": "A sort object." },
         "locations":
-          [ { "lineno": 287,
+          [ { "lineno": 369,
               "filename": "data-api.js" } ],
         "docs":
           { "summary": "Creates a sort to be used with the dataset `setSort()` function.",
@@ -2545,7 +2630,7 @@
                   [ "null" ] },
             "doc": "Fulfilled - When the items have been removed.\nRejected - The error that caused the rejection." },
         "locations":
-          [ { "lineno": 337,
+          [ { "lineno": 423,
               "filename": "data-api.js" } ],
         "docs":
           { "summary": "Removes all items from a collection.",
@@ -2626,7 +2711,7 @@
                   [ "Object" ] },
             "doc": "Fulfilled - The object that was updated.\nRejected - The error that caused the rejection." },
         "locations":
-          [ { "lineno": 471,
+          [ { "lineno": 563,
               "filename": "data-api.js" } ],
         "docs":
           { "summary": "Updates an item in a collection.",
@@ -2660,7 +2745,9 @@
                 " the value of the reference field to the referenced item's `_id` value or",
                 " the entire referenced item object.",
                 "",
-                "The maximum size of an item that you can update in a collection is 500kb." ],
+                "The maximum size of an item that you can update in a collection is 500kb.",
+                "",
+                "> **Note:** The `update()` function does not support multi-reference fields. For multi-reference fields, use [`replaceReferences()`](https://www.wix.com/velo/reference/wix-data/replacereferences) or [`insertReference()`](https://www.wix.com/velo/reference/wix-data/insertreference)." ],
             "links": [],
             "examples":
               [ { "title": "Update an item with a specified ID in a collection",
@@ -2900,7 +2987,25 @@
                       " *  }",
                       " */" ],
                   "extra":
-                    {  } } ],
+                    {  } },
+                { "title": "Update a collection using a custom function",
+                  "body":
+                    [ "import wixData from 'wix-data';",
+                      "",
+                      "// Code for an update operation using update() //",
+                      "",
+                      "function updateGreeting(itemId, language, greeting) {",
+                      "  const toUpdate = {",
+                      "    _id: itemId,",
+                      "    language,",
+                      "    greeting",
+                      "  };",
+                      "",
+                      "  return wixData.update('Greetings', toUpdate);",
+                      "}",
+                      "" ],
+                  "extra":
+                    { "description": "In this example, we demonstrate how you can you can build a CRUD \"update\" function using `update()`. You can test out the code in our [example template](https://manage.wix.com/edit-template/from?originTemplateId=d802a21e-b944-4bfb-92c3-eb4efd6fdee4&templateId=839cba18-7956-4dbc-bf2b-5b416b4097b6&autoDevMode=true)." } } ],
             "extra":
               {  } },
         "extra":
@@ -2909,7 +3014,7 @@
   "messages":
     [ { "name": "WixDataBulkRemoveResult",
         "locations":
-          [ { "lineno": 371,
+          [ { "lineno": 457,
               "filename": "data-api.js" } ],
         "docs":
           { "summary": "An object returned by the `bulkRemove()` function.",
@@ -2941,7 +3046,7 @@
         "labels": [] },
       { "name": "WixDataBulkResult",
         "locations":
-          [ { "lineno": 742,
+          [ { "lineno": 842,
               "filename": "data-api.js" } ],
         "docs":
           { "summary": "An object returned by Wix Data bulk operations.",
@@ -2989,16 +3094,15 @@
             "description":
               [ "The `options` parameter is an optional parameter that can be used when",
                 " calling some wix-data functions. To use `options`, pass it a `WixDataOptions`",
-                " object with one or both of the following key:value pairs:",
+                " object with one or more of the following key:value pairs:",
                 "",
                 " + `suppressAuth`: `true`/`false`",
                 " + `suppressHooks`: `true`/`false`",
                 " + `consistentRead`: `true`/`false`",
                 "",
-                "",
                 " The `options` parameter can only be used in backend code. Permission checks",
-                " and hooks always run for wix-data functions called from Page, Site and",
-                " Public code." ],
+                " and hooks always run for wix-data functions called from page, site and",
+                " public code." ],
             "links": [],
             "examples":
               [ { "title": "Create a data options object",
@@ -3050,10 +3154,91 @@
               "optional": true } ],
         "extra":
           {  },
-        "labels": [] },
+        "labels":
+          [ "changed" ] },
+      { "name": "WixDataQueryOptions",
+        "locations":
+          [ { "lineno": 29,
+              "filename": "data-api.js" } ],
+        "docs":
+          { "summary": "An object that you pass as the `options` parameter that modifies how an operation is performed.",
+            "description":
+              [ "The `options` parameter is an optional parameter that can be used when",
+                " calling some wix-data functions. To use `options`, pass it a `WixDataOptions`",
+                " object with one or more of the following key:value pairs:",
+                "",
+                " + `suppressAuth`: `true`/`false`",
+                " + `suppressHooks`: `true`/`false`",
+                " + `consistentRead`: `true`/`false`",
+                " + `omitTotalCount`: `true`/`false`",
+                "",
+                " The `options` parameter can only be used in backend code. Permission checks",
+                " and hooks always run for wix-data functions called from page, site and",
+                " public code." ],
+            "links": [],
+            "examples":
+              [ { "title": "Create a data options object",
+                  "body":
+                    [ "let options = {",
+                      "  \"suppressAuth\": true,",
+                      "  \"suppressHooks\": true",
+                      "};" ],
+                  "extra":
+                    {  } },
+                { "title": "Use data options to prevent permission checks and hooks from running",
+                  "body":
+                    [ "import wixData from 'wix-data';",
+                      "",
+                      "// ...",
+                      "",
+                      "let options = {",
+                      "  \"suppressAuth\": true,",
+                      "  \"suppressHooks\": true",
+                      "};",
+                      "",
+                      "wixData.get(\"myCollection\", \"00001\", options)",
+                      "  .then((results) => {",
+                      "    let item = results;",
+                      "  })",
+                      "  .catch((err) => {",
+                      "    let errorMsg = err;",
+                      "  });" ],
+                  "extra":
+                    {  } } ],
+            "extra":
+              {  } },
+        "members":
+          [ { "name": "suppressAuth",
+              "type": "boolean",
+              "doc": "Prevents [permission](https://support.wix.com/en/article/about-collection-permissions) checks from running for the operation. Defaults to `false`. Can only be used in backend code.",
+              "optional": true },
+            { "name": "suppressHooks",
+              "type": "boolean",
+              "doc": "Prevents [hooks](https://support.wix.com/en/article/wix-code-how-to-use-data-hooks) from running for the operation. Can only be used in backend code.",
+              "optional": true },
+            { "name": "consistentRead",
+              "type": "boolean",
+              "doc": "When `true`, reads data from the primary database instance. \nThis decreases performance but ensures data retrieved is up to date even immediately after an update. \nSee [Wix Data and Eventual Consistency](https://www.wix.com/velo/reference/wix-data/introduction#wix-data_introduction_wix-data-and-eventual-consistency) for more information.\n\nDefault: `false`",
+              "optional": true },
+            { "name": "omitTotalCount",
+              "type": "boolean",
+              "doc": "When `true`, the query result does not include a `totalCount` property containing the total number of items matching the query. \nThis speeds up the query.\n\nDefault: `false`",
+              "optional": true },
+            { "name": "appOptions",
+              "type": "wix-data.WixStoresProductQuery",
+              "doc": "Optional filters specific to querying [Wix Stores Products Collection Fields](https://support.wix.com/en/article/velo-wix-stores-products-collection-fields).",
+              "optional": true },
+            { "name": "language",
+              "type": "string",
+              "doc": "Language to translate result text into, in [IETF BCP 47 language tag](https://en.wikipedia.org/wiki/IETF_language_tag) format.\nIf provided, the result text is returned in the specified language. **Note:** Translation for the specified language must be enabled for the collection in [Wix Multilingual](https://www.wix.com/app-market/wix-multilingual).\nIf not provided, result text is not translated.",
+              "optional": true } ],
+        "extra":
+          {  },
+        "labels":
+          [ "changed" ] },
       { "name": "WixDataQueryReferencedOptions",
         "locations":
-          [ { "lineno": 532,
+          [ { "lineno": 628,
               "filename": "data-api.js" } ],
         "docs":
           { "summary": "An object for controlling the order of returned referenced items.",
@@ -3116,13 +3301,17 @@
             { "name": "consistentRead",
               "type": "boolean",
               "doc": "When `true`, reads data from the primary database instance. \nThis decreases performance but ensures data retrieved is up to date even immediately after an update. \nSee [Wix Data and Eventual Consistency](https://www.wix.com/velo/reference/wix-data/introduction#wix-data_introduction_wix-data-and-eventual-consistency) for more information.\n\nDefault: `false`",
+              "optional": true },
+            { "name": "omitTotalCount",
+              "type": "boolean",
+              "doc": "When `true`, the query result does not include a `totalCount` property containing the total number of items matching the query. \nThis speeds up the query.\n\nDefault: `false`",
               "optional": true } ],
         "extra":
           {  },
         "labels": [] },
       { "name": "WixStoresProductQuery",
         "locations":
-          [ { "lineno": 30,
+          [ { "lineno": 65,
               "filename": "data-api.js" } ],
         "docs":
           { "summary": "An object that you pass as the `options.appOptions` parameter that allows for Wix Stores/Products query specificity.",
@@ -3157,6 +3346,9 @@
       { "icon": "article",
         "text": "Adding Collection Data Search Functionality",
         "url": "https://support.wix.com/en/article/wix-code-tutorial-adding-collection-data-search-functionality" },
+      { "icon": "example",
+        "text": "Hello Data (Getting Started)",
+        "url": "https://www.wix.com/velo/example/hello-data" },
       { "icon": "example",
         "text": "Search",
         "url": "https://www.wix.com/velo/example/Search" },
