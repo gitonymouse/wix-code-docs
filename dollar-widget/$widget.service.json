@@ -11,9 +11,10 @@
         [ "<blockquote class=\"important\">",
           "",
           "__Important:__",
-          "This namespace is available only in Wix Blocks widget code. [Wix Blocks](https://support.wix.com/en/article/wix-blocks-check-out-our-articles) is an editor for building Wix apps.",
+          "+ This namespace is available only in Wix Blocks widget code. [Wix Blocks](https://support.wix.com/en/article/wix-blocks-check-out-our-articles) is an editor for building Wix apps.",
           "",
           "</blockquote>",
+          "",
           "",
           "Blocks widgets can expose a [widget API](https://support.wix.com/en/article/wix-blocks-about-the-widget-api), letting you add properties, events, and functions to your widget.",
           "The `$widget` namespace provides functionality for working with to your widget's API from within the widget code." ],
@@ -28,9 +29,9 @@
         "set": true,
         "type": "Object",
         "locations":
-          [ { "lineno": 17,
+          [ { "lineno": 19,
               "filename": "$widget.js" },
-            { "lineno": 30,
+            { "lineno": 32,
               "filename": "$widget.js" } ],
         "docs":
           { "summary": "Sets or gets the [widget's properties](https://support.wix.com/en/article/wix-blocks-widget-api-properties).",
@@ -66,7 +67,7 @@
         "ret":
           { "type": "void" },
         "locations":
-          [ { "lineno": 50,
+          [ { "lineno": 52,
               "filename": "$widget.js" } ],
         "docs":
           { "summary": "Fires an event that is defined in the Widget API.",
@@ -96,7 +97,7 @@
         "ret":
           { "type": "any" },
         "locations":
-          [ { "lineno": 37,
+          [ { "lineno": 39,
               "filename": "$widget.js" } ],
         "docs":
           { "summary": "Adds an event handler that runs when the value of a widget property is changed.",
@@ -130,7 +131,7 @@
         "ret":
           { "type": "void" },
         "locations":
-          [ { "lineno": 63,
+          [ { "lineno": 65,
               "filename": "$widget.js" } ],
         "docs":
           { "description":
