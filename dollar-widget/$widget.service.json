@@ -9,8 +9,10 @@
     { "summary": "The `$widget` namespace contains functionality for working with your Blocks widget's API from within the widget code.",
       "description":
         [ "<blockquote class=\"important\">",
+          "",
           "__Important:__",
           "This namespace is available only in Wix Blocks widget code. [Wix Blocks](https://support.wix.com/en/article/wix-blocks-check-out-our-articles) is an editor for building Wix apps.",
+          "",
           "</blockquote>",
           "",
           "Blocks widgets can expose a [widget API](https://support.wix.com/en/article/wix-blocks-about-the-widget-api), letting you add properties, events, and functions to your widget.",
@@ -26,9 +28,9 @@
         "set": true,
         "type": "Object",
         "locations":
-          [ { "lineno": 15,
+          [ { "lineno": 17,
               "filename": "$widget.js" },
-            { "lineno": 28,
+            { "lineno": 30,
               "filename": "$widget.js" } ],
         "docs":
           { "summary": "Sets or gets the [widget's properties](https://support.wix.com/en/article/wix-blocks-widget-api-properties).",
@@ -64,7 +66,7 @@
         "ret":
           { "type": "void" },
         "locations":
-          [ { "lineno": 48,
+          [ { "lineno": 50,
               "filename": "$widget.js" } ],
         "docs":
           { "summary": "Fires an event that is defined in the Widget API.",
@@ -94,7 +96,7 @@
         "ret":
           { "type": "any" },
         "locations":
-          [ { "lineno": 35,
+          [ { "lineno": 37,
               "filename": "$widget.js" } ],
         "docs":
           { "summary": "Adds an event handler that runs when the value of a widget property is changed.",
@@ -128,7 +130,7 @@
         "ret":
           { "type": "void" },
         "locations":
-          [ { "lineno": 61,
+          [ { "lineno": 63,
               "filename": "$widget.js" } ],
         "docs":
           { "description":
