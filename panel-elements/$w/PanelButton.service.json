@@ -4,15 +4,20 @@
     [ "$w.HiddenCollapsedMixin",
       "$w.Element",
       "$w.DisabledMixin" ],
-  "labels": [],
+  "labels":
+    [ "changed" ],
   "location":
     { "lineno": 1,
       "filename": "PanelButton.js" },
   "docs":
     { "summary": "A button on your Blocks panel.",
       "description":
-        [ "> **Important**:  ",
-          "> This element is available only in [custom panels](https://support.wix.com/en/article/wix-blocks-designing-custom-panels-for-your-widgets-action-bar-buttons) built in Wix Blocks. [Wix Blocks](https://support.wix.com/en/article/wix-blocks-check-out-our-articles) is an editor for building Wix apps." ],
+        [ "<blockquote class=\"important\">",
+          "",
+          "__Important:__  ",
+          "+ This element is available only in [custom panels](https://support.wix.com/en/article/wix-blocks-designing-custom-panels-for-your-widgets-action-bar-buttons) built in Wix Blocks. [Wix Blocks](https://support.wix.com/en/article/wix-blocks-check-out-our-articles) is an editor for building Wix apps.",
+          "",
+          "</blockquote>" ],
       "links": [],
       "examples": [],
       "extra":
@@ -24,9 +29,9 @@
         "set": true,
         "type": "string",
         "locations":
-          [ { "lineno": 55,
+          [ { "lineno": 59,
               "filename": "PanelButton.js" },
-            { "lineno": 68,
+            { "lineno": 72,
               "filename": "PanelButton.js" } ],
         "docs":
           { "summary": "Sets or gets the button's label (the text that appears on the button).",
@@ -53,9 +58,9 @@
         "set": true,
         "type": "string",
         "locations":
-          [ { "lineno": 145,
+          [ { "lineno": 149,
               "filename": "PanelButton.js" },
-            { "lineno": 161,
+            { "lineno": 165,
               "filename": "PanelButton.js" } ],
         "docs":
           { "summary": "Sets or gets the type of divider displayed under the element.",
@@ -86,9 +91,9 @@
         "set": true,
         "type": "string",
         "locations":
-          [ { "lineno": 37,
+          [ { "lineno": 41,
               "filename": "PanelButton.js" },
-            { "lineno": 49,
+            { "lineno": 53,
               "filename": "PanelButton.js" } ],
         "docs":
           { "summary": "Sets or gets the text above the button (field title). Maximum length is 120 characters.",
@@ -115,9 +120,9 @@
         "set": true,
         "type": "string",
         "locations":
-          [ { "lineno": 104,
+          [ { "lineno": 108,
               "filename": "PanelButton.js" },
-            { "lineno": 120,
+            { "lineno": 124,
               "filename": "PanelButton.js" } ],
         "docs":
           { "summary": "Sets or gets the button's size.",
@@ -148,9 +153,9 @@
         "set": true,
         "type": "string",
         "locations":
-          [ { "lineno": 74,
+          [ { "lineno": 78,
               "filename": "PanelButton.js" },
-            { "lineno": 98,
+            { "lineno": 102,
               "filename": "PanelButton.js" } ],
         "docs":
           { "summary": "Sets or gets the button's skin.",
@@ -189,9 +194,9 @@
         "set": true,
         "type": "boolean",
         "locations":
-          [ { "lineno": 128,
+          [ { "lineno": 132,
               "filename": "PanelButton.js" },
-            { "lineno": 139,
+            { "lineno": 143,
               "filename": "PanelButton.js" } ],
         "docs":
           { "summary": "Sets or gets whether the button is stretched to the full width of the panel.",
@@ -217,9 +222,9 @@
         "set": true,
         "type": "string",
         "locations":
-          [ { "lineno": 17,
+          [ { "lineno": 21,
               "filename": "PanelButton.js" },
-            { "lineno": 31,
+            { "lineno": 35,
               "filename": "PanelButton.js" } ],
         "docs":
           { "summary": "Sets or gets an element's tooltip.",
@@ -254,7 +259,7 @@
           { "type": "$w.Element",
             "doc": "The element to which the event handler was added." },
         "locations":
-          [ { "lineno": 167,
+          [ { "lineno": 171,
               "filename": "PanelButton.js" } ],
         "docs":
           { "summary": "Adds an event handler that runs when the element is clicked.",
@@ -296,7 +301,7 @@
   "messages":
     [ { "name": "icon",
         "locations":
-          [ { "lineno": 197,
+          [ { "lineno": 201,
               "filename": "PanelButton.js" } ],
         "docs":
           { "summary": "An object representing an SVG icon.",

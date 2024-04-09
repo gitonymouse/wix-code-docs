@@ -4,7 +4,8 @@
     [ "$w.HiddenCollapsedMixin",
       "$w.Element",
       "$w.DisabledMixin" ],
-  "labels": [],
+  "labels":
+    [ "changed" ],
   "location":
     { "lineno": 1,
       "filename": "PanelRadioButtonGroup.js" },
@@ -13,8 +14,13 @@
       "description":
         [ "Radio button groups consist of a list of options. Each option contains a label, which is what the user sees, and a value, which is what is used in code.",
           "",
-          "> **Important**:  ",
-          "> This element is available only in [custom panels](https://support.wix.com/en/article/wix-blocks-designing-custom-panels-for-your-widgets-action-bar-buttons) built in Wix Blocks. [Wix Blocks](https://support.wix.com/en/article/wix-blocks-check-out-our-articles) is an editor for building Wix apps." ],
+          "",
+          "<blockquote class=\"important\">",
+          "  ",
+          "__Important:__",
+          "+ This element is available only in [custom panels](https://support.wix.com/en/article/wix-blocks-designing-custom-panels-for-your-widgets-action-bar-buttons) built in Wix Blocks. [Wix Blocks](https://support.wix.com/en/article/wix-blocks-check-out-our-articles) is an editor for building Wix apps.",
+          "",
+          "</blockquote>" ],
       "links": [],
       "examples": [],
       "extra":
@@ -26,9 +32,9 @@
         "set": true,
         "type": "string",
         "locations":
-          [ { "lineno": 79,
+          [ { "lineno": 85,
               "filename": "PanelRadioButtonGroup.js" },
-            { "lineno": 95,
+            { "lineno": 101,
               "filename": "PanelRadioButtonGroup.js" } ],
         "docs":
           { "summary": "Sets or gets the type of divider displayed under the element.",
@@ -59,9 +65,9 @@
         "set": true,
         "type": "string",
         "locations":
-          [ { "lineno": 61,
+          [ { "lineno": 67,
               "filename": "PanelRadioButtonGroup.js" },
-            { "lineno": 72,
+            { "lineno": 78,
               "filename": "PanelRadioButtonGroup.js" } ],
         "docs":
           { "summary": "Sets or gets the label of an element.",
@@ -90,9 +96,9 @@
             "typeParams":
               [ "$w.PanelRadioButtonGroup.option" ] },
         "locations":
-          [ { "lineno": 101,
+          [ { "lineno": 107,
               "filename": "PanelRadioButtonGroup.js" },
-            { "lineno": 114,
+            { "lineno": 120,
               "filename": "PanelRadioButtonGroup.js" } ],
         "docs":
           { "summary": "Sets or gets the options in the radio button group.",
@@ -127,9 +133,9 @@
         "set": true,
         "type": "number",
         "locations":
-          [ { "lineno": 121,
+          [ { "lineno": 127,
               "filename": "PanelRadioButtonGroup.js" },
-            { "lineno": 145,
+            { "lineno": 151,
               "filename": "PanelRadioButtonGroup.js" } ],
         "docs":
           { "summary": "Sets or gets the index of the selected option.",
@@ -167,9 +173,9 @@
         "set": true,
         "type": "string",
         "locations":
-          [ { "lineno": 41,
+          [ { "lineno": 47,
               "filename": "PanelRadioButtonGroup.js" },
-            { "lineno": 55,
+            { "lineno": 61,
               "filename": "PanelRadioButtonGroup.js" } ],
         "docs":
           { "summary": "Sets or gets an element's tooltip.",
@@ -198,9 +204,9 @@
         "set": true,
         "type": "string",
         "locations":
-          [ { "lineno": 19,
+          [ { "lineno": 25,
               "filename": "PanelRadioButtonGroup.js" },
-            { "lineno": 35,
+            { "lineno": 41,
               "filename": "PanelRadioButtonGroup.js" } ],
         "docs":
           { "summary": "Sets or gets an element's value.",
@@ -237,7 +243,7 @@
           { "type": "$w.Element",
             "doc": "The element on which the event is now registered." },
         "locations":
-          [ { "lineno": 160,
+          [ { "lineno": 166,
               "filename": "PanelRadioButtonGroup.js" } ],
         "docs":
           { "summary": "Adds an event handler that runs when an input element's value\n is changed.",
@@ -271,7 +277,7 @@
   "messages":
     [ { "name": "option",
         "locations":
-          [ { "lineno": 152,
+          [ { "lineno": 158,
               "filename": "PanelRadioButtonGroup.js" } ],
         "docs":
           { "summary": "An object representing a radio button option.",
